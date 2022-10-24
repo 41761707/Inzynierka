@@ -1,0 +1,24 @@
+digraph G {
+	subgraph cluster_StateLevel1 {
+		color=gray
+		label=StateLevel1
+		"at(A,1)"
+		"at(B,2)"
+		"at(C,3)"
+		"clear(4)"
+		"clear(5)"
+		"clear(6)"
+	}
+	subgraph cluster_ActionLevel1 {
+		color=gray
+		label=ActionLevel1
+		"go(a,1,4)"
+		"persist(at(b,2))"
+		"persist(at(c,3))"
+		"persist(clear(4))"
+		"persist(clear(5))"
+		"persist(clear(6))"
+	}
+	"at(A,1)" -> "go(a,1,4)"
+	rankdir=LR
+}

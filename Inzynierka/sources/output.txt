@@ -1,0 +1,16 @@
+StartLevel: [at(a,1)/1,clear(2)/1]
+A: persist(at(a,1))
+PreCond: [at(a,1)]
+Effects: [at(a,1)]
+A: go(a,1,2)
+PreCond: [at(a,1),clear(2)]
+Effects: [at(a,2),clear(1),~at(a,1),~clear(2)]
+A: persist(at(a,1))
+PreCond: [at(a,1)]
+Effects: [at(a,1)]
+A: persist(clear(2))
+PreCond: [clear(2)]
+Effects: [clear(2)]
+ActionLevel: [go(a,1,2)/_2626,persist(at(a,1))/_2330]
+StateLevel: [~clear(2)/_2626,~at(a,1)/_2626,clear(1)/_2626,at(a,2)/_2626,at(a,1)/_2330]
+Plan: [[go(a,1,2)]]
