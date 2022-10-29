@@ -2,33 +2,45 @@ digraph G {
 	subgraph cluster_StateLevel1 {
 		color=gray
 		label=StateLevel1
-		"at(a,1)1" [label="at(a,1)"]
-		"clear(2)1" [label="clear(2)"]
+		"at(a,1)1" [label="at(a,1)" shape=oval]
+		"clear(2)1" [label="clear(2)" shape=oval]
+		"clear(3)1" [label="clear(3)" shape=oval]
 	}
+	"at(a,1)2" -> "clear(1)2" [arrowhead=none constraint=false style=dotted]
+	"at(a,1)2" -> "~at(a,1)2" [arrowhead=none constraint=false style=dotted]
+	"clear(2)2" -> "at(a,2)2" [arrowhead=none constraint=false style=dotted]
+	"clear(2)2" -> "~clear(2)2" [arrowhead=none constraint=false style=dotted]
 	subgraph cluster_ActionLevel1 {
 		color=gray
 		label=ActionLevel1
-		"go(a,1,2)1" [label="go(a,1,2)"]
-		"persist(at(a,1))1" [label="persist(at(a,1))"]
+		"persist(clear(3))1" [label="persist(clear(3))" shape=box]
+		"persist(clear(2))1" [label="persist(clear(2))" shape=box]
+		"persist(at(a,1))1" [label="persist(at(a,1))" shape=box]
+		"go(a,1,2)1" [label="go(a,1,2)" shape=box]
+		"persist(at(a,1))1" [label="persist(at(a,1))" shape=box]
 	}
 	subgraph cluster_StateLevel2 {
 		color=gray
 		label=StateLevel2
-		"~clear(2)2" [label="~clear(2)"]
-		"~at(a,1)2" [label="~at(a,1)"]
-		"clear(1)2" [label="clear(1)"]
-		"at(a,2)2" [label="at(a,2)"]
-		"at(a,1)2" [label="at(a,1)"]
+		"clear(3)2" [label="clear(3)" shape=oval]
+		"clear(2)2" [label="clear(2)" shape=oval]
+		"at(a,1)2" [label="at(a,1)" shape=oval]
+		"~clear(2)2" [label="~clear(2)" shape=oval]
+		"~at(a,1)2" [label="~at(a,1)" shape=oval]
+		"clear(1)2" [label="clear(1)" shape=oval]
+		"at(a,2)2" [label="at(a,2)" shape=oval]
 	}
-	"at(a,1)1" -> "persist(at(a,1))1"
-	"persist(at(a,1))1" -> "at(a,1)2"
+	"at(a,1)1" -> "persist(at(a,1))1" [style=dashed]
+	"persist(at(a,1))1" -> "at(a,1)2" [style=dashed]
 	"at(a,1)1" -> "go(a,1,2)1"
 	"clear(2)1" -> "go(a,1,2)1"
 	"go(a,1,2)1" -> "at(a,2)2"
 	"go(a,1,2)1" -> "clear(1)2"
 	"go(a,1,2)1" -> "~at(a,1)2"
 	"go(a,1,2)1" -> "~clear(2)2"
-	"clear(2)1" -> "persist(clear(2))1"
-	"persist(clear(2))1" -> "clear(2)2"
+	"clear(2)1" -> "persist(clear(2))1" [style=dashed]
+	"persist(clear(2))1" -> "clear(2)2" [style=dashed]
+	"clear(3)1" -> "persist(clear(3))1" [style=dashed]
+	"persist(clear(3))1" -> "clear(3)2" [style=dashed]
 	rankdir=LR
 }
