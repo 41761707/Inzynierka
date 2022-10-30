@@ -15,12 +15,12 @@ def generateArcs(actions,g,level):
             else:
                 Effects = action_variables[variable]
         for item in PreCond:
-            if(action_id.startswith("persist")):
+            if(action_id.startswith("zostan")):
                 g.edge(item+str(level),action_id+str(level),style='dashed')
             else:
                 g.edge(item+str(level),action_id+str(level))
         for item in Effects:
-            if(action_id.startswith("persist")):
+            if(action_id.startswith("zostan")):
                 g.edge(action_id+str(level),item+str(level_higher),style='dashed')
             else:
                 g.edge(action_id+str(level),item+str(level_higher))
@@ -66,32 +66,32 @@ def parseInput(file,g):
         if(name == 'StartLevel'):
             name = 'StateLevel1'
             #print(variables)
-            variables = re.findall('~?at\([a-z]+,[0-9]+\)|~?go\([a-z]+,[0-9]+,[0-9]+\)|~?clear\([0-9]+\)',variables)
+            variables = re.findall('~?na\([a-z]+,[0-9]+\)|~?idz\([a-z]+,[0-9]+,[0-9]+\)|~?pusty\([0-9]+\)',variables)
             generateLayer(name,variables,g,current_level,"oval")
         elif(name == 'A'):
             prev_action = variables.strip()
             current_level_actions[prev_action] = {}
             #print('A: ', variables)
-        elif(name == 'PreCond'):
-            variables = re.findall('~?at\([a-z]+,[0-9]+\)|~?go\([a-z]+,[0-9]+,[0-9]+\)|~?clear\([0-9]+\)',variables)
+        elif(name == 'Precondition'):
+            variables = re.findall('~?na\([a-z]+,[0-9]+\)|~?idz\([a-z]+,[0-9]+,[0-9]+\)|~?pusty\([0-9]+\)',variables)
             current_level_actions[prev_action]['PreCond'] = variables
-            #print('PreCond: ',variables)
+            #print('Precondition: ',variables)
         elif(name == 'Effects'):
-            variables = re.findall('~?at\([a-z]+,[0-9]+\)|~?go\([a-z]+,[0-9]+,[0-9]+\)|~?clear\([0-9]+\)',variables)
+            variables = re.findall('~?na\([a-z]+,[0-9]+\)|~?idz\([a-z]+,[0-9]+,[0-9]+\)|~?pusty\([0-9]+\)',variables)
             current_level_actions[prev_action]['Effects'] = variables
             #print('Effects: ',variables)
         elif(name == 'Mutex'):
-            variables = re.findall('~?at\([a-z]+,[0-9]+\)|~?go\([a-z]+,[0-9]+,[0-9]+\)|~?clear\([0-9]+\)',variables)
+            variables = re.findall('~?na\([a-z]+,[0-9]+\)|~?idz\([a-z]+,[0-9]+,[0-9]+\)|~?pusty\([0-9]+\)',variables)
             mutex_states.append(variables)
         elif(name == 'ActionLevel'):
             mutex_states.sort()
             generateMutexArcs(list(mutex_states for mutex_states,_ in itertools.groupby(mutex_states)),g,current_level+1)
             mutex_states = []
-            variables = re.findall('go\([a-z]+,[0-9]+,[0-9]+\)|persist\(~?at\([a-z]+,[0-9]+\)\)|persist\(~?clear\([0-9]+\)\)',variables)
+            variables = re.findall('idz\([a-z]+,[0-9]+,[0-9]+\)|zostan\(~?na\([a-z]+,[0-9]+\)\)|zostan\(~?pusty\([0-9]+\)\)',variables)
             generateLayer(name+str(current_level),variables,g,current_level,"box")
         elif(name == 'StateLevel'):
             current_level = current_level + 1
-            variables = re.findall('~?at\([a-z]+,[0-9]+\)|~?go\([a-z]+,[0-9]+,[0-9]+\)|~?clear\([0-9]+\)',variables)
+            variables = re.findall('~?na\([a-z]+,[0-9]+\)|~?idz\([a-z]+,[0-9]+,[0-9]+\)|~?pusty\([0-9]+\)',variables)
             generateLayer(name+str(current_level),variables,g,current_level,"oval")
             #print(current_level_actions)
             #used_actions = {k: current_level_actions[k] for k in variables}
@@ -100,17 +100,41 @@ def parseInput(file,g):
             generateArcs(current_level_actions,g,current_level-1)
             current_level_actions.clear()
             #used_actions.clear()
+        elif(name =='Plan'):
+            variables = variables[1:].lstrip('[').rstrip(']').split(']')
+            for i in range(1,len(variables)):
+                variables[i]=variables[i][2:]
+            return variables, current_level
+
+def parsePlan(plan):
+    parsed_plan = []
+    for element in plan:
+        parsed_plan.append(re.findall('idz\([a-z]+,[0-9]+,[0-9]+\)|zostan\(~?na\([a-z]+,[0-9]+\)\)|zostan\(~?pusty\([0-9]+\)\)',element))
+        #element = re.findall('idz\([a-z]+,[0-9]+,[0-9]+\)|zostan\(~?na\([a-z]+,[0-9]+\)\)|zostan\(~?pusty\([0-9]+\)\)',element)
+
+def colorUsedActions(plan, max_level, g):
+    plan = re.findall('idz\([a-z]+,[0-9]+,[0-9]+\)|zostan\(~?na\([a-z]+,[0-9]+\)\)|zostan\(~?pusty\([0-9]+\)\)',plan)
+    for item in plan:
+        for i,element in enumerate(g.body):
+            if item+str(max_level) in element and '->' in element and '[style=dashed]' not in element:
+                g.body[i] = element[:len(element)-1] + ' [color=red]\n'
+                print(element)
+                print(g.body[i])
 
 
 
 
 def main():
-    g = graphviz.Digraph('G',filename='GRAPHPLAN.gv')
+    g = graphviz.Digraph('G', filename='GRAPHPLAN.gv')
     file = readInput(sys.argv[1])
-    parseInput(file,g)
-    g.attr(rankdir='LR')
-
-    
+    plan, max_level = parseInput(file, g)
+    if(max_level < 5):
+        g.attr(rankdir='LR')
+    parsed_plan = parsePlan(plan)
+    for i in range(max_level-1):
+        colorUsedActions(plan[i],i+1,g)
+    for element in g.body:
+        print(element)
     g.view()
 
 if __name__=='__main__':

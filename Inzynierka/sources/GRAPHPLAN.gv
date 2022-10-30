@@ -2,45 +2,40 @@ digraph G {
 	subgraph cluster_StateLevel1 {
 		color=gray
 		label=StateLevel1
-		"at(a,1)1" [label="at(a,1)" shape=oval]
-		"clear(2)1" [label="clear(2)" shape=oval]
-		"clear(3)1" [label="clear(3)" shape=oval]
+		"na(a,1)1" [label="na(a,1)" shape=oval]
+		"pusty(2)1" [label="pusty(2)" shape=oval]
 	}
-	"at(a,1)2" -> "clear(1)2" [arrowhead=none constraint=false style=dotted]
-	"at(a,1)2" -> "~at(a,1)2" [arrowhead=none constraint=false style=dotted]
-	"clear(2)2" -> "at(a,2)2" [arrowhead=none constraint=false style=dotted]
-	"clear(2)2" -> "~clear(2)2" [arrowhead=none constraint=false style=dotted]
+	"na(a,1)2" -> "pusty(1)2" [arrowhead=none constraint=false style=dotted]
+	"na(a,1)2" -> "~na(a,1)2" [arrowhead=none constraint=false style=dotted]
+	"pusty(2)2" -> "na(a,2)2" [arrowhead=none constraint=false style=dotted]
+	"pusty(2)2" -> "~pusty(2)2" [arrowhead=none constraint=false style=dotted]
 	subgraph cluster_ActionLevel1 {
 		color=gray
 		label=ActionLevel1
-		"persist(clear(3))1" [label="persist(clear(3))" shape=box]
-		"persist(clear(2))1" [label="persist(clear(2))" shape=box]
-		"persist(at(a,1))1" [label="persist(at(a,1))" shape=box]
-		"go(a,1,2)1" [label="go(a,1,2)" shape=box]
-		"persist(at(a,1))1" [label="persist(at(a,1))" shape=box]
+		"zostan(pusty(2))1" [label="zostan(pusty(2))" shape=box]
+		"zostan(na(a,1))1" [label="zostan(na(a,1))" shape=box]
+		"idz(a,1,2)1" [label="idz(a,1,2)" shape=box]
+		"zostan(na(a,1))1" [label="zostan(na(a,1))" shape=box]
 	}
 	subgraph cluster_StateLevel2 {
 		color=gray
 		label=StateLevel2
-		"clear(3)2" [label="clear(3)" shape=oval]
-		"clear(2)2" [label="clear(2)" shape=oval]
-		"at(a,1)2" [label="at(a,1)" shape=oval]
-		"~clear(2)2" [label="~clear(2)" shape=oval]
-		"~at(a,1)2" [label="~at(a,1)" shape=oval]
-		"clear(1)2" [label="clear(1)" shape=oval]
-		"at(a,2)2" [label="at(a,2)" shape=oval]
+		"pusty(2)2" [label="pusty(2)" shape=oval]
+		"na(a,1)2" [label="na(a,1)" shape=oval]
+		"~pusty(2)2" [label="~pusty(2)" shape=oval]
+		"~na(a,1)2" [label="~na(a,1)" shape=oval]
+		"pusty(1)2" [label="pusty(1)" shape=oval]
+		"na(a,2)2" [label="na(a,2)" shape=oval]
 	}
-	"at(a,1)1" -> "persist(at(a,1))1" [style=dashed]
-	"persist(at(a,1))1" -> "at(a,1)2" [style=dashed]
-	"at(a,1)1" -> "go(a,1,2)1"
-	"clear(2)1" -> "go(a,1,2)1"
-	"go(a,1,2)1" -> "at(a,2)2"
-	"go(a,1,2)1" -> "clear(1)2"
-	"go(a,1,2)1" -> "~at(a,1)2"
-	"go(a,1,2)1" -> "~clear(2)2"
-	"clear(2)1" -> "persist(clear(2))1" [style=dashed]
-	"persist(clear(2))1" -> "clear(2)2" [style=dashed]
-	"clear(3)1" -> "persist(clear(3))1" [style=dashed]
-	"persist(clear(3))1" -> "clear(3)2" [style=dashed]
+	"na(a,1)1" -> "zostan(na(a,1))1" [style=dashed]
+	"zostan(na(a,1))1" -> "na(a,1)2" [style=dashed]
+	"na(a,1)1" -> "idz(a,1,2)1" [color=red]
+	"pusty(2)1" -> "idz(a,1,2)1" [color=red]
+	"idz(a,1,2)1" -> "na(a,2)2" [color=red]
+	"idz(a,1,2)1" -> "pusty(1)2" [color=red]
+	"idz(a,1,2)1" -> "~na(a,1)2" [color=red]
+	"idz(a,1,2)1" -> "~pusty(2)2" [color=red]
+	"pusty(2)1" -> "zostan(pusty(2))1" [style=dashed]
+	"zostan(pusty(2))1" -> "pusty(2)2" [style=dashed]
 	rankdir=LR
 }
