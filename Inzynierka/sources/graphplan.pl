@@ -3,10 +3,7 @@
 %TO-DO - sprawdzenie czy plan da sie zakonczyc
 %Proby wprowadzen ulepszen czasowych
 %Przed zadaniem pytania należy dodatkowo uruchomić następującą procedurę:
-%use_module(library(clpfd)). <- Programowanie ograniczeń
-%testowe wywołanie:
-%state0(S), plan(S,[na(a,3),na(c,1)],Plan).
-%state0(S), plan(S,[pusty(1), na(a,2)],Plan).
+%use_module(library(clpfd)). <- wymagany import, programowanie ograniczeń
 
 /**
 *   Negacja stany wymagana, ze wzgledu na
@@ -25,7 +22,6 @@ can(idz(R,A,B), [na(R,A), pusty(B)]) :-
 effects(zostan(P),[P]).
 effects(idz(R,A,B), [na(R,B),pusty(A),~na(R,A),~pusty(B)]).
 
-%robot(a). robot(b). robot(c).
 robot(a).
 
 adjacent(A,B) :-
@@ -33,9 +29,7 @@ adjacent(A,B) :-
     ;
     n(B,A).
 
-%n(1,2). n(2,3). n(4,5). n(5,6). n(1,4). n(2,5). n(3,6).
-n(1,2). n(2,1). 
-%n(2,3). n(3,2).
+n(1,2). n(2,1). n(2,3). n(3,2).
 
 incosistent(G,~G).
 incosistent(~G,G).
@@ -46,33 +40,33 @@ inconsistent(na(_,C),pusty(C)).
 inconsistent(pusty(C),na(_,C)).
 inconsistent(na(R1,C),na(R2,C)) :-
     R1 \== R2.
-
-
-%state0([na(a,1), na(b,2), na(c,3), pusty(4), pusty(5), pusty(6)]).
+:- dynamic state0/1.
 %state0([na(a,1),pusty(2),pusty(3)]).
-state0([na(a,1),pusty(2)]).
 
 remove(X,[X | Tail], Tail).
 remove(X,[Y | Tail], [Y|Tail1]) :-
     remove(X,Tail,Tail1).
 
 call_plan(Goals,Plan) :-
+    tell('outputs/output.txt'),
     state0(S),
-    plan(S,Goals,Plan).
+    create_plan(S,Goals,Plan),
+    write("Plan: "), writeln(Plan),
+    told.
 
-plan(StartState, Goals, Plan) :-
-    findall(P/1, member(P,StartState),StartLevel),
-    setof(action(A, Precondition, Effects), (effects(A,Effects),can(A,Precondition)),AllActions),
+create_plan(StartState, Goals, Plan) :-
+    findall(State/1, member(State,StartState),StartLevel),
+    setof(action(Action, Precondition, Effects), (effects(Action,Effects),can(Action,Precondition)),AllActions),
     write("StartLevel: "), write(StartLevel), nl,
     %write("Goals: "), write(Goals), nl,
     %write("Plan: "), write(Plan), nl,
     %write("AllActions: "), write(AllActions), nl,
     graphplan([StartLevel], Goals, Plan, AllActions).
 
-graphplan([StateLevel | PlanGraph], Goals, Plan, AllActs) :-
+graphplan([StateLevel | GraphPlan], Goals, Plan, AllActs) :-
     %write("StateLevel "), write(StateLevel), nl,
     satisfied(StateLevel, Goals),
-    extract_plan([StateLevel | PlanGraph], Plan)
+    extract_plan([StateLevel | GraphPlan], Plan)
     %,write("Plan: "), write(Plan), nl
     ;
     expand(StateLevel, ActionLevel, NewStateLev, AllActs),
@@ -82,7 +76,7 @@ graphplan([StateLevel | PlanGraph], Goals, Plan, AllActs) :-
     %write("AllActs: "), write(AllActs), nl,
     length(StateLevel,X),
     X>0,
-    graphplan([NewStateLev, ActionLevel, StateLevel | PlanGraph], Goals, Plan, AllActs).
+    graphplan([NewStateLev, ActionLevel, StateLevel | GraphPlan], Goals, Plan, AllActs).
 
 satisfied(_,[]).
 
@@ -97,14 +91,13 @@ extract_plan([_],[]).
 extract_plan([_,ActionLevel | RestOfGraph], Plan) :-
     collect_vars(ActionLevel, AVars),
     labeling([],AVars),
-    %findall(A,(member(A/1,ActionLevel),A \= zostan(_)), Actions),
-    findall(A, (member(A/1,ActionLevel)),Actions),
+    findall(A,(member(A/1,ActionLevel),A \= zostan(_)), Actions),
+    %findall(A, (member(A/1,ActionLevel)),Actions),
     extract_plan(RestOfGraph, RestOfPlan),
     append(RestOfPlan, [Actions], Plan).
 
 
 expand(StateLev, ActionLev, NextStateLev, AllActs) :-
-    %writeln("Inside expand"),
     add_actions(StateLev, AllActs, [], ActionLev1, [], NextStateLev1),
     findall(action(zostan(P),[P],[P]),member(P/_,StateLev),PersistActs),
     add_actions(StateLev, PersistActs, ActionLev1, ActionLev, NextStateLev1, NextStateLev),
@@ -165,10 +158,10 @@ mutex_constr1(P/T, [P1/T1 | Rest]) :-
     ),
     mutex_constr1(P/T,Rest).
 
-mutex(P,~P) :- 
+mutex(P,~P) :-
     write("Mutex: ["), write(P), write(","),write(~P), writeln("]"),!.
 
-mutex(~P,P) :- 
+mutex(~P,P) :-
     write("Mutex: ["), write(~P), write(","),write(P), writeln("]"),!.  
 
 mutex(A,B) :-              

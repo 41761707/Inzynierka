@@ -118,23 +118,27 @@ def colorUsedActions(plan, max_level, g):
         for i,element in enumerate(g.body):
             if item+str(max_level) in element and '->' in element and '[style=dashed]' not in element:
                 g.body[i] = element[:len(element)-1] + ' [color=red]\n'
-                print(element)
-                print(g.body[i])
+
+def planBezZostan(plan):
+    plan_wo_persist = []
+    for element in plan:
+        element = re.findall('idz\([a-z]+,[0-9]+,[0-9]+\)',element)
+        plan_wo_persist.append(element)
+
 
 
 
 
 def main():
-    g = graphviz.Digraph('G', filename='GRAPHPLAN.gv')
+    g = graphviz.Digraph('G', filename='FULL_GRAPHPLAN.gv')
     file = readInput(sys.argv[1])
     plan, max_level = parseInput(file, g)
     if(max_level < 5):
         g.attr(rankdir='LR')
     parsed_plan = parsePlan(plan)
+    planBezZostan(plan)
     for i in range(max_level-1):
         colorUsedActions(plan[i],i+1,g)
-    for element in g.body:
-        print(element)
     g.view()
 
 if __name__=='__main__':
