@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.5.18)  21 OCT 2022 21:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.5.18)  3 NOV 2022 01:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -825,7 +825,7 @@ e
 * paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: twoside 
+* modes: 
 * h-part:(L,W,R)=(85.35826pt, 457.80486pt, 71.13188pt)
 * v-part:(T,H,B)=(71.13188pt, 652.70622pt, 71.13188pt)
 * \paperwidth=614.295pt
@@ -833,13 +833,13 @@ e
 * \textwidth=457.80486pt
 * \textheight=652.70622pt
 * \oddsidemargin=13.08827pt
-* \evensidemargin=-1.1381pt
+* \evensidemargin=13.08827pt
 * \topmargin=-37.2056pt
 * \headheight=18.0pt
 * \headsep=18.06749pt
 * \topskip=10.0pt
 * \footskip=25.29494pt
-* \marginparwidth=125.0pt
+* \marginparwidth=69.0pt
 * \marginparsep=7.0pt
 * \columnsep=10.0pt
 * \skip\footins=9.0pt plus 4.0pt minus 2.0pt
@@ -847,8 +847,8 @@ e
 * \voffset=0.0pt
 * \mag=1000
 * \@twocolumnfalse
-* \@twosidetrue
-* \@mparswitchtrue
+* \@twosidefalse
+* \@mparswitchfalse
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
@@ -919,236 +919,254 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./streszczenie.tex) (./ab
+stract.tex)pdfTeX warning (ext4): destination with the same identifier (name{pa
+ge.i}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.673     \cleardoublepage
+                           [1
 
-] (./streszczenie.tex) (./abstract.tex)
-[3] [4
+]
 
-] (./praca.toc)
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 675.
+
+(./praca.toc
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 40.
+
+[1
+
+])
 \tf@toc=\write4
 \openout4 = `praca.toc'.
 
- [1] (./praca.lof)
+ [2]
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 680.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 680.
+
+(./praca.lof)
 \tf@lof=\write5
 \openout5 = `praca.lof'.
 
- [2
 
-] (./praca.lot)
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 685.
+
+[3
+
+]
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 687.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 687.
+
+(./praca.lot)
 \tf@lot=\write6
 \openout6 = `praca.lot'.
 
- [3
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 694.
+
+[4
 
 ]
-<wit-logo.png, id=143, 225.84375pt x 225.84375pt>
-File: wit-logo.png Graphic file (type png)
-<use wit-logo.png>
-Package pdftex.def Info: wit-logo.png  used on input line 694.
-(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
- [4
 
- <./wit-logo.png>] (./wstep.tex
-LaTeX Font Info:    Trying to load font information for OT4+lmtt on input line 
-8.
- (/usr/share/texmf/tex/latex/lm/ot4lmtt.fd
-File: ot4lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 701.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 701.
+
+(./wstep.tex
+Underfull \hbox (badness 10000) in paragraph at lines 8--13
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--18
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--24
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--39
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--45
+
+ []
+
 )
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-1.
 
-(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)) [1
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 709.
+
+[1
 
 
-]
-File: wit-logo.png Graphic file (type png)
-<use wit-logo.png>
-Package pdftex.def Info: wit-logo.png  used on input line 709.
-(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
- [2
 
 ] (./rozdzial1.tex
 Rozdzia\l  1.
-) [3
+)
 
-]
-File: wit-logo.png Graphic file (type png)
-<use wit-logo.png>
-Package pdftex.def Info: wit-logo.png  used on input line 712.
-(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
- [4
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 712.
+
+[2
+
 
 ] (./rozdzial2.tex
 Rozdzia\l  2.
-LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <8> on input line 15.
-LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <6> on input line 15.
-<aktyw.pdf, id=173, 401.5pt x 612.2875pt>
-File: aktyw.pdf Graphic file (type pdf)
-<use aktyw.pdf>
-Package pdftex.def Info: aktyw.pdf  used on input line 36.
-(pdftex.def)             Requested size: 228.90242pt x 349.08224pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[5
-
-]
-Underfull \vbox (badness 2351) has occurred while \output is active []
-
-File: wit-logo.png Graphic file (type png)
-<use wit-logo.png>
-Package pdftex.def Info: wit-logo.png  used on input line 60.
-(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
- [6 <./aktyw.pdf>]
-LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <9> on input line 71.
 )
-<pwr-logo.png, id=193, 217.81375pt x 216.81pt>
-File: pwr-logo.png Graphic file (type png)
-<use pwr-logo.png>
-Package pdftex.def Info: pwr-logo.png  used on input line 715.
-(pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
- [7 <./pwr-logo.png>]
-File: wit-logo.png Graphic file (type png)
-<use wit-logo.png>
-Package pdftex.def Info: wit-logo.png  used on input line 715.
-(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
- [8
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 715.
+
+[3
+
 
 ] (./rozdzial3.tex
 Rozdzia\l  3.
-
-LaTeX Warning: Citation `HTML-CSS' on page 9 undefined on input line 9.
-
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 2
-4.
 
-(/usr/share/texmf/tex/latex/lm/omslmr.fd
-File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-24.
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 718.
 
-(/usr/share/texmf/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <9> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 24.
- [9
-
-]
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2019/09/10 1.8c listings language file
-)
-Overfull \hbox (258.14357pt too wide) in paragraph at lines 81--82
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
+[4
 
 
-Overfull \hbox (341.39339pt too wide) in paragraph at lines 82--83
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-)
-File: wit-logo.png Graphic file (type png)
-<use wit-logo.png>
-Package pdftex.def Info: wit-logo.png  used on input line 718.
-(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
- [10] (./rozdzial4.tex
+] (./rozdzial4.tex
 Rozdzia\l  4.
-) [11
+)
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 721.
+
+[5
+
+
+] (./rozdzial5.tex
+Rozdzia\l  5.
+)
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 724.
+
+[6
+
+
+] (./rozdzial6.tex
+Rozdzia\l  6.
+)
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 727.
+
+[7
+
+
+] (./podsumowanie.tex)
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 730.
+
+[8
 
 
 ]
-File: wit-logo.png Graphic file (type png)
-<use wit-logo.png>
-Package pdftex.def Info: wit-logo.png  used on input line 721.
-(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
- [12
 
-] (./podsumowanie.tex) [13
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 738.
 
-]
-File: wit-logo.png Graphic file (type png)
-<use wit-logo.png>
-Package pdftex.def Info: wit-logo.png  used on input line 724.
-(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
- [14
 
-] (./praca.bbl) [15
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 738.
 
-]
-File: wit-logo.png Graphic file (type png)
-<use wit-logo.png>
-Package pdftex.def Info: wit-logo.png  used on input line 736.
-(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
- [16
+(./praca.bbl)
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 743.
+
+[9
+
 
 ]
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 750.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 750.
+
 (./dodatek1.tex
 Załącznik A.
-) [17
+)
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 755.
+
+[10
+
 
 ]
-File: wit-logo.png Graphic file (type png)
-<use wit-logo.png>
-Package pdftex.def Info: wit-logo.png  used on input line 748.
-(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
- [18
-
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 750.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 750.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 757.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 757.
  (./praca.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 750.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 750.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 757.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 757.
 Package rerunfilecheck Info: File `praca.out' has not changed.
-(rerunfilecheck)             Checksum: CBEBDB89B81AE1C7FAF1FE25654721EE;1267.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 750.
+(rerunfilecheck)             Checksum: 228E32993BE2B7F42FC956C0E141BF14;2419.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 757.
  ) 
 Here is how much of TeX's memory you used:
- 15457 strings out of 483075
- 227373 string characters out of 5963834
- 730451 words of memory out of 5000000
- 29948 multiletter control sequences out of 15000+600000
- 617102 words of font info for 89 fonts, out of 8000000 for 9000
+ 14559 strings out of 483075
+ 217022 string characters out of 5963834
+ 528887 words of memory out of 5000000
+ 29166 multiletter control sequences out of 15000+600000
+ 581597 words of font info for 58 fonts, out of 8000000 for 9000
  118 hyphenation exceptions out of 8191
- 41i,18n,50p,966b,2021s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,12n,48p,397b,431s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
-ips/lm/lm-mathsy.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plrm.enc
-}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/share/texlive/texmf-dis
-t/fonts/enc/dvips/pl/plms.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl
-/plmi.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fon
-ts/enc/dvips/lm/lm-rmsc.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb>
-</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type
-1/public/lm/lmbx6.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx9.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/publ
-ic/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/t
-exmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr
-7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/
-type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></u
-sr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/shar
-e/texmf/fonts/type1/public/lm/lmtt9.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/pl/plmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/pl
-r9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plsy9.pfb>
-Output written on praca.pdf (26 pages, 426659 bytes).
+ips/lm/lm-rmsc.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/sha
+re/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/te
+xmf/fonts/type1/public/lm/lmr12.pfb>
+Output written on praca.pdf (16 pages, 162487 bytes).
 PDF statistics:
- 442 PDF objects out of 1000 (max. 8388607)
- 386 compressed objects within 4 object streams
- 132 named destinations out of 1000 (max. 500000)
- 184 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 308 PDF objects out of 1000 (max. 8388607)
+ 282 compressed objects within 3 object streams
+ 54 named destinations out of 1000 (max. 500000)
+ 313 words of extra memory for PDF output out of 10000 (max. 10000000)
 

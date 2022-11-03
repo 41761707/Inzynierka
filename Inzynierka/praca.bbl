@@ -1,8 +1,8 @@
 \begin{thebibliography}{1}
 
-\bibitem{PROLOG}
-I.~Bratko.
-\newblock {\em Prolog Programming for Artificial Intelligence}.
-\newblock Pearson, 2012.
+\bibitem{GRAPHPLAN}
+Fast planning through planning graph analysis.
+\newblock Web pages: \url{https://www.cs.cmu.edu/~avrim/Papers/graphplan.pdf/}
+  [ostatni dostęp: 21.10.2022].
 
 \end{thebibliography}

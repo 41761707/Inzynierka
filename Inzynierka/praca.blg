@@ -3,46 +3,46 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: praca.aux
 The style file: plabbrv.bst
 Database file #1: literatura.bib
-Warning--I didn't find a database entry for "HTML-CSS"
+Warning--to sort, need author or key in GRAPHPLAN
 You've used 1 entry,
             2129 wiz_defined-function locations,
-            511 strings with 3871 characters,
-and the built_in function-call counts, 235 in all, are:
-= -- 19
-> -- 7
+            507 strings with 3936 characters,
+and the built_in function-call counts, 179 in all, are:
+= -- 15
+> -- 1
 < -- 0
-+ -- 3
-- -- 2
-* -- 10
-:= -- 47
-add.period$ -- 3
++ -- 1
+- -- 0
+* -- 7
+:= -- 26
+add.period$ -- 2
 call.type$ -- 1
 change.case$ -- 3
 chr.to.int$ -- 0
-cite$ -- 1
-duplicate$ -- 12
-empty$ -- 23
-format.name$ -- 2
-if$ -- 47
+cite$ -- 2
+duplicate$ -- 7
+empty$ -- 24
+format.name$ -- 0
+if$ -- 41
 int.to.chr$ -- 0
 int.to.str$ -- 1
-missing$ -- 2
-newline$ -- 8
-num.names$ -- 2
+missing$ -- 0
+newline$ -- 7
+num.names$ -- 0
 pop$ -- 8
 preamble$ -- 1
-purify$ -- 3
+purify$ -- 2
 quote$ -- 0
-skip$ -- 6
+skip$ -- 8
 stack$ -- 0
 substring$ -- 5
 swap$ -- 1
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 2
-warning$ -- 0
-while$ -- 2
+type$ -- 4
+warning$ -- 1
+while$ -- 0
 width$ -- 2
-write$ -- 12
+write$ -- 9
 (There was 1 warning)
