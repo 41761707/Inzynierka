@@ -1,9 +1,54 @@
 \chapter{Wprowadzenie}
 \thispagestyle{chapterBeginStyle}
 \label{rozdzial1}
-\section{Historia planowania}
+\section{Planowanie}
+
+    Codziennie ludzie używają słowa "plan" w różnych kontekstach: firma planuje rozkład palet na magazynie, trener planuje strategię na
+    najbliższy mecz, student planuje jak rozwiązać zadanie na kolokwium, czy chociażby człowiek codziennie planuje listę zakupów. \\
+    Mimo różnych kontekstów istnieją wyodrębnione wspólne cechy każdego z planów:
+    \begin{definition}
+    \label{StanyPoczatkowe}
+        \textbf{Warunki początkowe} - stan świata przed zastosowaniem jakichkolwiek akcji. W dalszej części pracy również określane jako 
+        \textbf{stany początkowe}.
+    \end{definition}
+    \begin{itemize}
+        \item Każdy plan musi mieć jasno zadeklarowane warunki początkowe.
+        Dzięki dokładnej wiedzy o świecie możliwym jest poprawne określenie akcji, przy pomocy których wprowadzane są modyfikacje
+        obecnego stanu aż do otrzymania zadowalających rezultatów. Dla przykładu, firma musi wiedzieć ile oraz jakie palety 
+        przybędą na magazyn zanim rozpocznie planowanie rozkładu dostawy na magazynie.
+    \end{itemize}
+    \begin{definition}
+    \label{Akcje}
+        \textbf{Akcja} - działanie zmieniające przedstawiony świat w ściśle określony sposób. W dalszej części pracy również określane jako
+        \textbf{operator}.
+    \end{definition}
+    \begin{itemize}
+        \item Akcje - akcje pozwalają na modyfikację przedstawionego świata. Każda z akcji składa się z podmiotu, na który działa oraz czynności,
+        która jest względem wskazanego podmiotu wykonywana. Przykładem dobrze określonej akcji może być przeniesienie klocka z 
+        jednego stolika na drugi- składa się ona z podmiotu w postaci klocka, oraz czynności w postaci przenoszenia, które możemy traktować
+        jako ruch. Czynności mogą różnić się od siebie w kwestii skomplikowania, najważniejszym jest, aby były określone poprawnie, co
+        sprowadza się do tego, aby były wykonalne w zdefiniowanym świecie..
+    \end{itemize}
+    \begin{definition}
+    \label{Cel}
+        \textbf{Cel} - Oczekiwany stan świata.
+    \end{definition}
+    \begin{itemize}
+        \item Cele - kwintesencją każdego planu jest cel, który należy uzyskać. Zwyczajowo plany składają się z celów możliwych do
+        osiągnięcia ze stanu początkowego przy pomocy zdefiniowany operacji, jednakże trzeba wziąc pod uwagę sytuację, w której 
+        niemożliwym jest uzyskanie wskazanego celu, szczególnie próbująć automatyzować pojęcie planowania.
+    \end{itemize} 
+    Przy pomocy powyższych definicji możliwym jest sformalizowanie pojęcia stojącego za słowem \textbf{plan}. 
+    \begin{definition}
+    \label{Plan}
+    \textbf{Plan}- lista akcji, której zastosowanie do stanu początkowego powoduje jego zmianę do stanu określonego w ramach cel. 
+    \end{definition}
+
+
+\section{Planowanie przy użyciu komputerów}
+    
 \section{Użycie grafów- motywacja}
-\section{O możliwych rozszerzeniach słów kilka}
+
 
 
 
