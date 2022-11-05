@@ -1,8 +1,7 @@
-%GRAPHPLAN wersja 1.1
+%GRAPHPLAN wersja 1.2
 
 %TO-DO - sprawdzenie czy plan da sie zakonczyc
 %Proby wprowadzen ulepszen czasowych
-%Przed zadaniem pytania należy dodatkowo uruchomić następującą procedurę:
 %use_module(library(clpfd)). <- wymagany import, programowanie ograniczeń
 
 /**
@@ -11,6 +10,8 @@
 *   Dodanie negacji ulatwia okreslanie poprawnych stanow kosztem 
 *   gorszej czytelnosci generowanych grafow
 */
+
+:-use_module(library(clpfd)).
 :-op(100,fx,~).
 
 can(zostan(P),[P]).
@@ -41,7 +42,6 @@ inconsistent(pusty(C),na(_,C)).
 inconsistent(na(R1,C),na(R2,C)) :-
     R1 \== R2.
 :- dynamic state0/1.
-%state0([na(a,1),pusty(2),pusty(3)]).
 
 remove(X,[X | Tail], Tail).
 remove(X,[Y | Tail], [Y|Tail1]) :-
@@ -74,8 +74,6 @@ graphplan([StateLevel | GraphPlan], Goals, Plan, AllActs) :-
     %write("ActionLevel: "), write(ActionLevel), nl,
     %write("NewStateLev: "), write(NewStateLev), nl,
     %write("AllActs: "), write(AllActs), nl,
-    length(StateLevel,X),
-    X>0,
     graphplan([NewStateLev, ActionLevel, StateLevel | GraphPlan], Goals, Plan, AllActs).
 
 satisfied(_,[]).
@@ -88,13 +86,16 @@ satisfied(StateLevel, [G | Goals]) :-
 
 extract_plan([_],[]).
 
-extract_plan([_,ActionLevel | RestOfGraph], Plan) :-
+extract_plan([ChosenStates,ActionLevel | RestOfGraph], Plan) :-
     collect_vars(ActionLevel, AVars),
     labeling([],AVars),
-    findall(A,(member(A/1,ActionLevel),A \= zostan(_)), Actions),
+    findall(A,(member(A/1,ActionLevel),A \= zostan(_)), ChosenActions),
     %findall(A, (member(A/1,ActionLevel)),Actions),
     extract_plan(RestOfGraph, RestOfPlan),
-    append(RestOfPlan, [Actions], Plan).
+    %Output dla szczegolowego planu
+    write("ChosenStates: "), writeln(ChosenStates),
+    write("ChosenActions: "), write(ChosenActions),nl,
+    append(RestOfPlan, [ChosenActions], Plan).
 
 
 expand(StateLev, ActionLev, NextStateLev, AllActs) :-
