@@ -13,6 +13,12 @@
 
 :-use_module(library(clpfd)).
 :-op(100,fx,~).
+:- dynamic state0/1.
+:- dynamic can/2.
+:- dynamic effects/2.
+:- dynamic adjacent/2.
+:- dynamic n/2.
+:- dynamic inconsistent/2.
 
 can(zostan(P),[P]).
 can(idz(R,A,B), [na(R,A), pusty(B)]) :-
@@ -24,13 +30,33 @@ effects(zostan(P),[P]).
 effects(idz(R,A,B), [na(R,B),pusty(A),~na(R,A),~pusty(B)]).
 
 robot(a).
+robot(b).
+robot(c).
+robot(d).
+robot(e).
+robot(f).
+robot(g).
+robot(h).
 
 adjacent(A,B) :-
     n(A,B)
     ;
     n(B,A).
 
-n(1,2). n(2,1). n(2,3). n(3,2).
+%n(1,2). n(2,1). n(2,3). n(3,2).
+
+n(1,2). n(1,4).
+n(2,1). n(2,3). n(2,5).
+n(3,2). n(3,6).
+n(4,1). n(4,5). n(4,7).
+n(5,4). n(5,6). n(5,2). n(5,8).
+n(6,5). n(6,3). n(6,9).
+n(7,4). n(7,8).
+n(8,7). n(8,5). n(8,9).
+n(9,8). n(9,6).
+
+%assert(state0([na(a,1),na(b,2),na(c,3),na(d,4),na(h,5),na(e,6),pusty(7),na(g,8),na(f,9)])).
+%call_plan([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(f,6),na(g,7),na(h,8),pusty(9)],Plan).
 
 incosistent(G,~G).
 incosistent(~G,G).
@@ -41,7 +67,6 @@ inconsistent(na(_,C),pusty(C)).
 inconsistent(pusty(C),na(_,C)).
 inconsistent(na(R1,C),na(R2,C)) :-
     R1 \== R2.
-:- dynamic state0/1.
 
 remove(X,[X | Tail], Tail).
 remove(X,[Y | Tail], [Y|Tail1]) :-
@@ -134,10 +159,8 @@ includes(StateLev, [P|Ps],TA) :-
 add_effects(_,[],StateLev,StateLev).
 
 add_effects(TA, [P | Ps], StateLev0, ExpandedState) :-
-    %write("Inside add_effects"), nl,
     (remove(P/TP,StateLev0,StateLev1),!,
     NewTP #= TP+TA,
-    %write("NewTP: "), write(NewTP), nl,
     StateLev = [P/NewTP | StateLev1]
     ;
     StateLev = [P/TA | StateLev0], !
