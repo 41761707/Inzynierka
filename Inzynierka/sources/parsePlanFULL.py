@@ -67,32 +67,32 @@ class Graph:
             if(name == 'StartLevel'):
                 name = 'StateLevel1'
                 #print(variables)
-                variables = re.findall('~?na\([a-z]+,[0-9]+\)|~?idz\([a-z]+,[0-9]+,[0-9]+\)|~?pusty\([0-9]+\)',variables)
+                variables = re.findall('~?na\([a-z]+,[a-z0-9]+\)|~?idz\([a-z]+,[a-z0-9]+,[a-z0-9]+\)|~?pusty\([a-z0-9]+\)',variables)
                 self.generateLayer(name,variables,g,current_level,"oval")
             elif(name == 'A'):
                 prev_action = variables.strip()
                 current_level_actions[prev_action] = {}
                 #print('A: ', variables)
             elif(name == 'Precondition'):
-                variables = re.findall('~?na\([a-z]+,[0-9]+\)|~?idz\([a-z]+,[0-9]+,[0-9]+\)|~?pusty\([0-9]+\)',variables)
+                variables = re.findall('~?na\([a-z]+,[a-z0-9]+\)|~?idz\([a-z]+,[a-z0-9]+,[a-z0-9]+\)|~?pusty\([a-z0-9]+\)',variables)
                 current_level_actions[prev_action]['PreCond'] = variables
                 #print('Precondition: ',variables)
             elif(name == 'Effects'):
-                variables = re.findall('~?na\([a-z]+,[0-9]+\)|~?idz\([a-z]+,[0-9]+,[0-9]+\)|~?pusty\([0-9]+\)',variables)
+                variables = re.findall('~?na\([a-z]+,[a-z0-9]+\)|~?idz\([a-z]+,[a-z0-9]+,[a-z0-9]+\)|~?pusty\([a-z0-9]+\)',variables)
                 current_level_actions[prev_action]['Effects'] = variables
                 #print('Effects: ',variables)
             elif(name == 'Mutex'):
-                variables = re.findall('~?na\([a-z]+,[0-9]+\)|~?idz\([a-z]+,[0-9]+,[0-9]+\)|~?pusty\([0-9]+\)',variables)
+                variables = re.findall('~?na\([a-z]+,[a-z0-9]+\)|~?idz\([a-z]+,[a-z0-9]+,[a-z0-9]+\)|~?pusty\([a-z0-9]+\)',variables)
                 mutex_states.append(variables)
             elif(name == 'ActionLevel'):
                 mutex_states.sort()
                 self.generateMutexArcs(list(mutex_states for mutex_states,_ in itertools.groupby(mutex_states)),g,current_level+1)
                 mutex_states = []
-                variables = re.findall('idz\([a-z]+,[0-9]+,[0-9]+\)|zostan\(~?na\([a-z]+,[0-9]+\)\)|zostan\(~?pusty\([0-9]+\)\)',variables)
+                variables = re.findall('idz\([a-z]+,[a-z0-9]+,[a-z0-9]+\)|zostan\(~?na\([a-z]+,[a-z0-9]+\)\)|zostan\(~?pusty\([a-z0-9]+\)\)',variables)
                 self.generateLayer(name+str(current_level),variables,g,current_level,"box")
             elif(name == 'StateLevel'):
                 current_level = current_level + 1
-                variables = re.findall('~?na\([a-z]+,[0-9]+\)|~?idz\([a-z]+,[0-9]+,[0-9]+\)|~?pusty\([0-9]+\)',variables)
+                variables = re.findall('~?na\([a-z]+,[a-z0-9]+\)|~?idz\([a-z]+,[a-z0-9]+,[a-z0-9]+\)|~?pusty\([a-z0-9]+\)',variables)
                 self.generateLayer(name+str(current_level),variables,g,current_level,"oval")
                 #print(current_level_actions)
                 #used_actions = {k: current_level_actions[k] for k in variables}
@@ -110,11 +110,11 @@ class Graph:
     def parsePlan(self,plan):
         parsed_plan = []
         for element in plan:
-            parsed_plan.append(re.findall('idz\([a-z]+,[0-9]+,[0-9]+\)|zostan\(~?na\([a-z]+,[0-9]+\)\)|zostan\(~?pusty\([0-9]+\)\)',element))
+            parsed_plan.append(re.findall('idz\([a-z]+,[a-z0-9]+,[a-z0-9]+\)|zostan\(~?na\([a-z]+,[a-z0-9]+\)\)|zostan\(~?pusty\([a-z0-9]+\)\)',element))
             #element = re.findall('idz\([a-z]+,[0-9]+,[0-9]+\)|zostan\(~?na\([a-z]+,[0-9]+\)\)|zostan\(~?pusty\([0-9]+\)\)',element)
 
     def colorUsedActions(self,plan, max_level, g):
-        plan = re.findall('idz\([a-z]+,[0-9]+,[0-9]+\)|zostan\(~?na\([a-z]+,[0-9]+\)\)|zostan\(~?pusty\([0-9]+\)\)',plan)
+        plan = re.findall('idz\([a-z]+,[a-z0-9]+,[a-z0-9]+\)|zostan\(~?na\([a-z]+,[a-z0-9]+\)\)|zostan\(~?pusty\([a-z0-9]+\)\)',plan)
         for item in plan:
             for i,element in enumerate(g.body):
                 if item+str(max_level) in element and '->' in element and '[style=dashed]' not in element:
@@ -127,7 +127,7 @@ class Graph:
             plan_wo_persist.append(element)
 
     def run_all(self):
-        g = graphviz.Digraph('G', filename='FULL_GRAPHPLAN.gv',format='png')
+        g = graphviz.Digraph('G', filename='FULL_GRAPHPLAN.gv',format='pdf')
         #g = graphviz.Digraph('G', filename='FULL_GRAPHPLAN.gv')
         file = self.readInput(self.filename)
         self.plan, max_level = self.parseInput(file, g)

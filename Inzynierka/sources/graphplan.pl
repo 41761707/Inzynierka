@@ -20,7 +20,10 @@
 :- dynamic n/2.
 :- dynamic inconsistent/2.
 
-can(zostan(P),[P]).
+%3x3
+
+/*
+        can(zostan(P),[P]).
 can(idz(R,A,B), [na(R,A), pusty(B)]) :-
     robot(R), 
     adjacent(A,B).
@@ -55,9 +58,6 @@ n(7,4). n(7,8).
 n(8,7). n(8,5). n(8,9).
 n(9,8). n(9,6).
 
-%assert(state0([na(a,1),na(b,2),na(c,3),na(d,4),na(h,5),na(e,6),pusty(7),na(g,8),na(f,9)])).
-%call_plan([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(f,6),na(g,7),na(h,8),pusty(9)],Plan).
-
 incosistent(G,~G).
 incosistent(~G,G).
 incosistent(na(R,C1),na(R,C2)) :-
@@ -67,6 +67,43 @@ inconsistent(na(_,C),pusty(C)).
 inconsistent(pusty(C),na(_,C)).
 inconsistent(na(R1,C),na(R2,C)) :-
     R1 \== R2.
+*/
+
+%CargoBOT
+/*
+:- dynamic object/1.
+:- dynamic place/1.
+
+can(zostan(P),[P]).
+can(idz(Block,From,To), [pusty(Block),pusty(To),na(Block,From)]) :-
+    block(Block),
+    object(To),
+    To \==Block,
+    object(From),
+    From \==To,
+    Block \== From.
+
+effects(zostan(P),[P]).
+effects(idz(X,From,To),[na(X,To),pusty(From),~na(X,From),~pusty(To)]).
+
+object(X) :-
+    place(X)
+    ;
+    block(X).
+
+block(a).
+block(b).
+block(c).
+
+place(1).
+place(2).
+place(3).
+place(4).
+
+%state0([pusty(2),pusty(4),pusty(b),pusty(c),na(a,1),na(b,3),na(c,a)]).
+
+*/
+
 
 remove(X,[X | Tail], Tail).
 remove(X,[Y | Tail], [Y|Tail1]) :-
@@ -86,20 +123,22 @@ create_plan(StartState, Goals, Plan) :-
     %write("Goals: "), write(Goals), nl,
     %write("Plan: "), write(Plan), nl,
     %write("AllActions: "), write(AllActions), nl,
-    graphplan([StartLevel], Goals, Plan, AllActions).
+    graphplan([StartLevel], Goals, Plan, AllActions,40).
 
-graphplan([StateLevel | GraphPlan], Goals, Plan, AllActs) :-
+graphplan([StateLevel | GraphPlan], Goals, Plan, AllActs,Round) :-
     %write("StateLevel "), write(StateLevel), nl,
     satisfied(StateLevel, Goals),
     extract_plan([StateLevel | GraphPlan], Plan)
     %,write("Plan: "), write(Plan), nl
     ;
+    Round>0,
+    NewRound is Round-1,
     expand(StateLevel, ActionLevel, NewStateLev, AllActs),
     %write("StateLevel: "), write(StateLevel), nl,
     %write("ActionLevel: "), write(ActionLevel), nl,
     %write("NewStateLev: "), write(NewStateLev), nl,
     %write("AllActs: "), write(AllActs), nl,
-    graphplan([NewStateLev, ActionLevel, StateLevel | GraphPlan], Goals, Plan, AllActs).
+    graphplan([NewStateLev, ActionLevel, StateLevel | GraphPlan], Goals, Plan, AllActs,NewRound).
 
 satisfied(_,[]).
 
@@ -200,7 +239,8 @@ mutex(A1,A2) :-
     ),
     member(P1,Precondition),
     member(P2,Effects),
-    mutex(P1,P2),!.
+    %write("Mutex: ["), write(A1), write(","),write(A2), writeln("]"),
+    mutex(P1,P2), !.
 
 collect_vars([],[]).
 

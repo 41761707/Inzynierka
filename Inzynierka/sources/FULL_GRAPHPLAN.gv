@@ -2,104 +2,44 @@ digraph G {
 	subgraph cluster_StateLevel1 {
 		color=gray
 		label=StateLevel1
-		"na(a,1)1" [label="na(a,1)" shape=oval]
-		"na(b,2)1" [label="na(b,2)" shape=oval]
-		"na(c,3)1" [label="na(c,3)" shape=oval]
-		"na(d,4)1" [label="na(d,4)" shape=oval]
-		"na(e,5)1" [label="na(e,5)" shape=oval]
-		"na(f,6)1" [label="na(f,6)" shape=oval]
-		"na(g,7)1" [label="na(g,7)" shape=oval]
-		"pusty(8)1" [label="pusty(8)" shape=oval]
-		"na(h,9)1" [label="na(h,9)" shape=oval]
+		"pusty(a)1" [label="pusty(a)" shape=oval]
+		"na(a,2)1" [label="na(a,2)" shape=oval]
+		"pusty(4)1" [label="pusty(4)" shape=oval]
 	}
-	"na(e,5)2" -> "pusty(5)2" [arrowhead=none constraint=false style=dotted]
-	"na(e,5)2" -> "~na(e,5)2" [arrowhead=none constraint=false style=dotted]
-	"na(g,7)2" -> "pusty(7)2" [arrowhead=none constraint=false style=dotted]
-	"na(g,7)2" -> "~na(g,7)2" [arrowhead=none constraint=false style=dotted]
-	"na(g,8)2" -> "na(e,8)2" [arrowhead=none constraint=false style=dotted]
-	"na(h,8)2" -> "na(e,8)2" [arrowhead=none constraint=false style=dotted]
-	"na(h,8)2" -> "na(g,8)2" [arrowhead=none constraint=false style=dotted]
-	"na(h,9)2" -> "pusty(9)2" [arrowhead=none constraint=false style=dotted]
-	"na(h,9)2" -> "~na(h,9)2" [arrowhead=none constraint=false style=dotted]
-	"pusty(8)2" -> "na(e,8)2" [arrowhead=none constraint=false style=dotted]
-	"pusty(8)2" -> "na(g,8)2" [arrowhead=none constraint=false style=dotted]
-	"pusty(8)2" -> "na(h,8)2" [arrowhead=none constraint=false style=dotted]
-	"pusty(8)2" -> "~pusty(8)2" [arrowhead=none constraint=false style=dotted]
+	"na(a,2)2" -> "~na(a,2)2" [arrowhead=none constraint=false style=dotted]
+	"pusty(4)2" -> "~pusty(4)2" [arrowhead=none constraint=false style=dotted]
 	subgraph cluster_ActionLevel1 {
 		color=gray
 		label=ActionLevel1
-		"zostan(na(h,9))1" [label="zostan(na(h,9))" shape=box]
-		"zostan(pusty(8))1" [label="zostan(pusty(8))" shape=box]
-		"zostan(na(g,7))1" [label="zostan(na(g,7))" shape=box]
-		"zostan(na(f,6))1" [label="zostan(na(f,6))" shape=box]
-		"zostan(na(e,5))1" [label="zostan(na(e,5))" shape=box]
-		"zostan(na(d,4))1" [label="zostan(na(d,4))" shape=box]
-		"zostan(na(c,3))1" [label="zostan(na(c,3))" shape=box]
-		"zostan(na(b,2))1" [label="zostan(na(b,2))" shape=box]
-		"zostan(na(a,1))1" [label="zostan(na(a,1))" shape=box]
-		"idz(h,9,8)1" [label="idz(h,9,8)" shape=box]
-		"idz(g,7,8)1" [label="idz(g,7,8)" shape=box]
-		"idz(e,5,8)1" [label="idz(e,5,8)" shape=box]
-		"zostan(na(a,1))1" [label="zostan(na(a,1))" shape=box]
+		"zostan(pusty(4))1" [label="zostan(pusty(4))" shape=box]
+		"zostan(na(a,2))1" [label="zostan(na(a,2))" shape=box]
+		"zostan(pusty(a))1" [label="zostan(pusty(a))" shape=box]
+		"idz(a,2,4)1" [label="idz(a,2,4)" shape=box]
+		"zostan(pusty(a))1" [label="zostan(pusty(a))" shape=box]
 	}
 	subgraph cluster_StateLevel2 {
 		color=gray
 		label=StateLevel2
-		"na(h,9)2" [label="na(h,9)" shape=oval]
-		"pusty(8)2" [label="pusty(8)" shape=oval]
-		"na(g,7)2" [label="na(g,7)" shape=oval]
-		"na(f,6)2" [label="na(f,6)" shape=oval]
-		"na(e,5)2" [label="na(e,5)" shape=oval]
-		"na(d,4)2" [label="na(d,4)" shape=oval]
-		"na(c,3)2" [label="na(c,3)" shape=oval]
-		"na(b,2)2" [label="na(b,2)" shape=oval]
-		"na(a,1)2" [label="na(a,1)" shape=oval]
-		"~pusty(8)2" [label="~pusty(8)" shape=oval]
-		"~na(h,9)2" [label="~na(h,9)" shape=oval]
-		"pusty(9)2" [label="pusty(9)" shape=oval]
-		"na(h,8)2" [label="na(h,8)" shape=oval]
-		"~na(g,7)2" [label="~na(g,7)" shape=oval]
-		"pusty(7)2" [label="pusty(7)" shape=oval]
-		"na(g,8)2" [label="na(g,8)" shape=oval]
-		"~na(e,5)2" [label="~na(e,5)" shape=oval]
-		"pusty(5)2" [label="pusty(5)" shape=oval]
-		"na(e,8)2" [label="na(e,8)" shape=oval]
+		"pusty(4)2" [label="pusty(4)" shape=oval]
+		"na(a,2)2" [label="na(a,2)" shape=oval]
+		"pusty(a)2" [label="pusty(a)" shape=oval]
+		"~pusty(4)2" [label="~pusty(4)" shape=oval]
+		"~na(a,2)2" [label="~na(a,2)" shape=oval]
+		"pusty(2)2" [label="pusty(2)" shape=oval]
+		"na(a,4)2" [label="na(a,4)" shape=oval]
 	}
-	"na(a,1)1" -> "zostan(na(a,1))1" [style=dashed]
-	"zostan(na(a,1))1" -> "na(a,1)2" [style=dashed]
-	"na(e,5)1" -> "idz(e,5,8)1"
-	"pusty(8)1" -> "idz(e,5,8)1"
-	"idz(e,5,8)1" -> "na(e,8)2"
-	"idz(e,5,8)1" -> "pusty(5)2"
-	"idz(e,5,8)1" -> "~na(e,5)2"
-	"idz(e,5,8)1" -> "~pusty(8)2"
-	"na(g,7)1" -> "idz(g,7,8)1"
-	"pusty(8)1" -> "idz(g,7,8)1"
-	"idz(g,7,8)1" -> "na(g,8)2"
-	"idz(g,7,8)1" -> "pusty(7)2"
-	"idz(g,7,8)1" -> "~na(g,7)2"
-	"idz(g,7,8)1" -> "~pusty(8)2"
-	"na(h,9)1" -> "idz(h,9,8)1" [color=red]
-	"pusty(8)1" -> "idz(h,9,8)1" [color=red]
-	"idz(h,9,8)1" -> "na(h,8)2" [color=red]
-	"idz(h,9,8)1" -> "pusty(9)2" [color=red]
-	"idz(h,9,8)1" -> "~na(h,9)2" [color=red]
-	"idz(h,9,8)1" -> "~pusty(8)2" [color=red]
-	"na(b,2)1" -> "zostan(na(b,2))1" [style=dashed]
-	"zostan(na(b,2))1" -> "na(b,2)2" [style=dashed]
-	"na(c,3)1" -> "zostan(na(c,3))1" [style=dashed]
-	"zostan(na(c,3))1" -> "na(c,3)2" [style=dashed]
-	"na(d,4)1" -> "zostan(na(d,4))1" [style=dashed]
-	"zostan(na(d,4))1" -> "na(d,4)2" [style=dashed]
-	"na(e,5)1" -> "zostan(na(e,5))1" [style=dashed]
-	"zostan(na(e,5))1" -> "na(e,5)2" [style=dashed]
-	"na(f,6)1" -> "zostan(na(f,6))1" [style=dashed]
-	"zostan(na(f,6))1" -> "na(f,6)2" [style=dashed]
-	"na(g,7)1" -> "zostan(na(g,7))1" [style=dashed]
-	"zostan(na(g,7))1" -> "na(g,7)2" [style=dashed]
-	"pusty(8)1" -> "zostan(pusty(8))1" [style=dashed]
-	"zostan(pusty(8))1" -> "pusty(8)2" [style=dashed]
-	"na(h,9)1" -> "zostan(na(h,9))1" [style=dashed]
-	"zostan(na(h,9))1" -> "na(h,9)2" [style=dashed]
+	"pusty(a)1" -> "zostan(pusty(a))1" [style=dashed]
+	"zostan(pusty(a))1" -> "pusty(a)2" [style=dashed]
+	"pusty(a)1" -> "idz(a,2,4)1" [color=red]
+	"pusty(4)1" -> "idz(a,2,4)1" [color=red]
+	"na(a,2)1" -> "idz(a,2,4)1" [color=red]
+	"idz(a,2,4)1" -> "na(a,4)2" [color=red]
+	"idz(a,2,4)1" -> "pusty(2)2" [color=red]
+	"idz(a,2,4)1" -> "~na(a,2)2" [color=red]
+	"idz(a,2,4)1" -> "~pusty(4)2" [color=red]
+	"na(a,2)1" -> "zostan(na(a,2))1" [style=dashed]
+	"zostan(na(a,2))1" -> "na(a,2)2" [style=dashed]
+	"pusty(4)1" -> "zostan(pusty(4))1" [style=dashed]
+	"zostan(pusty(4))1" -> "pusty(4)2" [style=dashed]
 	rankdir=LR
 }
