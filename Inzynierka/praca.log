@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.5.18)  3 NOV 2022 02:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.5.18)  8 NOV 2022 03:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -698,6 +698,14 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 \Gin@req@height=\dimen199
 \Gin@req@width=\dimen256
 )
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count300
+\float@exts=\toks30
+\float@box=\box66
+\@float@everytoks=\toks31
+\@floatcapt=\box67
+)
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2020/01/03 v3.4h Customizing captions (AR)
 
@@ -713,19 +721,20 @@ Package caption3 Info: TeX engine: e-TeX on input line 61.
 \caption@hangindent=\dimen263
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count300
-\c@continuedfloat=\count301
+\c@caption@flags=\count301
+\c@continuedfloat=\count302
+Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2020/01/22 v1.3d Sub-captions (AR)
-\c@subfigure=\count302
-\c@subtable=\count303
+\c@subfigure=\count303
+\c@subtable=\count304
 )
 (/usr/share/texlive/texmf-dist/tex/latex/mdwtools/footnote.sty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
-\fn@notes=\box66
+\fn@notes=\box68
 \fn@width=\dimen264
 )
 (/usr/share/texlive/texmf-dist/tex/generic/dirtree/dirtree.sty
@@ -740,10 +749,10 @@ Package: dirtree 2012/12/11 v0.32 package wrapper for dirtree
 \DT@rulewidth=\dimen269
 \DT@dotwidth=\dimen270
 \DTbaselineskip=\dimen271
-\DT@counti=\count304
-\DT@countii=\count305
-\DT@countiii=\count306
-\DT@countiv=\count307
+\DT@counti=\count305
+\DT@countii=\count306
+\DT@countiii=\count307
+\DT@countiv=\count308
 \DT@indent=\dimen272
 \DT@parskip=\dimen273
 \DT@baselineskip=\dimen274
@@ -753,60 +762,60 @@ File: dirtree.tex 2012/12/11 v0.32 `dirtree' (jcc)
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
 \multirow@colwidth=\skip129
-\multirow@cntb=\count308
+\multirow@cntb=\count309
 \multirow@dima=\skip130
 \bigstrutjot=\dimen275
 )
-\c@theorem=\count309
-\c@lemma=\count310
-\c@example=\count311
-\c@corollary=\count312
-\c@definition=\count313
+\c@theorem=\count310
+\c@lemma=\count311
+\c@example=\count312
+\c@corollary=\count313
+\c@definition=\count314
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count314
-\l__pdf_internal_box=\box67
+\l__kernel_color_stack_int=\count315
+\l__pdf_internal_box=\box69
 )
 (./praca.aux)
 \openout1 = `praca.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 609.
-LaTeX Font Info:    ... okay on input line 609.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 609.
-LaTeX Font Info:    ... okay on input line 609.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 609.
-LaTeX Font Info:    ... okay on input line 609.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 609.
-LaTeX Font Info:    ... okay on input line 609.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 609.
-LaTeX Font Info:    ... okay on input line 609.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 609.
-LaTeX Font Info:    ... okay on input line 609.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 609.
-LaTeX Font Info:    ... okay on input line 609.
-LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 609.
-LaTeX Font Info:    ... okay on input line 609.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 609.
-LaTeX Font Info:    ... okay on input line 609.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 613.
+LaTeX Font Info:    ... okay on input line 613.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 613.
+LaTeX Font Info:    ... okay on input line 613.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 613.
+LaTeX Font Info:    ... okay on input line 613.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 613.
+LaTeX Font Info:    ... okay on input line 613.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 613.
+LaTeX Font Info:    ... okay on input line 613.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 613.
+LaTeX Font Info:    ... okay on input line 613.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 613.
+LaTeX Font Info:    ... okay on input line 613.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 613.
+LaTeX Font Info:    ... okay on input line 613.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 613.
+LaTeX Font Info:    ... okay on input line 613.
 LaTeX Font Info:    Trying to load font information for OT4+lmr on input line 6
-09.
+13.
  (/usr/share/texmf/tex/latex/lm/ot4lmr.fd
 File: ot4lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count315
+\scratchcounter=\count316
 \scratchdimen=\dimen276
-\scratchbox=\box68
-\nofMPsegments=\count316
-\nofMParguments=\count317
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count318
+\scratchbox=\box70
+\nofMPsegments=\count317
+\nofMParguments=\count318
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count319
 \MPscratchDim=\dimen277
-\MPnumerator=\count319
-\makeMPintoPDFobject=\count320
-\everyMPtoPDFconversion=\toks31
+\MPnumerator=\count320
+\makeMPintoPDFobject=\count321
+\everyMPtoPDFconversion=\toks33
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -816,7 +825,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count321
+\c@lstlisting=\count322
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -852,8 +861,8 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box69
-Package hyperref Info: Link coloring ON on input line 609.
+\AtBeginShipoutBox=\box71
+Package hyperref Info: Link coloring ON on input line 613.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -863,11 +872,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count322
+\c@section@level=\count323
 )
-LaTeX Info: Redefining \ref on input line 609.
-LaTeX Info: Redefining \pageref on input line 609.
-LaTeX Info: Redefining \nameref on input line 609.
+LaTeX Info: Redefining \ref on input line 613.
+LaTeX Info: Redefining \pageref on input line 613.
+LaTeX Info: Redefining \nameref on input line 613.
 
 (./praca.out) (./praca.out)
 \@outlinefile=\write3
@@ -876,43 +885,43 @@ LaTeX Info: Redefining \nameref on input line 609.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Trying to load font information for OML+plm on input line 6
-27.
+31.
 
 (/usr/share/texlive/texmf-dist/tex/latex/polski/omlplm.fd
 File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    Trying to load font information for OMS+plsy on input line 
-627.
+631.
 
 (/usr/share/texlive/texmf-dist/tex/latex/polski/omsplsy.fd
 File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    Trying to load font information for OMX+plex on input line 
-627.
+631.
 
 (/usr/share/texlive/texmf-dist/tex/latex/polski/omxplex.fd
 File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <10> on input line 627.
+(Font)              <10> on input line 631.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <7> on input line 627.
+(Font)              <7> on input line 631.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <5> on input line 627.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 627
+(Font)              <5> on input line 631.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 631
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 627
+LaTeX Font Info:    Trying to load font information for U+msb on input line 631
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 62
-7.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 63
+1.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -924,13 +933,13 @@ stract.tex)pdfTeX warning (ext4): destination with the same identifier (name{pa
 ge.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.673     \cleardoublepage
+l.677     \cleardoublepage
                            [1
 
 ]
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 675.
+less on input line 679.
 
 (./praca.toc
 
@@ -946,11 +955,11 @@ less on input line 41.
  [2]
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 680.
+less on input line 684.
 
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 680.
+less on input line 684.
 
 (./praca.lof)
 \tf@lof=\write5
@@ -959,18 +968,18 @@ less on input line 680.
 
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 685.
+less on input line 689.
 
 [3
 
 ]
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 687.
+less on input line 691.
 
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 687.
+less on input line 691.
 
 (./praca.lot)
 \tf@lot=\write6
@@ -979,18 +988,18 @@ less on input line 687.
 
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 694.
+less on input line 698.
 
 [4
 
 ]
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 701.
+less on input line 705.
 
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 701.
+less on input line 705.
 
 (./wstep.tex
 Underfull \hbox (badness 10000) in paragraph at lines 8--13
@@ -998,39 +1007,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--13
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--18
+Underfull \hbox (badness 10000) in paragraph at lines 14--17
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--24
+Underfull \hbox (badness 10000) in paragraph at lines 18--23
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--29
+Underfull \hbox (badness 10000) in paragraph at lines 24--28
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--34
+Underfull \hbox (badness 10000) in paragraph at lines 29--33
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--39
+Underfull \hbox (badness 10000) in paragraph at lines 34--38
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--45
+Underfull \hbox (badness 10000) in paragraph at lines 39--44
 
  []
 
 )
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 709.
+less on input line 713.
 
 [1
 
@@ -1042,32 +1051,95 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
 5.
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-))
+)
+<./pictures/Przyklad1.png, id=457, 661.72218pt x 97.11281pt>
+File: ./pictures/Przyklad1.png Graphic file (type png)
+<use ./pictures/Przyklad1.png>
+Package pdftex.def Info: ./pictures/Przyklad1.png  used on input line 47.
+(pdftex.def)             Requested size: 330.86028pt x 48.55627pt.
+
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 712.
+less on input line 55.
 
 [2
 
 
-] (./rozdzial2.tex
+]
+<./pictures/Przyklad2.png, id=471, 366.61969pt x 331.2375pt>
+File: ./pictures/Przyklad2.png Graphic file (type png)
+<use ./pictures/Przyklad2.png>
+Package pdftex.def Info: ./pictures/Przyklad2.png  used on input line 77.
+(pdftex.def)             Requested size: 183.30939pt x 165.61833pt.
+<pwr-logo.png, id=473, 217.81375pt x 216.81pt>
+File: pwr-logo.png Graphic file (type png)
+<use pwr-logo.png>
+Package pdftex.def Info: pwr-logo.png  used on input line 89.
+(pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
+ [3 <./pwr-logo.png> <./pictures/Przyklad1.png> <./pictures/Przyklad2.png>]
+Overfull \hbox (0.63678pt too wide) in paragraph at lines 137--139
+[]\OT4/lmr/m/n/10 Dzi¦ki swo-jej roli w roz-woju pla-no-wa-nia z u»y-ciem kom-p
+u-te-rów, STRIPS zo-staª do-dat-kowo wyró»niony-
+ []
+
+File: pwr-logo.png Graphic file (type png)
+<use pwr-logo.png>
+Package pdftex.def Info: pwr-logo.png  used on input line 145.
+(pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
+[4])
+File: pwr-logo.png Graphic file (type png)
+<use pwr-logo.png>
+Package pdftex.def Info: pwr-logo.png  used on input line 716.
+(pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
+ [5] (./rozdzial2.tex
 Rozdzia\l  2.
-)
+<./pictures/PlanningGraph.png, id=503, 663.98062pt x 246.1697pt>
+File: ./pictures/PlanningGraph.png Graphic file (type png)
+<use ./pictures/PlanningGraph.png>
+Package pdftex.def Info: ./pictures/PlanningGraph.png  used on input line 8.
+(pdftex.def)             Requested size: 331.98949pt x 123.08453pt.
+
+Overfull \hbox (10.74667pt too wide) in paragraph at lines 5--14
+\OT4/lmr/m/n/10 zyk STRIPS, do-dat-kowo ba-zuje na pa-ra-dyg-ma-cie, który au-t
+o-rzy al-go-rytmu okre-±laj¡ jako "graf planuj¡cy"[[]]. 
+ []
+
+<./pictures/PrzykladSP.png, id=506, 344.03531pt x 229.60782pt>
+File: ./pictures/PrzykladSP.png Graphic file (type png)
+<use ./pictures/PrzykladSP.png>
+Package pdftex.def Info: ./pictures/PrzykladSP.png  used on input line 36.
+(pdftex.def)             Requested size: 172.01723pt x 114.80362pt.
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 715.
+less on input line 41.
 
-[3
+[6
 
 
-] (./rozdzial3.tex
+ <./pictures/PlanningGraph.png>]
+File: pwr-logo.png Graphic file (type png)
+<use pwr-logo.png>
+Package pdftex.def Info: pwr-logo.png  used on input line 76.
+(pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
+ [7 <./pictures/PrzykladSP.png>]
+<./pictures/PrzykladRuch.png, id=526, 344.03531pt x 229.60782pt>
+File: ./pictures/PrzykladRuch.png Graphic file (type png)
+<use ./pictures/PrzykladRuch.png>
+Package pdftex.def Info: ./pictures/PrzykladRuch.png  used on input line 79.
+(pdftex.def)             Requested size: 172.01723pt x 114.80362pt.
+)
+File: pwr-logo.png Graphic file (type png)
+<use pwr-logo.png>
+Package pdftex.def Info: pwr-logo.png  used on input line 719.
+(pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
+ [8 <./pictures/PrzykladRuch.png>] (./rozdzial3.tex
 Rozdzia\l  3.
 )
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 718.
+less on input line 722.
 
-[4
+[9
 
 
 ] (./rozdzial4.tex
@@ -1075,9 +1147,9 @@ Rozdzia\l  4.
 )
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 721.
+less on input line 725.
 
-[5
+[10
 
 
 ] (./rozdzial5.tex
@@ -1085,9 +1157,9 @@ Rozdzia\l  5.
 )
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 724.
+less on input line 728.
 
-[6
+[11
 
 
 ] (./rozdzial6.tex
@@ -1095,93 +1167,97 @@ Rozdzia\l  6.
 )
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 727.
+less on input line 731.
 
-[7
+[12
 
 
 ]
 Overfull \vbox (481.25084pt too high) has occurred while \output is active []
 
-<pwr-logo.png, id=442, 217.81375pt x 216.81pt>
 File: pwr-logo.png Graphic file (type png)
 <use pwr-logo.png>
-Package pdftex.def Info: pwr-logo.png  used on input line 727.
+Package pdftex.def Info: pwr-logo.png  used on input line 731.
 (pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
 
-[8 <./pwr-logo.png>] (./podsumowanie.tex)
+[13] (./podsumowanie.tex)
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 730.
+less on input line 734.
 
-[9
+[14
 
 
 ]
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 738.
+less on input line 742.
 
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 738.
+less on input line 742.
 
 (./praca.bbl)
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 743.
+less on input line 747.
 
-[10
+[15
 
 
 ]
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 750.
+less on input line 754.
 
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 750.
+less on input line 754.
 
 (./dodatek1.tex
 ZaÅ‚Ä…cznik A.
 )
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 755.
+less on input line 759.
 
-[11
+[16
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 757.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 757.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 761.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 761.
  (./praca.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 757.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 757.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 761.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 761.
 Package rerunfilecheck Info: File `praca.out' has not changed.
-(rerunfilecheck)             Checksum: B5F24FC9D96AA9B3514FAB21C23BE571;4762.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 757.
+(rerunfilecheck)             Checksum: 831B5AAE49F7E548DC8408E434EFAE61;5070.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 761.
  ) 
 Here is how much of TeX's memory you used:
- 14687 strings out of 483075
- 219344 string characters out of 5963834
- 529047 words of memory out of 5000000
- 29246 multiletter control sequences out of 15000+600000
+ 14831 strings out of 483075
+ 221643 string characters out of 5963834
+ 532883 words of memory out of 5000000
+ 29357 multiletter control sequences out of 15000+600000
  593353 words of font info for 62 fonts, out of 8000000 for 9000
  118 hyphenation exceptions out of 8191
- 41i,18n,48p,397b,441s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
-ips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmsc.enc}</usr/share/
-texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/
-lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr
-10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/font
-s/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb>
-Output written on praca.pdf (17 pages, 232554 bytes).
+ 41i,19n,55p,514b,445s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plms.enc}{/usr/share/texliv
+e/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texlive/texmf-dist/fonts/e
+nc/dvips/pl/plmi.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share
+/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm
+sc.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fon
+ts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/
+type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></u
+sr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/pub
+lic/lm/lmri10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plmi10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/pl/plsy10.pfb>
+Output written on praca.pdf (22 pages, 291874 bytes).
 PDF statistics:
- 518 PDF objects out of 1000 (max. 8388607)
- 484 compressed objects within 5 object streams
- 94 named destinations out of 1000 (max. 500000)
- 598 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 647 PDF objects out of 1000 (max. 8388607)
+ 598 compressed objects within 6 object streams
+ 122 named destinations out of 1000 (max. 500000)
+ 663 words of extra memory for PDF output out of 10000 (max. 10000000)
 

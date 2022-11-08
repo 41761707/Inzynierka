@@ -5,4 +5,11 @@ Fast planning through planning graph analysis.
 \newblock Web pages: \url{https://www.cs.cmu.edu/~avrim/Papers/graphplan.pdf/}
   [ostatni dostęp: 21.10.2022].
 
+\bibitem{STRIPS}
+Strips: A new approach to the application of theorem proving to problem
+  solving.
+\newblock Web pages:
+  \url{http://ai.stanford.edu/~nilsson/OnlinePubs-Nils/PublishedPapers/strips.pdf}
+  [ostatni dostęp: 07.11.2022].
+
 \end{thebibliography}

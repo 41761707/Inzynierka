@@ -35,94 +35,118 @@
 \newlabel{Akcje}{{1.2}{2}{Planowanie}{definition.1.2}{}}
 \newlabel{Cel}{{1.3}{2}{Planowanie}{definition.1.3}{}}
 \newlabel{Plan}{{1.4}{2}{Planowanie}{definition.1.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.2}Planowanie przy użyciu komputerów}{2}{section.1.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {1.3}Użycie grafów- motywacja}{2}{section.1.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}GRAPHPLAN}{3}{chapter.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Przeniesienie klocka z jednej półki na drugą jako przykład sytuacji dla której istnieje możliwość utworzenia planu. Po lewej stronie od strzałki znajduje się stan początkowy, natomiast po prawej- oczekiwany cel. Naturalną akcją w przedstawionym świecie jest akcja \textit  {przenieś}, która zadany klocek przenosi z jednej półki na drugą.\relax }}{3}{figure.caption.2}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{Przyklad1}{{1.1}{3}{Przeniesienie klocka z jednej półki na drugą jako przykład sytuacji dla której istnieje możliwość utworzenia planu. Po lewej stronie od strzałki znajduje się stan początkowy, natomiast po prawej- oczekiwany cel. Naturalną akcją w przedstawionym świecie jest akcja \textit {przenieś}, która zadany klocek przenosi z jednej półki na drugą.\relax }{figure.caption.2}{}}
+\newlabel{PlanOptymalny}{{1.5}{3}{Planowanie}{definition.1.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Problem komiwojażera (Travelling Salesman Problem, TSP). Na rysunku pomocniczym liczby symbolizują wagi krawędzi. Węzeł oznaczony kolorem czerwonym odpowiada węzłowi startowemu, do którego należy wrócić. Długości krawędzi nie zachowują wskazanych przez wagi proporcji.\relax }}{3}{figure.caption.3}\protected@file@percent }
+\newlabel{TSP}{{1.2}{3}{Problem komiwojażera (Travelling Salesman Problem, TSP). Na rysunku pomocniczym liczby symbolizują wagi krawędzi. Węzeł oznaczony kolorem czerwonym odpowiada węzłowi startowemu, do którego należy wrócić. Długości krawędzi nie zachowują wskazanych przez wagi proporcji.\relax }{figure.caption.3}{}}
+\citation{STRIPS}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Planowanie przy użyciu komputerów}{4}{section.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.1}STRIPS}{4}{subsection.1.2.1}\protected@file@percent }
+\newlabel{WarunekAkcji}{{1.6}{4}{STRIPS}{definition.1.6}{}}
+\newlabel{EfektAkcji}{{1.7}{4}{STRIPS}{definition.1.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.2}ADL i PDDL}{5}{subsection.1.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.3}Nowoczesne rozwiązania}{5}{subsection.1.2.3}\protected@file@percent }
+\citation{GRAPHPLAN}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}GRAPHPLAN}{6}{chapter.2}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Wprowadzenie}{3}{section.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Warunki początkowe}{3}{section.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Warstwy grafu}{3}{section.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Typy operatorów}{3}{section.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.5}Wzajemne wykluczanie}{3}{section.2.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.6}Wyszukiwanie planu}{3}{section.2.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.7}Prosty przykład}{3}{section.2.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Programowanie ograniczeń}{4}{chapter.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Wprowadzenie}{6}{section.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Najogólniejsza forma grafu planującego. Składa się on z węzłów, zwanych stanami oraz krawędzi zwanych akcjami. Docelowo poszczególne stany oraz akcje są parami różne, jednak mogą zajść sytuacje, gdy powtórzenie któregoś z komponentów będzie wymagane do uzyskania odpowiedniego celu.\relax }}{6}{figure.caption.4}\protected@file@percent }
+\newlabel{PlanningGraph}{{2.1}{6}{Najogólniejsza forma grafu planującego. Składa się on z węzłów, zwanych stanami oraz krawędzi zwanych akcjami. Docelowo poszczególne stany oraz akcje są parami różne, jednak mogą zajść sytuacje, gdy powtórzenie któregoś z komponentów będzie wymagane do uzyskania odpowiedniego celu.\relax }{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Warunki początkowe}{6}{section.2.2}\protected@file@percent }
+\newlabel{PoziomStanow}{{2.1}{6}{Warunki początkowe}{definition.2.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Przykładowy moment startowy przyszłego planu. Za pomocą okręgów oznaczono roboty, natomiast poprzez kwadraty oznaczone są kafelki- miejsca, po których mogą poruszać się roboty.\relax }}{7}{figure.caption.5}\protected@file@percent }
+\newlabel{PrzykladSP}{{2.2}{7}{Przykładowy moment startowy przyszłego planu. Za pomocą okręgów oznaczono roboty, natomiast poprzez kwadraty oznaczone są kafelki- miejsca, po których mogą poruszać się roboty.\relax }{figure.caption.5}{}}
+\newlabel{ZbiorPoczatkowy}{{2.1}{7}{Warunki początkowe}{equation.2.2.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Akcje}{7}{section.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Obrazowe przedstawienie ruchu robota B z kafelka 3 na kafelek 2\relax }}{8}{figure.caption.6}\protected@file@percent }
+\newlabel{PrzykladRuch}{{2.3}{8}{Obrazowe przedstawienie ruchu robota B z kafelka 3 na kafelek 2\relax }{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Typy akcji}{8}{subsection.2.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Definiowanie świata}{8}{section.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.5}Warstwy grafu}{8}{section.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.6}Wzajemne wykluczanie}{8}{section.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.7}Równoległość}{8}{section.2.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.8}Wyszukiwanie planu}{8}{section.2.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.9}Prosty przykład}{8}{section.2.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Programowanie ograniczeń}{9}{chapter.3}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Wprowadzenie}{4}{section.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Wykorzystanie w programowaniu w logice}{4}{section.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Obrazowe przykłady}{4}{section.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Implementacja}{5}{chapter.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Wprowadzenie}{9}{section.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Wykorzystanie w programowaniu w logice}{9}{section.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Obrazowe przykłady}{9}{section.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Implementacja}{10}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Połączenia między komponentami}{5}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Implementacja algorytmu}{5}{section.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Generowanie grafów}{5}{section.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Interfejs użytkownika}{5}{section.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Instalacja i wdrożenie}{6}{chapter.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Połączenia między komponentami}{10}{section.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Implementacja algorytmu}{10}{section.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Generowanie grafów}{10}{section.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Interfejs użytkownika}{10}{section.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Instalacja i wdrożenie}{11}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Instalacja pakietu SWI-Prolog}{6}{section.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Instalacja języka Python}{6}{section.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Sposób uruchomienia programu}{6}{section.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Testy}{7}{chapter.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Instalacja pakietu SWI-Prolog}{11}{section.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Instalacja języka Python}{11}{section.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Sposób uruchomienia programu}{11}{section.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Testy}{12}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}15}{8}{section.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Wprowadzenie}{8}{subsection.6.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Przykład}{8}{subsection.6.1.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.3}Szczegóły implementacyjne}{8}{subsection.6.1.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.4}Wyniki}{8}{subsection.6.1.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.5}Wnioski}{8}{subsection.6.1.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}CargoBot}{8}{section.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Wprowadzenie}{8}{subsection.6.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Przykład}{8}{subsection.6.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}Szczegóły implementacyjne}{8}{subsection.6.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.4}Wyniki}{8}{subsection.6.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.5}Wnioski}{8}{subsection.6.2.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Przemieszczanie w przestrzeni}{8}{section.6.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}Wprowadzenie}{8}{subsection.6.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}Przykład}{8}{subsection.6.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.3}Szczegóły implementacyjne}{8}{subsection.6.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.4}Wyniki}{8}{subsection.6.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.5}Wnioski}{8}{subsection.6.3.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Wieża Hanoi}{8}{section.6.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.1}Wprowadzenie}{8}{subsection.6.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.2}Przykład}{8}{subsection.6.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.3}Szczegóły implementacyjne}{8}{subsection.6.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.4}Wyniki}{8}{subsection.6.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.5}Wnioski}{8}{subsection.6.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.5}Lis, Gęś i Ziarno}{8}{section.6.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.1}Wprowadzenie}{8}{subsection.6.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.2}Przykład}{8}{subsection.6.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.3}Szczegóły implementacyjne}{8}{subsection.6.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.4}Wyniki}{8}{subsection.6.5.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.5}Wnioski}{8}{subsection.6.5.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.6}Problem komiwojażera}{8}{section.6.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.6.1}Wprowadzenie}{8}{subsection.6.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.6.2}Przykład}{8}{subsection.6.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.6.3}Szczegóły implementacyjne}{8}{subsection.6.6.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.6.4}Wyniki}{8}{subsection.6.6.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.6.5}Wnioski}{8}{subsection.6.6.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.7}Osiem Hetmanów}{8}{section.6.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.7.1}Wprowadzenie}{8}{subsection.6.7.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.7.2}Przykład}{8}{subsection.6.7.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.7.3}Szczegóły implementacyjne}{8}{subsection.6.7.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.7.4}Wyniki}{8}{subsection.6.7.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.7.5}Wnioski}{8}{subsection.6.7.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Podsumowanie}{9}{chapter*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}15}{13}{section.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Wprowadzenie}{13}{subsection.6.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Przykład}{13}{subsection.6.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.3}Szczegóły implementacyjne}{13}{subsection.6.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.4}Wyniki}{13}{subsection.6.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.5}Wnioski}{13}{subsection.6.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}CargoBot}{13}{section.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Wprowadzenie}{13}{subsection.6.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Przykład}{13}{subsection.6.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}Szczegóły implementacyjne}{13}{subsection.6.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.4}Wyniki}{13}{subsection.6.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.5}Wnioski}{13}{subsection.6.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Przemieszczanie w przestrzeni}{13}{section.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}Wprowadzenie}{13}{subsection.6.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}Przykład}{13}{subsection.6.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.3}Szczegóły implementacyjne}{13}{subsection.6.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.4}Wyniki}{13}{subsection.6.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.5}Wnioski}{13}{subsection.6.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Wieża Hanoi}{13}{section.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.1}Wprowadzenie}{13}{subsection.6.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.2}Przykład}{13}{subsection.6.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.3}Szczegóły implementacyjne}{13}{subsection.6.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.4}Wyniki}{13}{subsection.6.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.5}Wnioski}{13}{subsection.6.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.5}Lis, Gęś i Ziarno}{13}{section.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.1}Wprowadzenie}{13}{subsection.6.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.2}Przykład}{13}{subsection.6.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.3}Szczegóły implementacyjne}{13}{subsection.6.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.4}Wyniki}{13}{subsection.6.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.5}Wnioski}{13}{subsection.6.5.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.6}Problem komiwojażera}{13}{section.6.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.6.1}Wprowadzenie}{13}{subsection.6.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.6.2}Przykład}{13}{subsection.6.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.6.3}Szczegóły implementacyjne}{13}{subsection.6.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.6.4}Wyniki}{13}{subsection.6.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.6.5}Wnioski}{13}{subsection.6.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.7}Osiem Hetmanów}{13}{section.6.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.7.1}Wprowadzenie}{13}{subsection.6.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.7.2}Przykład}{13}{subsection.6.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.7.3}Szczegóły implementacyjne}{13}{subsection.6.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.7.4}Wyniki}{13}{subsection.6.7.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.7.5}Wnioski}{13}{subsection.6.7.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Podsumowanie}{14}{chapter*.7}\protected@file@percent }
 \bibstyle{plabbrv}
 \bibdata{literatura}
 \bibcite{GRAPHPLAN}{1}
-\@writefile{toc}{\contentsline {chapter}{Bibliografia}{10}{chapter*.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Zawartość płyty CD}{11}{appendix.A}\protected@file@percent }
+\bibcite{STRIPS}{2}
+\@writefile{toc}{\contentsline {chapter}{Bibliografia}{15}{chapter*.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Zawartość płyty CD}{16}{appendix.A}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{plytaCD}{{A}{11}{Zawartość płyty CD}{appendix.A}{}}
+\newlabel{plytaCD}{{A}{16}{Zawartość płyty CD}{appendix.A}{}}
