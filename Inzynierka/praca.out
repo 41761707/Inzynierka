@@ -14,10 +14,10 @@
 \BOOKMARK [2][-]{subsection.2.3.1}{Typy akcji}{section.2.3}% 14
 \BOOKMARK [1][-]{section.2.4}{Definiowanie swiata}{chapter.2}% 15
 \BOOKMARK [1][-]{section.2.5}{Warstwy grafu}{chapter.2}% 16
-\BOOKMARK [1][-]{section.2.6}{Wzajemne wykluczanie}{chapter.2}% 17
-\BOOKMARK [1][-]{section.2.7}{R\363wnoleg\233osc}{chapter.2}% 18
-\BOOKMARK [1][-]{section.2.8}{Wyszukiwanie planu}{chapter.2}% 19
-\BOOKMARK [1][-]{section.2.9}{Prosty przyk\233ad}{chapter.2}% 20
+\BOOKMARK [1][-]{section.2.6}{R\363wnoleg\233osc}{chapter.2}% 17
+\BOOKMARK [2][-]{subsection.2.6.1}{Wzajemne wykluczanie}{section.2.6}% 18
+\BOOKMARK [1][-]{section.2.7}{Wyszukiwanie planu}{chapter.2}% 19
+\BOOKMARK [1][-]{section.2.8}{Prosty przyk\233ad}{chapter.2}% 20
 \BOOKMARK [0][-]{chapter.3}{Programowanie ograniczen}{}% 21
 \BOOKMARK [1][-]{section.3.1}{Wprowadzenie}{chapter.3}% 22
 \BOOKMARK [1][-]{section.3.2}{Wykorzystanie w programowaniu w logice}{chapter.3}% 23
@@ -74,6 +74,6 @@
 \BOOKMARK [2][-]{subsection.6.7.3}{Szczeg\363\233y implementacyjne}{section.6.7}% 74
 \BOOKMARK [2][-]{subsection.6.7.4}{Wyniki}{section.6.7}% 75
 \BOOKMARK [2][-]{subsection.6.7.5}{Wnioski}{section.6.7}% 76
-\BOOKMARK [0][-]{chapter*.7}{Podsumowanie}{}% 77
-\BOOKMARK [0][-]{chapter*.8}{Bibliografia}{}% 78
+\BOOKMARK [0][-]{chapter*.12}{Podsumowanie}{}% 77
+\BOOKMARK [0][-]{chapter*.13}{Bibliografia}{}% 78
 \BOOKMARK [0][-]{appendix.A}{Zawartosc p\233yty CD}{}% 79

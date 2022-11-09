@@ -26,7 +26,7 @@
         \item Akcje pozwalają na modyfikację przedstawionego świata. Każda z akcji składa się z podmiotu, na który działa oraz czynności,
         która jest względem wskazanego podmiotu wykonywana. Przykładem dobrze określonej akcji może być przeniesienie klocka z 
         jednego stolika na drugi- składa się ona z podmiotu w postaci klocka, oraz czynności w postaci przenoszenia, które możemy traktować
-        jako ruch. Czynności mogą różnić się od siebie w kwestii skomplikowania, najważniejszym jest, aby były określone poprawnie i aby były wykonalne w zdefiniowanym świecie.
+        w ogólniejszy sposób jako ruch. Czynności mogą różnić się od siebie w kwestii skomplikowania, najważniejszym jest, aby były określone poprawnie i aby były wykonalne w zdefiniowanym świecie.
     \end{itemize}
     \begin{definition}
     \label{Cel}
@@ -53,7 +53,7 @@
         \label{Przyklad1}
     \end{figure}
     Łatwo zauważyć na podstawie przykładu \ref{Przyklad1}, iż można utworzyć wiele planów, które dla zadanego stanu początkowego 
-    osiągają wskazany cel. Dla powyżej sytuacji naturalnym planem jest przeniesienie klocka A z platformy po lewej na platformę po prawej, 
+    osiągają wskazany cel. Dla powyższej sytuacji naturalnym planem jest przeniesienie klocka A z platformy po lewej na platformę po prawej, 
     lecz nie jest to jedyna możliwość. Również satysfakcjonującym planem zgodnie z wprowadzoną wyżej definicją byłaby następująca sekwencja
     akcji:
     \begin{enumerate}
@@ -119,19 +119,19 @@
     \end{itemize}
     Po wykonaniu czynności z przykładu \ref{Przyklad1} wyróżniamy trzy typy nowych informacji:
     \begin{itemize}
-        \item Warunek dodający- Obecnośc klocka na lewej platformie, prawa platforma jest pusta
+        \item Warunek- Obecnośc klocka na lewej platformie, prawa platforma jest pusta
         \item Efekt dodający- Obecność klocka na prawej platformie
         \item Efekt usuwający - Platforma lewa jest pusta
     \end{itemize}
     W rozważanym podejściu każda z czynności zdefiniowana jest przy pomocy wyżej wskazanych trzech składowych.
 
         Takie zdefiniowane świata okazuje się wystarczające do rozwiązywania problemów pokroju rearanżacji obiektów czy 
-    nawigowania w ściśle zdefiniowanej przestrzeni, czego najlepszym przykładem jest pierwszy robot- \textbf{Shakey}.
+    nawigowania w ściśle zdefiniowanej przestrzeni, czego najlepszym przykładem, jest pierwszy robot do realizacji ów zadań- \textbf{Shakey}.
     Shakey był pierwszym robotem, który dzięki zainstalowanemu oprogramowaniu,
     posiadał umiejętność analizy własnego otoczenia. Dzięki zaimplementowanemu podejściu 
     STRIPS (oczywiście z odpowiednimi dostosowaniami do sytuacji) był w stanie rozwiązywać problemy z zakresu wyznaczania drogi,
     czy planowania rozmieszczenia obiektów w pokojach.
-    Shakey, ze względu na swoją innowacyjność i przełomowość często jest nazywany archetypem
+    Ze względu na swoją innowacyjność i przełomowość często jest nazywany archetypem
     dzisiejszych autonomicznych samochód czy militarnych dronów.
 
     Dzięki swojej roli w rozwoju planowania z użyciem komputerów, STRIPS został dodatkowo wyróżniony- od jego nazwy pochodzi języki opisu świata korzystający
@@ -145,8 +145,8 @@
     \subsection{Nowoczesne rozwiązania}
     TO-DO
     
-    Pomiędzy powstaniem ulepszeń metodologii STRIPS w postaci ADL oraz PDDL powstały również inne podejścia, w tym
-    silnie bazujący na grafach i ich możlwościach algorytm o wdzięcznej nazwie \textbf{GRAPHPLAN}
+    Między powstaniem metodologii STRIPS a jej rozszerzeniami w postaci ADL lub PDDL powstawały również inne podejścia, w tym silnie 
+    bazujący na grafach i ich możliwościach algorytm o wdzięcznej nazwie \textbf{GRAPHPLAN}.
 
 
 

@@ -7,6 +7,11 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Najogólniejsza forma grafu planującego. Składa się on z węzłów, zwanych stanami oraz krawędzi zwanych akcjami. Docelowo poszczególne stany oraz akcje są parami różne, jednak mogą zajść sytuacje, gdy powtórzenie któregoś z komponentów będzie wymagane do uzyskania odpowiedniego celu.\relax }}{6}{figure.caption.4}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Przykładowy moment startowy przyszłego planu. Za pomocą okręgów oznaczono roboty, natomiast poprzez kwadraty oznaczone są kafelki- miejsca, po których mogą poruszać się roboty.\relax }}{7}{figure.caption.5}%
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Obrazowe przedstawienie ruchu robota B z kafelka 3 na kafelek 2\relax }}{8}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Obrazowe przedstawienie wszystkich akcji w pierwszym kroku algorytmu, akcje opisane przy użyciu czcionki o kolorze zielonym symbolizują akcje podtrzymujące, natomiast o kolorze czerwonym- akcje aktywne\relax }}{9}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Graficzne przedstawienie relacji sąsiedztwa dla kafelka numer 4. Kolorem kremowym oznaczono miejsca, z którymi sąsiaduje, natomiast pomarańczowym- te, z którymi nie sąsiaduje. Oznacza to, iż do kafelków pomarańczowych nie można dostać się wykonując jeden ruch\relax }}{10}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Modyfikacja do grafu planującego wprowadzona w poprzednich podrozdziałach. Wprowadzono zależności akcji od stanu poprzedniego, oraz stanu następnego od akcji.\relax }}{10}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Modyfikacja do grafu planującego wprowadzona w poprzednich podrozdziałach. Wprowadzono zależności akcji od stanu poprzedniego, oraz stanu następnego od akcji.\relax }}{11}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Modyfikacja do grafu planującego wprowadzona w poprzednich podrozdziałach. Wprowadzono zależności akcji od stanu poprzedniego, oraz stanu następnego od akcji.\relax }}{12}{figure.caption.11}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
