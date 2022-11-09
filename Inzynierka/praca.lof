@@ -10,8 +10,9 @@
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Obrazowe przedstawienie wszystkich akcji w pierwszym kroku algorytmu, akcje opisane przy użyciu czcionki o kolorze zielonym symbolizują akcje podtrzymujące, natomiast o kolorze czerwonym- akcje aktywne\relax }}{9}{figure.caption.7}%
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Graficzne przedstawienie relacji sąsiedztwa dla kafelka numer 4. Kolorem kremowym oznaczono miejsca, z którymi sąsiaduje, natomiast pomarańczowym- te, z którymi nie sąsiaduje. Oznacza to, iż do kafelków pomarańczowych nie można dostać się wykonując jeden ruch\relax }}{10}{figure.caption.8}%
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Modyfikacja do grafu planującego wprowadzona w poprzednich podrozdziałach. Wprowadzono zależności akcji od stanu poprzedniego, oraz stanu następnego od akcji.\relax }}{10}{figure.caption.9}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Modyfikacja do grafu planującego wprowadzona w poprzednich podrozdziałach. Wprowadzono zależności akcji od stanu poprzedniego, oraz stanu następnego od akcji.\relax }}{11}{figure.caption.10}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Modyfikacja do grafu planującego wprowadzona w poprzednich podrozdziałach. Wprowadzono zależności akcji od stanu poprzedniego, oraz stanu następnego od akcji.\relax }}{12}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Przedstawienie sposobu wyznaczania warstw w algorytmie planującym. Poziom stanów oraz akcji wchodzący w skład danej warstwy wyróżniony jest poprzez konkatenację nazwy oraz liczby symbolizującej numer warstwy.\relax }}{11}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Przykład możliwości zastosowania równoległości w planowaniu działania. Należy zauważyć, iż ruchy robotów w żaden sposób ze sobą nie kolidują.\relax }}{12}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Przykład świata, w którym wprowadzenie równoległości dla pierwszej warstwy algorytmu. Dwa roboty próbują przenieść się na ten sam kafelek w tej samej jednostce czasu. Odpowiednio kolorami: czerwnoym i niebieskim oznaczono roboty, oraz kafelki, które są ich celem.\relax }}{13}{figure.caption.12}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

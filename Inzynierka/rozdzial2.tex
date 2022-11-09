@@ -132,7 +132,6 @@
     estetycznych podawawnie akcji podtrzymujących będzie często pomijane, jednakże nie można zapomnieć o ich występowaniu oraz o ich kluczowej roli 
     w generowaniu precyzyjnego planu.
     \begin{align*}
-        \label{MozliweAkcje}
         Akcje &= \{zostan(pusty(1)),zostan(pusty(2)),zostan(pusty(5)),zostan(pusty(6)),zostan(na(B,3)), \\
         &zostan(na(A,4)),ruch(B,3,2),ruch(B,3,6),
         ruch(A,4,1),ruch(A,4,5)\}
@@ -213,8 +212,8 @@
     \begin{figure}[H]
         \includegraphics[scale=0.5]{PlanningGraphLevels}
         \centering
-        \caption{Modyfikacja do grafu planującego wprowadzona w poprzednich podrozdziałach. Wprowadzono zależności akcji od stanu poprzedniego, oraz stanu 
-        następnego od akcji.}
+        \caption{Przedstawienie sposobu wyznaczania warstw w algorytmie planującym. Poziom stanów oraz akcji wchodzący w skład danej warstwy 
+        wyróżniony jest poprzez konkatenację nazwy oraz liczby symbolizującej numer warstwy.}
         \label{PlanningGraphLevels}
     \end{figure}
     Dzięki wprowadzeniu definicji warstwy po wygenerowaniu 
@@ -225,7 +224,7 @@
     możliwość jego reprezentacji jako częściowego porządku. To pozwala w prosty sposób wprowadzić pojęcie równoległości między akcjami. 
     \begin{definition}
         \label{Warstwa}
-        Dwie akcje mogą zostać wykonane \textbf{równolegle}, gdy po ich wykonaniu w tej samej warstwie $i$, warstwa $i+1$ nie będzie 
+        Dwie (lub więcej) akcje  mogą zostać wykonane \textbf{równolegle}, gdy po ich wykonaniu w tej samej warstwie $i$, warstwa $i+1$ nie będzie 
         zawierała w sobie żadnych sprzeczności.
     \end{definition}
     Przyglądając się rysunkowi \ref{PrzykladSP} od razu należy zauważyć, iż w stanie początkowym ruch robota A nie wpływa w żaden sposób na otoczenie
@@ -234,9 +233,9 @@
     \begin{figure}[H]
         \includegraphics[scale=0.5]{PrzykladRownolegle}
         \centering
-        \caption{Modyfikacja do grafu planującego wprowadzona w poprzednich podrozdziałach. Wprowadzono zależności akcji od stanu poprzedniego, oraz stanu 
-        następnego od akcji.}
-        \label{PlanningGraphLevels}
+        \caption{Przykład możliwości zastosowania równoległości w planowaniu działania. Należy zauważyć, iż ruchy robotów w żaden sposób ze sobą
+        nie kolidują.}
+        \label{PrzykladRownolegle}
     \end{figure}
     
     Po wprowadzeniu definicji równoległości, również definicja kroku musi ulec ewolucji. 
@@ -245,9 +244,30 @@
         \textbf{Krokiem} algorytmu nazywamy zbiór wszystkich możliwych do realizacji akcji w danej warstwie.
     \end{definition}
     Dzięki naniesionej poprawce pozbywamy się łatki mówiącej o tym, iż pojedyncza zmiana stanu jest ściśle związana z jedną akcją.W tym miejscu należy 
-    zauważyć, iż poprzednie analizy zawierały spore uproszczenie, gdyż akcje podtrzymujące również należą do kroku algorytmu (\ref{MozliweAkcje}).
+    zauważyć, iż poprzednie analizy zawierały spore uproszczenie, gdyż akcje podtrzymujące również należą do kroku algorytmu, co zostało zaprezentowane
+    w trakcie kreowania pierwszej warstwy akcji dla rozpatrywanego przykładu. 
+
+    Istnieją przypadki, gdy podmiot realizujący plan nie jest w stanie wykorzystać benefitów płynących z możliwości dokonywania akcji równolegle, 
+    na przykład ze względu na ograniczone zasoby. GRAPHPLAN również rozwiązuje ten problem, pozwalając przekształcać swój częsciowy porządek 
+    na porządek liniowy w dość dowolny sposób. Otóż akcje z danej warstwy mogą być wykonywane w dowolnej kolejności, gdyż w żaden sposób ze sobą nie 
+    kolidują. Z persepktywy algorytmu najważniejszym jest, aby stan świata $i$ i $i+1$ był zgodny z informacjami jakie posiada o świecie. Zgodnie z
+    przykładem \ref{PrzykladRownolegle} widać, iż to, czy akcja $ruch(A,4,5)$ zostanie wykonana przed akcją $ruch(B,3,2)$ lub to, czy akcja 
+    $ruch(B,3,2)$ odbędzie się prxed $ruch(A,4,5)$- efekt końcowy jest identyczny.
 
     \subsection{Wzajemne wykluczanie}
+    Twórcy algorytmy wprowadzając równoleglość, zdawali sobie sprawę z mocy tego podejścia. Dzięki temu ogromna liczba planów ulega redukcji
+    jeśli chodzi o wymagany czas wykonania. Jednakże równoległość wprowadza kolejny istotny problem w prezentowanym świecie, a mianowicie- co, gdy
+    wykonanie dwóch akcji będzie wprowadzało sprzeczność w następnym poziomie świata? Sytuacja ta została przedstawiona na poniższym rysunku
+    \begin{figure}[H]
+        \includegraphics[scale=0.5]{PrzykladRownolegleZle}
+        \centering
+        \caption{Przykład świata, w którym wprowadzenie równoległości dla pierwszej warstwy algorytmu. Dwa roboty próbują przenieść się na ten sam kafelek
+        w tej samej jednostce czasu. Odpowiednio kolorami:
+        czerwnoym i niebieskim oznaczono roboty, oraz kafelki, które są ich celem.}
+        \label{PrzykladRownolegle}
+    \end{figure}
+    
+    Zmusiło to twórców algorytmu do wporwadzenia pojęcia \textbf{relacji wykluczania}. 
     O akcjach wzajemnie się wykluczających (ang. actions mutually exclusive) wspomiano w ramach definiowana świata. Pojęcie ów można 
     określić w następujący sposób:
     \begin{definition}
@@ -256,7 +276,31 @@
         aby dwie wybrane akcje(stany) mogły być prawdziwe w tej samej jednostce czasu $t$
     \end{definition}
     Przykładem stanów wykluczających jest para: $pusty(1)$ oraz $\sim pusty(1)$. Kafelek nie może być pusty jak i niepusty jednocześnie.
+    Przykład dwóch akcji wykluczających przedstawiono na rysunku \ref{PrzykladRownolegle}. Należy zauważyć, iż wzajemne wykluczanie się 
+    jest rozpatrywane na poziomie jednej warstwy- brak możliwości wykonania dwóch akcji w warstwie $i$ nie przenosi się automatycznie na 
+    warstwę $i+1$. Świat może zostać na tyle przeobrażony, iż ich wspólna egzystencja nie spowoduje wprowadzenia niezgodności.
+    Kolejnym naturalnym krokiem jest ustalenie, kiedy akcje oraz stany są ze sobą w relacji wykluczającej. 
+    \subsubsection{Wykluczanie się akcji}
+    Dwie akcje mogą być ze sobą w relacji wzajemnie wykluczającej w trzech następujących przypadkach:
+    \begin{enumerate}
+        \item Niespójny efekt- przypadek, w którym zbiór efektów jednej z akcji 
+        jest negowany przez zbiór efektu drugiej
+        \item Przeszkadzanie - przypadek, w którym jedna z akcji usuwa warunki 
+        zajścia akcji drugiej 
+        \item Konkurencyjne potrzeby- przypadek, w którym warunki zajścia akcji 
+        są ze sobą w relacji wykluczającej.
+    \end{enumerate}
+    Poniższe przykłady w obrazowy sposób przedstawiają każdy w wyżej wymienionych
+    przypadków:
 
+
+    \subsubsection{Wykluczanie się stanów}
+    Dwa stany są ze sobą w relacji wzajemnie wykluczającej w dwóch następujacych przypadkach:
+    \begin{enumerate}
+        \item Negacja- przypadek, w którym jeden ze stanów jest negacją drugiego
+        \item Niespójne powstanie- wszystkie akcje z poprzedniej warstwy, które prowadza 
+        do utworzenia ów stanów są ze sobą w relacji wykluczającej
+    \end{enumerate}
 \section{Wyszukiwanie planu}
 
 \section{Prosty przykład}
