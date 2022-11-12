@@ -38,56 +38,33 @@ class GUI:
         self.cargo_blocks_right = []
         self.image = ""
 
-    #def convert(self,value):
-    #    table = ['a','b','c','d','e','f','g','h']
-    #    return table[int(value)-1]
+    def convert(self,value):
+        table = {'a':1,'b':2,'c':3,'d':4,'e':5,'f':6,'g':7,'h':8,'i':9,'j':10,'k':11,'l':12,'m':13,'n':14,'o':15}
+        return table[value]
     
     def get_graph(self):
         if(self.chosen_option==1):
             self.GRAPHPLAN3x3()
+        elif(self.chosen_option==2):
+            self.GRAPHPLAN4x4()
         else:
             self.GRAPHPLANCargo()
 
-    def GRAPHPLAN3x3(self):
+    def SquaresENV(self,robots,n,goal):
         graphplan = Prolog()
         graphplan.consult('graphplan.pl')
         graphplan.assertz('can(zostan(P),[P])')
         graphplan.assertz('can(idz(R,A,B), [na(R,A), pusty(B)]) :- robot(R), adjacent(A,B)')
         graphplan.assertz('effects(zostan(P),[P])')
         graphplan.assertz('effects(idz(R,A,B), [na(R,B),pusty(A),~na(R,A),~pusty(B)])')
-        graphplan.assertz('robot(a)')
-        graphplan.assertz('robot(b)')
-        graphplan.assertz('robot(c)')
-        graphplan.assertz('robot(d)')
-        graphplan.assertz('robot(e)')
-        graphplan.assertz('robot(f)')
-        graphplan.assertz('robot(g)')
-        graphplan.assertz('robot(h)')
+        #robots = ['a','b','c','d','e','f','g','h']
+        for robot in robots:
+            graphplan.assertz('robot({})'.format(robot))
         graphplan.assertz('adjacent(A,B) :- n(A,B) ; n(B,A)')
-        graphplan.assertz('n(1,2)')
-        graphplan.assertz('n(1,4)')
-        graphplan.assertz('n(2,1)')
-        graphplan.assertz('n(2,3)')
-        graphplan.assertz('n(2,5)')
-        graphplan.assertz('n(3,2)')
-        graphplan.assertz('n(3,6)')
-        graphplan.assertz('n(4,1)')
-        graphplan.assertz('n(4,5)')
-        graphplan.assertz('n(4,7)')
-        graphplan.assertz('n(5,4)')
-        graphplan.assertz('n(5,6)')
-        graphplan.assertz('n(5,2)')
-        graphplan.assertz('n(5,8)')
-        graphplan.assertz('n(6,5)')
-        graphplan.assertz('n(6,3)')
-        graphplan.assertz('n(6,9)')
-        graphplan.assertz('n(7,4)')
-        graphplan.assertz('n(7,8)')
-        graphplan.assertz('n(8,7)')
-        graphplan.assertz('n(8,5)')
-        graphplan.assertz('n(8,9)')
-        graphplan.assertz('n(9,8)')
-        graphplan.assertz('n(9,6)')
+        #n = [[2,4],[1,3,5],[2,6],[1,5,7],[4,6,2,8],[5,3,9],[4,8],[7,5,9],[8,6]]
+        for i in range(len(n)):
+            for element in n[i]:
+                graphplan.assertz('n({},{})'.format(i+1,element))
         graphplan.assertz('incosistent(G,~G)')
         graphplan.assertz('incosistent(~G,G)')
         graphplan.assertz('incosistent(na(R,C1),na(R,C2)) :- C1 \== C2')
@@ -104,7 +81,7 @@ class GUI:
         command = command+'])'
         print(command)
         graphplan.assertz(command)
-        plan = list(graphplan.query('call_plan([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(f,6),na(g,7),na(h,8),pusty(9)],Plan)',maxresult=1))
+        plan = list(graphplan.query('call_plan([{}],Plan)'.format(goal),maxresult=1))
         self.printGraph(plan)
         graphplan.retractall('n(_,_)')
         graphplan.retractall('can(_,_)')
@@ -113,6 +90,17 @@ class GUI:
         graphplan.retractall('adjacent(_,_)')
         graphplan.retractall('incosistent(_,_)')
         graphplan.retract(command)
+
+    def GRAPHPLAN3x3(self):
+        robots = ['a','b','c','d','e','f','g','h']
+        n = [[2,4],[1,3,5],[2,6],[1,5,7],[4,6,2,8],[5,3,9],[4,8],[7,5,9],[8,6]]
+        goal = 'na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(f,6),na(g,7),na(h,8),pusty(9)'
+        self.SquaresENV(robots,n,goal)
+    def GRAPHPLAN4x4(self):
+        robots = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o']
+        n=[[2,5],[1,6,3],[2,7,4],[3,8],[1,6,9],[5,2,7,10],[6,3,8,11],[7,4,12],[5,10,13],[9,6,11,14],[10,7,12,15],[11,8,16],[9,14],[13,10,15],[14,11,16],[15,12]]
+        goal='na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(f,6),na(g,7),na(h,8),na(i,9),na(j,10),na(k,11),na(l,12),na(m,13),na(n,14),na(o,15),pusty(16)'
+        self.SquaresENV(robots,n,goal)
 
     def GRAPHPLANCargo(self):
         graphplan = Prolog()
@@ -157,9 +145,9 @@ class GUI:
 
         
     def initMenu(self):
-        button1 = Button(self.menu_frame,text='4x4',command = self.drawBoard3x3).pack(side=LEFT)
-        button2 = Button(self.menu_frame,text='3x3', command = self.drawBoard3x3).pack(side=LEFT)
-        button3 = Button(self.menu_frame,text='Osiem Hetmanow', command = self.drawBoard3x3).pack(side=LEFT)
+        button1 = Button(self.menu_frame,text='3x3',command = self.drawBoard3x3).pack(side=LEFT)
+        button2 = Button(self.menu_frame,text='4x4', command = self.drawBoard4x4).pack(side=LEFT)
+        button3 = Button(self.menu_frame,text='N Hetmanow', command = self.drawBoard3x3).pack(side=LEFT)
         button4 = Button(self.menu_frame,text='CargoBot', command = self.cargoBOT).pack(side=LEFT)
         button5 = Button(self.menu_frame,text='Wygeneruj graf', bg='white',command = self.get_graph).pack(side=LEFT)
 
@@ -174,11 +162,31 @@ class GUI:
 
     def assign(self,button,popup):
         try:         
-            self.pressed_button = button
-            popup.tk_popup(button.winfo_rootx(), button.winfo_rooty(), 0)
+            self.pressed_button = self.buttons[button]
+            popup.tk_popup(self.buttons[button].winfo_rootx(), self.buttons[button].winfo_rooty(), 0)
         finally:
             popup.grab_release()
     
+    def drawBoard4x4(self):
+        self.clear_boards()
+        self.chosen_option=2
+        canvas_left = Canvas(self.left_panel, width=600, height=600)
+        canvas_left.configure(background='white')
+        for i in range(4):
+            for j in range(4):
+                canvas_left.create_rectangle(150*i,150*j,150*(i+1),150*(j+1))
+        options=['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','']
+        popup = Menu(canvas_left, tearoff=0)
+        self.buttons=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+        for i in range(4):
+            for j in range(4):
+                button_number=4*j+i
+                self.buttons[button_number]=(Button(canvas_left,width=12,height=6,bg='white',text='',command = lambda x=button_number: self.assign(x,popup)))
+                self.buttons[button_number].place(x=(150*i)+10,y=(150*j)+10)
+        for option in options:
+            popup.add_command(label=option,command = lambda i=option:self.setValue(i,popup,options))
+        canvas_left.pack()
+
     def drawBoard3x3(self):
         self.clear_boards()
         self.chosen_option=1
@@ -187,55 +195,17 @@ class GUI:
         for i in range(3):
             for j in range(3):
                 canvas_left.create_rectangle(200*i,200*j,200*(i+1),200*(j+1))
-        canvas_left.create_rectangle(200,0,400,200)
-        canvas_left.create_rectangle(400,0,600,200)
-        canvas_left.create_rectangle(0,200,200,400)
-        canvas_left.create_rectangle(200,200,400,400)
-        canvas_left.create_rectangle(400,200,600,400)
-        canvas_left.create_rectangle(0,400,200,600)
-        canvas_left.create_rectangle(200,400,400,600)
-        canvas_left.create_rectangle(400,400,600,600)
         options=['1','2','3','4','5','6','7','8','']
         popup = Menu(canvas_left, tearoff=0)
+        self.buttons=[1,2,3,4,5,6,7,8,9]
+        for i in range(3):
+            for j in range(3):
+                button_number=3*j+i
+                self.buttons[button_number]=(Button(canvas_left,width=19,height=10,bg='white',text='',command = lambda x=button_number: self.assign(x,popup)))
+                self.buttons[button_number].place(x=(200*i)+10,y=(200*j)+10)
         for option in options:
             popup.add_command(label=option,command = lambda i=option:self.setValue(i,popup,options))
-        button1 = Button(canvas_left,width=19,height=10,bg='white',text='',command = lambda:  self.assign(button1,popup))
-        button1.place(x=10,y=10)
-
-        button2 = Button(canvas_left,width=19,height=10,bg='white',text='',command = lambda:  self.assign(button2,popup))
-        button2.place(x=210,y=10)
-
-        button3 = Button(canvas_left,width=19,height=10,bg='white',text='',command = lambda:  self.assign(button3,popup))
-        button3.place(x=410,y=10)
-
-        button4 = Button(canvas_left,width=19,height=10,bg='white',text='',command = lambda:  self.assign(button4,popup))
-        button4.place(x=10,y=210)
-
-        button5 = Button(canvas_left,width=19,height=10,bg='white',text='',command = lambda:  self.assign(button5,popup))
-        button5.place(x=210,y=210)
-
-        button6 = Button(canvas_left,width=19,height=10,bg='white',text='',command = lambda:  self.assign(button6,popup))
-        button6.place(x=410,y=210)
-
-
-        button7 = Button(canvas_left,width=19,height=10,bg='white',text='',command = lambda:  self.assign(button7,popup))
-        button7.place(x=10,y=410)
-
-        button8 = Button(canvas_left,width=19,height=10,bg='white',text='',command = lambda:  self.assign(button8,popup))
-        button8.place(x=210,y=410)
-
-        button9 = Button(canvas_left,width=19,height=10,bg='white',text='',command = lambda:  self.assign(button9,popup))
-        button9.place(x=410,y=410)
         canvas_left.pack()
-        self.buttons.append(button1)
-        self.buttons.append(button2)
-        self.buttons.append(button3)
-        self.buttons.append(button4)
-        self.buttons.append(button5)
-        self.buttons.append(button6)
-        self.buttons.append(button7)
-        self.buttons.append(button8)
-        self.buttons.append(button9)
 
     def assign_table(self,index,popup,button,blocks):
         height = 0
@@ -312,17 +282,10 @@ class GUI:
 
     def printGraph(self,plan):
         g = parsePlanFULL.Graph('outputs/output.txt')
-        #graphplan.assertz('state0([na(a,1),pusty(2)])')
-        #plan = list(graphplan.query('call_plan([na(a,2)],Plan)',maxresult=1))
         g.run_all()
-        plan = g.return_plan()
 
         sg = parseplanSIMPLIFIED.SimplifiedGraph('outputs/output.txt')
-        sg.run_all()
-        simple_plan = sg.return_plan()
-        print(plan)
-
-        print(simple_plan)
+        simple_plan = sg.run_all()
         
         for widget in self.right_panel.winfo_children():
             widget.destroy()
@@ -333,24 +296,26 @@ class GUI:
         canvas.create_text(300,60,text='FULL_GRAPHPLAN.gv.png')
         canvas.create_text(300,90,text='Wygenerowany plan: ')
 
-        if(self.chosen_option==1):
-            for i in range(len(plan)):
-                command = plan[i].rstrip(')').split(',')
-                command[0] = command[0][4:]
-                print(command)
-                canvas.create_text(300,120+(30*i),text='Krok {}: Zamien klocek pusty z klockiem {}'.format(i+1,chr(ord(command[0])-48)))
+        counter = 0
+        if(self.chosen_option in (1,2)):
+            for i in range(len(simple_plan)):
+                print(simple_plan[i])
+                current_plan = re.split(',(?![^(]*\\))',str(simple_plan[i]))
+                for action in current_plan:
+                    command = action.rstrip(')').split(',')
+                    command[0] = command[0][6:]
+                    print(command[0])
+                    canvas.create_text(300,120+(30*counter),text='Krok {}: Zamien klocek pusty z klockiem {}'.format(i+1,self.convert(command[0])))
+                    counter = counter + 1
         else:
-            for i in range(len(plan)):
-                command = plan[i].rstrip(')').split(',')
-                command[0] = command[0][4:]
-                canvas.create_text(300,120+(30*i),text='Krok {}: Przenies klocek {} z {} na {}'.format(i+1,command[0],command[1],command[2]))
-        
-        '''
-        canvas2 = Canvas(self.right_panel,width=600,height=600) 
-        canvas2.pack()  
-        self.img = ImageTk.PhotoImage(Image.open("FULL_GRAPHPLAN.gv.png"))  
-        canvas2.create_image(300,300, image=self.img)
-        '''
+            for i in range(len(simple_plan)):
+                print(simple_plan[i])
+                current_plan = re.split(',(?![^(]*\\))',str(simple_plan[i]))
+                for action in current_plan:
+                    command = action.rstrip(')').split(',')
+                    command[0] = command[0][6:]
+                    canvas.create_text(300,120+(30*counter),text='Krok {}: Przenies klocek {} z {} na {}'.format(i+1,command[0],command[1],command[2]))
+                    counter = counter + 1
         
 
 

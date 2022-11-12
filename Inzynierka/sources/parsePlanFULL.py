@@ -8,9 +8,6 @@ class Graph:
         self.filename = filename
         self.plan = []
 
-    def return_plan(self):
-        return self.plan
-
     def generateArcs(self,actions,g,level):
         level_higher = level + 1
         PreCond = []
@@ -127,7 +124,7 @@ class Graph:
             plan_wo_persist.append(element)
 
     def run_all(self):
-        g = graphviz.Digraph('G', filename='FULL_GRAPHPLAN.gv',format='pdf')
+        g = graphviz.Digraph('G', filename='graphs/FULL_GRAPHPLAN.gv',format='pdf')
         #g = graphviz.Digraph('G', filename='FULL_GRAPHPLAN.gv')
         file = self.readInput(self.filename)
         self.plan, max_level = self.parseInput(file, g)

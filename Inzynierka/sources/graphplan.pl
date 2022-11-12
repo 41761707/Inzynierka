@@ -153,12 +153,12 @@ extract_plan([_],[]).
 extract_plan([ChosenStates,ActionLevel | RestOfGraph], Plan) :-
     collect_vars(ActionLevel, AVars),
     labeling([],AVars),
-    findall(A,(member(A/1,ActionLevel),A \= zostan(_)), ChosenActions),
-    %findall(A, (member(A/1,ActionLevel)),Actions),
+    %findall(A,(member(A/1,ActionLevel),A \= zostan(_)), ChosenActions),
+    findall(A, (member(A/1,ActionLevel)),ChosenActions),
     extract_plan(RestOfGraph, RestOfPlan),
     %Output dla szczegolowego planu
-    write("ChosenStates: "), writeln(ChosenStates),
     write("ChosenActions: "), write(ChosenActions),nl,
+    write("ChosenStates: "), writeln(ChosenStates),
     append(RestOfPlan, [ChosenActions], Plan).
 
 
@@ -221,15 +221,15 @@ mutex_constr1(P/T, [P1/T1 | Rest]) :-
     ),
     mutex_constr1(P/T,Rest).
 
-mutex(P,~P) :-
-    write("Mutex: ["), write(P), write(","),write(~P), writeln("]"),!.
+mutex(P,~P) :- !.
+    %write("Mutex: ["), write(P), write(","),write(~P), writeln("]"),!.
 
-mutex(~P,P) :-
-    write("Mutex: ["), write(~P), write(","),write(P), writeln("]"),!.  
+mutex(~P,P) :- !.
+    %write("Mutex: ["), write(~P), write(","),write(P), writeln("]"),!.  
 
 mutex(A,B) :-              
     inconsistent(A,B),
-    write("Mutex: ["), write(A), write(","),write(B), writeln("]"), 
+    %write("Mutex: ["), write(A), write(","),write(B), writeln("]"), 
     !.
 
 mutex(A1,A2) :-
