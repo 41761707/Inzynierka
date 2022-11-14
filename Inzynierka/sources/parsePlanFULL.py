@@ -31,9 +31,14 @@ class Graph:
 
     def generateMutexArcs(self,variables,g,level):
         for i,pair in enumerate(variables):
+            pair[0] = pair[0].lstrip(' [')
+            pair[1] = pair[1].rstrip(']')
             new_pair = [pair[1],pair[0]]
             if new_pair not in variables[i:]:
-                g.edge(pair[0]+str(level),pair[1]+str(level), style='dotted',arrowhead='none',constraint='false')
+                if 'idz' in pair[0] or 'idz' in pair[1] or 'zostan' in pair[0] or 'zostan' in pair[1]:
+                    g.edge(pair[0]+str(level-1),pair[1]+str(level-1), style='dotted',arrowhead='none',constraint='false', color='blue')
+                else:
+                    g.edge(pair[0]+str(level),pair[1]+str(level), style='dotted',arrowhead='none',constraint='false', color='blue')
 
 
     def generateLayer(self,name,variables,g,level,type):
@@ -56,7 +61,6 @@ class Graph:
     def parseInput(self,file,g):
         current_level = 1
         current_level_actions = {}
-        used_actions = {}
         mutex_states = []
         prev_action = ''
         for item in file:
@@ -79,9 +83,13 @@ class Graph:
                 current_level_actions[prev_action]['Effects'] = variables
                 #print('Effects: ',variables)
             elif(name == 'Mutex'):
-                variables = re.findall('~?na\([a-z]+,[a-z0-9]+\)|~?idz\([a-z]+,[a-z0-9]+,[a-z0-9]+\)|~?pusty\([a-z0-9]+\)',variables)
+                variables = re.split(',(?![^(]*\\))',variables)
+                variables[0] = variables[0].lstrip(' [')
+                variables[1] = variables[1].rstrip(']')
                 mutex_states.append(variables)
             elif(name == 'ActionLevel'):
+                for element in mutex_states:
+                    element.sort()
                 mutex_states.sort()
                 self.generateMutexArcs(list(mutex_states for mutex_states,_ in itertools.groupby(mutex_states)),g,current_level+1)
                 mutex_states = []
@@ -91,13 +99,8 @@ class Graph:
                 current_level = current_level + 1
                 variables = re.findall('~?na\([a-z]+,[a-z0-9]+\)|~?idz\([a-z]+,[a-z0-9]+,[a-z0-9]+\)|~?pusty\([a-z0-9]+\)',variables)
                 self.generateLayer(name+str(current_level),variables,g,current_level,"oval")
-                #print(current_level_actions)
-                #used_actions = {k: current_level_actions[k] for k in variables}
-                #current_level_actions.clear()
-                #generateArcs(used_actions,g,current_level-1)
                 self.generateArcs(current_level_actions,g,current_level-1)
                 current_level_actions.clear()
-                #used_actions.clear()
             elif(name =='Plan'):
                 variables = variables[1:].lstrip('[').rstrip(']').split(']')
                 for i in range(1,len(variables)):
@@ -114,7 +117,7 @@ class Graph:
         plan = re.findall('idz\([a-z]+,[a-z0-9]+,[a-z0-9]+\)|zostan\(~?na\([a-z]+,[a-z0-9]+\)\)|zostan\(~?pusty\([a-z0-9]+\)\)',plan)
         for item in plan:
             for i,element in enumerate(g.body):
-                if item+str(max_level) in element and '->' in element and '[style=dashed]' not in element:
+                if item+str(max_level) in element and '->' in element and 'style=dashed' not in element and 'style=dotted' not in element:
                     g.body[i] = element[:len(element)-1] + ' [color=red]\n'
 
     def planWoPersist(self,plan):
@@ -124,8 +127,9 @@ class Graph:
             plan_wo_persist.append(element)
 
     def run_all(self):
-        g = graphviz.Digraph('G', filename='graphs/FULL_GRAPHPLAN.gv',format='pdf')
-        #g = graphviz.Digraph('G', filename='FULL_GRAPHPLAN.gv')
+        #g = graphviz.Digraph('G', filename='graphs/FULL_GRAPHPLAN.gv',format='pdf')
+        g = graphviz.Digraph('G', filename='FULL_GRAPHPLAN_DEMO2.gv',format='png')
+        g.attr(ranksep = '2')
         file = self.readInput(self.filename)
         self.plan, max_level = self.parseInput(file, g)
         if(max_level < 5):
@@ -138,3 +142,9 @@ class Graph:
             self.colorUsedActions(self.plan[i],i+1,g)
         g.render()
         #g.view()
+
+def main():
+    g = Graph('outputs/output.txt')
+    g.run_all()
+if __name__ =='__main__':
+    main()

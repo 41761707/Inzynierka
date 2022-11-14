@@ -103,6 +103,33 @@ place(4).
 %state0([pusty(2),pusty(4),pusty(b),pusty(c),na(a,1),na(b,3),na(c,a)]).
 
 */
+can(zostan(P),[P]).
+can(idz(R,A,B), [na(R,A), pusty(B)]) :-
+    robot(R), 
+    adjacent(A,B).
+
+
+effects(zostan(P),[P]).
+effects(idz(R,A,B), [na(R,B),pusty(A),~na(R,A),~pusty(B)]).
+
+robot(a).
+
+adjacent(A,B) :-
+    n(A,B)
+    ;
+    n(B,A).
+
+n(1,2). n(2,1). n(2,3). n(3,2).
+
+incosistent(G,~G).
+incosistent(~G,G).
+incosistent(na(R,C1),na(R,C2)) :-
+    C1 \== C2.
+
+inconsistent(na(_,C),pusty(C)).
+inconsistent(pusty(C),na(_,C)).
+inconsistent(na(R1,C),na(R2,C)) :-
+    R1 \== R2.
 
 
 remove(X,[X | Tail], Tail).
@@ -221,15 +248,15 @@ mutex_constr1(P/T, [P1/T1 | Rest]) :-
     ),
     mutex_constr1(P/T,Rest).
 
-mutex(P,~P) :- !.
-    %write("Mutex: ["), write(P), write(","),write(~P), writeln("]"),!.
+mutex(P,~P) :- %!.
+    write("Mutex: ["), write(P), write(","),write(~P), writeln("]"),!.
 
-mutex(~P,P) :- !.
-    %write("Mutex: ["), write(~P), write(","),write(P), writeln("]"),!.  
+mutex(~P,P) :- %!.
+    write("Mutex: ["), write(~P), write(","),write(P), writeln("]"),!.  
 
 mutex(A,B) :-              
     inconsistent(A,B),
-    %write("Mutex: ["), write(A), write(","),write(B), writeln("]"), 
+    write("Mutex: ["), write(A), write(","),write(B), writeln("]"), 
     !.
 
 mutex(A1,A2) :-
@@ -239,8 +266,9 @@ mutex(A1,A2) :-
     ),
     member(P1,Precondition),
     member(P2,Effects),
-    %write("Mutex: ["), write(A1), write(","),write(A2), writeln("]"),
-    mutex(P1,P2), !.
+    mutex(P1,P2), 
+    write("Mutex: ["), write(A1), write(","),write(A2), writeln("]"),
+    !.
 
 collect_vars([],[]).
 

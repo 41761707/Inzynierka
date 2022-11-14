@@ -1,733 +1,140 @@
 digraph G {
+	ranksep=2
 	subgraph cluster_StateLevel1 {
 		color=gray
 		label=StateLevel1
-		"pusty(d)1" [label="pusty(d)" shape=oval]
-		"na(a,2)1" [label="na(a,2)" shape=oval]
-		"na(b,a)1" [label="na(b,a)" shape=oval]
-		"na(c,b)1" [label="na(c,b)" shape=oval]
-		"na(d,c)1" [label="na(d,c)" shape=oval]
-		"pusty(4)1" [label="pusty(4)" shape=oval]
+		"na(a,1)1" [label="na(a,1)" shape=oval]
+		"pusty(2)1" [label="pusty(2)" shape=oval]
+		"pusty(3)1" [label="pusty(3)" shape=oval]
 	}
+	"idz(a,1,2)1" -> "zostan(na(a,1))1" [arrowhead=none color=blue constraint=false style=dotted]
+	"idz(a,1,2)1" -> "zostan(pusty(2))1" [arrowhead=none color=blue constraint=false style=dotted]
+	"na(a,1)2" -> "pusty(1)2" [arrowhead=none color=blue constraint=false style=dotted]
+	"na(a,1)2" -> "~na(a,1)2" [arrowhead=none color=blue constraint=false style=dotted]
+	"na(a,2)2" -> "pusty(2)2" [arrowhead=none color=blue constraint=false style=dotted]
+	"pusty(2)2" -> "~pusty(2)2" [arrowhead=none color=blue constraint=false style=dotted]
 	subgraph cluster_ActionLevel1 {
 		color=gray
 		label=ActionLevel1
-		"zostan(pusty(4))1" [label="zostan(pusty(4))" shape=box]
-		"zostan(na(d,c))1" [label="zostan(na(d,c))" shape=box]
-		"zostan(na(c,b))1" [label="zostan(na(c,b))" shape=box]
-		"zostan(na(b,a))1" [label="zostan(na(b,a))" shape=box]
-		"zostan(na(a,2))1" [label="zostan(na(a,2))" shape=box]
-		"zostan(pusty(d))1" [label="zostan(pusty(d))" shape=box]
-		"idz(d,c,4)1" [label="idz(d,c,4)" shape=box]
-		"zostan(pusty(d))1" [label="zostan(pusty(d))" shape=box]
+		"zostan(pusty(3))1" [label="zostan(pusty(3))" shape=box]
+		"zostan(pusty(2))1" [label="zostan(pusty(2))" shape=box]
+		"zostan(na(a,1))1" [label="zostan(na(a,1))" shape=box]
+		"idz(a,1,2)1" [label="idz(a,1,2)" shape=box]
+		"zostan(na(a,1))1" [label="zostan(na(a,1))" shape=box]
 	}
 	subgraph cluster_StateLevel2 {
 		color=gray
 		label=StateLevel2
-		"pusty(4)2" [label="pusty(4)" shape=oval]
-		"na(d,c)2" [label="na(d,c)" shape=oval]
-		"na(c,b)2" [label="na(c,b)" shape=oval]
-		"na(b,a)2" [label="na(b,a)" shape=oval]
+		"pusty(3)2" [label="pusty(3)" shape=oval]
+		"pusty(2)2" [label="pusty(2)" shape=oval]
+		"na(a,1)2" [label="na(a,1)" shape=oval]
+		"~pusty(2)2" [label="~pusty(2)" shape=oval]
+		"~na(a,1)2" [label="~na(a,1)" shape=oval]
+		"pusty(1)2" [label="pusty(1)" shape=oval]
 		"na(a,2)2" [label="na(a,2)" shape=oval]
-		"pusty(d)2" [label="pusty(d)" shape=oval]
-		"~pusty(4)2" [label="~pusty(4)" shape=oval]
-		"~na(d,c)2" [label="~na(d,c)" shape=oval]
-		"pusty(c)2" [label="pusty(c)" shape=oval]
-		"na(d,4)2" [label="na(d,4)" shape=oval]
 	}
-	"pusty(d)1" -> "zostan(pusty(d))1" [style=dashed]
-	"zostan(pusty(d))1" -> "pusty(d)2" [style=dashed]
-	"pusty(d)1" -> "idz(d,c,4)1" [color=red]
-	"pusty(4)1" -> "idz(d,c,4)1" [color=red]
-	"na(d,c)1" -> "idz(d,c,4)1" [color=red]
-	"idz(d,c,4)1" -> "na(d,4)2" [color=red]
-	"idz(d,c,4)1" -> "pusty(c)2" [color=red]
-	"idz(d,c,4)1" -> "~na(d,c)2" [color=red]
-	"idz(d,c,4)1" -> "~pusty(4)2" [color=red]
-	"na(a,2)1" -> "zostan(na(a,2))1" [style=dashed]
-	"zostan(na(a,2))1" -> "na(a,2)2" [style=dashed]
-	"na(b,a)1" -> "zostan(na(b,a))1" [style=dashed]
-	"zostan(na(b,a))1" -> "na(b,a)2" [style=dashed]
-	"na(c,b)1" -> "zostan(na(c,b))1" [style=dashed]
-	"zostan(na(c,b))1" -> "na(c,b)2" [style=dashed]
-	"na(d,c)1" -> "zostan(na(d,c))1" [style=dashed]
-	"zostan(na(d,c))1" -> "na(d,c)2" [style=dashed]
-	"pusty(4)1" -> "zostan(pusty(4))1" [style=dashed]
-	"zostan(pusty(4))1" -> "pusty(4)2" [style=dashed]
+	"na(a,1)1" -> "zostan(na(a,1))1" [style=dashed]
+	"zostan(na(a,1))1" -> "na(a,1)2" [style=dashed]
+	"na(a,1)1" -> "idz(a,1,2)1"
+	"pusty(2)1" -> "idz(a,1,2)1"
+	"idz(a,1,2)1" -> "na(a,2)2"
+	"idz(a,1,2)1" -> "pusty(1)2"
+	"idz(a,1,2)1" -> "~na(a,1)2"
+	"idz(a,1,2)1" -> "~pusty(2)2"
+	"pusty(2)1" -> "zostan(pusty(2))1" [style=dashed]
+	"zostan(pusty(2))1" -> "pusty(2)2" [style=dashed]
+	"pusty(3)1" -> "zostan(pusty(3))1" [style=dashed]
+	"zostan(pusty(3))1" -> "pusty(3)2" [style=dashed]
+	"idz(a,1,2)2" -> "zostan(na(a,1))2" [arrowhead=none color=blue constraint=false style=dotted]
+	"idz(a,1,2)2" -> "zostan(na(a,2))2" [arrowhead=none color=blue constraint=false style=dotted]
+	"idz(a,1,2)2" -> "zostan(pusty(1))2" [arrowhead=none color=blue constraint=false style=dotted]
+	"idz(a,1,2)2" -> "zostan(pusty(2))2" [arrowhead=none color=blue constraint=false style=dotted]
+	"idz(a,1,2)2" -> "zostan(~na(a,1))2" [arrowhead=none color=blue constraint=false style=dotted]
+	"idz(a,1,2)2" -> "zostan(~pusty(2))2" [arrowhead=none color=blue constraint=false style=dotted]
+	"idz(a,2,1)2" -> "idz(a,2,3)2" [arrowhead=none color=blue constraint=false style=dotted]
+	"idz(a,2,1)2" -> "zostan(na(a,1))2" [arrowhead=none color=blue constraint=false style=dotted]
+	"idz(a,2,1)2" -> "zostan(na(a,2))2" [arrowhead=none color=blue constraint=false style=dotted]
+	"idz(a,2,1)2" -> "zostan(pusty(1))2" [arrowhead=none color=blue constraint=false style=dotted]
+	"idz(a,2,1)2" -> "zostan(pusty(2))2" [arrowhead=none color=blue constraint=false style=dotted]
+	"idz(a,2,1)2" -> "zostan(~na(a,1))2" [arrowhead=none color=blue constraint=false style=dotted]
+	"idz(a,2,1)2" -> "zostan(~pusty(2))2" [arrowhead=none color=blue constraint=false style=dotted]
+	"idz(a,2,3)2" -> "zostan(na(a,2))2" [arrowhead=none color=blue constraint=false style=dotted]
+	"idz(a,2,3)2" -> "zostan(pusty(2))2" [arrowhead=none color=blue constraint=false style=dotted]
+	"idz(a,2,3)2" -> "zostan(pusty(3))2" [arrowhead=none color=blue constraint=false style=dotted]
+	"idz(a,2,3)2" -> "zostan(~pusty(2))2" [arrowhead=none color=blue constraint=false style=dotted]
+	"na(a,1)3" -> "pusty(1)3" [arrowhead=none color=blue constraint=false style=dotted]
+	"na(a,1)3" -> "~na(a,1)3" [arrowhead=none color=blue constraint=false style=dotted]
+	"na(a,2)3" -> "pusty(2)3" [arrowhead=none color=blue constraint=false style=dotted]
+	"na(a,2)3" -> "~na(a,2)3" [arrowhead=none color=blue constraint=false style=dotted]
+	"na(a,3)3" -> "pusty(3)3" [arrowhead=none color=blue constraint=false style=dotted]
+	"pusty(1)3" -> "~pusty(1)3" [arrowhead=none color=blue constraint=false style=dotted]
+	"pusty(2)3" -> "~pusty(2)3" [arrowhead=none color=blue constraint=false style=dotted]
+	"pusty(3)3" -> "~pusty(3)3" [arrowhead=none color=blue constraint=false style=dotted]
+	"zostan(na(a,1))2" -> "zostan(pusty(1))2" [arrowhead=none color=blue constraint=false style=dotted]
+	"zostan(na(a,1))2" -> "zostan(~na(a,1))2" [arrowhead=none color=blue constraint=false style=dotted]
+	"zostan(na(a,2))2" -> "zostan(pusty(2))2" [arrowhead=none color=blue constraint=false style=dotted]
+	"zostan(pusty(2))2" -> "zostan(~pusty(2))2" [arrowhead=none color=blue constraint=false style=dotted]
 	subgraph cluster_ActionLevel2 {
 		color=gray
 		label=ActionLevel2
-		"zostan(na(d,4))2" [label="zostan(na(d,4))" shape=box]
-		"zostan(pusty(c))2" [label="zostan(pusty(c))" shape=box]
-		"zostan(~na(d,c))2" [label="zostan(~na(d,c))" shape=box]
-		"zostan(~pusty(4))2" [label="zostan(~pusty(4))" shape=box]
-		"zostan(pusty(d))2" [label="zostan(pusty(d))" shape=box]
 		"zostan(na(a,2))2" [label="zostan(na(a,2))" shape=box]
-		"zostan(na(b,a))2" [label="zostan(na(b,a))" shape=box]
-		"zostan(na(c,b))2" [label="zostan(na(c,b))" shape=box]
-		"zostan(na(d,c))2" [label="zostan(na(d,c))" shape=box]
-		"zostan(pusty(4))2" [label="zostan(pusty(4))" shape=box]
-		"idz(d,c,4)2" [label="idz(d,c,4)" shape=box]
-		"idz(d,4,c)2" [label="idz(d,4,c)" shape=box]
-		"idz(c,b,d)2" [label="idz(c,b,d)" shape=box]
-		"idz(c,b,4)2" [label="idz(c,b,4)" shape=box]
-		"zostan(pusty(d))2" [label="zostan(pusty(d))" shape=box]
+		"zostan(pusty(1))2" [label="zostan(pusty(1))" shape=box]
+		"zostan(~na(a,1))2" [label="zostan(~na(a,1))" shape=box]
+		"zostan(~pusty(2))2" [label="zostan(~pusty(2))" shape=box]
+		"zostan(na(a,1))2" [label="zostan(na(a,1))" shape=box]
+		"zostan(pusty(2))2" [label="zostan(pusty(2))" shape=box]
+		"zostan(pusty(3))2" [label="zostan(pusty(3))" shape=box]
+		"idz(a,2,3)2" [label="idz(a,2,3)" shape=box]
+		"idz(a,2,1)2" [label="idz(a,2,1)" shape=box]
+		"idz(a,1,2)2" [label="idz(a,1,2)" shape=box]
+		"zostan(na(a,1))2" [label="zostan(na(a,1))" shape=box]
 	}
 	subgraph cluster_StateLevel3 {
 		color=gray
 		label=StateLevel3
-		"na(d,4)3" [label="na(d,4)" shape=oval]
-		"pusty(c)3" [label="pusty(c)" shape=oval]
-		"~na(d,c)3" [label="~na(d,c)" shape=oval]
-		"~pusty(4)3" [label="~pusty(4)" shape=oval]
-		"pusty(d)3" [label="pusty(d)" shape=oval]
 		"na(a,2)3" [label="na(a,2)" shape=oval]
-		"na(b,a)3" [label="na(b,a)" shape=oval]
-		"na(c,b)3" [label="na(c,b)" shape=oval]
-		"na(d,c)3" [label="na(d,c)" shape=oval]
-		"pusty(4)3" [label="pusty(4)" shape=oval]
-		"~pusty(c)3" [label="~pusty(c)" shape=oval]
-		"~na(d,4)3" [label="~na(d,4)" shape=oval]
-		"~pusty(d)3" [label="~pusty(d)" shape=oval]
-		"~na(c,b)3" [label="~na(c,b)" shape=oval]
-		"pusty(b)3" [label="pusty(b)" shape=oval]
-		"na(c,d)3" [label="na(c,d)" shape=oval]
-		"na(c,4)3" [label="na(c,4)" shape=oval]
+		"pusty(1)3" [label="pusty(1)" shape=oval]
+		"~na(a,1)3" [label="~na(a,1)" shape=oval]
+		"~pusty(2)3" [label="~pusty(2)" shape=oval]
+		"na(a,1)3" [label="na(a,1)" shape=oval]
+		"pusty(2)3" [label="pusty(2)" shape=oval]
+		"pusty(3)3" [label="pusty(3)" shape=oval]
+		"~pusty(3)3" [label="~pusty(3)" shape=oval]
+		"~na(a,2)3" [label="~na(a,2)" shape=oval]
+		"na(a,3)3" [label="na(a,3)" shape=oval]
+		"~pusty(1)3" [label="~pusty(1)" shape=oval]
 	}
-	"pusty(d)2" -> "zostan(pusty(d))2" [style=dashed]
-	"zostan(pusty(d))2" -> "pusty(d)3" [style=dashed]
-	"pusty(c)2" -> "idz(c,b,4)2"
-	"pusty(4)2" -> "idz(c,b,4)2"
-	"na(c,b)2" -> "idz(c,b,4)2"
-	"idz(c,b,4)2" -> "na(c,4)3"
-	"idz(c,b,4)2" -> "pusty(b)3"
-	"idz(c,b,4)2" -> "~na(c,b)3"
-	"idz(c,b,4)2" -> "~pusty(4)3"
-	"pusty(c)2" -> "idz(c,b,d)2" [color=red]
-	"pusty(d)2" -> "idz(c,b,d)2" [color=red]
-	"na(c,b)2" -> "idz(c,b,d)2" [color=red]
-	"idz(c,b,d)2" -> "na(c,d)3" [color=red]
-	"idz(c,b,d)2" -> "pusty(b)3" [color=red]
-	"idz(c,b,d)2" -> "~na(c,b)3" [color=red]
-	"idz(c,b,d)2" -> "~pusty(d)3" [color=red]
-	"pusty(d)2" -> "idz(d,4,c)2"
-	"pusty(c)2" -> "idz(d,4,c)2"
-	"na(d,4)2" -> "idz(d,4,c)2"
-	"idz(d,4,c)2" -> "na(d,c)3"
-	"idz(d,4,c)2" -> "pusty(4)3"
-	"idz(d,4,c)2" -> "~na(d,4)3"
-	"idz(d,4,c)2" -> "~pusty(c)3"
-	"pusty(d)2" -> "idz(d,c,4)2"
-	"pusty(4)2" -> "idz(d,c,4)2"
-	"na(d,c)2" -> "idz(d,c,4)2"
-	"idz(d,c,4)2" -> "na(d,4)3"
-	"idz(d,c,4)2" -> "pusty(c)3"
-	"idz(d,c,4)2" -> "~na(d,c)3"
-	"idz(d,c,4)2" -> "~pusty(4)3"
-	"pusty(4)2" -> "zostan(pusty(4))2" [style=dashed]
-	"zostan(pusty(4))2" -> "pusty(4)3" [style=dashed]
-	"na(d,c)2" -> "zostan(na(d,c))2" [style=dashed]
-	"zostan(na(d,c))2" -> "na(d,c)3" [style=dashed]
-	"na(c,b)2" -> "zostan(na(c,b))2" [style=dashed]
-	"zostan(na(c,b))2" -> "na(c,b)3" [style=dashed]
-	"na(b,a)2" -> "zostan(na(b,a))2" [style=dashed]
-	"zostan(na(b,a))2" -> "na(b,a)3" [style=dashed]
+	"na(a,1)2" -> "zostan(na(a,1))2" [style=dashed]
+	"zostan(na(a,1))2" -> "na(a,1)3" [style=dashed]
+	"na(a,1)2" -> "idz(a,1,2)2"
+	"pusty(2)2" -> "idz(a,1,2)2"
+	"idz(a,1,2)2" -> "na(a,2)3"
+	"idz(a,1,2)2" -> "pusty(1)3"
+	"idz(a,1,2)2" -> "~na(a,1)3"
+	"idz(a,1,2)2" -> "~pusty(2)3"
+	"na(a,2)2" -> "idz(a,2,1)2"
+	"pusty(1)2" -> "idz(a,2,1)2"
+	"idz(a,2,1)2" -> "na(a,1)3"
+	"idz(a,2,1)2" -> "pusty(2)3"
+	"idz(a,2,1)2" -> "~na(a,2)3"
+	"idz(a,2,1)2" -> "~pusty(1)3"
+	"na(a,2)2" -> "idz(a,2,3)2"
+	"pusty(3)2" -> "idz(a,2,3)2"
+	"idz(a,2,3)2" -> "na(a,3)3"
+	"idz(a,2,3)2" -> "pusty(2)3"
+	"idz(a,2,3)2" -> "~na(a,2)3"
+	"idz(a,2,3)2" -> "~pusty(3)3"
+	"pusty(3)2" -> "zostan(pusty(3))2" [style=dashed]
+	"zostan(pusty(3))2" -> "pusty(3)3" [style=dashed]
+	"pusty(2)2" -> "zostan(pusty(2))2" [style=dashed]
+	"zostan(pusty(2))2" -> "pusty(2)3" [style=dashed]
+	"~pusty(2)2" -> "zostan(~pusty(2))2" [style=dashed]
+	"zostan(~pusty(2))2" -> "~pusty(2)3" [style=dashed]
+	"~na(a,1)2" -> "zostan(~na(a,1))2" [style=dashed]
+	"zostan(~na(a,1))2" -> "~na(a,1)3" [style=dashed]
+	"pusty(1)2" -> "zostan(pusty(1))2" [style=dashed]
+	"zostan(pusty(1))2" -> "pusty(1)3" [style=dashed]
 	"na(a,2)2" -> "zostan(na(a,2))2" [style=dashed]
 	"zostan(na(a,2))2" -> "na(a,2)3" [style=dashed]
-	"~pusty(4)2" -> "zostan(~pusty(4))2" [style=dashed]
-	"zostan(~pusty(4))2" -> "~pusty(4)3" [style=dashed]
-	"~na(d,c)2" -> "zostan(~na(d,c))2" [style=dashed]
-	"zostan(~na(d,c))2" -> "~na(d,c)3" [style=dashed]
-	"pusty(c)2" -> "zostan(pusty(c))2" [style=dashed]
-	"zostan(pusty(c))2" -> "pusty(c)3" [style=dashed]
-	"na(d,4)2" -> "zostan(na(d,4))2" [style=dashed]
-	"zostan(na(d,4))2" -> "na(d,4)3" [style=dashed]
-	subgraph cluster_ActionLevel3 {
-		color=gray
-		label=ActionLevel3
-		"zostan(na(c,4))3" [label="zostan(na(c,4))" shape=box]
-		"zostan(na(c,d))3" [label="zostan(na(c,d))" shape=box]
-		"zostan(pusty(b))3" [label="zostan(pusty(b))" shape=box]
-		"zostan(~na(c,b))3" [label="zostan(~na(c,b))" shape=box]
-		"zostan(~pusty(d))3" [label="zostan(~pusty(d))" shape=box]
-		"zostan(~na(d,4))3" [label="zostan(~na(d,4))" shape=box]
-		"zostan(~pusty(c))3" [label="zostan(~pusty(c))" shape=box]
-		"zostan(pusty(4))3" [label="zostan(pusty(4))" shape=box]
-		"zostan(na(d,c))3" [label="zostan(na(d,c))" shape=box]
-		"zostan(na(c,b))3" [label="zostan(na(c,b))" shape=box]
-		"zostan(na(b,a))3" [label="zostan(na(b,a))" shape=box]
-		"zostan(na(a,2))3" [label="zostan(na(a,2))" shape=box]
-		"zostan(pusty(d))3" [label="zostan(pusty(d))" shape=box]
-		"zostan(~pusty(4))3" [label="zostan(~pusty(4))" shape=box]
-		"zostan(~na(d,c))3" [label="zostan(~na(d,c))" shape=box]
-		"zostan(pusty(c))3" [label="zostan(pusty(c))" shape=box]
-		"zostan(na(d,4))3" [label="zostan(na(d,4))" shape=box]
-		"idz(d,c,b)3" [label="idz(d,c,b)" shape=box]
-		"idz(d,c,4)3" [label="idz(d,c,4)" shape=box]
-		"idz(d,4,c)3" [label="idz(d,4,c)" shape=box]
-		"idz(d,4,b)3" [label="idz(d,4,b)" shape=box]
-		"idz(c,d,b)3" [label="idz(c,d,b)" shape=box]
-		"idz(c,d,4)3" [label="idz(c,d,4)" shape=box]
-		"idz(c,b,d)3" [label="idz(c,b,d)" shape=box]
-		"idz(c,b,4)3" [label="idz(c,b,4)" shape=box]
-		"idz(c,4,d)3" [label="idz(c,4,d)" shape=box]
-		"idz(c,4,b)3" [label="idz(c,4,b)" shape=box]
-		"idz(b,a,d)3" [label="idz(b,a,d)" shape=box]
-		"idz(b,a,c)3" [label="idz(b,a,c)" shape=box]
-		"idz(b,a,4)3" [label="idz(b,a,4)" shape=box]
-		"zostan(pusty(d))3" [label="zostan(pusty(d))" shape=box]
-	}
-	subgraph cluster_StateLevel4 {
-		color=gray
-		label=StateLevel4
-		"na(c,4)4" [label="na(c,4)" shape=oval]
-		"na(c,d)4" [label="na(c,d)" shape=oval]
-		"pusty(b)4" [label="pusty(b)" shape=oval]
-		"~na(c,b)4" [label="~na(c,b)" shape=oval]
-		"~pusty(d)4" [label="~pusty(d)" shape=oval]
-		"~na(d,4)4" [label="~na(d,4)" shape=oval]
-		"~pusty(c)4" [label="~pusty(c)" shape=oval]
-		"pusty(4)4" [label="pusty(4)" shape=oval]
-		"na(d,c)4" [label="na(d,c)" shape=oval]
-		"na(c,b)4" [label="na(c,b)" shape=oval]
-		"na(b,a)4" [label="na(b,a)" shape=oval]
-		"na(a,2)4" [label="na(a,2)" shape=oval]
-		"pusty(d)4" [label="pusty(d)" shape=oval]
-		"~pusty(4)4" [label="~pusty(4)" shape=oval]
-		"~na(d,c)4" [label="~na(d,c)" shape=oval]
-		"pusty(c)4" [label="pusty(c)" shape=oval]
-		"na(d,4)4" [label="na(d,4)" shape=oval]
-		"~pusty(b)4" [label="~pusty(b)" shape=oval]
-		"na(d,b)4" [label="na(d,b)" shape=oval]
-		"~na(c,d)4" [label="~na(c,d)" shape=oval]
-		"~na(c,4)4" [label="~na(c,4)" shape=oval]
-		"~na(b,a)4" [label="~na(b,a)" shape=oval]
-		"pusty(a)4" [label="pusty(a)" shape=oval]
-		"na(b,d)4" [label="na(b,d)" shape=oval]
-		"na(b,c)4" [label="na(b,c)" shape=oval]
-		"na(b,4)4" [label="na(b,4)" shape=oval]
-	}
-	"pusty(d)3" -> "zostan(pusty(d))3" [style=dashed]
-	"zostan(pusty(d))3" -> "pusty(d)4" [style=dashed]
-	"pusty(b)3" -> "idz(b,a,4)3"
-	"pusty(4)3" -> "idz(b,a,4)3"
-	"na(b,a)3" -> "idz(b,a,4)3"
-	"idz(b,a,4)3" -> "na(b,4)4"
-	"idz(b,a,4)3" -> "pusty(a)4"
-	"idz(b,a,4)3" -> "~na(b,a)4"
-	"idz(b,a,4)3" -> "~pusty(4)4"
-	"pusty(b)3" -> "idz(b,a,c)3" [color=red]
-	"pusty(c)3" -> "idz(b,a,c)3" [color=red]
-	"na(b,a)3" -> "idz(b,a,c)3" [color=red]
-	"idz(b,a,c)3" -> "na(b,c)4" [color=red]
-	"idz(b,a,c)3" -> "pusty(a)4" [color=red]
-	"idz(b,a,c)3" -> "~na(b,a)4" [color=red]
-	"idz(b,a,c)3" -> "~pusty(c)4" [color=red]
-	"pusty(b)3" -> "idz(b,a,d)3"
-	"pusty(d)3" -> "idz(b,a,d)3"
-	"na(b,a)3" -> "idz(b,a,d)3"
-	"idz(b,a,d)3" -> "na(b,d)4"
-	"idz(b,a,d)3" -> "pusty(a)4"
-	"idz(b,a,d)3" -> "~na(b,a)4"
-	"idz(b,a,d)3" -> "~pusty(d)4"
-	"pusty(c)3" -> "idz(c,4,b)3"
-	"pusty(b)3" -> "idz(c,4,b)3"
-	"na(c,4)3" -> "idz(c,4,b)3"
-	"idz(c,4,b)3" -> "na(c,b)4"
-	"idz(c,4,b)3" -> "pusty(4)4"
-	"idz(c,4,b)3" -> "~na(c,4)4"
-	"idz(c,4,b)3" -> "~pusty(b)4"
-	"pusty(c)3" -> "idz(c,4,d)3"
-	"pusty(d)3" -> "idz(c,4,d)3"
-	"na(c,4)3" -> "idz(c,4,d)3"
-	"idz(c,4,d)3" -> "na(c,d)4"
-	"idz(c,4,d)3" -> "pusty(4)4"
-	"idz(c,4,d)3" -> "~na(c,4)4"
-	"idz(c,4,d)3" -> "~pusty(d)4"
-	"pusty(c)3" -> "idz(c,b,4)3"
-	"pusty(4)3" -> "idz(c,b,4)3"
-	"na(c,b)3" -> "idz(c,b,4)3"
-	"idz(c,b,4)3" -> "na(c,4)4"
-	"idz(c,b,4)3" -> "pusty(b)4"
-	"idz(c,b,4)3" -> "~na(c,b)4"
-	"idz(c,b,4)3" -> "~pusty(4)4"
-	"pusty(c)3" -> "idz(c,b,d)3"
-	"pusty(d)3" -> "idz(c,b,d)3"
-	"na(c,b)3" -> "idz(c,b,d)3"
-	"idz(c,b,d)3" -> "na(c,d)4"
-	"idz(c,b,d)3" -> "pusty(b)4"
-	"idz(c,b,d)3" -> "~na(c,b)4"
-	"idz(c,b,d)3" -> "~pusty(d)4"
-	"pusty(c)3" -> "idz(c,d,4)3"
-	"pusty(4)3" -> "idz(c,d,4)3"
-	"na(c,d)3" -> "idz(c,d,4)3"
-	"idz(c,d,4)3" -> "na(c,4)4"
-	"idz(c,d,4)3" -> "pusty(d)4"
-	"idz(c,d,4)3" -> "~na(c,d)4"
-	"idz(c,d,4)3" -> "~pusty(4)4"
-	"pusty(c)3" -> "idz(c,d,b)3"
-	"pusty(b)3" -> "idz(c,d,b)3"
-	"na(c,d)3" -> "idz(c,d,b)3"
-	"idz(c,d,b)3" -> "na(c,b)4"
-	"idz(c,d,b)3" -> "pusty(d)4"
-	"idz(c,d,b)3" -> "~na(c,d)4"
-	"idz(c,d,b)3" -> "~pusty(b)4"
-	"pusty(d)3" -> "idz(d,4,b)3"
-	"pusty(b)3" -> "idz(d,4,b)3"
-	"na(d,4)3" -> "idz(d,4,b)3"
-	"idz(d,4,b)3" -> "na(d,b)4"
-	"idz(d,4,b)3" -> "pusty(4)4"
-	"idz(d,4,b)3" -> "~na(d,4)4"
-	"idz(d,4,b)3" -> "~pusty(b)4"
-	"pusty(d)3" -> "idz(d,4,c)3"
-	"pusty(c)3" -> "idz(d,4,c)3"
-	"na(d,4)3" -> "idz(d,4,c)3"
-	"idz(d,4,c)3" -> "na(d,c)4"
-	"idz(d,4,c)3" -> "pusty(4)4"
-	"idz(d,4,c)3" -> "~na(d,4)4"
-	"idz(d,4,c)3" -> "~pusty(c)4"
-	"pusty(d)3" -> "idz(d,c,4)3"
-	"pusty(4)3" -> "idz(d,c,4)3"
-	"na(d,c)3" -> "idz(d,c,4)3"
-	"idz(d,c,4)3" -> "na(d,4)4"
-	"idz(d,c,4)3" -> "pusty(c)4"
-	"idz(d,c,4)3" -> "~na(d,c)4"
-	"idz(d,c,4)3" -> "~pusty(4)4"
-	"pusty(d)3" -> "idz(d,c,b)3"
-	"pusty(b)3" -> "idz(d,c,b)3"
-	"na(d,c)3" -> "idz(d,c,b)3"
-	"idz(d,c,b)3" -> "na(d,b)4"
-	"idz(d,c,b)3" -> "pusty(c)4"
-	"idz(d,c,b)3" -> "~na(d,c)4"
-	"idz(d,c,b)3" -> "~pusty(b)4"
-	"na(d,4)3" -> "zostan(na(d,4))3" [style=dashed]
-	"zostan(na(d,4))3" -> "na(d,4)4" [style=dashed]
-	"pusty(c)3" -> "zostan(pusty(c))3" [style=dashed]
-	"zostan(pusty(c))3" -> "pusty(c)4" [style=dashed]
-	"~na(d,c)3" -> "zostan(~na(d,c))3" [style=dashed]
-	"zostan(~na(d,c))3" -> "~na(d,c)4" [style=dashed]
-	"~pusty(4)3" -> "zostan(~pusty(4))3" [style=dashed]
-	"zostan(~pusty(4))3" -> "~pusty(4)4" [style=dashed]
-	"na(a,2)3" -> "zostan(na(a,2))3" [style=dashed]
-	"zostan(na(a,2))3" -> "na(a,2)4" [style=dashed]
-	"na(b,a)3" -> "zostan(na(b,a))3" [style=dashed]
-	"zostan(na(b,a))3" -> "na(b,a)4" [style=dashed]
-	"na(c,b)3" -> "zostan(na(c,b))3" [style=dashed]
-	"zostan(na(c,b))3" -> "na(c,b)4" [style=dashed]
-	"na(d,c)3" -> "zostan(na(d,c))3" [style=dashed]
-	"zostan(na(d,c))3" -> "na(d,c)4" [style=dashed]
-	"pusty(4)3" -> "zostan(pusty(4))3" [style=dashed]
-	"zostan(pusty(4))3" -> "pusty(4)4" [style=dashed]
-	"~pusty(c)3" -> "zostan(~pusty(c))3" [style=dashed]
-	"zostan(~pusty(c))3" -> "~pusty(c)4" [style=dashed]
-	"~na(d,4)3" -> "zostan(~na(d,4))3" [style=dashed]
-	"zostan(~na(d,4))3" -> "~na(d,4)4" [style=dashed]
-	"~pusty(d)3" -> "zostan(~pusty(d))3" [style=dashed]
-	"zostan(~pusty(d))3" -> "~pusty(d)4" [style=dashed]
-	"~na(c,b)3" -> "zostan(~na(c,b))3" [style=dashed]
-	"zostan(~na(c,b))3" -> "~na(c,b)4" [style=dashed]
-	"pusty(b)3" -> "zostan(pusty(b))3" [style=dashed]
-	"zostan(pusty(b))3" -> "pusty(b)4" [style=dashed]
-	"na(c,d)3" -> "zostan(na(c,d))3" [style=dashed]
-	"zostan(na(c,d))3" -> "na(c,d)4" [style=dashed]
-	"na(c,4)3" -> "zostan(na(c,4))3" [style=dashed]
-	"zostan(na(c,4))3" -> "na(c,4)4" [style=dashed]
-	subgraph cluster_ActionLevel4 {
-		color=gray
-		label=ActionLevel4
-		"zostan(na(b,4))4" [label="zostan(na(b,4))" shape=box]
-		"zostan(na(b,c))4" [label="zostan(na(b,c))" shape=box]
-		"zostan(na(b,d))4" [label="zostan(na(b,d))" shape=box]
-		"zostan(pusty(a))4" [label="zostan(pusty(a))" shape=box]
-		"zostan(~na(b,a))4" [label="zostan(~na(b,a))" shape=box]
-		"zostan(~na(c,4))4" [label="zostan(~na(c,4))" shape=box]
-		"zostan(~na(c,d))4" [label="zostan(~na(c,d))" shape=box]
-		"zostan(na(d,b))4" [label="zostan(na(d,b))" shape=box]
-		"zostan(~pusty(b))4" [label="zostan(~pusty(b))" shape=box]
-		"zostan(na(d,4))4" [label="zostan(na(d,4))" shape=box]
-		"zostan(pusty(c))4" [label="zostan(pusty(c))" shape=box]
-		"zostan(~na(d,c))4" [label="zostan(~na(d,c))" shape=box]
-		"zostan(~pusty(4))4" [label="zostan(~pusty(4))" shape=box]
-		"zostan(pusty(d))4" [label="zostan(pusty(d))" shape=box]
-		"zostan(na(a,2))4" [label="zostan(na(a,2))" shape=box]
-		"zostan(na(b,a))4" [label="zostan(na(b,a))" shape=box]
-		"zostan(na(c,b))4" [label="zostan(na(c,b))" shape=box]
-		"zostan(na(d,c))4" [label="zostan(na(d,c))" shape=box]
-		"zostan(pusty(4))4" [label="zostan(pusty(4))" shape=box]
-		"zostan(~pusty(c))4" [label="zostan(~pusty(c))" shape=box]
-		"zostan(~na(d,4))4" [label="zostan(~na(d,4))" shape=box]
-		"zostan(~pusty(d))4" [label="zostan(~pusty(d))" shape=box]
-		"zostan(~na(c,b))4" [label="zostan(~na(c,b))" shape=box]
-		"zostan(pusty(b))4" [label="zostan(pusty(b))" shape=box]
-		"zostan(na(c,d))4" [label="zostan(na(c,d))" shape=box]
-		"zostan(na(c,4))4" [label="zostan(na(c,4))" shape=box]
-		"idz(d,c,b)4" [label="idz(d,c,b)" shape=box]
-		"idz(d,c,a)4" [label="idz(d,c,a)" shape=box]
-		"idz(d,c,4)4" [label="idz(d,c,4)" shape=box]
-		"idz(d,b,c)4" [label="idz(d,b,c)" shape=box]
-		"idz(d,b,a)4" [label="idz(d,b,a)" shape=box]
-		"idz(d,b,4)4" [label="idz(d,b,4)" shape=box]
-		"idz(d,4,c)4" [label="idz(d,4,c)" shape=box]
-		"idz(d,4,b)4" [label="idz(d,4,b)" shape=box]
-		"idz(d,4,a)4" [label="idz(d,4,a)" shape=box]
-		"idz(c,d,b)4" [label="idz(c,d,b)" shape=box]
-		"idz(c,d,a)4" [label="idz(c,d,a)" shape=box]
-		"idz(c,d,4)4" [label="idz(c,d,4)" shape=box]
-		"idz(c,b,d)4" [label="idz(c,b,d)" shape=box]
-		"idz(c,b,a)4" [label="idz(c,b,a)" shape=box]
-		"idz(c,b,4)4" [label="idz(c,b,4)" shape=box]
-		"idz(c,4,d)4" [label="idz(c,4,d)" shape=box]
-		"idz(c,4,b)4" [label="idz(c,4,b)" shape=box]
-		"idz(c,4,a)4" [label="idz(c,4,a)" shape=box]
-		"idz(b,d,c)4" [label="idz(b,d,c)" shape=box]
-		"idz(b,d,a)4" [label="idz(b,d,a)" shape=box]
-		"idz(b,d,4)4" [label="idz(b,d,4)" shape=box]
-		"idz(b,c,d)4" [label="idz(b,c,d)" shape=box]
-		"idz(b,c,a)4" [label="idz(b,c,a)" shape=box]
-		"idz(b,c,4)4" [label="idz(b,c,4)" shape=box]
-		"idz(b,a,d)4" [label="idz(b,a,d)" shape=box]
-		"idz(b,a,c)4" [label="idz(b,a,c)" shape=box]
-		"idz(b,a,4)4" [label="idz(b,a,4)" shape=box]
-		"idz(b,4,d)4" [label="idz(b,4,d)" shape=box]
-		"idz(b,4,c)4" [label="idz(b,4,c)" shape=box]
-		"idz(b,4,a)4" [label="idz(b,4,a)" shape=box]
-		"idz(a,2,d)4" [label="idz(a,2,d)" shape=box]
-		"idz(a,2,c)4" [label="idz(a,2,c)" shape=box]
-		"idz(a,2,b)4" [label="idz(a,2,b)" shape=box]
-		"idz(a,2,4)4" [label="idz(a,2,4)" shape=box]
-		"zostan(pusty(d))4" [label="zostan(pusty(d))" shape=box]
-	}
-	subgraph cluster_StateLevel5 {
-		color=gray
-		label=StateLevel5
-		"na(b,4)5" [label="na(b,4)" shape=oval]
-		"na(b,c)5" [label="na(b,c)" shape=oval]
-		"na(b,d)5" [label="na(b,d)" shape=oval]
-		"pusty(a)5" [label="pusty(a)" shape=oval]
-		"~na(b,a)5" [label="~na(b,a)" shape=oval]
-		"~na(c,4)5" [label="~na(c,4)" shape=oval]
-		"~na(c,d)5" [label="~na(c,d)" shape=oval]
-		"na(d,b)5" [label="na(d,b)" shape=oval]
-		"~pusty(b)5" [label="~pusty(b)" shape=oval]
-		"na(d,4)5" [label="na(d,4)" shape=oval]
-		"pusty(c)5" [label="pusty(c)" shape=oval]
-		"~na(d,c)5" [label="~na(d,c)" shape=oval]
-		"~pusty(4)5" [label="~pusty(4)" shape=oval]
-		"pusty(d)5" [label="pusty(d)" shape=oval]
-		"na(a,2)5" [label="na(a,2)" shape=oval]
-		"na(b,a)5" [label="na(b,a)" shape=oval]
-		"na(c,b)5" [label="na(c,b)" shape=oval]
-		"na(d,c)5" [label="na(d,c)" shape=oval]
-		"pusty(4)5" [label="pusty(4)" shape=oval]
-		"~pusty(c)5" [label="~pusty(c)" shape=oval]
-		"~na(d,4)5" [label="~na(d,4)" shape=oval]
-		"~pusty(d)5" [label="~pusty(d)" shape=oval]
-		"~na(c,b)5" [label="~na(c,b)" shape=oval]
-		"pusty(b)5" [label="pusty(b)" shape=oval]
-		"na(c,d)5" [label="na(c,d)" shape=oval]
-		"na(c,4)5" [label="na(c,4)" shape=oval]
-		"~pusty(a)5" [label="~pusty(a)" shape=oval]
-		"na(d,a)5" [label="na(d,a)" shape=oval]
-		"~na(d,b)5" [label="~na(d,b)" shape=oval]
-		"na(c,a)5" [label="na(c,a)" shape=oval]
-		"~na(b,d)5" [label="~na(b,d)" shape=oval]
-		"~na(b,c)5" [label="~na(b,c)" shape=oval]
-		"~na(b,4)5" [label="~na(b,4)" shape=oval]
-		"~na(a,2)5" [label="~na(a,2)" shape=oval]
-		"pusty(2)5" [label="pusty(2)" shape=oval]
-		"na(a,d)5" [label="na(a,d)" shape=oval]
-		"na(a,c)5" [label="na(a,c)" shape=oval]
-		"na(a,b)5" [label="na(a,b)" shape=oval]
-		"na(a,4)5" [label="na(a,4)" shape=oval]
-	}
-	"pusty(d)4" -> "zostan(pusty(d))4" [style=dashed]
-	"zostan(pusty(d))4" -> "pusty(d)5" [style=dashed]
-	"pusty(a)4" -> "idz(a,2,4)4"
-	"pusty(4)4" -> "idz(a,2,4)4"
-	"na(a,2)4" -> "idz(a,2,4)4"
-	"idz(a,2,4)4" -> "na(a,4)5"
-	"idz(a,2,4)4" -> "pusty(2)5"
-	"idz(a,2,4)4" -> "~na(a,2)5"
-	"idz(a,2,4)4" -> "~pusty(4)5"
-	"pusty(a)4" -> "idz(a,2,b)4" [color=red]
-	"pusty(b)4" -> "idz(a,2,b)4" [color=red]
-	"na(a,2)4" -> "idz(a,2,b)4" [color=red]
-	"idz(a,2,b)4" -> "na(a,b)5" [color=red]
-	"idz(a,2,b)4" -> "pusty(2)5" [color=red]
-	"idz(a,2,b)4" -> "~na(a,2)5" [color=red]
-	"idz(a,2,b)4" -> "~pusty(b)5" [color=red]
-	"pusty(a)4" -> "idz(a,2,c)4"
-	"pusty(c)4" -> "idz(a,2,c)4"
-	"na(a,2)4" -> "idz(a,2,c)4"
-	"idz(a,2,c)4" -> "na(a,c)5"
-	"idz(a,2,c)4" -> "pusty(2)5"
-	"idz(a,2,c)4" -> "~na(a,2)5"
-	"idz(a,2,c)4" -> "~pusty(c)5"
-	"pusty(a)4" -> "idz(a,2,d)4"
-	"pusty(d)4" -> "idz(a,2,d)4"
-	"na(a,2)4" -> "idz(a,2,d)4"
-	"idz(a,2,d)4" -> "na(a,d)5"
-	"idz(a,2,d)4" -> "pusty(2)5"
-	"idz(a,2,d)4" -> "~na(a,2)5"
-	"idz(a,2,d)4" -> "~pusty(d)5"
-	"pusty(b)4" -> "idz(b,4,a)4"
-	"pusty(a)4" -> "idz(b,4,a)4"
-	"na(b,4)4" -> "idz(b,4,a)4"
-	"idz(b,4,a)4" -> "na(b,a)5"
-	"idz(b,4,a)4" -> "pusty(4)5"
-	"idz(b,4,a)4" -> "~na(b,4)5"
-	"idz(b,4,a)4" -> "~pusty(a)5"
-	"pusty(b)4" -> "idz(b,4,c)4"
-	"pusty(c)4" -> "idz(b,4,c)4"
-	"na(b,4)4" -> "idz(b,4,c)4"
-	"idz(b,4,c)4" -> "na(b,c)5"
-	"idz(b,4,c)4" -> "pusty(4)5"
-	"idz(b,4,c)4" -> "~na(b,4)5"
-	"idz(b,4,c)4" -> "~pusty(c)5"
-	"pusty(b)4" -> "idz(b,4,d)4"
-	"pusty(d)4" -> "idz(b,4,d)4"
-	"na(b,4)4" -> "idz(b,4,d)4"
-	"idz(b,4,d)4" -> "na(b,d)5"
-	"idz(b,4,d)4" -> "pusty(4)5"
-	"idz(b,4,d)4" -> "~na(b,4)5"
-	"idz(b,4,d)4" -> "~pusty(d)5"
-	"pusty(b)4" -> "idz(b,a,4)4"
-	"pusty(4)4" -> "idz(b,a,4)4"
-	"na(b,a)4" -> "idz(b,a,4)4"
-	"idz(b,a,4)4" -> "na(b,4)5"
-	"idz(b,a,4)4" -> "pusty(a)5"
-	"idz(b,a,4)4" -> "~na(b,a)5"
-	"idz(b,a,4)4" -> "~pusty(4)5"
-	"pusty(b)4" -> "idz(b,a,c)4"
-	"pusty(c)4" -> "idz(b,a,c)4"
-	"na(b,a)4" -> "idz(b,a,c)4"
-	"idz(b,a,c)4" -> "na(b,c)5"
-	"idz(b,a,c)4" -> "pusty(a)5"
-	"idz(b,a,c)4" -> "~na(b,a)5"
-	"idz(b,a,c)4" -> "~pusty(c)5"
-	"pusty(b)4" -> "idz(b,a,d)4"
-	"pusty(d)4" -> "idz(b,a,d)4"
-	"na(b,a)4" -> "idz(b,a,d)4"
-	"idz(b,a,d)4" -> "na(b,d)5"
-	"idz(b,a,d)4" -> "pusty(a)5"
-	"idz(b,a,d)4" -> "~na(b,a)5"
-	"idz(b,a,d)4" -> "~pusty(d)5"
-	"pusty(b)4" -> "idz(b,c,4)4"
-	"pusty(4)4" -> "idz(b,c,4)4"
-	"na(b,c)4" -> "idz(b,c,4)4"
-	"idz(b,c,4)4" -> "na(b,4)5"
-	"idz(b,c,4)4" -> "pusty(c)5"
-	"idz(b,c,4)4" -> "~na(b,c)5"
-	"idz(b,c,4)4" -> "~pusty(4)5"
-	"pusty(b)4" -> "idz(b,c,a)4"
-	"pusty(a)4" -> "idz(b,c,a)4"
-	"na(b,c)4" -> "idz(b,c,a)4"
-	"idz(b,c,a)4" -> "na(b,a)5"
-	"idz(b,c,a)4" -> "pusty(c)5"
-	"idz(b,c,a)4" -> "~na(b,c)5"
-	"idz(b,c,a)4" -> "~pusty(a)5"
-	"pusty(b)4" -> "idz(b,c,d)4"
-	"pusty(d)4" -> "idz(b,c,d)4"
-	"na(b,c)4" -> "idz(b,c,d)4"
-	"idz(b,c,d)4" -> "na(b,d)5"
-	"idz(b,c,d)4" -> "pusty(c)5"
-	"idz(b,c,d)4" -> "~na(b,c)5"
-	"idz(b,c,d)4" -> "~pusty(d)5"
-	"pusty(b)4" -> "idz(b,d,4)4"
-	"pusty(4)4" -> "idz(b,d,4)4"
-	"na(b,d)4" -> "idz(b,d,4)4"
-	"idz(b,d,4)4" -> "na(b,4)5"
-	"idz(b,d,4)4" -> "pusty(d)5"
-	"idz(b,d,4)4" -> "~na(b,d)5"
-	"idz(b,d,4)4" -> "~pusty(4)5"
-	"pusty(b)4" -> "idz(b,d,a)4"
-	"pusty(a)4" -> "idz(b,d,a)4"
-	"na(b,d)4" -> "idz(b,d,a)4"
-	"idz(b,d,a)4" -> "na(b,a)5"
-	"idz(b,d,a)4" -> "pusty(d)5"
-	"idz(b,d,a)4" -> "~na(b,d)5"
-	"idz(b,d,a)4" -> "~pusty(a)5"
-	"pusty(b)4" -> "idz(b,d,c)4"
-	"pusty(c)4" -> "idz(b,d,c)4"
-	"na(b,d)4" -> "idz(b,d,c)4"
-	"idz(b,d,c)4" -> "na(b,c)5"
-	"idz(b,d,c)4" -> "pusty(d)5"
-	"idz(b,d,c)4" -> "~na(b,d)5"
-	"idz(b,d,c)4" -> "~pusty(c)5"
-	"pusty(c)4" -> "idz(c,4,a)4"
-	"pusty(a)4" -> "idz(c,4,a)4"
-	"na(c,4)4" -> "idz(c,4,a)4"
-	"idz(c,4,a)4" -> "na(c,a)5"
-	"idz(c,4,a)4" -> "pusty(4)5"
-	"idz(c,4,a)4" -> "~na(c,4)5"
-	"idz(c,4,a)4" -> "~pusty(a)5"
-	"pusty(c)4" -> "idz(c,4,b)4"
-	"pusty(b)4" -> "idz(c,4,b)4"
-	"na(c,4)4" -> "idz(c,4,b)4"
-	"idz(c,4,b)4" -> "na(c,b)5"
-	"idz(c,4,b)4" -> "pusty(4)5"
-	"idz(c,4,b)4" -> "~na(c,4)5"
-	"idz(c,4,b)4" -> "~pusty(b)5"
-	"pusty(c)4" -> "idz(c,4,d)4"
-	"pusty(d)4" -> "idz(c,4,d)4"
-	"na(c,4)4" -> "idz(c,4,d)4"
-	"idz(c,4,d)4" -> "na(c,d)5"
-	"idz(c,4,d)4" -> "pusty(4)5"
-	"idz(c,4,d)4" -> "~na(c,4)5"
-	"idz(c,4,d)4" -> "~pusty(d)5"
-	"pusty(c)4" -> "idz(c,b,4)4"
-	"pusty(4)4" -> "idz(c,b,4)4"
-	"na(c,b)4" -> "idz(c,b,4)4"
-	"idz(c,b,4)4" -> "na(c,4)5"
-	"idz(c,b,4)4" -> "pusty(b)5"
-	"idz(c,b,4)4" -> "~na(c,b)5"
-	"idz(c,b,4)4" -> "~pusty(4)5"
-	"pusty(c)4" -> "idz(c,b,a)4"
-	"pusty(a)4" -> "idz(c,b,a)4"
-	"na(c,b)4" -> "idz(c,b,a)4"
-	"idz(c,b,a)4" -> "na(c,a)5"
-	"idz(c,b,a)4" -> "pusty(b)5"
-	"idz(c,b,a)4" -> "~na(c,b)5"
-	"idz(c,b,a)4" -> "~pusty(a)5"
-	"pusty(c)4" -> "idz(c,b,d)4"
-	"pusty(d)4" -> "idz(c,b,d)4"
-	"na(c,b)4" -> "idz(c,b,d)4"
-	"idz(c,b,d)4" -> "na(c,d)5"
-	"idz(c,b,d)4" -> "pusty(b)5"
-	"idz(c,b,d)4" -> "~na(c,b)5"
-	"idz(c,b,d)4" -> "~pusty(d)5"
-	"pusty(c)4" -> "idz(c,d,4)4"
-	"pusty(4)4" -> "idz(c,d,4)4"
-	"na(c,d)4" -> "idz(c,d,4)4"
-	"idz(c,d,4)4" -> "na(c,4)5"
-	"idz(c,d,4)4" -> "pusty(d)5"
-	"idz(c,d,4)4" -> "~na(c,d)5"
-	"idz(c,d,4)4" -> "~pusty(4)5"
-	"pusty(c)4" -> "idz(c,d,a)4"
-	"pusty(a)4" -> "idz(c,d,a)4"
-	"na(c,d)4" -> "idz(c,d,a)4"
-	"idz(c,d,a)4" -> "na(c,a)5"
-	"idz(c,d,a)4" -> "pusty(d)5"
-	"idz(c,d,a)4" -> "~na(c,d)5"
-	"idz(c,d,a)4" -> "~pusty(a)5"
-	"pusty(c)4" -> "idz(c,d,b)4"
-	"pusty(b)4" -> "idz(c,d,b)4"
-	"na(c,d)4" -> "idz(c,d,b)4"
-	"idz(c,d,b)4" -> "na(c,b)5"
-	"idz(c,d,b)4" -> "pusty(d)5"
-	"idz(c,d,b)4" -> "~na(c,d)5"
-	"idz(c,d,b)4" -> "~pusty(b)5"
-	"pusty(d)4" -> "idz(d,4,a)4"
-	"pusty(a)4" -> "idz(d,4,a)4"
-	"na(d,4)4" -> "idz(d,4,a)4"
-	"idz(d,4,a)4" -> "na(d,a)5"
-	"idz(d,4,a)4" -> "pusty(4)5"
-	"idz(d,4,a)4" -> "~na(d,4)5"
-	"idz(d,4,a)4" -> "~pusty(a)5"
-	"pusty(d)4" -> "idz(d,4,b)4"
-	"pusty(b)4" -> "idz(d,4,b)4"
-	"na(d,4)4" -> "idz(d,4,b)4"
-	"idz(d,4,b)4" -> "na(d,b)5"
-	"idz(d,4,b)4" -> "pusty(4)5"
-	"idz(d,4,b)4" -> "~na(d,4)5"
-	"idz(d,4,b)4" -> "~pusty(b)5"
-	"pusty(d)4" -> "idz(d,4,c)4"
-	"pusty(c)4" -> "idz(d,4,c)4"
-	"na(d,4)4" -> "idz(d,4,c)4"
-	"idz(d,4,c)4" -> "na(d,c)5"
-	"idz(d,4,c)4" -> "pusty(4)5"
-	"idz(d,4,c)4" -> "~na(d,4)5"
-	"idz(d,4,c)4" -> "~pusty(c)5"
-	"pusty(d)4" -> "idz(d,b,4)4"
-	"pusty(4)4" -> "idz(d,b,4)4"
-	"na(d,b)4" -> "idz(d,b,4)4"
-	"idz(d,b,4)4" -> "na(d,4)5"
-	"idz(d,b,4)4" -> "pusty(b)5"
-	"idz(d,b,4)4" -> "~na(d,b)5"
-	"idz(d,b,4)4" -> "~pusty(4)5"
-	"pusty(d)4" -> "idz(d,b,a)4"
-	"pusty(a)4" -> "idz(d,b,a)4"
-	"na(d,b)4" -> "idz(d,b,a)4"
-	"idz(d,b,a)4" -> "na(d,a)5"
-	"idz(d,b,a)4" -> "pusty(b)5"
-	"idz(d,b,a)4" -> "~na(d,b)5"
-	"idz(d,b,a)4" -> "~pusty(a)5"
-	"pusty(d)4" -> "idz(d,b,c)4"
-	"pusty(c)4" -> "idz(d,b,c)4"
-	"na(d,b)4" -> "idz(d,b,c)4"
-	"idz(d,b,c)4" -> "na(d,c)5"
-	"idz(d,b,c)4" -> "pusty(b)5"
-	"idz(d,b,c)4" -> "~na(d,b)5"
-	"idz(d,b,c)4" -> "~pusty(c)5"
-	"pusty(d)4" -> "idz(d,c,4)4"
-	"pusty(4)4" -> "idz(d,c,4)4"
-	"na(d,c)4" -> "idz(d,c,4)4"
-	"idz(d,c,4)4" -> "na(d,4)5"
-	"idz(d,c,4)4" -> "pusty(c)5"
-	"idz(d,c,4)4" -> "~na(d,c)5"
-	"idz(d,c,4)4" -> "~pusty(4)5"
-	"pusty(d)4" -> "idz(d,c,a)4"
-	"pusty(a)4" -> "idz(d,c,a)4"
-	"na(d,c)4" -> "idz(d,c,a)4"
-	"idz(d,c,a)4" -> "na(d,a)5"
-	"idz(d,c,a)4" -> "pusty(c)5"
-	"idz(d,c,a)4" -> "~na(d,c)5"
-	"idz(d,c,a)4" -> "~pusty(a)5"
-	"pusty(d)4" -> "idz(d,c,b)4"
-	"pusty(b)4" -> "idz(d,c,b)4"
-	"na(d,c)4" -> "idz(d,c,b)4"
-	"idz(d,c,b)4" -> "na(d,b)5"
-	"idz(d,c,b)4" -> "pusty(c)5"
-	"idz(d,c,b)4" -> "~na(d,c)5"
-	"idz(d,c,b)4" -> "~pusty(b)5"
-	"na(c,4)4" -> "zostan(na(c,4))4" [style=dashed]
-	"zostan(na(c,4))4" -> "na(c,4)5" [style=dashed]
-	"na(c,d)4" -> "zostan(na(c,d))4" [style=dashed]
-	"zostan(na(c,d))4" -> "na(c,d)5" [style=dashed]
-	"pusty(b)4" -> "zostan(pusty(b))4" [style=dashed]
-	"zostan(pusty(b))4" -> "pusty(b)5" [style=dashed]
-	"~na(c,b)4" -> "zostan(~na(c,b))4" [style=dashed]
-	"zostan(~na(c,b))4" -> "~na(c,b)5" [style=dashed]
-	"~pusty(d)4" -> "zostan(~pusty(d))4" [style=dashed]
-	"zostan(~pusty(d))4" -> "~pusty(d)5" [style=dashed]
-	"~na(d,4)4" -> "zostan(~na(d,4))4" [style=dashed]
-	"zostan(~na(d,4))4" -> "~na(d,4)5" [style=dashed]
-	"~pusty(c)4" -> "zostan(~pusty(c))4" [style=dashed]
-	"zostan(~pusty(c))4" -> "~pusty(c)5" [style=dashed]
-	"pusty(4)4" -> "zostan(pusty(4))4" [style=dashed]
-	"zostan(pusty(4))4" -> "pusty(4)5" [style=dashed]
-	"na(d,c)4" -> "zostan(na(d,c))4" [style=dashed]
-	"zostan(na(d,c))4" -> "na(d,c)5" [style=dashed]
-	"na(c,b)4" -> "zostan(na(c,b))4" [style=dashed]
-	"zostan(na(c,b))4" -> "na(c,b)5" [style=dashed]
-	"na(b,a)4" -> "zostan(na(b,a))4" [style=dashed]
-	"zostan(na(b,a))4" -> "na(b,a)5" [style=dashed]
-	"na(a,2)4" -> "zostan(na(a,2))4" [style=dashed]
-	"zostan(na(a,2))4" -> "na(a,2)5" [style=dashed]
-	"~pusty(4)4" -> "zostan(~pusty(4))4" [style=dashed]
-	"zostan(~pusty(4))4" -> "~pusty(4)5" [style=dashed]
-	"~na(d,c)4" -> "zostan(~na(d,c))4" [style=dashed]
-	"zostan(~na(d,c))4" -> "~na(d,c)5" [style=dashed]
-	"pusty(c)4" -> "zostan(pusty(c))4" [style=dashed]
-	"zostan(pusty(c))4" -> "pusty(c)5" [style=dashed]
-	"na(d,4)4" -> "zostan(na(d,4))4" [style=dashed]
-	"zostan(na(d,4))4" -> "na(d,4)5" [style=dashed]
-	"~pusty(b)4" -> "zostan(~pusty(b))4" [style=dashed]
-	"zostan(~pusty(b))4" -> "~pusty(b)5" [style=dashed]
-	"na(d,b)4" -> "zostan(na(d,b))4" [style=dashed]
-	"zostan(na(d,b))4" -> "na(d,b)5" [style=dashed]
-	"~na(c,d)4" -> "zostan(~na(c,d))4" [style=dashed]
-	"zostan(~na(c,d))4" -> "~na(c,d)5" [style=dashed]
-	"~na(c,4)4" -> "zostan(~na(c,4))4" [style=dashed]
-	"zostan(~na(c,4))4" -> "~na(c,4)5" [style=dashed]
-	"~na(b,a)4" -> "zostan(~na(b,a))4" [style=dashed]
-	"zostan(~na(b,a))4" -> "~na(b,a)5" [style=dashed]
-	"pusty(a)4" -> "zostan(pusty(a))4" [style=dashed]
-	"zostan(pusty(a))4" -> "pusty(a)5" [style=dashed]
-	"na(b,d)4" -> "zostan(na(b,d))4" [style=dashed]
-	"zostan(na(b,d))4" -> "na(b,d)5" [style=dashed]
-	"na(b,c)4" -> "zostan(na(b,c))4" [style=dashed]
-	"zostan(na(b,c))4" -> "na(b,c)5" [style=dashed]
-	"na(b,4)4" -> "zostan(na(b,4))4" [style=dashed]
-	"zostan(na(b,4))4" -> "na(b,4)5" [style=dashed]
+	rankdir=LR
 }
