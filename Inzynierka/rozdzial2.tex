@@ -18,6 +18,7 @@
     Dzięki swojej strukturze Graphplan w swojej naturze podobny jest do programowania dynamicznego.
 
 \section{Warunki początkowe}
+    \label{RozdzialWarunkiPoczatkowe}
     \begin{definition}
         \label{ZasadaSwiata}
         \textbf{Zasada zamkniętego świata} - Zasada, wedle której pojęcia, które nie są ściśle opisane w świecie są nieprawdziwe.
@@ -55,6 +56,7 @@
         \label{ZbiorPoczatkowy}
     \end{equation}
 \section{Akcje}
+    \label{RozdzialAkcje}
     Posiadając dobrze określony stan początkowy następnym krokiem będzie zdefiniowanie akcji. Zgodnie z \ref{Akcje} oraz wzmiance o akcjach w planerze STRIPS,
     akcja musi składać się z trzech komponentów:
     \begin{itemize}
@@ -93,7 +95,9 @@
     przedstawiona na \ref{PrzykladRuch}. Biorąc pod uwagę, iż stanem początkowym jest \ref{ZbiorPoczatkowy} Warunkami zajścia zdarzenia
     będą: $na(R,S)$ oraz $pusty(D)$. Dla efektów natomiast sytuacja wygląda następująco: efektami dodającymi są $na(R,D)$ oraz $pusty(S)$, które informują o tym, iż klocek 
     wykonał ruch z kafelka S na kafelek D, a efektami usuwającymi $\sim na(R,S)$ oraz $\sim pusty(D)$, które informują o tym, iż kafelek S został zwolniony, 
-    oraz robot nie znajduje się już na kafelku S. Przy pomocy matematycznego symbolu negacji wyrażono nieprawdziwość danego stanu.
+    oraz robot nie znajduje się już na kafelku S. Przy pomocy matematycznego symbolu negacji wyrażono nieprawdziwość danego stanu. Ze względów estetycznych 
+    oraz ułatwiających analizowanie pracy negacje stanów w dalszej części pracy wyrażono również przy pomocy polskiej partykuły przeczącej \textbf{nie}. 
+    Dla przykładu pojęcia $\sim pusty(1)$ oraz $niepusty(1)$ z perpsektywy wprowadzonej terminologii są tożsame. 
 
         Posiadająć następującą wiedzę poniżej zdefiniowano jedyną akcję znajdująca się w prezentowanym przykładzie:
     \begin{equation}
@@ -220,6 +224,7 @@
     planu natychmiast wiadomo ile kroków należy wykonać, a co za tym idzie- ile czasu należy poświęcić, aby osiągnąć ustalony cel. 
 
     \section{Równoległość}
+    \label{Rownoleglosc}
     W poprzednich paragrafach na pojedynczym poziomie akcji rozpatrywano conajwyżej jedną akcję aktywną, jednakże główną siła GRAPHPLANU, jest 
     możliwość jego reprezentacji jako częściowego porządku. To pozwala w prosty sposób wprowadzić pojęcie równoległości między akcjami. 
     \begin{definition}
@@ -261,14 +266,15 @@
     \begin{figure}[H]
         \includegraphics[scale=0.5]{PrzykladRownolegleZle}
         \centering
-        \caption{Przykład świata, w którym wprowadzenie równoległości dla pierwszej warstwy algorytmu. Dwa roboty próbują przenieść się na ten sam kafelek
-        w tej samej jednostce czasu. Odpowiednio kolorami:
+        \caption{Przykład świata, w którym wprowadzenie równoległości dla pierwszej warstwy algorytmu jest niemożliwe. 
+        Dwa roboty próbują przejść na ten sam kafelek
+        w tej samej jednostce czasu, co z perspektywy kafelka powoduje konflikt. Odpowiednio kolorami:
         czerwnoym i niebieskim oznaczono roboty, oraz kafelki, które są ich celem.}
         \label{PrzykladRownolegle}
     \end{figure}
     
     Zmusiło to twórców algorytmu do wporwadzenia pojęcia \textbf{relacji wykluczania}. 
-    O akcjach wzajemnie się wykluczających (ang. actions mutually exclusive) wspomiano w ramach definiowana świata. Pojęcie ów można 
+    O akcjach wzajemnie się wykluczających (ang. actions mutually exclusive, \textbf{mutex}) wspomiano w ramach definiowana świata. Pojęcie ów można 
     określić w następujący sposób:
     \begin{definition}
         \label{Warstwa}
@@ -277,9 +283,39 @@
     \end{definition}
     Przykładem stanów wykluczających jest para: $pusty(1)$ oraz $\sim pusty(1)$. Kafelek nie może być pusty jak i niepusty jednocześnie.
     Przykład dwóch akcji wykluczających przedstawiono na rysunku \ref{PrzykladRownolegle}. Należy zauważyć, iż wzajemne wykluczanie się 
-    jest rozpatrywane na poziomie jednej warstwy- brak możliwości wykonania dwóch akcji w warstwie $i$ nie przenosi się automatycznie na 
-    warstwę $i+1$. Świat może zostać na tyle przeobrażony, iż ich wspólna egzystencja nie spowoduje wprowadzenia niezgodności.
+    jest rozpatrywane warstwowo.
     Kolejnym naturalnym krokiem jest ustalenie, kiedy akcje oraz stany są ze sobą w relacji wykluczającej. 
+
+    \subsubsection{Wykluczanie się stanów}
+    Dwa stany są ze sobą w relacji wzajemnie wykluczającej w dwóch następujacych przypadkach:
+    \begin{enumerate}
+        \item Negacja- przypadek, w którym jeden ze stanów jest negacją drugiego
+        \item Niespójne powstanie- wszystkie akcje z poprzedniej warstwy, które prowadza 
+        do utworzenia ów stanów są ze sobą parami w relacji wykluczającej
+    \end{enumerate}
+    Ze względu na naturalność pojęcia negacji zbędnym jest wprowadzenie większego przykładu niż przedstawienie, iż dla każdego obiektu istnieje 
+    para stanów znajdujących się w relacji wykluczającej. Niech za przykład posłuży pustość kafelka. Kafelek nie może być jednocześnie pusty, jak 
+    i niepusty, co sprowadza się, iż stan $pusty(kafelek)$ jak i $\sim pusty(kafelek)$ są niemożliwe do zawarcia w jednej warstwie planu.
+
+    Dla kontrastu przedstawienie przypadku, w którym zachodzi \textbf{niespójne powstawanie} jest trudniejsze i wymaga użycia 
+    przykładowej ilustracji:
+
+    \begin{figure}[H]
+        \includegraphics[scale=0.5]{PrzykladWykluczenie3}
+        \centering
+        \caption{Urywek planu przedstawiający sytuację, w której dwa stany powstają w sposób niespójny. Zgodnie z założeniami akcje oznaczone są przy 
+        pomocy prostokątów, stany- okręgów, miedzy akcjami a stanami czerwone linie symbolizują które stany są efektami których akcji, natomiast linie
+        niebieskie między akcjami symbolizują powstałe między nimi \textit{mutexy}}
+        \label{PrzykladWykluczenie3}
+    \end{figure}
+
+    Zgodnie z nienaturalnym przykładem \ref{PrzykladWykluczenie3} należy zauważyć, iż stany 1 oraz 2 nie mogą 
+    znajdować się jednocześnie w planie ze względu na to, iż każda z akcji, która generuje stan 1 (B,C) znajduje się w relacji 
+    wzajemnie wykluczającej z każdą akcją, która generuje stan 2 (C,D). Oznacza to, iż ów dwa stany powstają w sposób \textbf{niespójny}.
+    
+    Z reguły ten typ wykluczeń występuje po większej liczbie kroków dla bardziej rozbudowanych światów jak i planów.
+    
+
     \subsubsection{Wykluczanie się akcji}
     Dwie akcje mogą być ze sobą w relacji wzajemnie wykluczającej w trzech następujących przypadkach:
     \begin{enumerate}
@@ -293,14 +329,129 @@
     Poniższe przykłady w obrazowy sposób przedstawiają każdy w wyżej wymienionych
     przypadków:
 
+    \begin{figure}[H]
+        \includegraphics[scale=0.5]{PrzykladWykluczenie2}
+        \centering
+        \caption{Przykład wykluczania się akcji aktywnych z podtrzymującymi}
+        \label{PrzykladWykluczenie2}
+    \end{figure}
 
-    \subsubsection{Wykluczanie się stanów}
-    Dwa stany są ze sobą w relacji wzajemnie wykluczającej w dwóch następujacych przypadkach:
-    \begin{enumerate}
-        \item Negacja- przypadek, w którym jeden ze stanów jest negacją drugiego
-        \item Niespójne powstanie- wszystkie akcje z poprzedniej warstwy, które prowadza 
-        do utworzenia ów stanów są ze sobą w relacji wykluczającej
-    \end{enumerate}
+    Na pierwszy rzut oka wydawać by się mogło, iż niemożliwym jest wygenerowanie dwóch akcji znajdujących się w relacji wykluczania dla przykładu 
+    \ref{PrzykladWykluczenie2}, jednakże istnieją dwie takie pary: 
+    \begin{equation}
+        zostan(na(A,lewy)),ruch(A,lewy,prawy)
+    \end{equation} 
+    oraz 
+    \begin{equation}
+        zostan(pusty(prawy)) oraz ruch(A,lewy,prawy)
+    \end{equation} 
+    Wynika to z faktu, iż zbiór efektów jednej akcji z powyższych par jest negowany przez drugi. Zbiorem efektów akcji 
+    $zostan(na(A,lewy))$ jest $na(A,lewy)$, jednakże zbiorem efektów $ruch(A,lewy,prawy)$ jest ciut większy zbiór:
+    \begin{equation}
+        na(A,prawy), \sim na(A,lewy), pusty(lewy), \sim pusty(prawy)
+    \end{equation}
+    Widać, iż efekt $\sim na(A,lewy)$ jest negacją efektu $na(A,lewy)$. Akcje podtrzymujące i aktywne względem tego samego obiektu zawsze sobą ze sobą 
+    w relacji wykluczającej ze względu na \textbf{niespójny efekt}.
+
+    \begin{figure}[H]
+        \includegraphics[scale=0.5]{PrzykladWykluczenie1}
+        \centering
+        \caption{Przykład świata, w którym każdy z robotów próbuje przesunąć się na sąsiadujący z lewej strony klocek. Uwidoczniona sytuacja 
+        jest przykładem wykluczających się akcji}
+        \label{PrzykladWykluczenie1}
+    \end{figure}
+
+    Idea przedstawiona na rysunku \ref{PrzykladWykluczenie1} jest ciekawym przykładem, pozwalającym zrozumieć dokładniej definicję słowa 
+    \textbf{równoległość} odnośnie planów generowanych przez GRAPHPLAN. Gdyby roboty poruszając się z tą samą szybkością ruszyły w tym samym momencie
+    to wykonanie ów sekwencji akcji byłoby w zupełności możliwe, jednakże w sekcji \ref{Rownoleglosc} wspomniano, iż każdy z wygenerowanych planów 
+    musi być możliwy do przedstawienia w postaci porządku liniowego, czyli plan równoległy może zostać przerobiony w dowolny sposób na plan,
+    w którym każda z akcji wykonywana jest po kolei. Zgodnie z omawianym przykładem sprowadzenie ów planu do dowolnej postaci liniowej jest 
+    niemożliwe, gdyż istnieje konfiguracja, w której to najpierw robot B miałby wykonać ruch, jednakże jest to niemożliwe ze względu na 
+    obecność robota A na kafelku będącym jego celem podróży. Dodatkowe wprowadzenie ograniczeń na konwersję planów równoległych na liniowe 
+    jest bardziej skompilowanym zagadnieniem, którego omówienie nastąpi w sekcji odpowiedzialnej za możliwe rozwinięcia algorytmu.
+    
+    Z powyższego opisu wynika, iż 
+    omawiane relacje ruchu są ze sobą w relacji wzajmenie wykluczającej z powodu \textbf{przeszkadzania}. 
+    Klocek A do wykonanaia ruchu potrzebuje znajdować się na kafelku środkowym, co oznacza, iż kafelek środowy musi byc niepusty, 
+    jednakże klocek B potrzebuje, aby ów klocek był pusty. Relacja wykluczająca między tymi stanami bezpośrednio generuje wykluczanie się tych akcji.
+    
+    Ponadto, omawiane akcje w ilustracji \ref{PrzykladWykluczenie1} znajdują się w relacji wykluczającej z powodu \textbf{Konkurencyjnych potrzeb}. 
+    Robot B przy przesunięciu \textbf{na} środkowy kafelek wymaga, aby on był pusty, natomiast robot A przy przesunięciu \textbf{z} środkowego klocka 
+    musi się na nim znajdować, czyli kafelek musi być niepusty. Stany pusty i niepusty względem kafelka są w oczywistej relacji wykluczającej 
+    co automatycznie generuje wykluczenie się wspomnianej pary akcji. Przykład ów przedstawia, iż jedna para akcji może być ze sobą w relacji wykluczającej 
+    z kilku powodów, jednakże algorytm rozpatrując parę akcji podchodzi do tego w sposób binarny, co oznacza, iż patrzy jedynie czy znajdują się w 
+    relacji wykluczającej czy nie, nie interesuje go liczba sposobów, na które ów relację można utworzyć.    
+
+    Należy zauważyć, iż dzięki wprowadzeniu relacji wzajemnego wykluczania pozbyto się porównań wielu akcji, których zajście jest niemożliwe w tej samej 
+    warstwie grafu. Koszt jaki został poniesiony ze względu na zapamiętywanie dodatkowych informacji o relacjach między akcjami jest często zaniedbywalny,
+    ze względu na ogrom benefitów w postaci mniejszej liczbie sprawdzeń, a co za tym idzie- szybsze działanie algorytmu.
+
+
 \section{Wyszukiwanie planu}
+    Zdefiniowawszy wszystkie niezbędne elementy planera należy wskazać, w jaki sposób przy posiadaniu całej wiedzy wygenerowanej przez graf planujący.
+    Wykonywane jest to w następujący sposób:
+    \begin{enumerate}
+        \item Rozpoczynając od stanu początkowego, zgodnie z opisanymi w poprzednich sekcjach metodami, odbywa się generowanie kolejnych warstw grafu,
+        biorąc pod uwage informację o \textbf{mutexach} między akcjami oraz stanami
+        \item Dla każdej nowo utworzonej warstwy $i$ dokonywane jest sprawdzenie, czy wszystkie założenia z celu nie znajdują się 
+        w ów poziomie stanów. Jeśli odpowiedź jest negatywna, odbywa się dalsze generowanie planu zgodnie z 1. Jednak, gdy 
+        wszystkie stany celu znajdują się na poziomie $i$ dochodzi do generowania planu.
+        \item Dla każdego stanu z celów na poziomie $i$ dochodzi do wybrania akcji, dzięki której został on wygenerowany. 
+        Ów operacja dokonywana jest dla każdego stanu. Jeżeli dobrane akcje są ze sobą w relacji wykluczającej, należy spróbować innej 
+        kombinacji akcji. Jeśli wszystkie dobory akcji zawiodą należy wygenerować kolejną warstwę grafu i ponownie, w warstwie $i+1$, rozpocząc cały proces
+        \item Jeśli jednak istnieje dobór akcji taki, że nie występuje między nimi relacja wykluczania, należy dla każdego stanu 
+        znajdującego się w zbiorze warunków zajścia wspomnianych akcji wykonać procedurę z kroku 3. 
+        \item Jeśli dojdzie do niepowodzenia na którymkolwiek z etapów powrotu do stanu wyjściowego algorytm podejmuje próbuję odpowiedniego dobrania 
+        akcji na ostatnio sprawdzonym poziomie. Brak niepowodzenia na ścieżke powrotu od warstwy $i$ do warunków początkowych świadczy o tym, 
+        iż istnieje sekwencja akcji pozwalająca otrzymać stany zdefiniowane z celu w określonym przez stany początkowe świecie, co oznacza, 
+        iż jest możliwym utworzenie odpowiedniego \textbf{planu}.
+    \end{enumerate}
+    Aby precyzyjnie przedstawić działanie algorytmu w następnej części programu przeprowadzono rozbudową analizę konkretnego przykładu:
+
+    \begin{figure}[H]
+        \includegraphics[scale=0.5]{PrzykladPlan1}
+        \centering
+        \caption{Sytuacja początkowa świata, dla którego odbędzie się przykładowe generowanie planu. Kolorem niebieskim zaznaczono kafelek docelowy robota}
+        \label{PrzykladPlan1}
+    \end{figure}
+
+    \ref{PrzykladPlan1} przedstawia świat, w którym robot A z kafelka 1 próbuje przedostać się do kafelka 3 (Kafelki ponownie numerowane są od lewej strony
+    do prawej).
+
+    \begin{figure}[H]
+        \includegraphics[scale=0.5]{PrzykladPlanStateLevel1}
+        \centering
+        \caption{Warunki początkowe omawianego świata. Obrazki ułatwiające analizę przykładu w całości zostały 
+        wykonane przez oprogramowanie utworzone na rzecz pracy. }
+        \label{PrzykladPlanWP}
+    \end{figure}
+    W powyższy sposób zaprezentowano stan początkowy świata. Wszystkie definicje relacji takich jak \textbf{na}, \textbf{idz}, \textbf{zostan}, czy 
+    \textbf{pusty} wprowadzono w podrozdziałach \ref{RozdzialWarunkiPoczatkowe} i \ref{RozdzialAkcje}. W wygenerowanych przez oprogramowanie grafach \textbf{poziomy stanów}
+    określane są poprzez swój angielski odpowiednich \textbf{StateLevel}. Podobnie z \textbf{poziom akcji} i \textbf{ActionLevel}. 
+
+    \begin{figure}[H]
+        \includegraphics[scale=0.5]{PrzykladPlanActionLevel1}
+        \centering
+        \caption{Wygenerowane akcje na podstawie warunków początkowych}
+        \label{PrzykladPlanAP1}
+    \end{figure}
+
+    Następnie przystąpiono do wygenerowania wszystkich możliwych akcji. Postąpiono zgodnie ze wskazówkami z podrozdziału \ref{RozdzialAkcje}. 
+    Dodajemy niezbędne krawędzie wynikające z warunków, jak i efektów każdej z akcji oraz mutexy.
+
+    \begin{figure}[H]
+        \includegraphics[scale=0.5]{PrzykladPlanWarstwa1}
+        \centering
+        \caption{Wygenerowany drugi stan grafu bezpośrednio wynikający z pierwszego poziomu akcji}
+        \label{PrzykladPlanW1}
+    \end{figure}
+
+    Przy pomocy efektów akcji automatycznie wykreowano następny poziom stanów. Zgodnie z schematem planowania należy sprawdzić, czy oczekiwany cel
+    $na(A,3)$ znajduje się w zbiorze stanów poziomu drugiego. Po szybkiej analizie okazuje się, iż cel nie znajduje się na wskazanym poziomie, więc
+    należy dokonać rozszerzenia grafu planującego o kolejny poziom. Następuje to w sposób analogiczny.
+
+
+
+\section{Własności GRAPHPLAN'u}
 
 \section{Prosty przykład}

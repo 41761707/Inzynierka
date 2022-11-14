@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.5.18)  9 NOV 2022 23:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.5.18)  14 NOV 2022 04:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -847,7 +847,7 @@ e
 * paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
+* modes: twoside 
 * h-part:(L,W,R)=(85.35826pt, 457.80486pt, 71.13188pt)
 * v-part:(T,H,B)=(71.13188pt, 652.70622pt, 71.13188pt)
 * \paperwidth=614.295pt
@@ -855,13 +855,13 @@ e
 * \textwidth=457.80486pt
 * \textheight=652.70622pt
 * \oddsidemargin=13.08827pt
-* \evensidemargin=13.08827pt
+* \evensidemargin=-1.1381pt
 * \topmargin=-37.2056pt
 * \headheight=18.0pt
 * \headsep=18.06749pt
 * \topskip=10.0pt
 * \footskip=25.29494pt
-* \marginparwidth=69.0pt
+* \marginparwidth=125.0pt
 * \marginparsep=7.0pt
 * \columnsep=10.0pt
 * \skip\footins=9.0pt plus 4.0pt minus 2.0pt
@@ -869,8 +869,8 @@ e
 * \voffset=0.0pt
 * \mag=1000
 * \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
+* \@twosidetrue
+* \@mparswitchtrue
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
@@ -941,80 +941,44 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./streszczenie.tex) (./ab
-stract.tex)pdfTeX warning (ext4): destination with the same identifier (name{pa
-ge.i}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.677     \cleardoublepage
-                           [1
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
-]
+] (./streszczenie.tex) (./abstract.tex)
+[3] [4
 
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 679.
-
-(./praca.toc
-
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 43.
-
-[1
-
-])
+] (./praca.toc [1])
 \tf@toc=\write4
 \openout4 = `praca.toc'.
 
- [2]
+ [2] (./praca.lof
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 684.
+ [3
 
-
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 684.
-
-(./praca.lof)
+])
 \tf@lof=\write5
 \openout5 = `praca.lof'.
 
+<wit-logo.png, id=500, 225.84375pt x 225.84375pt>
+File: wit-logo.png Graphic file (type png)
+<use wit-logo.png>
+Package pdftex.def Info: wit-logo.png  used on input line 689.
+(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
 
-
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 689.
-
-[3
-
-]
-
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 691.
-
-
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 691.
-
-(./praca.lot)
+[4 <./wit-logo.png>] (./praca.lot)
 \tf@lot=\write6
 \openout6 = `praca.lot'.
 
-
-
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 698.
-
-[4
+ [5
 
 ]
+File: wit-logo.png Graphic file (type png)
+<use wit-logo.png>
+Package pdftex.def Info: wit-logo.png  used on input line 698.
+(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
+ [6
 
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 705.
-
-
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 705.
-
-(./wstep.tex
+] (./wstep.tex
 Underfull \hbox (badness 10000) in paragraph at lines 8--13
 
  []
@@ -1049,14 +1013,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--44
 
  []
 
-)
-
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 713.
-
-[1
+) [1
 
 
+]
+File: wit-logo.png Graphic file (type png)
+<use wit-logo.png>
+Package pdftex.def Info: wit-logo.png  used on input line 713.
+(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
+ [2
 
 ] (./rozdzial1.tex
 Rozdzia\l  1.
@@ -1065,48 +1030,42 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<./pictures/Przyklad1.png, id=480, 661.72218pt x 97.11281pt>
+<./pictures/Przyklad1.png, id=530, 661.72218pt x 97.11281pt>
 File: ./pictures/Przyklad1.png Graphic file (type png)
 <use ./pictures/Przyklad1.png>
 Package pdftex.def Info: ./pictures/Przyklad1.png  used on input line 47.
 (pdftex.def)             Requested size: 330.86028pt x 48.55627pt.
-
-
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 55.
-
-[2
-
+ [3
 
 ]
-<./pictures/Przyklad2.png, id=495, 366.61969pt x 331.2375pt>
+<./pictures/Przyklad2.png, id=545, 366.61969pt x 331.2375pt>
 File: ./pictures/Przyklad2.png Graphic file (type png)
 <use ./pictures/Przyklad2.png>
 Package pdftex.def Info: ./pictures/Przyklad2.png  used on input line 77.
 (pdftex.def)             Requested size: 183.30939pt x 165.61833pt.
-<pwr-logo.png, id=497, 217.81375pt x 216.81pt>
-File: pwr-logo.png Graphic file (type png)
-<use pwr-logo.png>
-Package pdftex.def Info: pwr-logo.png  used on input line 89.
-(pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
- [3 <./pwr-logo.png> <./pictures/Przyklad1.png> <./pictures/Przyklad2.png>]
+File: wit-logo.png Graphic file (type png)
+<use wit-logo.png>
+Package pdftex.def Info: wit-logo.png  used on input line 89.
+(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
+ [4 <./pictures/Przyklad1.png> <./pictures/Przyklad2.png>]
 Overfull \hbox (0.63678pt too wide) in paragraph at lines 137--139
 []\OT4/lmr/m/n/10 Dzi¦ki swo-jej roli w roz-woju pla-no-wa-nia z u»y-ciem kom-p
 u-te-rów, STRIPS zo-staª do-dat-kowo wyró»niony-
  []
 
+<pwr-logo.png, id=561, 217.81375pt x 216.81pt>
 File: pwr-logo.png Graphic file (type png)
 <use pwr-logo.png>
 Package pdftex.def Info: pwr-logo.png  used on input line 145.
 (pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
-[4])
-File: pwr-logo.png Graphic file (type png)
-<use pwr-logo.png>
-Package pdftex.def Info: pwr-logo.png  used on input line 716.
-(pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
- [5] (./rozdzial2.tex
+[5 <./pwr-logo.png>])
+File: wit-logo.png Graphic file (type png)
+<use wit-logo.png>
+Package pdftex.def Info: wit-logo.png  used on input line 716.
+(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
+ [6] (./rozdzial2.tex
 Rozdzia\l  2.
-<./pictures/PlanningGraph.png, id=526, 663.98062pt x 246.1697pt>
+<./pictures/PlanningGraph.png, id=575, 663.98062pt x 246.1697pt>
 File: ./pictures/PlanningGraph.png Graphic file (type png)
 <use ./pictures/PlanningGraph.png>
 Package pdftex.def Info: ./pictures/PlanningGraph.png  used on input line 8.
@@ -1117,189 +1076,241 @@ Overfull \hbox (10.74667pt too wide) in paragraph at lines 5--14
 o-rzy al-go-rytmu okre-±laj¡ jako "graf planuj¡cy"[[]]. 
  []
 
-
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 34.
-
-[6
+[7
 
 
  <./pictures/PlanningGraph.png>]
-<./pictures/PrzykladSP.png, id=536, 344.03531pt x 229.60782pt>
+<./pictures/PrzykladSP.png, id=585, 344.03531pt x 229.60782pt>
 File: ./pictures/PrzykladSP.png Graphic file (type png)
 <use ./pictures/PrzykladSP.png>
-Package pdftex.def Info: ./pictures/PrzykladSP.png  used on input line 42.
+Package pdftex.def Info: ./pictures/PrzykladSP.png  used on input line 43.
 (pdftex.def)             Requested size: 172.01723pt x 114.80362pt.
-File: pwr-logo.png Graphic file (type png)
-<use pwr-logo.png>
-Package pdftex.def Info: pwr-logo.png  used on input line 82.
-(pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
- [7 <./pictures/PrzykladSP.png>]
-<./pictures/PrzykladRuch.png, id=551, 344.03531pt x 229.60782pt>
+File: wit-logo.png Graphic file (type png)
+<use wit-logo.png>
+Package pdftex.def Info: wit-logo.png  used on input line 84.
+(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
+ [8 <./pictures/PrzykladSP.png>]
+<./pictures/PrzykladRuch.png, id=599, 344.03531pt x 229.60782pt>
 File: ./pictures/PrzykladRuch.png Graphic file (type png)
 <use ./pictures/PrzykladRuch.png>
-Package pdftex.def Info: ./pictures/PrzykladRuch.png  used on input line 87.
+Package pdftex.def Info: ./pictures/PrzykladRuch.png  used on input line 89.
 (pdftex.def)             Requested size: 172.01723pt x 114.80362pt.
 File: pwr-logo.png Graphic file (type png)
 <use pwr-logo.png>
-Package pdftex.def Info: pwr-logo.png  used on input line 129.
+Package pdftex.def Info: pwr-logo.png  used on input line 131.
 (pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
- [8 <./pictures/PrzykladRuch.png>]
-<./pictures/PrzykladAkcje.png, id=567, 539.01375pt x 320.69812pt>
+ [9 <./pictures/PrzykladRuch.png>]
+<./pictures/PrzykladAkcje.png, id=616, 539.01375pt x 320.69812pt>
 File: ./pictures/PrzykladAkcje.png Graphic file (type png)
 <use ./pictures/PrzykladAkcje.png>
-Package pdftex.def Info: ./pictures/PrzykladAkcje.png  used on input line 142.
+Package pdftex.def Info: ./pictures/PrzykladAkcje.png  used on input line 146.
 (pdftex.def)             Requested size: 269.50621pt x 160.34866pt.
-<./pictures/PrzykladSasiad.png, id=570, 344.03531pt x 229.60782pt>
+<./pictures/PrzykladSasiad.png, id=619, 344.03531pt x 229.60782pt>
 File: ./pictures/PrzykladSasiad.png Graphic file (type png)
 <use ./pictures/PrzykladSasiad.png>
-Package pdftex.def Info: ./pictures/PrzykladSasiad.png  used on input line 170.
+Package pdftex.def Info: ./pictures/PrzykladSasiad.png  used on input line 174.
 
 (pdftex.def)             Requested size: 172.01723pt x 114.80362pt.
-File: pwr-logo.png Graphic file (type png)
-<use pwr-logo.png>
-Package pdftex.def Info: pwr-logo.png  used on input line 176.
-(pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
- [9 <./pictures/PrzykladAkcje.png>]
-<./pictures/PlanningGraphStates.png, id=578, 551.81157pt x 377.91188pt>
+File: wit-logo.png Graphic file (type png)
+<use wit-logo.png>
+Package pdftex.def Info: wit-logo.png  used on input line 179.
+(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
+ [10 <./pictures/PrzykladAkcje.png>]
+<./pictures/PlanningGraphStates.png, id=628, 551.81157pt x 377.91188pt>
 File: ./pictures/PlanningGraphStates.png Graphic file (type png)
 <use ./pictures/PlanningGraphStates.png>
 Package pdftex.def Info: ./pictures/PlanningGraphStates.png  used on input line
- 197.
+ 201.
 (pdftex.def)             Requested size: 275.9051pt x 188.95547pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 File: pwr-logo.png Graphic file (type png)
 <use pwr-logo.png>
-Package pdftex.def Info: pwr-logo.png  used on input line 205.
+Package pdftex.def Info: pwr-logo.png  used on input line 207.
 (pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
- [10 <./pictures/PrzykladSasiad.png> <./pictures/PlanningGraphStates.png>]
-<./pictures/PlanningGraphLevels.png, id=584, 887.56593pt x 408.02437pt>
+ [11 <./pictures/PrzykladSasiad.png>]
+<./pictures/PlanningGraphLevels.png, id=634, 887.56593pt x 408.02437pt>
 File: ./pictures/PlanningGraphLevels.png Graphic file (type png)
 <use ./pictures/PlanningGraphLevels.png>
 Package pdftex.def Info: ./pictures/PlanningGraphLevels.png  used on input line
- 213.
+ 217.
 (pdftex.def)             Requested size: 443.78188pt x 204.01169pt.
-<./pictures/PrzykladRownolegle.png, id=586, 346.29375pt x 255.20343pt>
+File: wit-logo.png Graphic file (type png)
+<use wit-logo.png>
+Package pdftex.def Info: wit-logo.png  used on input line 231.
+(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
+ [12 <./pictures/PlanningGraphStates.png> <./pictures/PlanningGraphLevels.png>]
+<./pictures/PrzykladRownolegle.png, id=641, 346.29375pt x 255.20343pt>
 File: ./pictures/PrzykladRownolegle.png Graphic file (type png)
 <use ./pictures/PrzykladRownolegle.png>
 Package pdftex.def Info: ./pictures/PrzykladRownolegle.png  used on input line 
-234.
+239.
 (pdftex.def)             Requested size: 173.14644pt x 127.6014pt.
-File: pwr-logo.png Graphic file (type png)
-<use pwr-logo.png>
-Package pdftex.def Info: pwr-logo.png  used on input line 240.
-(pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
- [11 <./pictures/PlanningGraphLevels.png>]
-<./pictures/PrzykladRownolegleZle.png, id=594, 411.03563pt x 415.5525pt>
+<./pictures/PrzykladRownolegleZle.png, id=643, 411.03563pt x 415.5525pt>
 File: ./pictures/PrzykladRownolegleZle.png Graphic file (type png)
 <use ./pictures/PrzykladRownolegleZle.png>
 Package pdftex.def Info: ./pictures/PrzykladRownolegleZle.png  used on input li
-ne 262.
+ne 267.
 (pdftex.def)             Requested size: 205.5173pt x 207.77574pt.
 File: pwr-logo.png Graphic file (type png)
 <use pwr-logo.png>
-Package pdftex.def Info: pwr-logo.png  used on input line 269.
+Package pdftex.def Info: pwr-logo.png  used on input line 275.
 (pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
- [12 <./pictures/PrzykladRownolegle.png>])
+ [13 <./pictures/PrzykladRownolegle.png>]
+<./pictures/PrzykladWykluczenie3.png, id=652, 352.31625pt x 310.91156pt>
+File: ./pictures/PrzykladWykluczenie3.png Graphic file (type png)
+<use ./pictures/PrzykladWykluczenie3.png>
+Package pdftex.def Info: ./pictures/PrzykladWykluczenie3.png  used on input lin
+e 304.
+(pdftex.def)             Requested size: 176.15768pt x 155.45538pt.
+
+Underfull \vbox (badness 1087) has occurred while \output is active []
+
+File: wit-logo.png Graphic file (type png)
+<use wit-logo.png>
+Package pdftex.def Info: wit-logo.png  used on input line 311.
+(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
+ [14 <./pictures/PrzykladRownolegleZle.png>]
+<./pictures/PrzykladWykluczenie2.png, id=663, 224.33812pt x 117.43875pt>
+File: ./pictures/PrzykladWykluczenie2.png Graphic file (type png)
+<use ./pictures/PrzykladWykluczenie2.png>
+Package pdftex.def Info: ./pictures/PrzykladWykluczenie2.png  used on input lin
+e 333.
+(pdftex.def)             Requested size: 112.16878pt x 58.71922pt.
 File: pwr-logo.png Graphic file (type png)
 <use pwr-logo.png>
-Package pdftex.def Info: pwr-logo.png  used on input line 719.
+Package pdftex.def Info: pwr-logo.png  used on input line 352.
 (pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
- [13 <./pictures/PrzykladRownolegleZle.png>]
+ [15 <./pictures/PrzykladWykluczenie3.png> <./pictures/PrzykladWykluczenie2.png
+>]
+<./pictures/PrzykladWykluczenie1.png, id=678, 344.03531pt x 117.43875pt>
+File: ./pictures/PrzykladWykluczenie1.png Graphic file (type png)
+<use ./pictures/PrzykladWykluczenie1.png>
+Package pdftex.def Info: ./pictures/PrzykladWykluczenie1.png  used on input lin
+e 357.
+(pdftex.def)             Requested size: 172.01723pt x 58.71922pt.
+File: wit-logo.png Graphic file (type png)
+<use wit-logo.png>
+Package pdftex.def Info: wit-logo.png  used on input line 399.
+(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
+ [16 <./pictures/PrzykladWykluczenie1.png>]
+<./pictures/PrzykladPlan1.png, id=689, 340.27126pt x 114.4275pt>
+File: ./pictures/PrzykladPlan1.png Graphic file (type png)
+<use ./pictures/PrzykladPlan1.png>
+Package pdftex.def Info: ./pictures/PrzykladPlan1.png  used on input line 412.
+(pdftex.def)             Requested size: 170.13521pt x 57.21361pt.
+<./pictures/PrzykladPlanStateLevel1.png, id=691, 116.68594pt x 184.43906pt>
+File: ./pictures/PrzykladPlanStateLevel1.png Graphic file (type png)
+<use ./pictures/PrzykladPlanStateLevel1.png>
+Package pdftex.def Info: ./pictures/PrzykladPlanStateLevel1.png  used on input 
+line 422.
+(pdftex.def)             Requested size: 58.34282pt x 92.2193pt.
+<./pictures/PrzykladPlanActionLevel1.png, id=694, 149.05687pt x 235.63031pt>
+File: ./pictures/PrzykladPlanActionLevel1.png Graphic file (type png)
+<use ./pictures/PrzykladPlanActionLevel1.png>
+Package pdftex.def Info: ./pictures/PrzykladPlanActionLevel1.png  used on input
+ line 433.
+(pdftex.def)             Requested size: 74.52824pt x 117.81487pt.
+
+Underfull \vbox (badness 1584) has occurred while \output is active []
+
 File: pwr-logo.png Graphic file (type png)
 <use pwr-logo.png>
-Package pdftex.def Info: pwr-logo.png  used on input line 719.
+Package pdftex.def Info: pwr-logo.png  used on input line 438.
 (pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
- [14] (./rozdzial3.tex
-Rozdzia\l  3.
+ [17 <./pictures/PrzykladPlan1.png> <./pictures/PrzykladPlanStateLevel1.png>]
+<./pictures/PrzykladPlanWarstwa1.png, id=705, 653.44125pt x 402.75468pt>
+File: ./pictures/PrzykladPlanWarstwa1.png Graphic file (type png)
+<use ./pictures/PrzykladPlanWarstwa1.png>
+Package pdftex.def Info: ./pictures/PrzykladPlanWarstwa1.png  used on input lin
+e 443.
+(pdftex.def)             Requested size: 326.71982pt x 201.37685pt.
 )
+File: wit-logo.png Graphic file (type png)
+<use wit-logo.png>
+Package pdftex.def Info: wit-logo.png  used on input line 719.
+(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
+ [18 <./pictures/PrzykladPlanActionLevel1.png> <./pictures/PrzykladPlanWarstwa1
+.png>]
+(./rozdzial3.tex
+Rozdzia\l  3.
+) [19
 
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 722.
 
-[15
-
+]
+File: wit-logo.png Graphic file (type png)
+<use wit-logo.png>
+Package pdftex.def Info: wit-logo.png  used on input line 722.
+(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
+ [20
 
 ] (./rozdzial4.tex
 Rozdzia\l  4.
-)
+) [21
 
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 725.
-
-[16
-
+]
+File: wit-logo.png Graphic file (type png)
+<use wit-logo.png>
+Package pdftex.def Info: wit-logo.png  used on input line 725.
+(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
+ [22
 
 ] (./rozdzial5.tex
 Rozdzia\l  5.
-)
+) [23
 
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 728.
-
-[17
-
+]
+File: wit-logo.png Graphic file (type png)
+<use wit-logo.png>
+Package pdftex.def Info: wit-logo.png  used on input line 728.
+(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
+ [24
 
 ] (./rozdzial6.tex
 Rozdzia\l  6.
 )
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 731.
-
-[18
-
+ [25
 
 ]
 Overfull \vbox (481.25084pt too high) has occurred while \output is active []
 
-File: pwr-logo.png Graphic file (type png)
-<use pwr-logo.png>
-Package pdftex.def Info: pwr-logo.png  used on input line 731.
-(pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
+File: wit-logo.png Graphic file (type png)
+<use wit-logo.png>
+Package pdftex.def Info: wit-logo.png  used on input line 731.
+(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
 
-[19] (./podsumowanie.tex)
-
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 734.
-
-[20
+[26] (./podsumowanie.tex) [27
 
 
 ]
+File: wit-logo.png Graphic file (type png)
+<use wit-logo.png>
+Package pdftex.def Info: wit-logo.png  used on input line 734.
+(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
+ [28
 
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 742.
-
-
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 742.
-
-(./praca.bbl)
-
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 747.
-
-[21
-
+] (./praca.bbl) [29
 
 ]
+File: wit-logo.png Graphic file (type png)
+<use wit-logo.png>
+Package pdftex.def Info: wit-logo.png  used on input line 747.
+(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
+ [30
 
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 754.
-
-
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 754.
-
-(./dodatek1.tex
+] (./dodatek1.tex
 ZaÅ‚Ä…cznik A.
-)
+) [31
 
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 759.
-
-[22
-
+]
+File: wit-logo.png Graphic file (type png)
+<use wit-logo.png>
+Package pdftex.def Info: wit-logo.png  used on input line 759.
+(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
+ [32
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 761.
@@ -1308,7 +1319,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 761.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 761.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 761.
 Package rerunfilecheck Info: File `praca.out' has not changed.
-(rerunfilecheck)             Checksum: F0953A86938409470A87E667C24BEAAB;5079.
+(rerunfilecheck)             Checksum: AB2A5F91C184BA5F28A628B1062D9219;5150.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1316,17 +1327,17 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 761.
  ) 
 Here is how much of TeX's memory you used:
- 14913 strings out of 483075
- 223397 string characters out of 5963834
- 535249 words of memory out of 5000000
- 29409 multiletter control sequences out of 15000+600000
+ 15011 strings out of 483075
+ 225622 string characters out of 5963834
+ 537761 words of memory out of 5000000
+ 29476 multiletter control sequences out of 15000+600000
  599219 words of font info for 64 fonts, out of 8000000 for 9000
  118 hyphenation exceptions out of 8191
- 41i,19n,55p,514b,508s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,19n,55p,533b,564s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plms.enc}{/usr/share/texliv
 e/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texlive/texmf-dist/fonts/e
-nc/dvips/pl/plmi.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share
-/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm
+nc/dvips/pl/plmi.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/shar
+e/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm
 sc.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fon
 ts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.p
 fb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/
@@ -1335,10 +1346,10 @@ sr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmri10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plmi10.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr10.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/pl/plsy10.pfb>
-Output written on praca.pdf (28 pages, 396825 bytes).
+Output written on praca.pdf (42 pages, 604206 bytes).
 PDF statistics:
- 736 PDF objects out of 1000 (max. 8388607)
- 670 compressed objects within 7 object streams
- 150 named destinations out of 1000 (max. 500000)
- 693 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 862 PDF objects out of 1000 (max. 8388607)
+ 766 compressed objects within 8 object streams
+ 181 named destinations out of 1000 (max. 500000)
+ 741 words of extra memory for PDF output out of 10000 (max. 10000000)
 
