@@ -425,6 +425,10 @@
         wykonane przez oprogramowanie utworzone na rzecz pracy. }
         \label{PrzykladPlanWP}
     \end{figure}
+
+    Ze względu na fakt, iż w języku programowania \textbf{PROLOG}, w którym implementowany jest algorytm, zmienne są oznaczane przy pomocy wielkiej litery,
+    a stałe przy pomocy małej, wielkość litery w oznaczaniu nazwy robota nie ma istotnego znaczenia. Zwyczajowo w opisie robot będzie określany 
+    przy pomocy wielkiej litery (np. \textbf{A}) natomiast w wygenerowanych przez program grafach przy pomocy małej \textbf{a}.
     W powyższy sposób zaprezentowano stan początkowy świata. Wszystkie definicje relacji takich jak \textbf{na}, \textbf{idz}, \textbf{zostan}, czy 
     \textbf{pusty} wprowadzono w podrozdziałach \ref{RozdzialWarunkiPoczatkowe} i \ref{RozdzialAkcje}. W wygenerowanych przez oprogramowanie grafach \textbf{poziomy stanów}
     określane są poprzez swój angielski odpowiednich \textbf{StateLevel}. Podobnie z \textbf{poziom akcji} i \textbf{ActionLevel}. 
@@ -437,7 +441,7 @@
     \end{figure}
 
     Następnie przystąpiono do wygenerowania wszystkich możliwych akcji. Postąpiono zgodnie ze wskazówkami z podrozdziału \ref{RozdzialAkcje}. 
-    Dodajemy niezbędne krawędzie wynikające z warunków, jak i efektów każdej z akcji oraz mutexy.
+    Dodajemy niezbędne krawędzie wynikające z warunków, jak i efektów każdej z akcji oraz mutexy (oznaczone przerywanymi, niebieskimi liniami).
 
     \begin{figure}[H]
         \includegraphics[scale=0.5]{PrzykladPlanWarstwa1}
@@ -450,8 +454,133 @@
     $na(A,3)$ znajduje się w zbiorze stanów poziomu drugiego. Po szybkiej analizie okazuje się, iż cel nie znajduje się na wskazanym poziomie, więc
     należy dokonać rozszerzenia grafu planującego o kolejny poziom. Następuje to w sposób analogiczny.
 
+    \begin{figure}[H]
+        \includegraphics[scale=0.25]{FULL_GRAPHPLAN.DEMO1.gv}
+        \centering
+        \caption{Przykład kolejnej iteracji algorytmu}
+        \label{PrzykladPlanW1}
+    \end{figure}
 
+    Po wygenerowaniu kolejnej warstwy algorytmu oraz zaznaczeniu wszystkich mutexów zauważono, iż stan $na(A,3)$ znajduje się w zbiorze stanów 
+    \textbf{StateLevel3}. Następnym krokiem jest sprawdzenie, czy taki zbiór akcji, który doprowadzi nas do stanu $i-1$ bez wprowadzania żadnych sprzeczności.
+    Okazuje się, iż istnieje taka para akcji: $idz(A,2,3) oraz zostan(pusty(1))$. Zgodnie z schematem generowania planu należy zejść iteracyjnie aż do 
+    warunków początkowych aby uzyskać poprawny plan. W omawiany przykładzie łatwo zauważyć, iż przy pomocy akcji $idz(A,1,2)$ oraz $pusty(3)$ udało się 
+    z powrotem otrzymać stan początkowy. Ze względu na fakt, iż człowiek jest w stanie sprawnie wydedukować akcje podtrzymujące na podstawie 
+    akcji aktywny dla każdego poziomu, przy graficznym przedstawieniu planu (w formie opisowej i graficznej) z reguły akcje podtrzymujące będą 
+    pomijane.
+
+    \begin{figure}[H]
+        \includegraphics[scale=0.25]{FULL_GRAPHPLAN_DEMO2.gv}
+        \centering
+        \caption{Graf planujący z zaznaczonymi akcjami aktywnymi prowadzącymi do uzyskania wskazanego celu}
+        \label{PrzykladPlanW1}
+    \end{figure}
+
+    Powyższy rysunek przy pomocy czerwonych strzałek przedstawia akcje aktywną, wraz z jej bezpośrednimi warunkami zajścia oraz efektami, które 
+    prowadzą do uzyskania planu. Zgodnie z intuicją, najbardziej optymalny plan przeniesienia robota A z kafelka 1 na kafelek 3 to:
+    \begin{equation}
+        [[idz(A,1,2)],[idz(A,2,3)]]
+    \end{equation}
+    Ze względu na fakt, iż na danym poziomie może odbywać się więcej niż jedna akcja, każdy krok algorytmu oznaczany jest za pomocą \textbf{listy}, 
+    którą możemy utożsamić z matematycznym zbiorem.
+
+    W ten oto sposób wygenerowano poprawny plan stosując algorytm \textbf{GRAPHPLAN}.
 
 \section{Własności GRAPHPLAN'u}
+    Działanie GRAPHPLAN'u można przedstawić również jako swego rodzaju iteratywne przeszukiwane wszerz. 
+    Dla każdego poziomu generowane są wszystkie możliwe stany, by następnie móc sprawdzić, czy cele do osiągnięcia 
+    znajdują się w utworzonym zbiorze. Jeśli rzeczone cele nie znajdują się, algorytm wykonuje kolejną iterację, 
+    poszerzając swoją wiedzę o świecie. Powyższe przeszukiwanie wykonuje się aż do momemntu, gdy uda się utworzyć satysfakcjonujący plan
+    Dzięki tej własności łatwo pokazać, iż:
+    \begin{theorem}
+        Każdy wyprodukowany plan przez algorytm GRAPHPLAN jest planem legalnym, czyli spełnialnym dla zadanych 
+        warunków początkowych, akcji oraz celów. Ponadto, jeśli dla opisanego świata istnieje plan GRAPHPLAN zawsze go znajdzie.
+    \end{theorem}
+    oraz
+    \begin{theorem}
+        Algorytm zawsze zwraca najkrótszy plan, czyli plan optymalny.
+    \end{theorem}
 
-\section{Prosty przykład}
+    \begin{proof}
+        W pierwszym kroku algorytm generuje nowy poziom stanów. Następnie sprawdza, czy cele znajdują się wśród stanów. Jeśli odpowiedź jest twierdząca,
+        dobiera zbiór akcji, dzięki którym udało się spełnić postawione wymagania. Jeśli odpowiedź jest przecząca, algorytm generuje kolejną warstwę.
+        Niech warstwa $i$ będzie warstwa, w której nie znajdują się wszystkie stany ze zbioru determinowanego przez zdefiniowane cele. W tym przpyadku
+        dla $i+1$ warstwy algorytm próbuje wygenerować plan cofając się do stanu $i$. Jeśli uda się odpowiednio dobrać akcje 
+        cofa się jeszcze dalej aż do stanu początkowego i kończy działanie, jako wynik zwracając plan. Powyższy opis determinuje optymalność planu.
+    \end{proof}
+
+
+    Ponadto należy się również przyjrzeć mechanizmom kreowania kolejnych stanów dla poszczególnych warstw. Algorytm robi to przyrostowo. 
+    Wszystkie istniejące już stane przenoszone są przy pomocy akcji podtrzymujących do następnej warstwy, natomiast akcje aktywne produkują 
+    nowe efekty- dodające bądź usuwające. Mimo iż akcja z perspektywy człowieka jest \textbf{usuwająca}, 
+    z perspektywy komputera jest kolejną informacja, która również zostaje dodana do zbioru stanów.
+
+    Korzystając z powyższej własności sformułowano następujący wniosek:
+    \begin{theorem}
+        \label{LevelOff}
+        Liczba stanów w warstwie \textbf{i+1} jest zawsze większa bądź równa liczbie stanów w warstwie \textbf{i}
+    \end{theorem}
+    Skutki ów twierdzenia są dobrze uwidocznione w przykładach grafów planujących takich jak \ref{PrzykladPlanW1}.
+    Twierdzenie \ref{LevelOff} generuje ciekawy wniosek. Niech oznaczenie $WSL(i)$ oznacza liczbę stanów wchodzą w skład $i$-tej warstwy.
+
+    \begin{lemma}
+        $\exists k\in\mathbb{N}$  $\forall i>k, i\in\mathbb{N}$ : WSL(i+1) = WSL(i)
+    \end{lemma}
+
+    Co sprowadza się do tego, iż od pewnego momentu liczba stanów dla każdej kolejnej warstwy jest stała.
+
+    \begin{proof}
+        Zgodnie z \ref{LevelOff} wiadomym jest, iż zawsze spełniona jest zależność $WSL(i+1) > WSL(i)$. Należy pokazać, iz od pewnego momentu 
+        liczby stanów w warstwach dążą do stałej liczby. Ze względu na strukturę języka STRIPS istnieje skończona liczba akcji. W ów modelu nie istnieją
+        akcje niedeterminstyczne, bądź jakiekolwiek niespodziewane efekty uboczne przeprowadzonych akcji. 
+        Algorytm również rozpoczyna pracę z góry znaną liczbą obiektów, a każdy z obiektów może znajdować się w skończonej liczbie stanów takich 
+        jak $na$ czy $pusty$. Algorytm rozszerza kolejne poziomy stanów przy pomocy akcji aktywnych, jednakże na podstawie skończonej 
+        liczby obiektów oraz skończonych stanów, w jakich ów obiekty mogą się znajdować algorytm, dla każdego z obiektów, może wywnioskować jedynie skończoną 
+        liczbę akcji, które może wykonać. Ostatecznie sprowadza się to do sytuacji, w której ze względu na skończoność wszystkich określonych dziedzin,
+        $i$-ty poziom stanów algorytmu zawiera wszystkie możliwe stany dla wszystkich możliwych obiektów.
+        Od tego momentu mimo przeprowadzania kolejnych akcji podtrzymujących bądź 
+        aktywnych nie powstają już kolejne stany, gdyż zbiór efektów każdej z akcji ma już swoje odwzorowanie w poprzedniej warstwie. 
+        Stąd wniosek, iż istnieje 
+        moment krytyczny, dla którego dochodzi do stabilizacji liczby stanów w danej warstwie.
+    \end{proof}
+
+    \begin{definition}
+        \textbf{Spłaszczeniem} algorytmu jest sytuacja, w której wygenerowanie kolejnego stanu nie prowadzi 
+        do uzyskania nowych informacji o świecie.
+    \end{definition}
+
+    Powyższy lemat jest kluczowym w kontekście rozwiązywania tak zwanego \textit{Problemu stopu} dla algorytmu GRAPHPLAN.
+
+    \subsection{Problem stopu}
+    \begin{figure}[H]
+        \includegraphics[scale=0.25]{FULL_GRAPHPLAN_DEMO2.gv}
+        \centering
+        \caption{Przykład świata, w którym osiągnięcie celu, którym jest kafelek oznaczony kolorem takim jak kolor użytej czcionki do oznaczenia 
+        sygnatury robota, jest niemożliwe ze względu na absencję jednego z kafelków, będących łącznikiem, między robotem a jego celem.}
+        \label{PrzykladPlanW1}
+    \end{figure}
+    Wcześniejsze przykłady rozpatrywały jedynie sytuację, w której algorytm zawsze znajdował plan, gdyż przedstawione światy były spreparowane w taki sposób, 
+    aby rzeczony plan zawsze istniał. Jednakże nie zawsze musi tak być, więc należy zabezpieczyć algorytm również i przed taką ewentualnością. Łatwo zauważyć, 
+    iż obecna struktura planu nie została utworzona z myslą o takiej sytuacji- algorytm będzie generował coraz to nowsze warstwy bezskutecznie próbując uzyskać 
+    plan dla zdefiniowanego celu.Ostatecznie dojdzie do całkowitego zapętlenia pracy algorytmu. 
+    Z tego powodu pierwszym pomysłem na uzbrojenie algorytm w mechanizm detekcji nieskończonej pętli jest sprawdzenie rozmiaru zbioru stanów dla dwóch 
+    następujących po sobie warstw. Jeśli warstwa nowsza składa się z większej liczby stanów, algorytm uzyskuje nowe informacje o świecie i jest 
+    przygotowany do dalszego trawersowania po grafie planującym, jednakże gdy ów liczby są sobie równe dochodzi do swego rodzaju stagnacji- wszystkie 
+    możliwe ruchy nie wprowadzają nowych informacji o świecie. Jeśli dla poprzedniego stanu nie udało się utworzyć planu, algorytm wnioskuje, iż 
+    również dla tego, jak i przyszłych, utworzenie stanu będzie niemożliwe, co powoduje zwrócenie przez program informacji o braku 
+    możliwości utworzenia odpowiedniego planu i jego terminację.
+
+    Po wprowadzeniu powyższej modyfikacji możliwym jest wyciągnąć następujący wniosek 
+
+    \begin{lemma}
+        GRAPHPLAN zawsze kończy swoje działanie.
+    \end{lemma} 
+
+    TO-DO: Może bardziej "matematyczne" dowody, a nastepnie obrazowe opisy wraz z rysunkami?
+    Wprowadzenie informacji o liczbie akcji oraz mutexów, wprowadzenie twierdzenia o 
+    wielomianowości czasu utworzenia algorytmu GRAPHPLAN (niestety eksponencjalny, ale 
+    jednak wielomianowy))
+
+
+    
+

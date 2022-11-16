@@ -18,11 +18,11 @@
 \BOOKMARK [2][-]{subsection.2.6.1}{Wzajemne wykluczanie}{section.2.6}% 18
 \BOOKMARK [1][-]{section.2.7}{Wyszukiwanie planu}{chapter.2}% 19
 \BOOKMARK [1][-]{section.2.8}{W\233asnosci GRAPHPLAN'u}{chapter.2}% 20
-\BOOKMARK [1][-]{section.2.9}{Prosty przyk\233ad}{chapter.2}% 21
+\BOOKMARK [2][-]{subsection.2.8.1}{Problem stopu}{section.2.8}% 21
 \BOOKMARK [0][-]{chapter.3}{Programowanie ograniczen}{}% 22
 \BOOKMARK [1][-]{section.3.1}{Wprowadzenie}{chapter.3}% 23
-\BOOKMARK [1][-]{section.3.2}{Wykorzystanie w programowaniu w logice}{chapter.3}% 24
-\BOOKMARK [1][-]{section.3.3}{Obrazowe przyk\233ady}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.2}{Obrazowe przyk\233ady}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.3}{Wykorzystanie w implementacji algorytmu}{chapter.3}% 25
 \BOOKMARK [0][-]{chapter.4}{Implementacja}{}% 26
 \BOOKMARK [1][-]{section.4.1}{Po\233aczenia miedzy komponentami}{chapter.4}% 27
 \BOOKMARK [1][-]{section.4.2}{Implementacja algorytmu}{chapter.4}% 28
@@ -75,6 +75,6 @@
 \BOOKMARK [2][-]{subsection.6.7.3}{Szczeg\363\233y implementacyjne}{section.6.7}% 75
 \BOOKMARK [2][-]{subsection.6.7.4}{Wyniki}{section.6.7}% 76
 \BOOKMARK [2][-]{subsection.6.7.5}{Wnioski}{section.6.7}% 77
-\BOOKMARK [0][-]{chapter*.22}{Podsumowanie}{}% 78
-\BOOKMARK [0][-]{chapter*.23}{Bibliografia}{}% 79
+\BOOKMARK [0][-]{chapter*.25}{Podsumowanie}{}% 78
+\BOOKMARK [0][-]{chapter*.26}{Bibliografia}{}% 79
 \BOOKMARK [0][-]{appendix.A}{Zawartosc p\233yty CD}{}% 80

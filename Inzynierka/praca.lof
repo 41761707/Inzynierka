@@ -20,6 +20,9 @@
 \contentsline {figure}{\numberline {2.14}{\ignorespaces Warunki początkowe omawianego świata. Obrazki ułatwiające analizę przykładu w całości zostały wykonane przez oprogramowanie utworzone na rzecz pracy. \relax }}{17}{figure.caption.19}%
 \contentsline {figure}{\numberline {2.15}{\ignorespaces Wygenerowane akcje na podstawie warunków początkowych\relax }}{18}{figure.caption.20}%
 \contentsline {figure}{\numberline {2.16}{\ignorespaces Wygenerowany drugi stan grafu bezpośrednio wynikający z pierwszego poziomu akcji\relax }}{18}{figure.caption.21}%
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Przykład kolejnej iteracji algorytmu\relax }}{19}{figure.caption.22}%
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Graf planujący z zaznaczonymi akcjami aktywnymi prowadzącymi do uzyskania wskazanego celu\relax }}{19}{figure.caption.23}%
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Przykład świata, w którym osiągnięcie celu, którym jest kafelek oznaczony kolorem takim jak kolor użytej czcionki do oznaczenia sygnatury robota, jest niemożliwe ze względu na absencję jednego z kafelków, będących łącznikiem, między robotem a jego celem.\relax }}{21}{figure.caption.24}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
