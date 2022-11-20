@@ -2,6 +2,7 @@ import sys
 import parsePlanFULL
 import parseplanSIMPLIFIED
 from tkinter import *
+from tkinter import font as tkFont
 from PIL import ImageTk,Image
 from pyswip import Prolog
 
@@ -20,6 +21,8 @@ class GUI:
         self.menu_frame = Frame(self.root,width=1200,height=100)
         self.left_panel = Frame(self.root,bg='white',width=600,height=700)
         self.right_panel = Frame(self.root,bg='white',width=600,height=700)
+        self.helv36=tkFont.Font(family='Helvetica', size=36)
+        self.menu_font = tkFont.Font(family='Helvetica', size=30)
         self.initMenu()
         self.menu_frame.pack(side=TOP)
         self.left_panel.pack(side=LEFT)
@@ -145,11 +148,11 @@ class GUI:
 
         
     def initMenu(self):
-        button1 = Button(self.menu_frame,text='3x3',command = self.drawBoard3x3).pack(side=LEFT)
-        button2 = Button(self.menu_frame,text='4x4', command = self.drawBoard4x4).pack(side=LEFT)
-        button3 = Button(self.menu_frame,text='N Hetmanow', command = self.drawBoard3x3).pack(side=LEFT)
-        button4 = Button(self.menu_frame,text='CargoBot', command = self.cargoBOT).pack(side=LEFT)
-        button5 = Button(self.menu_frame,text='Wygeneruj graf', bg='white',command = self.get_graph).pack(side=LEFT)
+        button1 = Button(self.menu_frame,text='3x3',font=self.menu_font,command = self.drawBoard3x3).pack(side=LEFT)
+        button2 = Button(self.menu_frame,text='4x4',font=self.menu_font, command = self.drawBoard4x4).pack(side=LEFT)
+        button3 = Button(self.menu_frame,text='N Hetmanow',font=self.menu_font, command = self.drawBoard3x3).pack(side=LEFT)
+        button4 = Button(self.menu_frame,text='CargoBot',font=self.menu_font, command = self.cargoBOT).pack(side=LEFT)
+        button5 = Button(self.menu_frame,text='Wygeneruj graf',font=self.menu_font, bg='white',command = self.get_graph).pack(side=LEFT)
 
     def setValue(self,value,popup,options):
         index = 0
@@ -170,19 +173,17 @@ class GUI:
     def drawBoard4x4(self):
         self.clear_boards()
         self.chosen_option=2
+        self.helv36 = tkFont.Font(family='Helvetica', size=36, weight='bold')
         canvas_left = Canvas(self.left_panel, width=600, height=600)
         canvas_left.configure(background='white')
-        for i in range(4):
-            for j in range(4):
-                canvas_left.create_rectangle(150*i,150*j,150*(i+1),150*(j+1))
         options=['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','']
         popup = Menu(canvas_left, tearoff=0)
         self.buttons=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
         for i in range(4):
             for j in range(4):
                 button_number=4*j+i
-                self.buttons[button_number]=(Button(canvas_left,width=12,height=6,bg='white',text='',command = lambda x=button_number: self.assign(x,popup)))
-                self.buttons[button_number].place(x=(150*i)+10,y=(150*j)+10)
+                self.buttons[button_number]=(Button(canvas_left,width=5,height=3,font=self.helv36,bg='brown',text='',command = lambda x=button_number: self.assign(x,popup)))
+                self.buttons[button_number].place(x=(150*i),y=(150*j))
         for option in options:
             popup.add_command(label=option,command = lambda i=option:self.setValue(i,popup,options))
         canvas_left.pack()
@@ -190,19 +191,17 @@ class GUI:
     def drawBoard3x3(self):
         self.clear_boards()
         self.chosen_option=1
+        self.helv36 = tkFont.Font(family='Helvetica', size=36, weight='bold')
         canvas_left = Canvas(self.left_panel, width=600, height=600)
         canvas_left.configure(background='white')
-        for i in range(3):
-            for j in range(3):
-                canvas_left.create_rectangle(200*i,200*j,200*(i+1),200*(j+1))
         options=['1','2','3','4','5','6','7','8','']
         popup = Menu(canvas_left, tearoff=0)
         self.buttons=[1,2,3,4,5,6,7,8,9]
         for i in range(3):
             for j in range(3):
                 button_number=3*j+i
-                self.buttons[button_number]=(Button(canvas_left,width=19,height=10,bg='white',text='',command = lambda x=button_number: self.assign(x,popup)))
-                self.buttons[button_number].place(x=(200*i)+10,y=(200*j)+10)
+                self.buttons[button_number]=(Button(canvas_left,width=7,height=4,bg='brown',font=self.helv36,text='',command = lambda x=button_number: self.assign(x,popup)))
+                self.buttons[button_number].place(x=(200*i),y=(200*j))
         for option in options:
             popup.add_command(label=option,command = lambda i=option:self.setValue(i,popup,options))
         canvas_left.pack()
@@ -222,7 +221,7 @@ class GUI:
             if(block_name in blocks[i] and i != pos):
                 blocks[i].remove(block_name)
         print(blocks)
-        self.cargo_button.place(x=width*int(pos)+(width/4),y=532-(18*3*height),anchor='nw')
+        self.cargo_button.place(x=width*int(pos)+(width/4),y=542-(18*3*height),anchor='nw')
 
 
     def chose_table(self,button,canvas,blocks):
@@ -241,13 +240,13 @@ class GUI:
             counter=counter+len(blocks[i])
         counter=counter-len(blocks)
 
-        button = Button(panel,width=3,height=3,text=chr(97+counter),bg='orange',command = lambda: self.chose_table(button,canvas,blocks))
+        button = Button(panel,width=1,height=1,text=chr(97+counter),bg='orange',font=self.helv36,command = lambda: self.chose_table(button,canvas,blocks))
         button.place(x=0,y=0)
     
-    def add_table(self,canvas,blocks):
+    def add_table(self,canvas,blocks,font_used):
         table_id=-1
         table_id = canvas.create_line(25,550,575,550)
-        label_id = canvas.create_text(275,580, text=table_id)
+        label_id = canvas.create_text(275,580, text=table_id, font=font_used)
         blocks.append([table_id])
         table_width = 550/len(blocks)
         for i in range(len(blocks)):
@@ -261,9 +260,10 @@ class GUI:
     def cargoBOT(self):
         self.clear_boards()
         self.chosen_option=3
+        helv16 = tkFont.Font(family='Helvetica', size=16, weight='bold')
         canvas_left = Canvas(self.left_panel, width=600, height=600)
         canvas_left.create_text(300,30,text='Stan poczatkowy:')
-        table_button = Button(self.left_panel,width=10,height=3,text='Dodaj polke',command = lambda: self.add_table(canvas_left,self.cargo_blocks_left))
+        table_button = Button(self.left_panel,width=10,height=3,text='Dodaj polke',command = lambda: self.add_table(canvas_left,self.cargo_blocks_left,helv16))
         block_button = Button(self.left_panel,width=10,height=3,text='Dodaj blok',command= lambda: self.add_block(canvas_left,self.cargo_blocks_left,self.left_panel))
         block_button.place(x=350,y=50,anchor='nw')
         table_button.place(x=150,y=50,anchor='nw')
@@ -272,7 +272,7 @@ class GUI:
 
         canvas_right = Canvas(self.right_panel, width=600, height=600)
         canvas_right.create_text(300,30,text='Stan koncowy: ')
-        table_button_right = Button(self.right_panel,width=10,height=3,text='Dodaj polke',command = lambda: self.add_table(canvas_right,self.cargo_blocks_right))
+        table_button_right = Button(self.right_panel,width=10,height=3,text='Dodaj polke',command = lambda: self.add_table(canvas_right,self.cargo_blocks_right,helv16))
         block_button_right = Button(self.right_panel,width=10,height=3,text='Dodaj blok',command= lambda: self.add_block(canvas_right,self.cargo_blocks_right,self.right_panel))
         block_button_right.place(x=350,y=50,anchor='nw')
         table_button_right.place(x=150,y=50,anchor='nw')
