@@ -3,9 +3,10 @@
 \label{rozdzial1}
 \section{Planowanie}
 
-    Codziennie ludzie używają słowa "plan" w różnych kontekstach: firma planuje rozkład palet na magazynie, trener planuje strategię na
-    najbliższy mecz, student planuje jak rozwiązać zadanie na kolokwium, czy chociażby człowiek codziennie planuje listę zakupów. \\
-    Mimo różnych kontekstów istnieją wyodrębnione wspólne cechy każdego z planów:
+    Każdy człowiek codziennie wielokrotnie dokonuje procesu określonego mianem planowania, często nie zważając na to, jak skomplikowany proces wykonują.
+    Skonstruowane przez ludzi plany mogą odnosić się do tak trywialnych zagadnień jak utworzenie listy zakupów, która wprost jest generowana przez braki
+    w domowej lodówce oraz upodobania gastronomiczne kupującego, do bardziej abstrakcyjnych form jak \textit{plan na życie}, czy \textit{plan na wygranie meczu}.
+    Przyglądając się planom oraz ich własnościom można wyodrębnić następujące trzy aspekty:
     \begin{definition}
     \label{StanyPoczatkowe}
         \textbf{Warunki początkowe} - stan świata przed zastosowaniem akcji. W dalszej części pracy również określane jako 
@@ -42,6 +43,20 @@
     \label{Plan}
     \textbf{Plan}- lista akcji, której zastosowanie do stanu początkowego powoduje jego zmianę do stanu określonego w ramach cel. 
     \end{definition}
+
+    Oczywiście nie każdy plan musi być wykonalny. Zdarzają się również sytuacje, w których nie da się utworzyć planu dla zadanych warunków 
+    początkowych oraz celu. Z takimi przypadkami algorytm jest sobie w stanie sprawnie poradzić (o czym później w dalszej części pracy), 
+    jednakże istnieje inna grupa przypadków, która z persepktywy ów metodologii jest niemożliwa do realizacji. 
+    Mowa tu o sytuacjach, gdy któraś z akcji zmienia się w akcję \textbf{warunkową}.
+    \begin{definition}
+        \label{Akcja warunkowa}
+        \textbf{Akcja warunkowa} to typ akcji, która w zależności od bieżącego stanu świata produkuje inne wyniki
+    \end{definition}
+
+    Przykładem akcji warunkowej jest kopnięcie dmuchanej piłki. W zależności od wiejącego wiatru, które często zmienia się w sposób dynamiczny, 
+    przyłożenie tej samej siły do kopnięcia skutkuje różnym punktem końcowym trasy piłki. Ze względu na ograniczenia języka STRIPS plany w 
+    takim kontekście są niemożliwe do utworzenia, dlatego w dalszej części pracy wszystkie przedstawione sytuacje będą możliwe do całkowitego 
+    opisu przy pomocy nomenklatury STRIPS.
     
     \begin{figure}[H]
         \includegraphics[scale=0.5]{Przyklad1}
@@ -69,7 +84,8 @@
         \textbf{Plan optymalny}- Plan o minimalnej liczbie kroków satysfakcjonujący wskazany cel. 
     \end{definition}
      
-    W dalszej części pracy słowo \textbf{plan} najczęściej będzie utożsamiane z planem optymalnym. \\
+    W dalszej części pracy słowo \textbf{plan} najczęściej będzie utożsamiane z planem optymalnym.
+    
     Wprowadzenie powyższej definicji wiąże się z powstaniem bardzo ważnego pytania: \textit{Jak utworzyć plan optymalny?}. Bazując na przykładach
     takich jak \ref{Przyklad1} złudną może być myśl, iż generowanie optymalnych planów jest rzeczą prostą. Niech kolejny przykład będzie tego
     dowodem.
@@ -89,7 +105,9 @@
 
 
 \section{Planowanie przy użyciu komputerów}
+
     \subsection{STRIPS}
+    \label{STRIPSRozdział}
     W 1971 roku Panowie: Richard Fikes oraz Nils Nillson z Standford Research Institute (SRI International, 
     jeden z najsłynniejszych na świecie ośrodków badawczych) zdecydowali się na przedstawienie światu
     nowego podejścia w dziedzinie planowania o nazwie \textbf{STRIPS} (\textbf{ST}anford \textbf{R}esearch \textbf{I}nstitute
@@ -137,10 +155,43 @@
     Dzięki swojej roli w rozwoju planowania z użyciem komputerów, STRIPS został dodatkowo wyróżniony- od jego nazwy pochodzi języki opisu świata korzystający
     z trójki: stan początkowy, akcja oraz cel. Przez następne lata rozwiązania w obszarze planowania silnie bazowały na wprowadzonym w powyższej pracy opisie świata.
 
+    \subsection{Rozwiązywanie ludzkich problemów}
+    W 1972 roku Panowie Allen Newell i Herbet Simon opublikowali książkę pod nazwą \textbf{Human Problem Solving}, której tłumaczenie
+    znajduje się w tytule opisywanej sekcji. Założenie odnośnie otrzymywanych przez algorytm rozwiązujący problem danych 
+    pozostało zgodne z opisem w sekcji \ref{STRIPSRozdział}, jednakże autorzy pracy zauważyli, iż utworzony w ten sposób 
+    obszar działań (\textit{problem space}) może osiągać niebotyczne rozmiary. Chcąc odpowiedzieć na pytanie, 
+    w jaki sposób ludzie wybierają odpowiednie operacje w danej sytuacji, zauważyli, iż ludzie często wykorzystują \textit{skróty},
+    które wynikają bezpośrednio z intuicji. Człowiek ze względu na swoją naturę będzie dążył do zużycia jak najmniejszych 
+    pokładów energii w celu osiągnięcia wyznaczonego celu. Na tej podstawie rozpoczęło się formowanie 
+    technik rozwiązywania problemów zwanych \textbf{heurystykami}. Początkowe heurtystki ograniczały się do zastosowania 
+    pewnych ograniczeń jeśli chodzi o wyznaczanie zbioru operatorów, na przykład poprzez unikanie powtórzeń (\textit{repeat-state avoidance})
+    oraz unikanie powrotów do stanó już znanych (\textit{backup avoidance}). Na przestrzeni następnych lat pojęcie heurystyki rozwinie się diametralnie, jednakże
+    zachowa swoją pierwotną definicję szukania rozwiązań na skróty lub kolokwialnie mówiąc \textit{na ludzkie oko}.  
+
+    \subsection{Liniowy i częściowy porządek}
+    Na początku lat 70 ubiegłego wieku do tworzenia prostych planów wykorzystywano również pojęcie 
+    liniowego porządku (\textit{total order}) sekwencji akcji. W tym podejściu, ochrzonym mianem \textbf{planowanie liniowe}
+    (\textit{linear planning}) dla każdego z celów  próbowano utworzyć odpowiedni podplan, który go osiągał.
+    Następnie ów plan łączono przy pomocy odpowiedniego porządku akcji w jeden spójny plan.
+    Ze względu na wady tego podejścia, jak długi czas formowania planu oraz możliwość wystąpienia konfliktów między 
+    odpowiednimi celami planu, co na początku nie było takie oczywiste, zamiast liniowego porządku zaczęto wykorzystywać porządek częściowy (\textit{partial order}),
+    którego przykładem jest omawiany \textbf{GRAPHPLAN}.
+
+
+
+
+
+
+
     \subsection{ADL i PDDL}
-    TO-DO
+    Action Description Language (w skrócie \textbf{ADL}) zostało zaproponowane przez pana Edwina Pednault'a  w 1987 roku jako usprawnienie 
+    języku opisu STRIPS. Ów system automatycznego planowania został zaprojektowany z myślą o przyszłej implementajci w nowoczesnych na tamten czas robotach.
+    Główną ideą stojącą za utworzeniem tego języka opisu problemów było zauważenie, iż język STRIPS nie potrafi poradzić sobie z sytuacjami, gdy
+    powstanie danego efektu jest niedeterministyczne. Dodatkowym aspektem, które wprowadzenie znacznie poprawiło wydajność metodologii ADL względem STRIPS 
+    było wykorzystanie zasady \textbf{otwartego świata}, która mówi, iż rzeczy nieokreślone w świecie są uznawane jako \textit{nieznane}, a nie jako 
+    fałszywe, jak to było w STRIPS (\textbf{zasada zamkniętego świata}). Dodatkowo, 
 
-
+    Planning Domain Definition Language (w skrócie \textbf{PDDL}) 
 
     \subsection{Nowoczesne rozwiązania}
     TO-DO

@@ -5,6 +5,24 @@ Fast planning through planning graph analysis.
 \newblock Web pages: \url{https://www.cs.cmu.edu/~avrim/Papers/graphplan.pdf/}
   [ostatni dostęp: 21.10.2022].
 
+\bibitem{FifteenLoydProblem}
+A modern treatment of the 15 puzzle, aaron f. archer.
+\newblock Web pages:
+  \url{https://www.cs.cmu.edu/afs/cs/academic/class/15859-f01/www/notes/15-puzzle.pdf}
+  [ostatni dostęp: 07.11.2022].
+
+\bibitem{80Moves}
+The parallel search bench zram and its applications.
+\newblock Web pages:
+  \url{http://www.iro.umontreal.ca/~gendron/Pisa/References/BB/Brungger99.pdf}
+  [ostatni dostęp: 07.11.2022].
+
+\bibitem{Fifteen}
+Solving the 15-puzzle.
+\newblock Web pages:
+  \url{https://cseweb.ucsd.edu/~ccalabro/essays/15_puzzle.pdf} [ostatni
+  dostęp: 07.11.2022].
+
 \bibitem{STRIPS}
 Strips: A new approach to the application of theorem proving to problem
   solving.

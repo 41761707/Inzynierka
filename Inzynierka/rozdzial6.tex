@@ -3,9 +3,80 @@
 
 \section{15}
     \subsection{Wprowadzenie}
+        Piętnastka (fr. taquin), znana również w Polsce o nazwie \textit{przesuwanka}, w zapisie często podawana przy pomocy liczbowego
+        odpowiednika (15) jest grą w formie specyficznej
+        układanki, której powstanie datuje się na koniec XIX wieku. Składa się ona z 
+        15 klocków oraz ramki, pierwotnie drewnianej. Ramka zaprojektowana została specjalnie z myślą
+        o pozostawieniu jednego wolnego miejsca, aby móc w łatwy sposób przesuwać klocki sąsiadujące z miejscem 
+        pustym. Celem gry jest ułożenie klocków w określony sposób, najcześciej w porządku rosnącym czytając 
+        od lewej do prawej rzędami, z określonego stanu początkowego. Częstym zabiegiem stosowanym przez 
+        twórców ów układanki jest konwersja liczb na części obrazka, aby zachęcić do gry młodszych odbiorców.
+
+        \begin{figure}[H]
+            \includegraphics[scale=0.5]{15_ułożona}
+            \centering
+            \caption{Wygląd układanki piętnastki wygenerowany przy pomocy zaimplementowanej w ramach pracy warstwy graficznej}
+        \end{figure}
+
+        \begin{figure}[H]
+            \includegraphics[scale=0.15]{15_obrazkowa}
+            \centering
+            \caption{Piętnastka w formie obrazkowej. Źródło: \url{http://mypuzzlecollection.blogspot.com/2012/08/mc-escher-birds-fish-and-turtles.html}}
+        \end{figure}
+
+        \begin{figure}[H]
+            \includegraphics[scale=0.15]{15_losowe}
+            \centering
+            \caption{Losowa rozwiązywalna permutacja układanki}
+        \end{figure}
+
+    \subsection{Teoria}
+        W 1878 roku amerykański wynalazca gier i zagadek (między innymi zagadek szachowych) \textbf{Samuel Loyd} ze względu na swój fach 
+        nie przeszedł obojętnie koło piętnastki proponując ułożenie układu rosnącego z pozycji, która 
+        od początkowej różniła się pozycjami jedynie dwóch klocków numerowanych odpowiednio 14 i 15 \cite{FifteenLoydProblem}.
+        Problem ów stał się na tyle popularny, iż została wyznaczona nagroda 1000 dolarów dla osoby, której udałoby się 
+        znaleźć prawidłowe rozwiązanie przygotowanego przez Pana Samuela problemu.
+
+        Niemożliwość ułożenia problemu przez bardzo długi czas doprowadziła do pierwszych poważniejszych rozważań 
+        nad z pozoru trywialną łamigówką. Efektem prac matematyków było parę zaskakujących wniosków, które ostatecznie doprowadziły 
+        do udowodnienia, iż wyżej przedstawiona łamigłówka jest nierozwiązywalna.
+
+        \begin{lemma}
+            Nie wszystkie ustawienia początkowe piętnastki są możliwe do rozwiązania.\cite{Fifteen}
+        \end{lemma}
+        
+        Wynika to z faktu, iż rozwiązywalne są jedynie rozwiązanie oo parzystej liczbie inwersji. Zagadka Pana Lyod'a jest 
+        ustawieniem nieparzystym jeśli chodzi o inwersje. Prowadzi to do następującego wniosku:
+        \begin{corollary}
+            Istnieje $\frac{16!}{2}=10 461 394 944 000$ rozwiązywalnych ustawień. 
+        \end{corollary}
+
+        Dodatkową ciekawostką istotną z perspektywy wykonywanych testów jest minimalna liczba posunięć, którą należy wykonać, 
+        aby z rozwiązywalnego stanu osiągnąć wcześniej wyznaczony cel. Mianem \textbf{boskiej liczby} w odniesieniu do przesuwanki
+        określą się największą liczbę posunięć, którą trzeba osiągnąć, aby rozwiązać najtrudniejsze ułożeniem początkowe. Przy pomocy matematyki 
+        naukowcy odnaleźli najtrudniejsze ustawienia oraz obliczyli ów liczbę, co zaprezentowano w następującym lemacie:
+
+        \begin{lemma}
+            \textbf{Boska liczba} dla 15-elementowej przesuwanki wynosi \textbf{80}. \cite{80Moves}
+        \end{lemma}
+
+        W trakcie poniżej opisanego testu sprawdzono plany przesuwania odpowiednich klocków, aby w jak najmniejszej możliwej liczbie ruchów
+        otrzymać odpowiedni stan końcowy, przy okazji sprawdzono osiągnięcia czasowe jak i porównano otrzymane wyniki z popularnymi herustykiami 
+        spersonalizowanymi pod rozwiązywanie ów układanki.
+
     \subsection{Przykład}
+        Rozpatrzmy następujący przykład:
+
+
     \subsection{Szczegóły implementacyjne}
+    Ważnym jest, aby przedstawić omawiany świat zgodnie z wytycznymi ustalonymi przez język \textbf{STRIPS}. Z tego powodu należy dokładnie okreslić 
+    każdą z istniejących w świecie relacji oraz poprawnie określić cel, jak i warunki początkowe.
+
     \subsection{Wyniki}
+
+    \subsection{Młodsza siostra- ósemka}
+
+    \subsection{Wyniki dla 8}
     \subsection{Wnioski}
 \section{CargoBot}
     \subsection{Wprowadzenie}

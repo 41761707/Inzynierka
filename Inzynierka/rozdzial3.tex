@@ -3,11 +3,75 @@
 
 \section{Wprowadzenie}
     Programowanie ograniczeń (inna nazwa: technologia więzów) jest narzędziem wykorzystywanym do rozwiązywania 
-    problemów z dziedzin kombinatoryki, sztucznej inteligencji, czy planowania jak i harmonogramowania zadań.  
+    problemów z dziedzin kombinatoryki, sztucznej inteligencji, czy planowania jak i harmonogramowania zadań.
+    W składzie tego podejścia do programowania często wyróżnia się dwa elementy: ograniczenia (zwane również
+    stałymi) oraz problem rozwiązywania ograniczeń (ang. Constraint Satisfaction Problem, CSP)
+    Poniżej dokonano formalnego zdefiniowania powyższych komponentów:
+    \begin{definition}
+        \label{ConstraintProblem}
+        \textbf{Problem rozwiązywania ograniczeń, CSP} jest następującą trójką:
+        \begin{equation}
+            CSP = (V,D,C)
+        \end{equation}
+        gdzie:
+
+        $V = \{x_{1},x_{2},...,x_{n}\}$ oznacza zbiór zmiennych wykorzystywanych do opisu problemu
+
+        $D = \{d_{1},d_{2},...,d_{n}\}$ oznacza zbiór dziedzin wyżej wspominanych zmiennych. W ramach 
+        rozważeń zawartych w rzeczonej pracy rozpatrywane będą takie $d_{i}$, które są zbiorami zawierającymi 
+        skończoną liczbę potencjalnych wartości zmiennej $x_{i}$.
+
+        $C = \{c_{1},c_{2},...,c_{m}\}$ oznacza zbiór ograniczeń
+    \end{definition}
+    \begin{definition}
+        \label{Constraint}
+        \textbf{Ograniczenami} (inne nazwy: stałe, więzy) nazywamy zmienne oraz zależności między nimi, które muszą zostać spełnione 
+        w ramach rozwiązywania problemu ograniczeń
+        Przy następujących definicjach oczekiwanym celem będzie utworzenie mechanizmu rozwiązującego zadany problem. Jego wynikiem 
+        będzie zbiór wszystkich zmiennych, oraz krotek, które będą zawierały odpowiednie wartości przyporządkowane dla zmiennych.
+    \end{definition}
+    \begin{definition}
+        \label{Krotka}
+        \textbf{Krotka} (ang. tuple) - struktura danych, która w systemach informatycznych odzwierciedla uporządkowany ciąg wartości
+    \end{definition}
+    Dodatkowo wprowadza się termin \textbf{arności} ograniczenia:
+    \begin{definition}
+        \label{Krotka}
+        \textbf{Arnością} (ang. arity) ograniczenia związana jest z liczbą unikalnych zmiennych, która w nią wchodzi.
+    \end{definition}
+
+    Najpopularniejszymi typami ograniczeń są:
+    \begin{enumerate}
+        \item Ograniczenia o arności 1, zwane ograniczeniami \textbf{unarnymi} (w tym przypadku z reguły będą one ściśle związane z dziedziną, raczej 
+        nie będą występowały w kontekście ograniczeń)
+        \item Ograniczenia o arności 2, zwane ograniczeniami \textbf{binarnymi}
+        \item Ograniczenia o arności 3, zwane ograniczeniami \textbf{ternarnymi}
+    \end{enumerate} 
+
+    \begin{example}
+        \label{CP1}
+        Niech będzie dane równanie $x+y=z$, gdzie $x,y,z \in \{0,1\}$. Łatwo zauważyć, iż zadane równanie jest automatycznie ograniczeniem 
+        wpływającym na prezentowane zmienne. Przyporządkowując odpowiednie wartości do zbiorów z definicji \label{ConstraintProblem} otrzymano
+        \begin{enumerate}
+            \item $ V = \{x,y,z\} $
+            \item $ D = \{d_{x},d_{y},d_{z}\}$, gdzie $d_{x},d_{y},d_{z} = \{0,1\}$
+            \item $ C = \{x+y=z\}$
+        \end{enumerate}
+        \textbf{Arność} ograniczenia występujące w przedstawionym przykładzie wynosi 3, determinowane jest to liczbą zmiennych, która wchodzi w jej skład.
+        Rozwiązaniem tego problemu będą następujące dopasowania:
+
+        
+        $((x,y,z),\{0,0,0\}, \{1,0,1\}, \{0,1,1\})$
+
+    \end{example}
+    Odnalezienie rozwiązań z przykładu \ref{CP1} było trywialne ze względu na małą liczbę zmiennych, wąskie dziedziny oraz tylko jedno wprowadzone ograniczenie.
+    Podobnie jak z planowaniem, wprowadzenie dodatkowych zmiennych, powiększanie dziedzin oraz zbioru ograniczeń znacznie wpływa na skomplikowanie 
+    odnajdowania rozwiązania.
+
+\section{Wyszukiwanie rozwiązań}
 
 \section{Obrazowe przykłady}
 
 //SEND + MORE = MONEY, N HETMANÓW, czy problem plecakowy?
 //Wszystkie trzy będą pewnie zbędne
 
-\section{Wykorzystanie w implementacji algorytmu}
