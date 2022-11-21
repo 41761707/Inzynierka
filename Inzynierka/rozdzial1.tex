@@ -177,27 +177,33 @@
     odpowiednimi celami planu, co na początku nie było takie oczywiste, zamiast liniowego porządku zaczęto wykorzystywać porządek częściowy (\textit{partial order}),
     którego przykładem jest omawiany \textbf{GRAPHPLAN}.
 
-
-
-
-
-
-
     \subsection{ADL i PDDL}
     Action Description Language (w skrócie \textbf{ADL}) zostało zaproponowane przez pana Edwina Pednault'a  w 1987 roku jako usprawnienie 
     języku opisu STRIPS. Ów system automatycznego planowania został zaprojektowany z myślą o przyszłej implementajci w nowoczesnych na tamten czas robotach.
     Główną ideą stojącą za utworzeniem tego języka opisu problemów było zauważenie, iż język STRIPS nie potrafi poradzić sobie z sytuacjami, gdy
-    powstanie danego efektu jest niedeterministyczne. Dodatkowym aspektem, które wprowadzenie znacznie poprawiło wydajność metodologii ADL względem STRIPS 
+    powstanie danego efektu jest niedeterministyczne. Dodatkowym aspektem, którego wprowadzenie znacznie poprawiło wydajność metodologii ADL względem STRIPS 
     było wykorzystanie zasady \textbf{otwartego świata}, która mówi, iż rzeczy nieokreślone w świecie są uznawane jako \textit{nieznane}, a nie jako 
-    fałszywe, jak to było w STRIPS (\textbf{zasada zamkniętego świata}). Dodatkowo, 
+    fałszywe, jak to było w STRIPS (\textbf{zasada zamkniętego świata}). Dodatkowo, ostateczne cele w języku STRIPS mogły być jedynie przedstawione jako 
+    koniunkcje stanów (np. Dobra i Tania, np. w kontekście restauracji), czyli jako cele bezwarunkowe. 
+    W nomenklaturze ADL cele można przedstawiać również przy pomocy alternatyw, to znaczy 
+    nie wszystkie stany muszą być spełnione, mogły istnieć grupy stanów, w których spełnienie tylko jednego było wystarczające (np. Dobra i (Tania lub Blisko)). 
 
-    Planning Domain Definition Language (w skrócie \textbf{PDDL}) 
+    Planning Domain Definition Language (w skrócie \textbf{PDDL}) było próbą ustandaryzowania języków wykorzystywanych 
+    do planowania przy pomocy komputerów silnie inspirowaną przez swoich poprzedników- STRIPS i ADL. 
+    Utworzeniem takiego standardu zajął się Pan Drew McDermott wraz ze współpracownikami z \textbf{Yale University}.
+    Podstawową ideą stojąca za PDDL jest całkowite odseparowanie metod rozwiązywania problemów od środowisk, w których się 
+    znajdują. Techniki rozwiązywania problemów związanych z logistyką (ustalanie najkrótszej drogi) powinny być również aplikowalne do rozwiązywanie problemów 
+    związanych z produkcją (minimalizacja zużycia materiału). Pozostałe aspekty są porównywalne do języka STRIPS- 
+    istnienie warunków początkowych, zbioru operatorów oraz zbioru złożonego z celow do osiągnięcia.
+
+
 
     \subsection{Nowoczesne rozwiązania}
     TO-DO
     
+    \subsection{Miejsce GRAPHPLAN'u}
     Między powstaniem metodologii STRIPS a jej rozszerzeniami w postaci ADL lub PDDL powstawały również inne podejścia, w tym silnie 
-    bazujący na grafach i ich możliwościach algorytm o wdzięcznej nazwie \textbf{GRAPHPLAN}.
+    bazujący na grafach, własnościach częściowego porządku i ich możliwościach algorytm o wdzięcznej nazwie \textbf{GRAPHPLAN}.
 
 
 

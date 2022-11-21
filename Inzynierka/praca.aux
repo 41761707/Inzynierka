@@ -45,164 +45,168 @@
 \newlabel{TSP}{{1.2}{5}{Problem komiwojażera (Travelling Salesman Problem, TSP). Na rysunku pomocniczym liczby symbolizują wagi krawędzi. Węzeł oznaczony kolorem czerwonym odpowiada węzłowi startowemu, do którego należy wrócić. Długości krawędzi nie zachowują wskazanych przez wagi proporcji.\relax }{figure.caption.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.2}Planowanie przy użyciu komputerów}{5}{section.1.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2.1}STRIPS}{5}{subsection.1.2.1}\protected@file@percent }
+\newlabel{STRIPSRozdział}{{1.2.1}{5}{STRIPS}{subsection.1.2.1}{}}
 \newlabel{WarunekAkcji}{{1.7}{5}{STRIPS}{definition.1.7}{}}
 \newlabel{EfektAkcji}{{1.8}{5}{STRIPS}{definition.1.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.2}ADL i PDDL}{6}{subsection.1.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.3}Nowoczesne rozwiązania}{6}{subsection.1.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.2}Rozwiązywanie ludzkich problemów}{6}{subsection.1.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.3}Liniowy i częściowy porządek}{6}{subsection.1.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.4}ADL i PDDL}{7}{subsection.1.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.5}Nowoczesne rozwiązania}{7}{subsection.1.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.6}Miejsce GRAPHPLAN'u}{7}{subsection.1.2.6}\protected@file@percent }
 \citation{GRAPHPLAN}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}GRAPHPLAN}{7}{chapter.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}GRAPHPLAN}{9}{chapter.2}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Wprowadzenie}{7}{section.2.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Najogólniejsza forma grafu planującego. Składa się on z węzłów, zwanych stanami oraz krawędzi zwanych akcjami. Docelowo poszczególne stany oraz akcje są parami różne, jednak mogą zajść sytuacje, gdy powtórzenie któregoś z komponentów będzie wymagane do uzyskania odpowiedniego celu.\relax }}{7}{figure.caption.4}\protected@file@percent }
-\newlabel{PlanningGraph}{{2.1}{7}{Najogólniejsza forma grafu planującego. Składa się on z węzłów, zwanych stanami oraz krawędzi zwanych akcjami. Docelowo poszczególne stany oraz akcje są parami różne, jednak mogą zajść sytuacje, gdy powtórzenie któregoś z komponentów będzie wymagane do uzyskania odpowiedniego celu.\relax }{figure.caption.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Warunki początkowe}{7}{section.2.2}\protected@file@percent }
-\newlabel{RozdzialWarunkiPoczatkowe}{{2.2}{7}{Warunki początkowe}{section.2.2}{}}
-\newlabel{ZasadaSwiata}{{2.1}{7}{Warunki początkowe}{definition.2.1}{}}
-\newlabel{PoziomStanow}{{2.2}{8}{Warunki początkowe}{definition.2.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Przykładowy moment startowy przyszłego planu. Za pomocą okręgów oznaczono roboty, natomiast poprzez kwadraty oznaczone są kafelki- miejsca, po których mogą poruszać się roboty.\relax }}{8}{figure.caption.5}\protected@file@percent }
-\newlabel{PrzykladSP}{{2.2}{8}{Przykładowy moment startowy przyszłego planu. Za pomocą okręgów oznaczono roboty, natomiast poprzez kwadraty oznaczone są kafelki- miejsca, po których mogą poruszać się roboty.\relax }{figure.caption.5}{}}
-\newlabel{ZbiorPoczatkowy}{{2.1}{8}{Warunki początkowe}{equation.2.2.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Akcje}{8}{section.2.3}\protected@file@percent }
-\newlabel{RozdzialAkcje}{{2.3}{8}{Akcje}{section.2.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Obrazowe przedstawienie ruchu robota B z kafelka 3 na kafelek 2\relax }}{9}{figure.caption.6}\protected@file@percent }
-\newlabel{PrzykladRuch}{{2.3}{9}{Obrazowe przedstawienie ruchu robota B z kafelka 3 na kafelek 2\relax }{figure.caption.6}{}}
-\newlabel{Ruch}{{2.5}{9}{Akcje}{equation.2.3.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Typy akcji}{9}{subsection.2.3.1}\protected@file@percent }
-\newlabel{Persist}{{2.3}{9}{Typy akcji}{definition.2.3}{}}
-\newlabel{Active}{{2.4}{10}{Typy akcji}{definition.2.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Obrazowe przedstawienie wszystkich akcji w pierwszym kroku algorytmu, akcje opisane przy użyciu czcionki o kolorze zielonym symbolizują akcje podtrzymujące, natomiast o kolorze czerwonym- akcje aktywne\relax }}{10}{figure.caption.7}\protected@file@percent }
-\newlabel{PrzykladAkcje}{{2.4}{10}{Obrazowe przedstawienie wszystkich akcji w pierwszym kroku algorytmu, akcje opisane przy użyciu czcionki o kolorze zielonym symbolizują akcje podtrzymujące, natomiast o kolorze czerwonym- akcje aktywne\relax }{figure.caption.7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Definiowanie świata}{10}{section.2.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Graficzne przedstawienie relacji sąsiedztwa dla kafelka numer 4. Kolorem kremowym oznaczono miejsca, z którymi sąsiaduje, natomiast pomarańczowym- te, z którymi nie sąsiaduje. Oznacza to, iż do kafelków pomarańczowych nie można dostać się wykonując jeden ruch\relax }}{11}{figure.caption.8}\protected@file@percent }
-\newlabel{PrzykladAkcje}{{2.5}{11}{Graficzne przedstawienie relacji sąsiedztwa dla kafelka numer 4. Kolorem kremowym oznaczono miejsca, z którymi sąsiaduje, natomiast pomarańczowym- te, z którymi nie sąsiaduje. Oznacza to, iż do kafelków pomarańczowych nie można dostać się wykonując jeden ruch\relax }{figure.caption.8}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.5}Warstwy grafu}{11}{section.2.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Modyfikacja do grafu planującego wprowadzona w poprzednich podrozdziałach. Wprowadzono zależności akcji od stanu poprzedniego, oraz stanu następnego od akcji.\relax }}{12}{figure.caption.9}\protected@file@percent }
-\newlabel{PlanningGraphStates}{{2.6}{12}{Modyfikacja do grafu planującego wprowadzona w poprzednich podrozdziałach. Wprowadzono zależności akcji od stanu poprzedniego, oraz stanu następnego od akcji.\relax }{figure.caption.9}{}}
-\newlabel{Warstwa}{{2.5}{12}{Warstwy grafu}{definition.2.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Przedstawienie sposobu wyznaczania warstw w algorytmie planującym. Poziom stanów oraz akcji wchodzący w skład danej warstwy wyróżniony jest poprzez konkatenację nazwy oraz liczby symbolizującej numer warstwy.\relax }}{12}{figure.caption.10}\protected@file@percent }
-\newlabel{PlanningGraphLevels}{{2.7}{12}{Przedstawienie sposobu wyznaczania warstw w algorytmie planującym. Poziom stanów oraz akcji wchodzący w skład danej warstwy wyróżniony jest poprzez konkatenację nazwy oraz liczby symbolizującej numer warstwy.\relax }{figure.caption.10}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.6}Równoległość}{13}{section.2.6}\protected@file@percent }
-\newlabel{Rownoleglosc}{{2.6}{13}{Równoległość}{section.2.6}{}}
-\newlabel{Warstwa}{{2.6}{13}{Równoległość}{definition.2.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Przykład możliwości zastosowania równoległości w planowaniu działania. Należy zauważyć, iż ruchy robotów w żaden sposób ze sobą nie kolidują.\relax }}{13}{figure.caption.11}\protected@file@percent }
-\newlabel{PrzykladRownolegle}{{2.8}{13}{Przykład możliwości zastosowania równoległości w planowaniu działania. Należy zauważyć, iż ruchy robotów w żaden sposób ze sobą nie kolidują.\relax }{figure.caption.11}{}}
-\newlabel{Krok}{{2.7}{13}{Równoległość}{definition.2.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.1}Wzajemne wykluczanie}{13}{subsection.2.6.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Przykład świata, w którym wprowadzenie równoległości dla pierwszej warstwy algorytmu jest niemożliwe. Dwa roboty próbują przejść na ten sam kafelek w tej samej jednostce czasu, co z perspektywy kafelka powoduje konflikt. Odpowiednio kolorami: czerwnoym i niebieskim oznaczono roboty, oraz kafelki, które są ich celem.\relax }}{14}{figure.caption.12}\protected@file@percent }
-\newlabel{PrzykladRownolegle}{{2.9}{14}{Przykład świata, w którym wprowadzenie równoległości dla pierwszej warstwy algorytmu jest niemożliwe. Dwa roboty próbują przejść na ten sam kafelek w tej samej jednostce czasu, co z perspektywy kafelka powoduje konflikt. Odpowiednio kolorami: czerwnoym i niebieskim oznaczono roboty, oraz kafelki, które są ich celem.\relax }{figure.caption.12}{}}
-\newlabel{Warstwa}{{2.8}{14}{Wzajemne wykluczanie}{definition.2.8}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Wykluczanie się stanów}{14}{section*.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Urywek planu przedstawiający sytuację, w której dwa stany powstają w sposób niespójny. Zgodnie z założeniami akcje oznaczone są przy pomocy prostokątów, stany- okręgów, miedzy akcjami a stanami czerwone linie symbolizują które stany są efektami których akcji, natomiast linie niebieskie między akcjami symbolizują powstałe między nimi \textit  {mutexy}\relax }}{15}{figure.caption.14}\protected@file@percent }
-\newlabel{PrzykladWykluczenie3}{{2.10}{15}{Urywek planu przedstawiający sytuację, w której dwa stany powstają w sposób niespójny. Zgodnie z założeniami akcje oznaczone są przy pomocy prostokątów, stany- okręgów, miedzy akcjami a stanami czerwone linie symbolizują które stany są efektami których akcji, natomiast linie niebieskie między akcjami symbolizują powstałe między nimi \textit {mutexy}\relax }{figure.caption.14}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Wykluczanie się akcji}{15}{section*.15}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.11}{\ignorespaces Przykład wykluczania się akcji aktywnych z podtrzymującymi\relax }}{15}{figure.caption.16}\protected@file@percent }
-\newlabel{PrzykladWykluczenie2}{{2.11}{15}{Przykład wykluczania się akcji aktywnych z podtrzymującymi\relax }{figure.caption.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.12}{\ignorespaces Przykład świata, w którym każdy z robotów próbuje przesunąć się na sąsiadujący z lewej strony klocek. Uwidoczniona sytuacja jest przykładem wykluczających się akcji\relax }}{16}{figure.caption.17}\protected@file@percent }
-\newlabel{PrzykladWykluczenie1}{{2.12}{16}{Przykład świata, w którym każdy z robotów próbuje przesunąć się na sąsiadujący z lewej strony klocek. Uwidoczniona sytuacja jest przykładem wykluczających się akcji\relax }{figure.caption.17}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.7}Wyszukiwanie planu}{16}{section.2.7}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.13}{\ignorespaces Sytuacja początkowa świata, dla którego odbędzie się przykładowe generowanie planu. Kolorem niebieskim zaznaczono kafelek docelowy robota\relax }}{17}{figure.caption.18}\protected@file@percent }
-\newlabel{PrzykladPlan1}{{2.13}{17}{Sytuacja początkowa świata, dla którego odbędzie się przykładowe generowanie planu. Kolorem niebieskim zaznaczono kafelek docelowy robota\relax }{figure.caption.18}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.14}{\ignorespaces Warunki początkowe omawianego świata. Obrazki ułatwiające analizę przykładu w całości zostały wykonane przez oprogramowanie utworzone na rzecz pracy. \relax }}{17}{figure.caption.19}\protected@file@percent }
-\newlabel{PrzykladPlanWP}{{2.14}{17}{Warunki początkowe omawianego świata. Obrazki ułatwiające analizę przykładu w całości zostały wykonane przez oprogramowanie utworzone na rzecz pracy. \relax }{figure.caption.19}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.15}{\ignorespaces Wygenerowane akcje na podstawie warunków początkowych\relax }}{18}{figure.caption.20}\protected@file@percent }
-\newlabel{PrzykladPlanAP1}{{2.15}{18}{Wygenerowane akcje na podstawie warunków początkowych\relax }{figure.caption.20}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.16}{\ignorespaces Wygenerowany drugi stan grafu bezpośrednio wynikający z pierwszego poziomu akcji\relax }}{18}{figure.caption.21}\protected@file@percent }
-\newlabel{PrzykladPlanW1}{{2.16}{18}{Wygenerowany drugi stan grafu bezpośrednio wynikający z pierwszego poziomu akcji\relax }{figure.caption.21}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.17}{\ignorespaces Przykład kolejnej iteracji algorytmu\relax }}{19}{figure.caption.22}\protected@file@percent }
-\newlabel{PrzykladPlanW1}{{2.17}{19}{Przykład kolejnej iteracji algorytmu\relax }{figure.caption.22}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.18}{\ignorespaces Graf planujący z zaznaczonymi akcjami aktywnymi prowadzącymi do uzyskania wskazanego celu\relax }}{19}{figure.caption.23}\protected@file@percent }
-\newlabel{PrzykladPlanW1}{{2.18}{19}{Graf planujący z zaznaczonymi akcjami aktywnymi prowadzącymi do uzyskania wskazanego celu\relax }{figure.caption.23}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.8}Własności GRAPHPLAN'u}{20}{section.2.8}\protected@file@percent }
-\newlabel{LevelOff}{{2.3}{20}{Własności GRAPHPLAN'u}{theorem.2.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.8.1}Problem stopu}{21}{subsection.2.8.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.19}{\ignorespaces Przykład świata, w którym osiągnięcie celu, którym jest kafelek oznaczony kolorem takim jak kolor użytej czcionki do oznaczenia sygnatury robota, jest niemożliwe ze względu na absencję jednego z kafelków, będących łącznikiem, między robotem a jego celem.\relax }}{21}{figure.caption.24}\protected@file@percent }
-\newlabel{PrzykladPlanW1}{{2.19}{21}{Przykład świata, w którym osiągnięcie celu, którym jest kafelek oznaczony kolorem takim jak kolor użytej czcionki do oznaczenia sygnatury robota, jest niemożliwe ze względu na absencję jednego z kafelków, będących łącznikiem, między robotem a jego celem.\relax }{figure.caption.24}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Programowanie ograniczeń}{23}{chapter.3}\protected@file@percent }
+\newlabel{GRAPHPLANRozdzial}{{2}{9}{GRAPHPLAN}{chapter.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Wprowadzenie}{9}{section.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Najogólniejsza forma grafu planującego. Składa się on z węzłów, zwanych stanami oraz krawędzi zwanych akcjami. Docelowo poszczególne stany oraz akcje są parami różne, jednak mogą zajść sytuacje, gdy powtórzenie któregoś z komponentów będzie wymagane do uzyskania odpowiedniego celu.\relax }}{9}{figure.caption.4}\protected@file@percent }
+\newlabel{PlanningGraph}{{2.1}{9}{Najogólniejsza forma grafu planującego. Składa się on z węzłów, zwanych stanami oraz krawędzi zwanych akcjami. Docelowo poszczególne stany oraz akcje są parami różne, jednak mogą zajść sytuacje, gdy powtórzenie któregoś z komponentów będzie wymagane do uzyskania odpowiedniego celu.\relax }{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Warunki początkowe}{9}{section.2.2}\protected@file@percent }
+\newlabel{RozdzialWarunkiPoczatkowe}{{2.2}{9}{Warunki początkowe}{section.2.2}{}}
+\newlabel{ZasadaSwiata}{{2.1}{9}{Warunki początkowe}{definition.2.1}{}}
+\newlabel{PoziomStanow}{{2.2}{10}{Warunki początkowe}{definition.2.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Przykładowy moment startowy przyszłego planu. Za pomocą okręgów oznaczono roboty, natomiast poprzez kwadraty oznaczone są kafelki- miejsca, po których mogą poruszać się roboty.\relax }}{10}{figure.caption.5}\protected@file@percent }
+\newlabel{PrzykladSP}{{2.2}{10}{Przykładowy moment startowy przyszłego planu. Za pomocą okręgów oznaczono roboty, natomiast poprzez kwadraty oznaczone są kafelki- miejsca, po których mogą poruszać się roboty.\relax }{figure.caption.5}{}}
+\newlabel{ZbiorPoczatkowy}{{2.1}{10}{Warunki początkowe}{equation.2.2.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Akcje}{10}{section.2.3}\protected@file@percent }
+\newlabel{RozdzialAkcje}{{2.3}{10}{Akcje}{section.2.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Obrazowe przedstawienie ruchu robota B z kafelka 3 na kafelek 2\relax }}{11}{figure.caption.6}\protected@file@percent }
+\newlabel{PrzykladRuch}{{2.3}{11}{Obrazowe przedstawienie ruchu robota B z kafelka 3 na kafelek 2\relax }{figure.caption.6}{}}
+\newlabel{Ruch}{{2.5}{11}{Akcje}{equation.2.3.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Typy akcji}{11}{subsection.2.3.1}\protected@file@percent }
+\newlabel{Persist}{{2.3}{11}{Typy akcji}{definition.2.3}{}}
+\newlabel{Active}{{2.4}{12}{Typy akcji}{definition.2.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Obrazowe przedstawienie wszystkich akcji w pierwszym kroku algorytmu, akcje opisane przy użyciu czcionki o kolorze zielonym symbolizują akcje podtrzymujące, natomiast o kolorze czerwonym- akcje aktywne\relax }}{12}{figure.caption.7}\protected@file@percent }
+\newlabel{PrzykladAkcje}{{2.4}{12}{Obrazowe przedstawienie wszystkich akcji w pierwszym kroku algorytmu, akcje opisane przy użyciu czcionki o kolorze zielonym symbolizują akcje podtrzymujące, natomiast o kolorze czerwonym- akcje aktywne\relax }{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Definiowanie świata}{12}{section.2.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Graficzne przedstawienie relacji sąsiedztwa dla kafelka numer 4. Kolorem kremowym oznaczono miejsca, z którymi sąsiaduje, natomiast pomarańczowym- te, z którymi nie sąsiaduje. Oznacza to, iż do kafelków pomarańczowych nie można dostać się wykonując jeden ruch\relax }}{13}{figure.caption.8}\protected@file@percent }
+\newlabel{PrzykladAkcje}{{2.5}{13}{Graficzne przedstawienie relacji sąsiedztwa dla kafelka numer 4. Kolorem kremowym oznaczono miejsca, z którymi sąsiaduje, natomiast pomarańczowym- te, z którymi nie sąsiaduje. Oznacza to, iż do kafelków pomarańczowych nie można dostać się wykonując jeden ruch\relax }{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.5}Warstwy grafu}{13}{section.2.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Modyfikacja do grafu planującego wprowadzona w poprzednich podrozdziałach. Wprowadzono zależności akcji od stanu poprzedniego, oraz stanu następnego od akcji.\relax }}{14}{figure.caption.9}\protected@file@percent }
+\newlabel{PlanningGraphStates}{{2.6}{14}{Modyfikacja do grafu planującego wprowadzona w poprzednich podrozdziałach. Wprowadzono zależności akcji od stanu poprzedniego, oraz stanu następnego od akcji.\relax }{figure.caption.9}{}}
+\newlabel{Warstwa}{{2.5}{14}{Warstwy grafu}{definition.2.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Przedstawienie sposobu wyznaczania warstw w algorytmie planującym. Poziom stanów oraz akcji wchodzący w skład danej warstwy wyróżniony jest poprzez konkatenację nazwy oraz liczby symbolizującej numer warstwy.\relax }}{14}{figure.caption.10}\protected@file@percent }
+\newlabel{PlanningGraphLevels}{{2.7}{14}{Przedstawienie sposobu wyznaczania warstw w algorytmie planującym. Poziom stanów oraz akcji wchodzący w skład danej warstwy wyróżniony jest poprzez konkatenację nazwy oraz liczby symbolizującej numer warstwy.\relax }{figure.caption.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.6}Równoległość}{15}{section.2.6}\protected@file@percent }
+\newlabel{Rownoleglosc}{{2.6}{15}{Równoległość}{section.2.6}{}}
+\newlabel{Warstwa}{{2.6}{15}{Równoległość}{definition.2.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Przykład możliwości zastosowania równoległości w planowaniu działania. Należy zauważyć, iż ruchy robotów w żaden sposób ze sobą nie kolidują.\relax }}{15}{figure.caption.11}\protected@file@percent }
+\newlabel{PrzykladRownolegle}{{2.8}{15}{Przykład możliwości zastosowania równoległości w planowaniu działania. Należy zauważyć, iż ruchy robotów w żaden sposób ze sobą nie kolidują.\relax }{figure.caption.11}{}}
+\newlabel{Krok}{{2.7}{15}{Równoległość}{definition.2.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.1}Wzajemne wykluczanie}{15}{subsection.2.6.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Przykład świata, w którym wprowadzenie równoległości dla pierwszej warstwy algorytmu jest niemożliwe. Dwa roboty próbują przejść na ten sam kafelek w tej samej jednostce czasu, co z perspektywy kafelka powoduje konflikt. Odpowiednio kolorami: czerwnoym i niebieskim oznaczono roboty, oraz kafelki, które są ich celem.\relax }}{16}{figure.caption.12}\protected@file@percent }
+\newlabel{PrzykladRownolegle}{{2.9}{16}{Przykład świata, w którym wprowadzenie równoległości dla pierwszej warstwy algorytmu jest niemożliwe. Dwa roboty próbują przejść na ten sam kafelek w tej samej jednostce czasu, co z perspektywy kafelka powoduje konflikt. Odpowiednio kolorami: czerwnoym i niebieskim oznaczono roboty, oraz kafelki, które są ich celem.\relax }{figure.caption.12}{}}
+\newlabel{Warstwa}{{2.8}{16}{Wzajemne wykluczanie}{definition.2.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Wykluczanie się stanów}{16}{section*.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Urywek planu przedstawiający sytuację, w której dwa stany powstają w sposób niespójny. Zgodnie z założeniami akcje oznaczone są przy pomocy prostokątów, stany- okręgów, miedzy akcjami a stanami czerwone linie symbolizują które stany są efektami których akcji, natomiast linie niebieskie między akcjami symbolizują powstałe między nimi \textit  {mutexy}\relax }}{17}{figure.caption.14}\protected@file@percent }
+\newlabel{PrzykladWykluczenie3}{{2.10}{17}{Urywek planu przedstawiający sytuację, w której dwa stany powstają w sposób niespójny. Zgodnie z założeniami akcje oznaczone są przy pomocy prostokątów, stany- okręgów, miedzy akcjami a stanami czerwone linie symbolizują które stany są efektami których akcji, natomiast linie niebieskie między akcjami symbolizują powstałe między nimi \textit {mutexy}\relax }{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Wykluczanie się akcji}{17}{section*.15}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.11}{\ignorespaces Przykład wykluczania się akcji aktywnych z podtrzymującymi\relax }}{17}{figure.caption.16}\protected@file@percent }
+\newlabel{PrzykladWykluczenie2}{{2.11}{17}{Przykład wykluczania się akcji aktywnych z podtrzymującymi\relax }{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.12}{\ignorespaces Przykład świata, w którym każdy z robotów próbuje przesunąć się na sąsiadujący z lewej strony klocek. Uwidoczniona sytuacja jest przykładem wykluczających się akcji\relax }}{18}{figure.caption.17}\protected@file@percent }
+\newlabel{PrzykladWykluczenie1}{{2.12}{18}{Przykład świata, w którym każdy z robotów próbuje przesunąć się na sąsiadujący z lewej strony klocek. Uwidoczniona sytuacja jest przykładem wykluczających się akcji\relax }{figure.caption.17}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.7}Wyszukiwanie planu}{18}{section.2.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.13}{\ignorespaces Sytuacja początkowa świata, dla którego odbędzie się przykładowe generowanie planu. Kolorem niebieskim zaznaczono kafelek docelowy robota\relax }}{19}{figure.caption.18}\protected@file@percent }
+\newlabel{PrzykladPlan1}{{2.13}{19}{Sytuacja początkowa świata, dla którego odbędzie się przykładowe generowanie planu. Kolorem niebieskim zaznaczono kafelek docelowy robota\relax }{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.14}{\ignorespaces Warunki początkowe omawianego świata. Obrazki ułatwiające analizę przykładu w całości zostały wykonane przez oprogramowanie utworzone na rzecz pracy. \relax }}{19}{figure.caption.19}\protected@file@percent }
+\newlabel{PrzykladPlanWP}{{2.14}{19}{Warunki początkowe omawianego świata. Obrazki ułatwiające analizę przykładu w całości zostały wykonane przez oprogramowanie utworzone na rzecz pracy. \relax }{figure.caption.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.15}{\ignorespaces Wygenerowane akcje na podstawie warunków początkowych\relax }}{20}{figure.caption.20}\protected@file@percent }
+\newlabel{PrzykladPlanAP1}{{2.15}{20}{Wygenerowane akcje na podstawie warunków początkowych\relax }{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.16}{\ignorespaces Wygenerowany drugi stan grafu bezpośrednio wynikający z pierwszego poziomu akcji\relax }}{20}{figure.caption.21}\protected@file@percent }
+\newlabel{PrzykladPlanW1}{{2.16}{20}{Wygenerowany drugi stan grafu bezpośrednio wynikający z pierwszego poziomu akcji\relax }{figure.caption.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.17}{\ignorespaces Przykład kolejnej iteracji algorytmu\relax }}{21}{figure.caption.22}\protected@file@percent }
+\newlabel{PrzykladPlanW1}{{2.17}{21}{Przykład kolejnej iteracji algorytmu\relax }{figure.caption.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.18}{\ignorespaces Graf planujący z zaznaczonymi akcjami aktywnymi prowadzącymi do uzyskania wskazanego celu\relax }}{21}{figure.caption.23}\protected@file@percent }
+\newlabel{PrzykladPlanW1}{{2.18}{21}{Graf planujący z zaznaczonymi akcjami aktywnymi prowadzącymi do uzyskania wskazanego celu\relax }{figure.caption.23}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.8}Własności GRAPHPLAN'u}{22}{section.2.8}\protected@file@percent }
+\newlabel{LevelOff}{{2.3}{22}{Własności GRAPHPLAN'u}{theorem.2.3}{}}
+\citation{GRAPHPLAN}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.8.1}Złożoność obliczeniowa}{23}{subsection.2.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.8.2}Problem stopu}{23}{subsection.2.8.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.19}{\ignorespaces Przykład świata, w którym osiągnięcie celu, którym jest kafelek oznaczony kolorem takim jak kolor użytej czcionki do oznaczenia sygnatury robota, jest niemożliwe ze względu na absencję jednego z kafelków, będących łącznikiem, między robotem a jego celem.\relax }}{23}{figure.caption.24}\protected@file@percent }
+\newlabel{PrzykladPlanW1}{{2.19}{23}{Przykład świata, w którym osiągnięcie celu, którym jest kafelek oznaczony kolorem takim jak kolor użytej czcionki do oznaczenia sygnatury robota, jest niemożliwe ze względu na absencję jednego z kafelków, będących łącznikiem, między robotem a jego celem.\relax }{figure.caption.24}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Programowanie ograniczeń}{25}{chapter.3}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Wprowadzenie}{23}{section.3.1}\protected@file@percent }
-\newlabel{ConstraintProblem}{{3.1}{23}{Wprowadzenie}{definition.3.1}{}}
-\newlabel{Constraint}{{3.2}{23}{Wprowadzenie}{definition.3.2}{}}
-\newlabel{Krotka}{{3.3}{23}{Wprowadzenie}{definition.3.3}{}}
-\newlabel{Krotka}{{3.4}{23}{Wprowadzenie}{definition.3.4}{}}
-\newlabel{CP1}{{3.1}{24}{Wprowadzenie}{example.3.1}{}}
-\newlabel{ConstraintProblem}{{3.1}{24}{Wprowadzenie}{example.3.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Wyszukiwanie rozwiązań}{24}{section.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Obrazowe przykłady}{24}{section.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Implementacja}{25}{chapter.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Wprowadzenie}{25}{section.3.1}\protected@file@percent }
+\newlabel{ConstraintProblem}{{3.1}{25}{Wprowadzenie}{definition.3.1}{}}
+\newlabel{Constraint}{{3.2}{25}{Wprowadzenie}{definition.3.2}{}}
+\newlabel{Krotka}{{3.3}{25}{Wprowadzenie}{definition.3.3}{}}
+\newlabel{Krotka}{{3.4}{25}{Wprowadzenie}{definition.3.4}{}}
+\newlabel{CP1}{{3.1}{26}{Wprowadzenie}{example.3.1}{}}
+\newlabel{ConstraintProblem}{{3.1}{26}{Wprowadzenie}{example.3.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Pojęcie ustalenia i spójności}{26}{section.3.2}\protected@file@percent }
+\newlabel{SpójnośćRodział}{{3.2}{26}{Pojęcie ustalenia i spójności}{section.3.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Wyszukiwanie rozwiązań}{27}{section.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Obrazowe przykłady}{27}{section.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Wykorzystanie w algorytmie}{27}{section.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Implementacja}{29}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Połączenia między komponentami}{25}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Implementacja algorytmu}{25}{section.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Generowanie grafów}{25}{section.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Interfejs użytkownika}{25}{section.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Instalacja i wdrożenie}{27}{chapter.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Połączenia między komponentami}{29}{section.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Implementacja algorytmu}{29}{section.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Generowanie grafów}{29}{section.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Interfejs użytkownika}{29}{section.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Instalacja i wdrożenie}{31}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Instalacja pakietu SWI-Prolog}{27}{section.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Instalacja języka Python}{27}{section.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Sposób uruchomienia programu}{27}{section.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Testy}{29}{chapter.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Instalacja pakietu SWI-Prolog}{31}{section.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Instalacja języka Python}{31}{section.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Sposób uruchomienia programu}{31}{section.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Testy}{33}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}15}{29}{section.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Wprowadzenie}{29}{subsection.6.1.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Wygląd układanki piętnastki wygenerowany przy pomocy zaimplementowanej w ramach pracy warstwy graficznej\relax }}{29}{figure.caption.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}15}{33}{section.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Wprowadzenie}{33}{subsection.6.1.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Wygląd układanki piętnastki wygenerowany przy pomocy zaimplementowanej w ramach pracy warstwy graficznej\relax }}{33}{figure.caption.25}\protected@file@percent }
 \citation{FifteenLoydProblem}
 \citation{Fifteen}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Losowa rozwiązywalna permutacja układanki\relax }}{34}{figure.caption.26}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Piętnastka w formie obrazkowej. Źródło: \url  {http://mypuzzlecollection.blogspot.com/2012/08/mc-escher-birds-fish-and-turtles.html}\relax }}{34}{figure.caption.27}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Teoria}{34}{subsection.6.1.2}\protected@file@percent }
 \citation{80Moves}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Piętnastka w formie obrazkowej. Źródło: \url  {http://mypuzzlecollection.blogspot.com/2012/08/mc-escher-birds-fish-and-turtles.html}\relax }}{30}{figure.caption.26}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Losowa rozwiązywalna permutacja układanki\relax }}{30}{figure.caption.27}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Teoria}{30}{subsection.6.1.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.3}Przykład}{31}{subsection.6.1.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.4}Szczegóły implementacyjne}{31}{subsection.6.1.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.5}Wyniki}{33}{subsection.6.1.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.6}Młodsza siostra- ósemka}{33}{subsection.6.1.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.7}Wyniki dla 8}{33}{subsection.6.1.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.8}Wnioski}{33}{subsection.6.1.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}CargoBot}{33}{section.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Wprowadzenie}{33}{subsection.6.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Przykład}{33}{subsection.6.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}Szczegóły implementacyjne}{33}{subsection.6.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.4}Wyniki}{33}{subsection.6.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.5}Wnioski}{33}{subsection.6.2.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Przemieszczanie w przestrzeni}{33}{section.6.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}Wprowadzenie}{33}{subsection.6.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}Przykład}{33}{subsection.6.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.3}Szczegóły implementacyjne}{33}{subsection.6.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.4}Wyniki}{33}{subsection.6.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.5}Wnioski}{33}{subsection.6.3.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Wieża Hanoi}{33}{section.6.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.1}Wprowadzenie}{33}{subsection.6.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.2}Przykład}{33}{subsection.6.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.3}Szczegóły implementacyjne}{33}{subsection.6.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.4}Wyniki}{33}{subsection.6.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.5}Wnioski}{33}{subsection.6.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.5}Lis, Gęś i Ziarno}{33}{section.6.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.1}Wprowadzenie}{33}{subsection.6.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.2}Przykład}{33}{subsection.6.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.3}Szczegóły implementacyjne}{33}{subsection.6.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.4}Wyniki}{33}{subsection.6.5.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.5}Wnioski}{33}{subsection.6.5.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.6}Problem komiwojażera}{33}{section.6.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.6.1}Wprowadzenie}{33}{subsection.6.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.6.2}Przykład}{33}{subsection.6.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.6.3}Szczegóły implementacyjne}{33}{subsection.6.6.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.6.4}Wyniki}{33}{subsection.6.6.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.6.5}Wnioski}{33}{subsection.6.6.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.7}Osiem Hetmanów}{33}{section.6.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.7.1}Wprowadzenie}{33}{subsection.6.7.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.7.2}Przykład}{33}{subsection.6.7.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.7.3}Szczegóły implementacyjne}{33}{subsection.6.7.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.7.4}Wyniki}{33}{subsection.6.7.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.7.5}Wnioski}{33}{subsection.6.7.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Podsumowanie}{35}{chapter*.28}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.3}Przykład}{35}{subsection.6.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.4}Szczegóły implementacyjne}{35}{subsection.6.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.5}Wyniki}{37}{subsection.6.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.6}Młodsza siostra- ósemka}{37}{subsection.6.1.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.7}Wyniki dla 8}{37}{subsection.6.1.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.8}Wnioski}{37}{subsection.6.1.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}CargoBot}{37}{section.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Wprowadzenie}{37}{subsection.6.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Przykład}{37}{subsection.6.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}Szczegóły implementacyjne}{37}{subsection.6.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.4}Wyniki}{37}{subsection.6.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.5}Wnioski}{37}{subsection.6.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Przemieszczanie w przestrzeni}{37}{section.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}Wprowadzenie}{37}{subsection.6.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}Przykład}{37}{subsection.6.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.3}Szczegóły implementacyjne}{37}{subsection.6.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.4}Wyniki}{37}{subsection.6.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.5}Wnioski}{37}{subsection.6.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Wieża Hanoi}{37}{section.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.1}Wprowadzenie}{37}{subsection.6.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.2}Przykład}{37}{subsection.6.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.3}Szczegóły implementacyjne}{37}{subsection.6.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.4}Wyniki}{37}{subsection.6.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.5}Wnioski}{37}{subsection.6.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.5}Problem komiwojażera}{37}{section.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.1}Wprowadzenie}{37}{subsection.6.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.2}Przykład}{37}{subsection.6.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.3}Szczegóły implementacyjne}{37}{subsection.6.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.4}Wyniki}{37}{subsection.6.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.5}Wnioski}{37}{subsection.6.5.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.6}Osiem Hetmanów}{37}{section.6.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.6.1}Wprowadzenie}{37}{subsection.6.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.6.2}Przykład}{37}{subsection.6.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.6.3}Szczegóły implementacyjne}{37}{subsection.6.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.6.4}Wyniki}{37}{subsection.6.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.6.5}Wnioski}{37}{subsection.6.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Podsumowanie}{39}{chapter*.28}\protected@file@percent }
 \bibstyle{plabbrv}
 \bibdata{literatura}
 \bibcite{GRAPHPLAN}{1}
@@ -210,9 +214,9 @@
 \bibcite{80Moves}{3}
 \bibcite{Fifteen}{4}
 \bibcite{STRIPS}{5}
-\@writefile{toc}{\contentsline {chapter}{Bibliografia}{37}{chapter*.29}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Zawartość płyty CD}{39}{appendix.A}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Bibliografia}{41}{chapter*.29}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Zawartość płyty CD}{43}{appendix.A}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{plytaCD}{{A}{39}{Zawartość płyty CD}{appendix.A}{}}
+\newlabel{plytaCD}{{A}{43}{Zawartość płyty CD}{appendix.A}{}}

@@ -1,5 +1,6 @@
 \chapter{GRAPHPLAN}
 \thispagestyle{chapterBeginStyle}
+\label{GRAPHPLANRozdzial}
 
 \section{Wprowadzenie}
     \textbf{GRAPHPLAN} jest algorytmem do planowania akcji działający w dziedzinie zdefiniowanej
@@ -551,9 +552,21 @@
 
     Powyższy lemat jest kluczowym w kontekście rozwiązywania tak zwanego \textit{Problemu stopu} dla algorytmu GRAPHPLAN.
 
+    \subsection{Złożoność obliczeniowa}
+    \begin{theorem}
+        Niech problem do rozwiązania przy pomocy planu składa się z \textit{n} obiektów, \textit{p} stanów 
+        w warstwie początkowej, \textit{m} operatorów przedstawionych zgodnie z zasadami języka STRIPS, posiadających 
+        stałą liczbę parametrów. Dodatkowo, niech \textit{l} będzie długością najdłuższej listy efektów dodających 
+        dla zbioru akcji. Wtedy rozmiar \textit{t} poziomowego grafu planującego wygenerowanego przez algorytm, jak i czas jego generacji 
+        jest wielomianowy w zależności od zmiennych \textit{n, m, p, l i t}
+    \end{theorem}
+
+    Co jest znacznym usprawnieniem względem poprzednich metod. Dowód tego twierdzenia można znaleźć w oryginalnej pracy 
+    autorów \cite{GRAPHPLAN}.
+
     \subsection{Problem stopu}
     \begin{figure}[H]
-        \includegraphics[scale=0.25]{FULL_GRAPHPLAN_DEMO2.gv}
+        \includegraphics[scale=0.5]{PrzykladNieosiagalny}
         \centering
         \caption{Przykład świata, w którym osiągnięcie celu, którym jest kafelek oznaczony kolorem takim jak kolor użytej czcionki do oznaczenia 
         sygnatury robota, jest niemożliwe ze względu na absencję jednego z kafelków, będących łącznikiem, między robotem a jego celem.}
@@ -562,7 +575,7 @@
     Wcześniejsze przykłady rozpatrywały jedynie sytuację, w której algorytm zawsze znajdował plan, gdyż przedstawione światy były spreparowane w taki sposób, 
     aby rzeczony plan zawsze istniał. Jednakże nie zawsze musi tak być, więc należy zabezpieczyć algorytm również i przed taką ewentualnością. Łatwo zauważyć, 
     iż obecna struktura planu nie została utworzona z myslą o takiej sytuacji- algorytm będzie generował coraz to nowsze warstwy bezskutecznie próbując uzyskać 
-    plan dla zdefiniowanego celu.Ostatecznie dojdzie do całkowitego zapętlenia pracy algorytmu. 
+    plan dla zdefiniowanego celu. Ostatecznie dojdzie do całkowitego zapętlenia pracy algorytmu. 
     Z tego powodu pierwszym pomysłem na uzbrojenie algorytm w mechanizm detekcji nieskończonej pętli jest sprawdzenie rozmiaru zbioru stanów dla dwóch 
     następujących po sobie warstw. Jeśli warstwa nowsza składa się z większej liczby stanów, algorytm uzyskuje nowe informacje o świecie i jest 
     przygotowany do dalszego trawersowania po grafie planującym, jednakże gdy ów liczby są sobie równe dochodzi do swego rodzaju stagnacji- wszystkie 
@@ -572,14 +585,22 @@
 
     Po wprowadzeniu powyższej modyfikacji możliwym jest wyciągnąć następujący wniosek 
 
-    \begin{lemma}
+    \begin{corollary}
         GRAPHPLAN zawsze kończy swoje działanie.
-    \end{lemma} 
+    \end{corollary} 
 
-    TO-DO: Może bardziej "matematyczne" dowody, a nastepnie obrazowe opisy wraz z rysunkami?
-    Wprowadzenie informacji o liczbie akcji oraz mutexów, wprowadzenie twierdzenia o 
-    wielomianowości czasu utworzenia algorytmu GRAPHPLAN (niestety eksponencjalny, ale 
-    jednak wielomianowy))
+    a co za tym idzie
+
+    \begin{corollary}
+        Odpowiedzi GRAPHPLANU dla zadanych danych wejściowych przyjmują jedynie dwie formy:
+        \begin{enumerate}
+            \item plan, którego realizacja prowadzi do uzyskania wskazanych celów
+            \item informacja o tym, iż nie istnieje plan spełniający oczekiwania użytkownika
+        \end{enumerate}
+    \end{corollary}
+
+    Powoduje to, iż GRAPHPLAN jako algorytm jest kompletny i zawsze zakończy swoje działanie w skończonym czasie. Jest to własność, której większość 
+    z planerów korzystających z częściowego porządku nie posiada w swoim arsenale.
 
 
     

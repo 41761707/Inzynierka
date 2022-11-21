@@ -26,10 +26,20 @@
     \begin{definition}
         \label{Constraint}
         \textbf{Ograniczenami} (inne nazwy: stałe, więzy) nazywamy zmienne oraz zależności między nimi, które muszą zostać spełnione 
-        w ramach rozwiązywania problemu ograniczeń
-        Przy następujących definicjach oczekiwanym celem będzie utworzenie mechanizmu rozwiązującego zadany problem. Jego wynikiem 
-        będzie zbiór wszystkich zmiennych, oraz krotek, które będą zawierały odpowiednie wartości przyporządkowane dla zmiennych.
+        w ramach rozwiązywania problemu ograniczeń. Określamy je przy pomocy pary: 
+        \begin{equation}
+            C = (S,R)
+        \end{equation}
+        gdzie:
+
+        S jest krotką wszystkich zmiennych wchodzących w skład relacji 
+
+        R jest relacją, która definiuje jakie wartości mogą przyjąc zmienne, które w niej uczestniczą.
     \end{definition}
+    Relacje często przedstawia się przy pomocy zbioru zawierającego krotki, które składają się ze wszystkich 
+    przyporządkowań wartości do odpowiednich zmiennych.
+    Przy następujących definicjach oczekiwanym celem będzie utworzenie mechanizmu rozwiązującego zadany problem. Jego wynikiem 
+    będzie zbiór wszystkich zmiennych, oraz krotek, które będą zawierały odpowiednie wartości przyporządkowane dla zmiennych.
     \begin{definition}
         \label{Krotka}
         \textbf{Krotka} (ang. tuple) - struktura danych, która w systemach informatycznych odzwierciedla uporządkowany ciąg wartości
@@ -37,9 +47,9 @@
     Dodatkowo wprowadza się termin \textbf{arności} ograniczenia:
     \begin{definition}
         \label{Krotka}
-        \textbf{Arnością} (ang. arity) ograniczenia związana jest z liczbą unikalnych zmiennych, która w nią wchodzi.
+        \textbf{Arnością ograniczenia} (ang. arity)  związana jest z liczbą unikalnych zmiennych, która w nią wchodzi.
     \end{definition}
-
+    CSP 
     Najpopularniejszymi typami ograniczeń są:
     \begin{enumerate}
         \item Ograniczenia o arności 1, zwane ograniczeniami \textbf{unarnymi} (w tym przypadku z reguły będą one ściśle związane z dziedziną, raczej 
@@ -48,6 +58,12 @@
         \item Ograniczenia o arności 3, zwane ograniczeniami \textbf{ternarnymi}
     \end{enumerate} 
 
+    Tak jak ograniczenie może mieć swoją arność, tak dla CSP również zdefiniowano pojęcie arności w lekko zmodyfikowany sposób 
+    \begin{definition}
+        \textbf{Arność} CSP o wartości $i$ zawiera w sobie wszystkie typy ograniczeń od arności 1 aż do arności $i$
+    \end{definition}
+
+    Wedle powyższego binarne CSP zawiera w sobie jedynie ograniczenia unarne jak i binarne.
     \begin{example}
         \label{CP1}
         Niech będzie dane równanie $x+y=z$, gdzie $x,y,z \in \{0,1\}$. Łatwo zauważyć, iż zadane równanie jest automatycznie ograniczeniem 
@@ -68,10 +84,55 @@
     Podobnie jak z planowaniem, wprowadzenie dodatkowych zmiennych, powiększanie dziedzin oraz zbioru ograniczeń znacznie wpływa na skomplikowanie 
     odnajdowania rozwiązania.
 
+
+
+\section{Pojęcie ustalenia i spójności}
+    \label{SpójnośćRodział}
+    W ostatecznej formie problem ograniczeń wyszukuje rozwiązanie przy pomocy ustalenia wartości zmiennych, jednakże naistotniejsza 
+    jest droga, jaką pokonuje, aby ów ustalenia uzyskać. W tej sekcji należy wprowadzić kilka dodatkowych definicji:
+    \begin{definition}
+        Ustalenie zmiennych jest \textbf{spójne}, gdy nie jest w konflikcie z żadnym z ograniczeń.
+    \end{definition}
+    Ustalenie spójne również w nomenlakturze programowania ograniczeń nazywane jest ustaleniem \textbf{legalnym}.
+    Nadanie zmiennym X oraz Y wartość 1 w przykładzie \ref{CP1} prowadzi do konfliktu, gdyż nie istnieje wartość 2 w zbiorze $D_{z}$.
+    \begin{definition}
+        \textbf{Kompletnym ustaleniem} nazywamy takie ustalenie, w którym wszystkie zmienne posiadają ustaloną wartość.
+    \end{definition}
+    Łatwo zauważyć, iż kompletne ustawienie jest jednocześnie rozwiązaniem problemu ograniczeń. Z tego płynie następujący wniosek:
+    \begin{corollary}
+        Każde rozwiązanie problemu ograniczeń jest spójne.
+    \end{corollary}
+
+    Dodatkowo w źródłach \ref{AI} definiuje się częściowe ustalenie oraz częściowe rozwiązanie. Zgodnie z nazewnictwem 
+    częściowe ustalenie związane jest z sytuacją, gdy jeszcze nie wszystkie zmienne mają dokładnie określone wartości, natomiast 
+    częściowe rozwiązanie w praktyce identyfikuje się jako spójne częściowe ustalenie.
+
+    Po wprowadzeniu powyższych definicji należy rozpocząć rozważań na temat tego, w jaki sposób 
+    problem ograniczeń może zostać rozwiązany. Pierwszym z podejść może być ustalenie wartości dla zmiennych poprzez 
+    analizę ograniczeń, jakie między nimi występują. Ten proces nazywany jest \textbf{propagacją ograniczenia}. Dzięki 
+    podstawowej analizie ograniczeń algorytm może wyeliminować wartości nadmiarowe znajdujące się w zadanych dziedzinach, co znacząco wpłynie 
+    na przyszłościowe osiągi pod kątem czasowym. Często propagacja ograniczeń jest wykonywana jako \textit{preprocessing step}, czyli 
+    jako krok, który zostanie wykonany jeszcze przed rozpoczęciem prawdziwej pracy nad problem. 
+    
+    Kluczem do uzyskania poprawnego efektu propagacji ograniczeń jest skorzystanie z pojęcia zdefiniowanego jako \textbf{lokalna spójność}.
+    Istnieją różne typy lokalnej spójności:
+
 \section{Wyszukiwanie rozwiązań}
+
 
 \section{Obrazowe przykłady}
 
 //SEND + MORE = MONEY, N HETMANÓW, czy problem plecakowy?
 //Wszystkie trzy będą pewnie zbędne
+
+\section{Wykorzystanie w algorytmie}
+
+    Podczas graficznego prezentowania przykładów programowania ograniczeń często wykorzystywaną strukturą był graf, chociażby w sekcji omawiającej 
+    pojęcie lokalnych spójności (\ref{SpójnośćRodział}). Ze względu na ów powiązanie między programowaniem ograniczeń a GRAPHPLAN'em do podstawowego opisu GRAPHPLANU z rodziału 2 
+    \ref{GRAPHPLANRozdzial} dodano funkcjonalności opisane w powyższych rozdziałach. 
+
+    Każdy ze stanów oraz akcji zawiera w sobie dodatkowy \textbf{indykator stanu}. Jest to liczba z zakresu $\{0,1\}$, o której 
+    należy mysleć bardziej w kontekście wartości bool'owskich $\{prawda,fałsz\}$. Przy pomocy indykatorów program ustala, które stany, bądź akcje 
+    są w danej warstwie prawdziwe, czyli występują w świecie oraz takie, które w ów świecie w danym momencie nie występują, czyli są fałszywe. 
+    
 
