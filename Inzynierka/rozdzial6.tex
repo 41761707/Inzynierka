@@ -40,26 +40,21 @@
         Niemożliwość ułożenia problemu przez bardzo długi czas doprowadziła do pierwszych poważniejszych rozważań 
         nad z pozoru trywialną łamigówką. Efektem prac matematyków było parę zaskakujących wniosków, które ostatecznie doprowadziły 
         do udowodnienia, iż wyżej przedstawiona łamigłówka jest nierozwiązywalna.
-
         \begin{lemma}
             Nie wszystkie ustawienia początkowe piętnastki są możliwe do rozwiązania.\cite{Fifteen}
         \end{lemma}
-        
         Wynika to z faktu, iż rozwiązywalne są jedynie rozwiązanie oo parzystej liczbie inwersji. Zagadka Pana Lyod'a jest 
         ustawieniem nieparzystym jeśli chodzi o inwersje. Prowadzi to do następującego wniosku:
         \begin{corollary}
             Istnieje $\frac{16!}{2}=10 461 394 944 000$ rozwiązywalnych ustawień. 
         \end{corollary}
-
         Dodatkową ciekawostką istotną z perspektywy wykonywanych testów jest minimalna liczba posunięć, którą należy wykonać, 
         aby z rozwiązywalnego stanu osiągnąć wcześniej wyznaczony cel. Mianem \textbf{boskiej liczby} w odniesieniu do przesuwanki
         określą się największą liczbę posunięć, którą trzeba osiągnąć, aby rozwiązać najtrudniejsze ułożeniem początkowe. Przy pomocy matematyki 
         naukowcy odnaleźli najtrudniejsze ustawienia oraz obliczyli ów liczbę, co zaprezentowano w następującym lemacie:
-
         \begin{lemma}
             \textbf{Boska liczba} dla 15-elementowej przesuwanki wynosi \textbf{80}. \cite{80Moves}
         \end{lemma}
-
         Oznacza to, iż maksymalna liczba kroków algorytmu w żadnym wypadku nie powinna przekroczyć liczby 80.
 
         W trakcie poniżej opisanego testu sprawdzono plany przesuwania odpowiednich klocków, aby w jak najmniejszej możliwej liczbie ruchów
@@ -67,7 +62,33 @@
         spersonalizowanymi pod rozwiązywanie ów układanki.
 
     \subsection{Przykład}
-        Rozpatrzmy następujący przykład:
+        Na podstawie następującego przykładu zostanie przedstawiony schemat rozwiązywania układanki przez algorytm:
+        \begin{figure}[H]
+            \includegraphics[scale=0.5]{15_przyklad}
+            \centering
+            \caption{Przykładowe startowe ułożenie przesuwanki}
+        \end{figure}
+        Algorytm buduje graf na podstawie jedynej zdefiniowanej w problemie akcji: przesuwania klocka. Robi to aż do momentu, gdy kafelki nie 
+        będą ułożone w wczesniej zdefiniowanej kolejności. Dla zdefiniowanego powyżej przykładu w pierwszym kroku algorytm ma jedynie dwie możliwości 
+        akcji aktywnych: zamiana klocka pustego z klockiem o numerze 3 lub klockiem o numerze 4. Na tej podstawie generuje kolejny poziom stanów. 
+        Dla załączonego przykładu optymalnym rozwiązaniem jest odpowiednio zamiana pustego kafelka z kafelkami: 4,8,12, co zostało poprawnie 
+        wyznaczone przez GRAPHPLAN. Poniżej przedstawiono zbiory akcji przeanalizowane przez algorytm w danym kroku jak i uproszczony graf planujący.
+
+        \begin{figure}[H]
+            \includegraphics[scale=0.5]{15_zbiory_akcji}
+            \centering
+            \caption{Akcje rozpatrywane przez algorytm w danym kroku}
+        \end{figure}
+
+        \begin{figure}[H]
+            \includegraphics[scale=0.25]{15_graphplan}
+            \centering
+            \caption{Uproszczony graf planujący wygenerowany przez algorytm GRAPHPLAN przedstawiający stan każdego kafelka w danej warstwie. Węzły wypełnione 
+            kolorem szarym obrazują stany, które są warunkami zajścia jak i efektami wykonywanej w danej warstwie akcji}
+        \end{figure}
+
+
+
 
 
     \subsection{Szczegóły implementacyjne}
@@ -75,6 +96,13 @@
     każdą z istniejących w świecie relacji oraz poprawnie określić cel, jak i warunki początkowe.
 
     \subsection{Wyniki}
+
+    \textbf{UWAGA:} Testy czasowe zaprezentowane w poniższych tabelach tyczą się osiągów samego algorytmu. Oznacza to, iż na czas wykonywania prób
+    wyłączone zostały wszystkie poboczne funkcjonalności takie jak generowanie grafu, czy prezentowanie rozwiązania w formie graficznej. 
+    Wykonanie poniższych badań w aplikacji może skutkować innymi wynikami, zwykle dłuższymi. Należy mieć to na uwadze przy potencjalnej 
+    próbie odtwarzania badań.
+
+
 
     \subsection{Młodsza siostra- ósemka}
 

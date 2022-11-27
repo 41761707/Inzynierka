@@ -4,7 +4,7 @@
 \section{Wprowadzenie}
     Programowanie ograniczeń (inna nazwa: technologia więzów) jest narzędziem wykorzystywanym do rozwiązywania 
     problemów z dziedzin kombinatoryki, sztucznej inteligencji, czy planowania jak i harmonogramowania zadań.
-    W składzie tego podejścia do programowania często wyróżnia się dwa elementy: ograniczenia (zwane również
+    W skład tego podejścia do programowania często wyróżnia się dwa elementy: ograniczenia (zwane również
     stałymi) oraz problem rozwiązywania ograniczeń (ang. Constraint Satisfaction Problem, CSP)
     Poniżej dokonano formalnego zdefiniowania powyższych komponentów:
     \begin{definition}
@@ -18,7 +18,7 @@
         $V = \{x_{1},x_{2},...,x_{n}\}$ oznacza zbiór zmiennych wykorzystywanych do opisu problemu
 
         $D = \{d_{1},d_{2},...,d_{n}\}$ oznacza zbiór dziedzin wyżej wspominanych zmiennych. W ramach 
-        rozważeń zawartych w rzeczonej pracy rozpatrywane będą takie $d_{i}$, które są zbiorami zawierającymi 
+        rozważań zawartych w rzeczonej pracy rozpatrywane będą takie $d_{i}$, które są zbiorami zawierającymi 
         skończoną liczbę potencjalnych wartości zmiennej $x_{i}$.
 
         $C = \{c_{1},c_{2},...,c_{m}\}$ oznacza zbiór ograniczeń
@@ -47,9 +47,8 @@
     Dodatkowo wprowadza się termin \textbf{arności} ograniczenia:
     \begin{definition}
         \label{Krotka}
-        \textbf{Arnością ograniczenia} (ang. arity)  związana jest z liczbą unikalnych zmiennych, która w nią wchodzi.
+        \textbf{Arność ograniczenia} (ang. arity)  związana jest z liczbą unikalnych zmiennych, która w nią wchodzi.
     \end{definition}
-    CSP 
     Najpopularniejszymi typami ograniczeń są:
     \begin{enumerate}
         \item Ograniczenia o arności 1, zwane ograniczeniami \textbf{unarnymi} (w tym przypadku z reguły będą one ściśle związane z dziedziną, raczej 
@@ -103,21 +102,92 @@
         Każde rozwiązanie problemu ograniczeń jest spójne.
     \end{corollary}
 
-    Dodatkowo w źródłach \ref{AI} definiuje się częściowe ustalenie oraz częściowe rozwiązanie. Zgodnie z nazewnictwem 
+    Dodatkowo w źródłach \cite{AI} definiuje się częściowe ustalenie oraz częściowe rozwiązanie. Zgodnie z nazewnictwem 
     częściowe ustalenie związane jest z sytuacją, gdy jeszcze nie wszystkie zmienne mają dokładnie określone wartości, natomiast 
     częściowe rozwiązanie w praktyce identyfikuje się jako spójne częściowe ustalenie.
 
-    Po wprowadzeniu powyższych definicji należy rozpocząć rozważań na temat tego, w jaki sposób 
+    Po wprowadzeniu powyższych definicji należy rozpocząć rozważania na temat tego, w jaki sposób 
     problem ograniczeń może zostać rozwiązany. Pierwszym z podejść może być ustalenie wartości dla zmiennych poprzez 
     analizę ograniczeń, jakie między nimi występują. Ten proces nazywany jest \textbf{propagacją ograniczenia}. Dzięki 
     podstawowej analizie ograniczeń algorytm może wyeliminować wartości nadmiarowe znajdujące się w zadanych dziedzinach, co znacząco wpłynie 
     na przyszłościowe osiągi pod kątem czasowym. Często propagacja ograniczeń jest wykonywana jako \textit{preprocessing step}, czyli 
     jako krok, który zostanie wykonany jeszcze przed rozpoczęciem prawdziwej pracy nad problem. 
     
+    Przy rozwiązywaniu problemów związanych z ograniczeniami bardzo intuicyjną reprezentacją, jest reprezentacja 
+    w formie \textit{grafu}. Poprzez wierzchołki oznacza się zmienne wchodzące w skład problemu, natomiast poprzez krawędzie- 
+    binarne ograniczenia, która między nimi występują. Z tego powodu pożądanym zabiegiem będzie przedstawienie wszystkich ograniczeń 
+    n-arnych w formie binarnej.
+
     Kluczem do uzyskania poprawnego efektu propagacji ograniczeń jest skorzystanie z pojęcia zdefiniowanego jako \textbf{lokalna spójność}.
     Istnieją różne typy lokalnej spójności:
+    \begin{itemize}
+        \item \textbf{Spójność wierzchołkowa} (ang. node consistency) - Zmienna jest wierzchołkowo spójna, 
+        gdy wszystkie wartości znajdujące się w jej dziedzine spełniają zdefiniowane przez nią ograniczenie unarne.
+        Graf jest wierzchołkowo spójny, gdy wszystkie wierzchołki wchodzące w skład grafu są wierzchołkowo spójne.
+        Zachowanie wierzchołkowej spójności z reguły sprowadza się do \textbf{zawężania} dziedziny zmiennej.
+        \item \textbf{Spójność krawędziowa} (ang. arc consistency/edge consistency)- Zmienna jest spójna krawędziowo wtedy, 
+        gdy każda wartość z jej dziedziny spełnia binarne ograniczenia zmiennej. Graf jest krawędziowo spójny gdy każda para 
+        zmiennych jest ze sobą krawędziowo spójna.
+        \item \textbf{Spójność ścieżki} (ang. path consistency) - Dwie zmienne $a,b$ są spójne w kontekście ścieżki z trzecią zmienną 
+        $c$, gdy każde przypisanie wartości do zmiennych $a,b$ spełniające ograniczenie występujące między rzeczonymi zmiennymi dodatkowo 
+        spełnia ograniczenie między zmiennymi $a,c$ oraz $c,b$.
+        \item \textbf{K-spójność}- CSP jest k-spójne, gdy dla każdego spójnego ustalenia zawierającego $k-1$ zmiennych można dołączyć k-tą zmienną 
+        bez załamiania spóności. Pojęcie 2-spójność jest tożsame z spójnością krawędziową, a 3-spójność- ze spójnością ścieżki.
+    \end{itemize}
 
+    Sprowadzanie problemu ograniczeń do sytuacji, w której zachodzi lokalna spójność jest określane mianem \textbf{propagacją ograniczeń}. 
+    Jest to o tyle istotne, iż jedną z głównych metod rozwiązywania problemu ograniczeń jest sprowadzenie dziedzin zmiennych do pojedynczej wartości- 
+    wtedy całkowitym ustaleniem jest nadanie zmiennej jedynej wartości w swojej dziedzinie. Propagacja ograniczeń jest silnym mechanizmem wykrywającym 
+    niespójności- jeśli przy próbie propagacji któraś z wartości zostałaby z pustą dziedziną, wtedy należałoby przerwać rozwiązywanie problemu wraz 
+    ze zwróceniem informacji o fakcie, iż nie ma takiego ustalenia zmiennych przy obecnych dziedzinach, dla którego rozpatrywane ograniczenie 
+    jest rozwiązywalne.
+
+\section{Ograniczenia globalne}
+
+    
 \section{Wyszukiwanie rozwiązań}
+    Podstawowa metoda rozwiązywania problem z dziedziny ograniczeń nosi miano metody \textbf{cofającej} (ang. backtracking).
+    Działa ona zbliżenie do mechanizmu przeszukiwania grafu wgłąb. Na początku wybierana jest jedna ze zmiennych. Dla każdej wartości 
+    z dziedziny dochodzi do częściowego ustalenia- zmienna otrzymuje wartość równą pierwszej wartości w swojej dziedzinie. Następnie, 
+    korzystając z tej informacji dochodzi do propagacji ograniczeń. Jeśli wybrana została poprawna wartość propagacja ograniczeń doprowadzi 
+    do znalezienia rozwiązania problemu. Istnieje również sytuacja, w której wybrana wartość prowadzi do slepego zaułka, czyli do sytuacji, w której 
+    nie istnieje odpowiednie ustalenie zmiennych. Wtedy należy \textbf{cofnąć} 
+    się do miejsca, w którym zmiennej nadaliśmy wartość i spróbować innego ustalenia. 
+    Połączenie mechanizmu cofnięcia wraz z propagacją ograniczeń, czyli z utrzymywaniem lokalnej spójności na każdym etapie 
+    wyszukiwania rozwiązania jest znakomitą techniką poprawiającą wydajność. Dzięki propagacji ograniczeń często 
+    dochodzi do sytuacji, w której wyżej wymienione ślepe zaułki są eliminowane zanim mechanizm cofania je rozpatrzy. 
+    
+    Drugą metodą jest metoda nazywana \textbf{wyszukiwaniem lokalnym} (ang. local search). Metoda cofająca, jak sama nazwa wskazuje, próbowała dokonać 
+    częściowego ustalenia, by następnie przy propagacji ograniczeń udowodnić, iż rozpatrywane częściowe ustalenie jest prawidłowe 
+    i generuje odpowiednie całkowite ustalenie. Metodologia wyszukiwania lokalnego różni się w swojej filozofii tym, iż na samym 
+    początku dochodzi do pełnego ustalenia zmiennych. W znacznej większości przypadków ów pełne ustalenie jest 
+    nieprawidłowe, to znaczy nie spełnia wszystkich ograniczeń. Wtedy mechanizm próbuje na bieżąco naprawiać sytuację modyfikując całkowite ustalenie w takich 
+    sposób, aby ustalenie nadal było całkowite jednocześnie spełniając ograniczenie, które wcześniej powodowało konflikty. Jeśli algorytm będzie w stanie 
+    rozwiązać wszystkie ograniczenia uzyska odpowiednie ustalenie zmiennych.
+
+    Porównując powyższe dwie metody łatwo zauważyć, iż różnią się one od siebie w znacznym stopniu, nie tylko w samej filozofii działania, lecz także 
+    w efektach.
+
+    \begin{definition}
+        \label{AlgorytmKompletny}
+        \textbf{Algorytmem kompletnym} jest algorytm, który gwarantuje uzyskanie rozwiązania oraz jest w stanie 
+        wykryć, gdy takowe rozwiązanie nie istnieje
+    \end{definition}
+
+    Przeciwieństwem algorytmu kompletnego jest algorytm \textbf{niekompletny}, czyli taki, który nie gwarantuje 
+    uzyskania optymalnego rozwiązania oraz wykrycia, czy problem posiada rozwiązanie. Algorytmy niekompletne natomiast są o wiele 
+    szybsze oraz dobrze przybliżają optymalne rozwiązanie. 
+
+    Zgodnie z powyższym metoda cofająca jest przykładem algorytmu kompletnego- systematycznie generuje nowe ustalenia oraz propagacje ograniczeń,
+    natomiast wyszukiwanie lokalne jest przykładem algorytmu niekompletnego- łatwo sobie wyobrazić sytuację, iż naprawienie jednego ograniczenia 
+    może nieustannie generować zepsucie kolejnego. W trakcie wyboru algorytmu ważnym jest, aby znać jego zalety jak i wady. Do implementacji 
+    GRAPHPLANU został wykorzystany mechanizm cofania, aby zwracany przez algorytm plan był zawsze optymalny.
+
+
+
+    Powyżej wymienione metody posiadają wiele dodatkowych usprawnień oraz specjalnie zdefiniowanych heurystyk,
+    z którymi czytelnik może zapoznać się kierująć się do następującej pozycji w bibliografii \cite{CP}
+\section{Programowanie w logice a ograniczenia}
 
 
 \section{Obrazowe przykłady}
@@ -131,8 +201,31 @@
     pojęcie lokalnych spójności (\ref{SpójnośćRodział}). Ze względu na ów powiązanie między programowaniem ograniczeń a GRAPHPLAN'em do podstawowego opisu GRAPHPLANU z rodziału 2 
     \ref{GRAPHPLANRozdzial} dodano funkcjonalności opisane w powyższych rozdziałach. 
 
-    Każdy ze stanów oraz akcji zawiera w sobie dodatkowy \textbf{indykator stanu}. Jest to liczba z zakresu $\{0,1\}$, o której 
-    należy mysleć bardziej w kontekście wartości bool'owskich $\{prawda,fałsz\}$. Przy pomocy indykatorów program ustala, które stany, bądź akcje 
+    Każdy ze stanów oraz akcji zawiera w sobie dodatkowy \textbf{indykator}. Jest to liczba ze zbioru liczb całkowitych, o której 
+    należy mysleć bardziej w kontekście wartości bool'owskich $\{prawda,fałsz\}$. Wartość liczby równa 0 indikuje fałszywość stanu, natomiast wartość większa od 0 indukuje jego
+    prawdziwość. Przy pomocy indykatorów program ustala, które stany, bądź akcje 
     są w danej warstwie prawdziwe, czyli występują w świecie oraz takie, które w ów świecie w danym momencie nie występują, czyli są fałszywe. 
+    Odbywa się to w następujący sposób:
+    \begin{enumerate}
+        \item Wszystkie stany wchodzące w stan początkowy otrzymują indykator równy 1, gdyż są aktualnie prawdziwe 
+        w rozpatrywanym świecie.
+        \item W trakcie generowania akcji następuje utworzenie powiązania między warunkami zajścia, akcjami oraz ich efektami.
+        Akcja zostaje powiązane ze swoim warunkiem następującym ograniczeniem: wartośc indykatora akcji jest mniejsza bądź równa wartości 
+        indykatora warunku. Należy to rozumieć w następujący sposób- jeśli warunek jest prawdziwy to akcja \textbf{może} zachodzić w świecie, natomiast 
+        jeśli warunek jest nieprawdziwy, czyli ma indykator równy 0, akcja automatycznie dostaje indykator równy 0.
+        Efekt zostaje powiązany ze swoją akcją poprzez następujące ograniczenie: jeśli jakakolwiek akcja w danej warstwie, 
+        która ma dany stan za efekt zachodzi, wtedy również i efekt w nim występuje. Jeśli wszystkie akcje generujące ów efekt mają indykator równy 0 
+        wtedy efekt nie może zachodzić na danym poziomie, więc również otrzymuje indykator równy 0.
+        \item Dochodzi do sprawdzenia relacji wzajemnego wykluczania poprzez sprawdzenie indykatorów dwóch stanów- Jeśli ich iloczyn jest równy 0, wtedy 
+        dwa stany nie mogą razem występować na danym poziomie.
+        \item Przy dokładnej realizacji kroków 2 i 3 algorytm jest w stanie wygenerować kolejny poziom stanów. Po wygenerowaniu 
+        dochodzi do sprawdzenia, czy wszystkie stany zawarte w zbiorze przechowującym cele mają indykatory równe 1. Jeśli nie, 
+        rzeczony proces jest powtarzany aż do otrzymania pożądanego skutku.
+        \item Gdy wszystkie cele otrzymają indykator 1, program przelicza wszystkie indykatory, dzięki czemu jest w stanie bezbłędnie określić, który 
+        stan bądź która akcja na danym etapie przetwarzania świata znajdują się w nim bądź nie. Ów mechanizm jest silnie wykorzystywany 
+        przy generowaniu grafów, przedstawiających zachodzące w świecie zmiany.
+    \end{enumerate}
+
+    Dokładne sformuowanie ograniczeń przy pomocy symboli matematycznych odbędzie się w sekcji poświęconej implementacji algorytmu.
     
 
