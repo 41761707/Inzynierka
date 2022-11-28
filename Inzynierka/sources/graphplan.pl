@@ -20,116 +20,6 @@
 :- dynamic n/2.
 :- dynamic inconsistent/2.
 
-%3x3
-
-/*
-        can(zostan(P),[P]).
-can(idz(R,A,B), [na(R,A), pusty(B)]) :-
-    robot(R), 
-    adjacent(A,B).
-
-
-effects(zostan(P),[P]).
-effects(idz(R,A,B), [na(R,B),pusty(A),~na(R,A),~pusty(B)]).
-
-robot(a).
-robot(b).
-robot(c).
-robot(d).
-robot(e).
-robot(f).
-robot(g).
-robot(h).
-
-adjacent(A,B) :-
-    n(A,B)
-    ;
-    n(B,A).
-
-%n(1,2). n(2,1). n(2,3). n(3,2).
-
-n(1,2). n(1,4).
-n(2,1). n(2,3). n(2,5).
-n(3,2). n(3,6).
-n(4,1). n(4,5). n(4,7).
-n(5,4). n(5,6). n(5,2). n(5,8).
-n(6,5). n(6,3). n(6,9).
-n(7,4). n(7,8).
-n(8,7). n(8,5). n(8,9).
-n(9,8). n(9,6).
-
-incosistent(G,~G).
-incosistent(~G,G).
-incosistent(na(R,C1),na(R,C2)) :-
-    C1 \== C2.
-
-inconsistent(na(_,C),pusty(C)).
-inconsistent(pusty(C),na(_,C)).
-inconsistent(na(R1,C),na(R2,C)) :-
-    R1 \== R2.
-*/
-
-%CargoBOT
-/*
-:- dynamic object/1.
-:- dynamic place/1.
-
-can(zostan(P),[P]).
-can(idz(Block,From,To), [pusty(Block),pusty(To),na(Block,From)]) :-
-    block(Block),
-    object(To),
-    To \==Block,
-    object(From),
-    From \==To,
-    Block \== From.
-
-effects(zostan(P),[P]).
-effects(idz(X,From,To),[na(X,To),pusty(From),~na(X,From),~pusty(To)]).
-
-object(X) :-
-    place(X)
-    ;
-    block(X).
-
-block(a).
-block(b).
-block(c).
-
-place(1).
-place(2).
-place(3).
-place(4).
-
-%state0([pusty(2),pusty(4),pusty(b),pusty(c),na(a,1),na(b,3),na(c,a)]).
-
-*/
-can(zostan(P),[P]).
-can(idz(R,A,B), [na(R,A), pusty(B)]) :-
-    robot(R), 
-    adjacent(A,B).
-
-
-effects(zostan(P),[P]).
-effects(idz(R,A,B), [na(R,B),pusty(A),~na(R,A),~pusty(B)]).
-
-robot(a).
-
-adjacent(A,B) :-
-    n(A,B)
-    ;
-    n(B,A).
-
-n(1,2). n(2,1). n(2,3). n(3,2).
-
-incosistent(G,~G).
-incosistent(~G,G).
-incosistent(na(R,C1),na(R,C2)) :-
-    C1 \== C2.
-
-inconsistent(na(_,C),pusty(C)).
-inconsistent(pusty(C),na(_,C)).
-inconsistent(na(R1,C),na(R2,C)) :-
-    R1 \== R2.
 
 
 remove(X,[X | Tail], Tail).
@@ -150,22 +40,23 @@ create_plan(StartState, Goals, Plan) :-
     %write("Goals: "), write(Goals), nl,
     %write("Plan: "), write(Plan), nl,
     %write("AllActions: "), write(AllActions), nl,
-    graphplan([StartLevel], Goals, Plan, AllActions,40).
+    graphplan([StartLevel], Goals, Plan, AllActions).
 
-graphplan([StateLevel | GraphPlan], Goals, Plan, AllActs,Round) :-
+graphplan([StateLevel | GraphPlan], Goals, Plan, AllActs) :-
     %write("StateLevel "), write(StateLevel), nl,
     satisfied(StateLevel, Goals),
     extract_plan([StateLevel | GraphPlan], Plan)
     %,write("Plan: "), write(Plan), nl
     ;
-    Round>0,
-    NewRound is Round-1,
+    length(StateLevel,A),
+    length(NewStateLev,B),
+    B>A,
     expand(StateLevel, ActionLevel, NewStateLev, AllActs),
     %write("StateLevel: "), write(StateLevel), nl,
     %write("ActionLevel: "), write(ActionLevel), nl,
     %write("NewStateLev: "), write(NewStateLev), nl,
     %write("AllActs: "), write(AllActs), nl,
-    graphplan([NewStateLev, ActionLevel, StateLevel | GraphPlan], Goals, Plan, AllActs,NewRound).
+    graphplan([NewStateLev, ActionLevel, StateLevel | GraphPlan], Goals, Plan, AllActs).
 
 satisfied(_,[]).
 
@@ -180,8 +71,8 @@ extract_plan([_],[]).
 extract_plan([ChosenStates,ActionLevel | RestOfGraph], Plan) :-
     collect_vars(ActionLevel, AVars),
     labeling([],AVars),
-    %findall(A,(member(A/1,ActionLevel),A \= zostan(_)), ChosenActions),
-    findall(A, (member(A/1,ActionLevel)),ChosenActions),
+    findall(A,(member(A/1,ActionLevel),A \= zostan(_)), ChosenActions),
+    %findall(A, (member(A/1,ActionLevel)),ChosenActions),
     extract_plan(RestOfGraph, RestOfPlan),
     %Output dla szczegolowego planu
     write("ChosenActions: "), write(ChosenActions),nl,
