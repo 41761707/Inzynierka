@@ -41,11 +41,11 @@
     Przy pomocy powyższych definicji możliwym jest sformalizowanie pojęcia stojącego za słowem \textbf{plan}. 
     \begin{definition}
     \label{Plan}
-    \textbf{Plan}- lista akcji, której zastosowanie do stanu początkowego powoduje jego zmianę do stanu określonego w ramach cel. 
+    \textbf{Plan}- lista akcji, której zastosowanie do stanu początkowego powoduje jego zmianę do stanu określonego w ramach celu. 
     \end{definition}
 
     Oczywiście nie każdy plan musi być wykonalny. Zdarzają się również sytuacje, w których nie da się utworzyć planu dla zadanych warunków 
-    początkowych oraz celu. Z takimi przypadkami algorytm jest sobie w stanie sprawnie poradzić (o czym później w dalszej części pracy), 
+    początkowych oraz celu. Z takimi przypadkami algorytm jest sobie w stanie sprawnie poradzić (formalny dowód w dalszej części pracy), 
     jednakże istnieje inna grupa przypadków, która z persepktywy ów metodologii jest niemożliwa do realizacji. 
     Mowa tu o sytuacjach, gdy któraś z akcji zmienia się w akcję \textbf{warunkową}.
     \begin{definition}
@@ -139,7 +139,7 @@
     \begin{itemize}
         \item Warunek- Obecnośc klocka na lewej platformie, prawa platforma jest pusta
         \item Efekt dodający- Obecność klocka na prawej platformie
-        \item Efekt usuwający - Platforma lewa jest pusta
+        \item Efekt usuwający - Brak obecności klocka na lewej platformie (platforma lewa jest pusta)
     \end{itemize}
     W rozważanym podejściu każda z czynności zdefiniowana jest przy pomocy wyżej wskazanych trzech składowych.
 
@@ -152,12 +152,12 @@
     Ze względu na swoją innowacyjność i przełomowość często jest nazywany archetypem
     dzisiejszych autonomicznych samochód czy militarnych dronów.
 
-    Dzięki swojej roli w rozwoju planowania z użyciem komputerów, STRIPS został dodatkowo wyróżniony- od jego nazwy pochodzi języki opisu świata korzystający
+    Dzięki swojej roli w rozwoju planowania z użyciem komputerów, STRIPS został dodatkowo wyróżniony- od jego nazwy pochodzi język opisu świata korzystający
     z trójki: stan początkowy, akcja oraz cel. Przez następne lata rozwiązania w obszarze planowania silnie bazowały na wprowadzonym w powyższej pracy opisie świata.
 
     \subsection{Rozwiązywanie ludzkich problemów}
     W 1972 roku Panowie Allen Newell i Herbet Simon opublikowali książkę pod nazwą \textbf{Human Problem Solving}, której tłumaczenie
-    znajduje się w tytule opisywanej sekcji. Założenie odnośnie otrzymywanych przez algorytm rozwiązujący problem danych 
+    znajduje się w tytule opisywanej sekcji. Założenie, odnośnie otrzymywanych przez algorytm rozwiązujący problem danych, 
     pozostało zgodne z opisem w sekcji \ref{STRIPSRozdział}, jednakże autorzy pracy zauważyli, iż utworzony w ten sposób 
     obszar działań (\textit{problem space}) może osiągać niebotyczne rozmiary. Chcąc odpowiedzieć na pytanie, 
     w jaki sposób ludzie wybierają odpowiednie operacje w danej sytuacji, zauważyli, iż ludzie często wykorzystują \textit{skróty},
@@ -165,12 +165,12 @@
     pokładów energii w celu osiągnięcia wyznaczonego celu. Na tej podstawie rozpoczęło się formowanie 
     technik rozwiązywania problemów zwanych \textbf{heurystykami}. Początkowe heurtystki ograniczały się do zastosowania 
     pewnych ograniczeń jeśli chodzi o wyznaczanie zbioru operatorów, na przykład poprzez unikanie powtórzeń (\textit{repeat-state avoidance})
-    oraz unikanie powrotów do stanó już znanych (\textit{backup avoidance}). Na przestrzeni następnych lat pojęcie heurystyki rozwinie się diametralnie, jednakże
+    oraz unikanie powrotów do stanów już znanych (\textit{backup avoidance}). Na przestrzeni następnych lat pojęcie heurystyki rozwinie się diametralnie, jednakże
     zachowa swoją pierwotną definicję szukania rozwiązań na skróty lub kolokwialnie mówiąc \textit{na ludzkie oko}.  
 
     \subsection{Liniowy i częściowy porządek}
     Na początku lat 70 ubiegłego wieku do tworzenia prostych planów wykorzystywano również pojęcie 
-    liniowego porządku (\textit{total order}) sekwencji akcji. W tym podejściu, ochrzonym mianem \textbf{planowanie liniowe}
+    liniowego porządku (\textit{total order}) sekwencji akcji. W tym podejściu, ochrzczonym mianem \textbf{planowanie liniowe}
     (\textit{linear planning}) dla każdego z celów  próbowano utworzyć odpowiedni podplan, który go osiągał.
     Następnie ów plan łączono przy pomocy odpowiedniego porządku akcji w jeden spójny plan.
     Ze względu na wady tego podejścia, jak długi czas formowania planu oraz możliwość wystąpienia konfliktów między 
@@ -184,8 +184,8 @@
     powstanie danego efektu jest niedeterministyczne. Dodatkowym aspektem, którego wprowadzenie znacznie poprawiło wydajność metodologii ADL względem STRIPS 
     było wykorzystanie zasady \textbf{otwartego świata}, która mówi, iż rzeczy nieokreślone w świecie są uznawane jako \textit{nieznane}, a nie jako 
     fałszywe, jak to było w STRIPS (\textbf{zasada zamkniętego świata}). Dodatkowo, ostateczne cele w języku STRIPS mogły być jedynie przedstawione jako 
-    koniunkcje stanów (np. Dobra i Tania, np. w kontekście restauracji), czyli jako cele bezwarunkowe. 
-    W nomenklaturze ADL cele można przedstawiać również przy pomocy alternatyw, to znaczy 
+    koniunkcje stanów (np. Dobra i Tania w kontekście restauracji), czyli jako cele bezwarunkowe. 
+    W nomenklaturze ADL cele można przedstawiać również przy pomocy alternatyw, to znaczy: 
     nie wszystkie stany muszą być spełnione, mogły istnieć grupy stanów, w których spełnienie tylko jednego było wystarczające (np. Dobra i (Tania lub Blisko)). 
 
     Planning Domain Definition Language (w skrócie \textbf{PDDL}) było próbą ustandaryzowania języków wykorzystywanych 

@@ -15,7 +15,7 @@
     \end{figure}
     Pierwotną ideę grafu planującego przedstawiono na obrazku \ref{PlanningGraph}. W trakcie dalszego omawiania metodologii GRAPHPLAN powyższa 
     rycina będzie pojawiała się ponownie z coraz to większym poziomiem szczegółowości.
-    Ze względu na fakt, iż Graphplan opiera się na języku STRIPS musi mieć jasno zdefiniowane: stan początkowy, akcje oraz cel, który pragniemy uzyskać.
+    Ze względu na fakt, iż Graphplan opiera się na języku STRIPS musi mieć jasno zdefiniowane: stan początkowy, akcje oraz cel, który należy uzyskać.
     Dzięki swojej strukturze Graphplan w swojej naturze podobny jest do programowania dynamicznego.
 
 \section{Warunki początkowe}
@@ -47,9 +47,9 @@
         po których mogą poruszać się roboty.}
         \label{PrzykladSP}
     \end{figure}
-    Na powyższym przkładzie, zgodnie z ideą Graphplanu wyszczególniamy 6 stanów początkowych. Dodatkowo należy doprecyzować pojęcie bycia robota na danym kafelku. Wykonano to 
+    Na powyższym przkładzie, zgodnie z ideą Graphplanu wyszczególniono 6 stanów początkowych. Dodatkowo należy doprecyzować pojęcie bycia robota na danym kafelku. Wykonano to 
     przy pomocy dwuargumentowej relacji \textit{na}, która jako pierwszy argument przyjmuje sygnaturę robota, a na drugim- numer kafelka. Na potrzeby przykładu ustalono, iż 
-    numerowanie odbywa się rzędami od lewej do prawej. Zgodnie z tymi ustaleniami pozycję robotów A i B możemy określić w następujący sposób: \textit{$na(A,4)$} oraz 
+    numerowanie odbywa się rzędami od lewej do prawej. Zgodnie z tymi ustaleniami pozycję robotów A i B można określić w następujący sposób: \textit{$na(A,4)$} oraz 
     \textit{$na(B,3)$}. Również pustość kafelków należy sformalizować wprowadzając relację jednoargumentową o nazwie \textit{pusty}, która przyjmuje jako argument numer
     pustego kafelka. Reasumując, zbiorem stanów początkowy dla analizowanego przykładu \ref{PrzykladSP} jest: 
     \begin{equation}
@@ -65,23 +65,23 @@
         \item Warunków zajścia
         \item Efektów zajścia
     \end{itemize}
-    Z tego powodu każdą z akcji będziemy traktować jako trójkę 
+    Z tego powodu każdą z akcji traktuje się jako trójkę 
     \begin{equation}
         A=(C,W,E)
     \end{equation}
     gdzie każda z liter odpowiada pierwszej literze wyżej wymienionego pojęcia. 
     W skład efektów wchodzą dwa pojęcia wprost z terminologii STRIPS- dodające i usuwające. Dzięki takiemu podziałowi łatwiejszym będzie 
     zachowanie silnego podziału między przyczynami a efektami akcji. 
-    Jedyną czynnością, którą należy brać pod uwagę w ramach \ref{PrzykladSP} jest czynność \textit{ruch}, którą definiujemy jako trzyargumentową relację:
+    Jedyną czynnością, którą należy brać pod uwagę w ramach \ref{PrzykladSP} jest czynność \textit{ruch}, którą zdefiniowana jest jako trójargumentowa relacja:
     \begin{equation}
         ruch(R,S,D)
     \end{equation}
     , gdzie R odpowiada robotowi, który musi się przemieścić z kafelka oznaczonego literą S (kafelek startowy) na kafelek oznaczony
     literą D (kafelek docelowy).
     
-    Następnymi składowymi są odpowiednio \textit{Warunki} jak i \textit{Efekty}. Warunki traktujemy jako zbiór wszystkich stanów, które muszą być 
+    Następnymi składowymi są odpowiednio \textit{Warunki} jak i \textit{Efekty}. Warunki traktowane są jako zbiór wszystkich stanów, które muszą być 
     prawdziwe w danej jednostce czasu. Jeśli choć jeden stan nie jest spełnialny, opisywana akcja nie może zostać wykonana w danym ruchu.
-    Efekty natomiast definiujemy jako następującą parę:
+    Efekty natomiast zdefinowano jako następującą parę:
     \begin{equation}
         E=(D,U)
     \end{equation}
@@ -96,18 +96,19 @@
     przedstawiona na \ref{PrzykladRuch}. Biorąc pod uwagę, iż stanem początkowym jest \ref{ZbiorPoczatkowy} Warunkami zajścia zdarzenia
     będą: $na(R,S)$ oraz $pusty(D)$. Dla efektów natomiast sytuacja wygląda następująco: efektami dodającymi są $na(R,D)$ oraz $pusty(S)$, które informują o tym, iż klocek 
     wykonał ruch z kafelka S na kafelek D, a efektami usuwającymi $\sim na(R,S)$ oraz $\sim pusty(D)$, które informują o tym, iż kafelek S został zwolniony, 
-    oraz robot nie znajduje się już na kafelku S. Przy pomocy matematycznego symbolu negacji wyrażono nieprawdziwość danego stanu. Ze względów estetycznych 
-    oraz ułatwiających analizowanie pracy negacje stanów w dalszej części pracy wyrażono również przy pomocy polskiej partykuły przeczącej \textbf{nie}. 
+    robot nie znajduje się już na kafelku S oraz kafelek D już nie jest pusty. 
+    Przy pomocy matematycznego symbolu negacji wyrażono nieprawdziwość danego stanu. Ze względów estetycznych 
+    oraz ułatwiających analizowanie pracy negacje stanów w dalszej części wyrażono również przy pomocy polskiej partykuły przeczącej \textbf{nie}. 
     Dla przykładu pojęcia $\sim pusty(1)$ oraz $niepusty(1)$ z perpsektywy wprowadzonej terminologii są tożsame. 
 
         Posiadająć następującą wiedzę poniżej zdefiniowano jedyną akcję znajdująca się w prezentowanym przykładzie:
     \begin{equation}
         \label{Ruch}
-        A=(ruch(R,S,D),\{na(R,S),pusty(D)\},\{na(R,D),pusty(S),\sim na(R,S),\sim pusty(D)\})
+        A=(ruch(R,S,D),\{na(R,S),pusty(D)\},\{\{na(R,D),pusty(S)\},\{ \sim na(R,S),\sim pusty(D)\}\})
     \end{equation}
-    Podstawiając za $R=B$, $S=3$, a $D=2$ otrzymujemy następującą akcję:
+    Podstawiając za $R=B$, $S=3$, a $D=2$ otrzymano następującą akcję:
     \begin{equation}
-        A=(ruch(B,3,2),\{na(B,3),pusty(2)\},\{na(B,2),pusty(3),\sim na(B,3),\sim pusty(2)\})
+        A=(ruch(B,3,2),\{na(B,3),pusty(2)\},\{\{na(B,2),pusty(3)\},\{ \sim na(B,3),\sim pusty(2)\}\})
     \end{equation}
     
     Analogicznie można zdefiniować ruch na kafelek numer 6, oraz dwa ruchy dla robota o sygnaturze A.
@@ -118,7 +119,7 @@
     W pierwszym kroku wykonano akcję $ruch(B,3,2)$.Z persepktywy człowieka jest to wystarczająca informacja, aby móc wydedukować, co we wskazanym etapie
     generowania planu  dzieje się z robotem \textbf{A}. Otóż robot A w pierwszym ruchu zostaje na tym samym kafelku. 
     Jednakże ze względu na zamkniętość świata 
-    algorytmu należy go również poinformować go o tym, w jakim stanie po pierwszym kroku ma znajdować się robot A. Wykonywane jest to przy pomocy 
+    algorytmu należy go również poinformować o tym, w jakim stanie po pierwszym kroku ma znajdować się robot A. Wykonywane jest to przy pomocy 
     akcji, zwanych \textbf{akcjami potrzymującymi}.
     \begin{definition}
         \label{Persist}
@@ -141,7 +142,7 @@
         &zostan(na(A,4)),ruch(B,3,2),ruch(B,3,6),
         ruch(A,4,1),ruch(A,4,5)\}
     \end{align*}
-    Należy również nadmienić, iż podobnie jak w stanach, dla akcji wprowadza się pojęcie \textbf{Stanu akcji}, które funkcjonuje jako zbiór 
+    Należy również nadmienić, iż podobnie jak w stanach, dla akcji wprowadza się pojęcie \textbf{poziomu akcji}, które funkcjonuje jako zbiór 
     składający się ze wszystkich możliwych akcji do wykonania w danej jednostce czasu.
     \begin{figure}[H]
         \includegraphics[scale=0.5]{PrzykladAkcje}
@@ -180,13 +181,13 @@
     \end{figure}
     Taka definicja ruchu pozwala w skuteczny sposób oddać intuicję, która wynika z poglądowego obrazka przedstawiającego rozpatrywany świat.
     Niewystarczającym jest określenie relacji $sasiad(1,2)$, gdyż wedle tego faktu kafelek pierwszy sąsiaduje z kafelkiem drugim, jednakże nie oznacza 
-    to, iż kafelek drugi sąsiaduje z kafelkiem pierwszym. Z tego dla każdej pary kafelków A i B do zbioru sąsiadów należy dodać dwie relacje:
+    to, iż kafelek drugi sąsiaduje z kafelkiem pierwszym. Wedle tej informacji dla każdej pary kafelków A i B do zbioru sąsiadów należy dodać dwie relacje:
     $sasiad(A,B)$ oraz $sasiad(B,A)$. Inna sytuacja byłaby, gdyby ruch był możliwy jedynie w jedną stronę, jednakże tutaj taki stan rzeczy nie występuje.
 
 
     Oprócz definicji sąsiedztwa należy również zabezpieczyć się przed sytuacją, gdy dwa roboty będą chciały w tym samym momencie znaleźć się na tym samym 
     kafelku. Dodatkowo kafelek A nie może znajdować się w dwóch stanach jednocześnie: $pusty(A)$ oraz $na(R,A)$, gdzie R oznacza dowolnego robota. 
-    Wymodelowanie tych ograniczeń jest prostym, lecz istotnym zadaniem implementując przedstawianą metodologię, które zostanie poruszone w ramach 
+    Wymodelowanie tych ograniczeń jest żmdunym, lecz istotnym zadaniem implementując przedstawianą metodologię, które zostanie poruszone w ramach 
     przedstawiania pojęcia "wzajemnego wykluczania".
     
     
@@ -195,7 +196,7 @@
 
 
 \section{Warstwy grafu}
-    Składowe planu grafującego można podzielić na dwa typy: jeden, wyszczególniony jako poziomy stanów oraz drugi- poziomy akcji. Aby lepiej 
+    Składowe grafu planującego można podzielić na dwa typy: jeden, wyszczególniony jako poziomy stanów oraz drugi- poziomy akcji. Aby lepiej 
     uwidocznić zależność poziomu akcji od warunków początkowych oraz zależność kolejnego poziomu stanów od efektów akcji graf planujący 
     z \ref{PlanningGraph} ulegnie lekkiej modyfikacji. 
     \begin{figure}[H]
@@ -208,16 +209,15 @@
     Następnym krokiem będzie wprowadzenie definicji \textbf{Warstwy grafu}
     \begin{definition}
         \label{Warstwa}
-        \textbf{Warstwą} - grafu nazywamy połączenie poziomu stanów oraz wynikającego z niego poziomu akcji
+        \textbf{Warstwą} - grafu jest połączenie poziomu stanów oraz wynikającego z niego poziomu akcji
     \end{definition}
     Przez $i$-tą warstwę grafu oznaczono stan świata w $i$-tym momencie czasu. Ze względu na charakterystykę planera czas traktowany jest w sposób dyskretny-
     każda ze zdefiniowanych akcji zajmuje zawsze tyle samo czasu oraz zawsze kończy się tym samym efektem. Poziomy stanów jak i poziomy akcji 
-    należące do tej samej $i$-tej warstwy nazywamy poprzez dołączenie do ich nazwy numera, odpowiadającego obecnej iteracji algorytmu
-    iteracji algorytmu.
+    należące do tej samej $i$-tej warstwy nazwano poprzez dołączenie do ich nazwy numera, odpowiadającego obecnej iteracji algorytmu
     \begin{figure}[H]
         \includegraphics[scale=0.5]{PlanningGraphLevels}
         \centering
-        \caption{Przedstawienie sposobu wyznaczania warstw w algorytmie planującym. Poziom stanów oraz akcji wchodzący w skład danej warstwy 
+        \caption{Przedstawienie sposobu wyznaczania warstw w grafie planującym. Poziom stanów oraz akcji wchodzący w skład danej warstwy 
         wyróżniony jest poprzez konkatenację nazwy oraz liczby symbolizującej numer warstwy.}
         \label{PlanningGraphLevels}
     \end{figure}
@@ -247,9 +247,9 @@
     Po wprowadzeniu definicji równoległości, również definicja kroku musi ulec ewolucji. 
     \begin{definition}
         \label{Krok}
-        \textbf{Krokiem} algorytmu nazywamy zbiór wszystkich możliwych do realizacji akcji w danej warstwie.
+        \textbf{Krokiem} algorytmu jest zbiór wszystkich możliwych do realizacji akcji w danej warstwie.
     \end{definition}
-    Dzięki naniesionej poprawce pozbywamy się łatki mówiącej o tym, iż pojedyncza zmiana stanu jest ściśle związana z jedną akcją.W tym miejscu należy 
+    Dzięki naniesionej poprawce możliwym jest wykonanie więcej niż jednej akcji między dwoma poziomami stanów. W tym miejscu należy 
     zauważyć, iż poprzednie analizy zawierały spore uproszczenie, gdyż akcje podtrzymujące również należą do kroku algorytmu, co zostało zaprezentowane
     w trakcie kreowania pierwszej warstwy akcji dla rozpatrywanego przykładu. 
 
@@ -258,10 +258,10 @@
     na porządek liniowy w dość dowolny sposób. Otóż akcje z danej warstwy mogą być wykonywane w dowolnej kolejności, gdyż w żaden sposób ze sobą nie 
     kolidują. Z persepktywy algorytmu najważniejszym jest, aby stan świata $i$ i $i+1$ był zgodny z informacjami jakie posiada o świecie. Zgodnie z
     przykładem \ref{PrzykladRownolegle} widać, iż to, czy akcja $ruch(A,4,5)$ zostanie wykonana przed akcją $ruch(B,3,2)$ lub to, czy akcja 
-    $ruch(B,3,2)$ odbędzie się prxed $ruch(A,4,5)$- efekt końcowy jest identyczny.
+    $ruch(B,3,2)$ odbędzie się przed $ruch(A,4,5)$ nie ma większego znaczenia- efekt końcowy jest identyczny.
 
     \subsection{Wzajemne wykluczanie}
-    Twórcy algorytmy wprowadzając równoleglość, zdawali sobie sprawę z mocy tego podejścia. Dzięki temu ogromna liczba planów ulega redukcji
+    Twórcy algorytmu wprowadzając równoleglość, zdawali sobie sprawę z mocy tego podejścia. Dzięki temu ogromna liczba planów ulega redukcji
     jeśli chodzi o wymagany czas wykonania. Jednakże równoległość wprowadza kolejny istotny problem w prezentowanym świecie, a mianowicie- co, gdy
     wykonanie dwóch akcji będzie wprowadzało sprzeczność w następnym poziomie świata? Sytuacja ta została przedstawiona na poniższym rysunku
     \begin{figure}[H]
@@ -282,7 +282,7 @@
         \textbf{Relacją wzajemnie wykluczającą się} - jest relacją między akcjami(stanami), która informuje o tym, iż nie istnieje plan taki,
         aby dwie wybrane akcje(stany) mogły być prawdziwe w tej samej jednostce czasu $t$
     \end{definition}
-    Przykładem stanów wykluczających jest para: $pusty(1)$ oraz $\sim pusty(1)$. Kafelek nie może być pusty jak i niepusty jednocześnie.
+    Przykładem stanów wykluczających jest para: $pusty(1)$ oraz $niepusty(1)$. Kafelek nie może być pusty jak i niepusty jednocześnie.
     Przykład dwóch akcji wykluczających przedstawiono na rysunku \ref{PrzykladRownolegle}. Należy zauważyć, iż wzajemne wykluczanie się 
     jest rozpatrywane warstwowo.
     Kolejnym naturalnym krokiem jest ustalenie, kiedy akcje oraz stany są ze sobą w relacji wykluczającej. 
@@ -310,7 +310,7 @@
         \label{PrzykladWykluczenie3}
     \end{figure}
 
-    Zgodnie z nienaturalnym przykładem \ref{PrzykladWykluczenie3} należy zauważyć, iż stany 1 oraz 2 nie mogą 
+    Zgodnie z przykładem \ref{PrzykladWykluczenie3} należy zauważyć, iż stany 1 oraz 2 nie mogą 
     znajdować się jednocześnie w planie ze względu na to, iż każda z akcji, która generuje stan 1 (B,C) znajduje się w relacji 
     wzajemnie wykluczającej z każdą akcją, która generuje stan 2 (C,D). Oznacza to, iż ów dwa stany powstają w sposób \textbf{niespójny}.
     
@@ -344,7 +344,7 @@
     \end{equation} 
     oraz 
     \begin{equation}
-        zostan(pusty(prawy)) oraz ruch(A,lewy,prawy)
+        zostan(pusty(prawy)),ruch(A,lewy,prawy)
     \end{equation} 
     Wynika to z faktu, iż zbiór efektów jednej akcji z powyższych par jest negowany przez drugi. Zbiorem efektów akcji 
     $zostan(na(A,lewy))$ jest $na(A,lewy)$, jednakże zbiorem efektów $ruch(A,lewy,prawy)$ jest ciut większy zbiór:
@@ -363,10 +363,11 @@
     \end{figure}
 
     Idea przedstawiona na rysunku \ref{PrzykladWykluczenie1} jest ciekawym przykładem, pozwalającym zrozumieć dokładniej definicję słowa 
-    \textbf{równoległość} odnośnie planów generowanych przez GRAPHPLAN. Gdyby roboty poruszając się z tą samą szybkością ruszyły w tym samym momencie
+    \textbf{równoległość} odnośnie planów generowanych przez GRAPHPLAN. Gdyby roboty poruszając się z tą samą szybkością i ruszyły w tym samym momencie
     to wykonanie ów sekwencji akcji byłoby w zupełności możliwe, jednakże w sekcji \ref{Rownoleglosc} wspomniano, iż każdy z wygenerowanych planów 
     musi być możliwy do przedstawienia w postaci porządku liniowego, czyli plan równoległy może zostać przerobiony w dowolny sposób na plan,
-    w którym każda z akcji wykonywana jest po kolei. Zgodnie z omawianym przykładem sprowadzenie ów planu do dowolnej postaci liniowej jest 
+    w którym każda z akcji wykonywana jest w z góry ustalonej kolejności.
+    Zgodnie z omawianym przykładem sprowadzenie ów planu do dowolnej postaci liniowej jest 
     niemożliwe, gdyż istnieje konfiguracja, w której to najpierw robot B miałby wykonać ruch, jednakże jest to niemożliwe ze względu na 
     obecność robota A na kafelku będącym jego celem podróży. Dodatkowe wprowadzenie ograniczeń na konwersję planów równoległych na liniowe 
     jest bardziej skompilowanym zagadnieniem, którego omówienie nastąpi w sekcji odpowiedzialnej za możliwe rozwinięcia algorytmu.
@@ -389,7 +390,8 @@
 
 
 \section{Wyszukiwanie planu}
-    Zdefiniowawszy wszystkie niezbędne elementy planera należy wskazać, w jaki sposób przy posiadaniu całej wiedzy wygenerowanej przez graf planujący.
+    Zdefiniowawszy wszystkie niezbędne elementy planera należy wskazać, w jaki sposób przy posiadaniu całej wiedzy wygenerowanej przez graf planujący
+    algorytm tworzy odpowiedni plan.
     Wykonywane jest to w następujący sposób:
     \begin{enumerate}
         \item Rozpoczynając od stanu początkowego, zgodnie z opisanymi w poprzednich sekcjach metodami, odbywa się generowanie kolejnych warstw grafu,
@@ -407,7 +409,7 @@
         iż istnieje sekwencja akcji pozwalająca otrzymać stany zdefiniowane z celu w określonym przez stany początkowe świecie, co oznacza, 
         iż jest możliwym utworzenie odpowiedniego \textbf{planu}.
     \end{enumerate}
-    Aby precyzyjnie przedstawić działanie algorytmu w następnej części programu przeprowadzono rozbudową analizę konkretnego przykładu:
+    Aby precyzyjnie przedstawić działanie algorytmu w następnej części programu przeprowadzono rozbudowaną analizę konkretnego przykładu:
 
     \begin{figure}[H]
         \includegraphics[scale=0.5]{PrzykladPlan1}
@@ -428,8 +430,9 @@
     \end{figure}
 
     Ze względu na fakt, iż w języku programowania \textbf{PROLOG}, w którym implementowany jest algorytm, zmienne są oznaczane przy pomocy wielkiej litery,
-    a stałe przy pomocy małej, wielkość litery w oznaczaniu nazwy robota nie ma istotnego znaczenia. Zwyczajowo w opisie robot będzie określany 
-    przy pomocy wielkiej litery (np. \textbf{A}) natomiast w wygenerowanych przez program grafach przy pomocy małej \textbf{a}.
+    a stałe przy pomocy małej, należy nie przywiązywać większej wagi do wielkości litery prezentowanej na przytoczonych rysunkach. 
+    Zwyczajowo w opisie robot będzie określany przy pomocy wielkiej litery (np. \textbf{A}) natomiast 
+    w wygenerowanych przez program grafach przy pomocy małej \textbf{a}.
     W powyższy sposób zaprezentowano stan początkowy świata. Wszystkie definicje relacji takich jak \textbf{na}, \textbf{idz}, \textbf{zostan}, czy 
     \textbf{pusty} wprowadzono w podrozdziałach \ref{RozdzialWarunkiPoczatkowe} i \ref{RozdzialAkcje}. W wygenerowanych przez oprogramowanie grafach \textbf{poziomy stanów}
     określane są poprzez swój angielski odpowiednich \textbf{StateLevel}. Podobnie z \textbf{poziom akcji} i \textbf{ActionLevel}. 
@@ -441,8 +444,8 @@
         \label{PrzykladPlanAP1}
     \end{figure}
 
-    Następnie przystąpiono do wygenerowania wszystkich możliwych akcji. Postąpiono zgodnie ze wskazówkami z podrozdziału \ref{RozdzialAkcje}. 
-    Dodajemy niezbędne krawędzie wynikające z warunków, jak i efektów każdej z akcji oraz mutexy (oznaczone przerywanymi, niebieskimi liniami).
+    Następnie przystąpiono do wygenerowania wszystkich możliwych akcji. Postąpiono zgodnie ze wskazówkami z podrozdziału \ref{RozdzialAkcje}, 
+    dodawszy niezbędne krawędzie wynikające z warunków, jak i efektów każdej z akcji oraz mutexy (oznaczone przerywanymi, niebieskimi liniami).
 
     \begin{figure}[H]
         \includegraphics[scale=0.5]{PrzykladPlanWarstwa1}
@@ -483,7 +486,7 @@
         [[idz(A,1,2)],[idz(A,2,3)]]
     \end{equation}
     Ze względu na fakt, iż na danym poziomie może odbywać się więcej niż jedna akcja, każdy krok algorytmu oznaczany jest za pomocą \textbf{listy}, 
-    którą możemy utożsamić z matematycznym zbiorem.
+    którą należy utożsamiać z matematycznym zbiorem.
 
     W ten oto sposób wygenerowano poprawny plan stosując algorytm \textbf{GRAPHPLAN}.
 

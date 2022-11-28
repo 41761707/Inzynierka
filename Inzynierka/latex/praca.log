@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.5.18)  27 NOV 2022 04:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.5.18)  28 NOV 2022 04:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -974,7 +974,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 \tf@lof=\write5
 \openout5 = `praca.lof'.
 
-<wit-logo.png, id=535, 225.84375pt x 225.84375pt>
+<wit-logo.png, id=516, 225.84375pt x 225.84375pt>
 File: wit-logo.png Graphic file (type png)
 <use wit-logo.png>
 Package pdftex.def Info: wit-logo.png  used on input line 689.
@@ -1047,12 +1047,12 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [3
 
 ]
-<./pictures/Przyklad1.png, id=594, 661.72218pt x 97.11281pt>
+<./pictures/Przyklad1.png, id=576, 661.72218pt x 97.11281pt>
 File: ./pictures/Przyklad1.png Graphic file (type png)
 <use ./pictures/Przyklad1.png>
 Package pdftex.def Info: ./pictures/Przyklad1.png  used on input line 62.
 (pdftex.def)             Requested size: 330.86028pt x 48.55627pt.
-<./pictures/Przyklad2.png, id=598, 366.61969pt x 331.2375pt>
+<./pictures/Przyklad2.png, id=580, 366.61969pt x 331.2375pt>
 File: ./pictures/Przyklad2.png Graphic file (type png)
 <use ./pictures/Przyklad2.png>
 Package pdftex.def Info: ./pictures/Przyklad2.png  used on input line 93.
@@ -1065,7 +1065,7 @@ File: wit-logo.png Graphic file (type png)
 Package pdftex.def Info: wit-logo.png  used on input line 99.
 (pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
  [4 <./pictures/Przyklad1.png>]
-<pwr-logo.png, id=613, 217.81375pt x 216.81pt>
+<pwr-logo.png, id=595, 217.81375pt x 216.81pt>
 File: pwr-logo.png Graphic file (type png)
 <use pwr-logo.png>
 Package pdftex.def Info: pwr-logo.png  used on input line 135.
@@ -1094,7 +1094,7 @@ Package pdftex.def Info: wit-logo.png  used on input line 716.
 
 ] (./rozdzial2.tex
 Rozdzia\l  2.
-<./pictures/PlanningGraph.png, id=638, 663.98062pt x 246.1697pt>
+<./pictures/PlanningGraph.png, id=619, 663.98062pt x 246.1697pt>
 File: ./pictures/PlanningGraph.png Graphic file (type png)
 <use ./pictures/PlanningGraph.png>
 Package pdftex.def Info: ./pictures/PlanningGraph.png  used on input line 9.
@@ -1108,7 +1108,7 @@ o-rzy al-go-rytmu okre-�laj� jako "graf planuj�cy"[[]].
 [9
 
  <./pictures/PlanningGraph.png>]
-<./pictures/PrzykladSP.png, id=649, 344.03531pt x 229.60782pt>
+<./pictures/PrzykladSP.png, id=631, 344.03531pt x 229.60782pt>
 File: ./pictures/PrzykladSP.png Graphic file (type png)
 <use ./pictures/PrzykladSP.png>
 Package pdftex.def Info: ./pictures/PrzykladSP.png  used on input line 44.
@@ -1118,47 +1118,47 @@ File: wit-logo.png Graphic file (type png)
 Package pdftex.def Info: wit-logo.png  used on input line 85.
 (pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
  [10 <./pictures/PrzykladSP.png>]
-<./pictures/PrzykladRuch.png, id=663, 344.03531pt x 229.60782pt>
+<./pictures/PrzykladRuch.png, id=645, 344.03531pt x 229.60782pt>
 File: ./pictures/PrzykladRuch.png Graphic file (type png)
 <use ./pictures/PrzykladRuch.png>
 Package pdftex.def Info: ./pictures/PrzykladRuch.png  used on input line 90.
 (pdftex.def)             Requested size: 172.01723pt x 114.80362pt.
 File: pwr-logo.png Graphic file (type png)
 <use pwr-logo.png>
-Package pdftex.def Info: pwr-logo.png  used on input line 132.
+Package pdftex.def Info: pwr-logo.png  used on input line 133.
 (pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
  [11 <./pictures/PrzykladRuch.png>]
-<./pictures/PrzykladAkcje.png, id=678, 539.01375pt x 320.69812pt>
+<./pictures/PrzykladAkcje.png, id=660, 539.01375pt x 320.69812pt>
 File: ./pictures/PrzykladAkcje.png Graphic file (type png)
 <use ./pictures/PrzykladAkcje.png>
-Package pdftex.def Info: ./pictures/PrzykladAkcje.png  used on input line 147.
+Package pdftex.def Info: ./pictures/PrzykladAkcje.png  used on input line 148.
 (pdftex.def)             Requested size: 269.50621pt x 160.34866pt.
-<./pictures/PrzykladSasiad.png, id=681, 344.03531pt x 229.60782pt>
+<./pictures/PrzykladSasiad.png, id=663, 344.03531pt x 229.60782pt>
 File: ./pictures/PrzykladSasiad.png Graphic file (type png)
 <use ./pictures/PrzykladSasiad.png>
-Package pdftex.def Info: ./pictures/PrzykladSasiad.png  used on input line 175.
+Package pdftex.def Info: ./pictures/PrzykladSasiad.png  used on input line 176.
 
 (pdftex.def)             Requested size: 172.01723pt x 114.80362pt.
 File: wit-logo.png Graphic file (type png)
 <use wit-logo.png>
-Package pdftex.def Info: wit-logo.png  used on input line 180.
+Package pdftex.def Info: wit-logo.png  used on input line 181.
 (pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
  [12 <./pictures/PrzykladAkcje.png>]
-<./pictures/PlanningGraphStates.png, id=690, 551.81157pt x 377.91188pt>
+<./pictures/PlanningGraphStates.png, id=672, 551.81157pt x 377.91188pt>
 File: ./pictures/PlanningGraphStates.png Graphic file (type png)
 <use ./pictures/PlanningGraphStates.png>
 Package pdftex.def Info: ./pictures/PlanningGraphStates.png  used on input line
- 202.
+ 203.
 (pdftex.def)             Requested size: 275.9051pt x 188.95547pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: pwr-logo.png Graphic file (type png)
 <use pwr-logo.png>
-Package pdftex.def Info: pwr-logo.png  used on input line 208.
+Package pdftex.def Info: pwr-logo.png  used on input line 209.
 (pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
  [13 <./pictures/PrzykladSasiad.png>]
-<./pictures/PlanningGraphLevels.png, id=696, 887.56593pt x 408.02437pt>
+<./pictures/PlanningGraphLevels.png, id=678, 887.56593pt x 408.02437pt>
 File: ./pictures/PlanningGraphLevels.png Graphic file (type png)
 <use ./pictures/PlanningGraphLevels.png>
 Package pdftex.def Info: ./pictures/PlanningGraphLevels.png  used on input line
@@ -1169,13 +1169,13 @@ File: wit-logo.png Graphic file (type png)
 Package pdftex.def Info: wit-logo.png  used on input line 232.
 (pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
  [14 <./pictures/PlanningGraphStates.png> <./pictures/PlanningGraphLevels.png>]
-<./pictures/PrzykladRownolegle.png, id=703, 346.29375pt x 255.20343pt>
+<./pictures/PrzykladRownolegle.png, id=685, 346.29375pt x 255.20343pt>
 File: ./pictures/PrzykladRownolegle.png Graphic file (type png)
 <use ./pictures/PrzykladRownolegle.png>
 Package pdftex.def Info: ./pictures/PrzykladRownolegle.png  used on input line 
 240.
 (pdftex.def)             Requested size: 173.14644pt x 127.6014pt.
-<./pictures/PrzykladRownolegleZle.png, id=705, 411.03563pt x 415.5525pt>
+<./pictures/PrzykladRownolegleZle.png, id=687, 411.03563pt x 415.5525pt>
 File: ./pictures/PrzykladRownolegleZle.png Graphic file (type png)
 <use ./pictures/PrzykladRownolegleZle.png>
 Package pdftex.def Info: ./pictures/PrzykladRownolegleZle.png  used on input li
@@ -1186,7 +1186,7 @@ File: pwr-logo.png Graphic file (type png)
 Package pdftex.def Info: pwr-logo.png  used on input line 276.
 (pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
  [15 <./pictures/PrzykladRownolegle.png>]
-<./pictures/PrzykladWykluczenie3.png, id=715, 352.31625pt x 310.91156pt>
+<./pictures/PrzykladWykluczenie3.png, id=697, 352.31625pt x 310.91156pt>
 File: ./pictures/PrzykladWykluczenie3.png Graphic file (type png)
 <use ./pictures/PrzykladWykluczenie3.png>
 Package pdftex.def Info: ./pictures/PrzykladWykluczenie3.png  used on input lin
@@ -1200,7 +1200,7 @@ File: wit-logo.png Graphic file (type png)
 Package pdftex.def Info: wit-logo.png  used on input line 312.
 (pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
  [16 <./pictures/PrzykladRownolegleZle.png>]
-<./pictures/PrzykladWykluczenie2.png, id=726, 224.33812pt x 117.43875pt>
+<./pictures/PrzykladWykluczenie2.png, id=708, 224.33812pt x 117.43875pt>
 File: ./pictures/PrzykladWykluczenie2.png Graphic file (type png)
 <use ./pictures/PrzykladWykluczenie2.png>
 Package pdftex.def Info: ./pictures/PrzykladWykluczenie2.png  used on input lin
@@ -1212,7 +1212,7 @@ Package pdftex.def Info: pwr-logo.png  used on input line 353.
 (pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
  [17 <./pictures/PrzykladWykluczenie3.png> <./pictures/PrzykladWykluczenie2.png
 >]
-<./pictures/PrzykladWykluczenie1.png, id=741, 344.03531pt x 117.43875pt>
+<./pictures/PrzykladWykluczenie1.png, id=722, 344.03531pt x 117.43875pt>
 File: ./pictures/PrzykladWykluczenie1.png Graphic file (type png)
 <use ./pictures/PrzykladWykluczenie1.png>
 Package pdftex.def Info: ./pictures/PrzykladWykluczenie1.png  used on input lin
@@ -1220,83 +1220,83 @@ e 358.
 (pdftex.def)             Requested size: 172.01723pt x 58.71922pt.
 File: wit-logo.png Graphic file (type png)
 <use wit-logo.png>
-Package pdftex.def Info: wit-logo.png  used on input line 400.
+Package pdftex.def Info: wit-logo.png  used on input line 402.
 (pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
  [18 <./pictures/PrzykladWykluczenie1.png>]
-<./pictures/PrzykladPlan1.png, id=752, 340.27126pt x 114.4275pt>
+<./pictures/PrzykladPlan1.png, id=733, 340.27126pt x 114.4275pt>
 File: ./pictures/PrzykladPlan1.png Graphic file (type png)
 <use ./pictures/PrzykladPlan1.png>
-Package pdftex.def Info: ./pictures/PrzykladPlan1.png  used on input line 413.
+Package pdftex.def Info: ./pictures/PrzykladPlan1.png  used on input line 415.
 (pdftex.def)             Requested size: 170.13521pt x 57.21361pt.
-<./pictures/PrzykladPlanStateLevel1.png, id=754, 116.68594pt x 184.43906pt>
+<./pictures/PrzykladPlanStateLevel1.png, id=735, 116.68594pt x 184.43906pt>
 File: ./pictures/PrzykladPlanStateLevel1.png Graphic file (type png)
 <use ./pictures/PrzykladPlanStateLevel1.png>
 Package pdftex.def Info: ./pictures/PrzykladPlanStateLevel1.png  used on input 
-line 423.
+line 425.
 (pdftex.def)             Requested size: 58.34282pt x 92.2193pt.
-<./pictures/PrzykladPlanActionLevel1.png, id=757, 149.05687pt x 235.63031pt>
+<./pictures/PrzykladPlanActionLevel1.png, id=738, 149.05687pt x 235.63031pt>
 File: ./pictures/PrzykladPlanActionLevel1.png Graphic file (type png)
 <use ./pictures/PrzykladPlanActionLevel1.png>
 Package pdftex.def Info: ./pictures/PrzykladPlanActionLevel1.png  used on input
- line 438.
+ line 441.
 (pdftex.def)             Requested size: 74.52824pt x 117.81487pt.
 File: pwr-logo.png Graphic file (type png)
 <use pwr-logo.png>
-Package pdftex.def Info: pwr-logo.png  used on input line 443.
+Package pdftex.def Info: pwr-logo.png  used on input line 446.
 (pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
 
 [19 <./pictures/PrzykladPlan1.png> <./pictures/PrzykladPlanStateLevel1.png>]
-<./pictures/PrzykladPlanWarstwa1.png, id=768, 653.44125pt x 402.75468pt>
+<./pictures/PrzykladPlanWarstwa1.png, id=750, 653.44125pt x 402.75468pt>
 File: ./pictures/PrzykladPlanWarstwa1.png Graphic file (type png)
 <use ./pictures/PrzykladPlanWarstwa1.png>
 Package pdftex.def Info: ./pictures/PrzykladPlanWarstwa1.png  used on input lin
-e 448.
+e 451.
 (pdftex.def)             Requested size: 326.71982pt x 201.37685pt.
-<./pictures/FULL_GRAPHPLAN.DEMO1.gv.png, id=769, 1635.10875pt x 855.195pt>
+<./pictures/FULL_GRAPHPLAN.DEMO1.gv.png, id=751, 1635.10875pt x 855.195pt>
 File: ./pictures/FULL_GRAPHPLAN.DEMO1.gv.png Graphic file (type png)
 <use ./pictures/FULL_GRAPHPLAN.DEMO1.gv.png>
 Package pdftex.def Info: ./pictures/FULL_GRAPHPLAN.DEMO1.gv.png  used on input 
-line 459.
+line 462.
 (pdftex.def)             Requested size: 408.77618pt x 213.79823pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: wit-logo.png Graphic file (type png)
 <use wit-logo.png>
-Package pdftex.def Info: wit-logo.png  used on input line 464.
+Package pdftex.def Info: wit-logo.png  used on input line 467.
 (pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
  [20 <./pictures/PrzykladPlanActionLevel1.png> <./pictures/PrzykladPlanWarstwa1
 .png>]
-<./pictures/FULL_GRAPHPLAN_DEMO2.gv.png, id=776, 1635.10875pt x 855.195pt>
+<./pictures/FULL_GRAPHPLAN_DEMO2.gv.png, id=758, 1635.10875pt x 855.195pt>
 File: ./pictures/FULL_GRAPHPLAN_DEMO2.gv.png Graphic file (type png)
 <use ./pictures/FULL_GRAPHPLAN_DEMO2.gv.png>
 Package pdftex.def Info: ./pictures/FULL_GRAPHPLAN_DEMO2.gv.png  used on input 
-line 474.
+line 477.
 (pdftex.def)             Requested size: 408.77618pt x 213.79823pt.
 File: pwr-logo.png Graphic file (type png)
 <use pwr-logo.png>
-Package pdftex.def Info: pwr-logo.png  used on input line 484.
+Package pdftex.def Info: pwr-logo.png  used on input line 487.
 (pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
 
 [21 <./pictures/FULL_GRAPHPLAN.DEMO1.gv.png> <./pictures/FULL_GRAPHPLAN_DEMO2.g
 v.png>]
 LaTeX Font Info:    Trying to load font information for U+bbold on input line 5
-28.
+31.
  (/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd)
 File: wit-logo.png Graphic file (type png)
 <use wit-logo.png>
-Package pdftex.def Info: wit-logo.png  used on input line 546.
+Package pdftex.def Info: wit-logo.png  used on input line 549.
 (pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
  [22]
-<./pictures/PrzykladNieosiagalny.png, id=799, 575.90157pt x 112.92188pt>
+<./pictures/PrzykladNieosiagalny.png, id=781, 575.90157pt x 112.92188pt>
 File: ./pictures/PrzykladNieosiagalny.png Graphic file (type png)
 <use ./pictures/PrzykladNieosiagalny.png>
 Package pdftex.def Info: ./pictures/PrzykladNieosiagalny.png  used on input lin
-e 569.
+e 572.
 (pdftex.def)             Requested size: 287.95007pt x 56.46078pt.
 File: pwr-logo.png Graphic file (type png)
 <use pwr-logo.png>
-Package pdftex.def Info: pwr-logo.png  used on input line 597.
+Package pdftex.def Info: pwr-logo.png  used on input line 600.
 (pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
  [23 <./pictures/PrzykladNieosiagalny.png>])
 File: wit-logo.png Graphic file (type png)
@@ -1316,11 +1316,11 @@ Package pdftex.def Info: wit-logo.png  used on input line 116.
  [26]
 File: pwr-logo.png Graphic file (type png)
 <use pwr-logo.png>
-Package pdftex.def Info: pwr-logo.png  used on input line 167.
+Package pdftex.def Info: pwr-logo.png  used on input line 168.
 (pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
  [27]
 
-LaTeX Warning: Command \l invalid in math mode on input line 205.
+LaTeX Warning: Command \l invalid in math mode on input line 214.
 
 Missing character: There is no � in font plmi10!
 File: wit-logo.png Graphic file (type png)
@@ -1341,18 +1341,22 @@ Package pdftex.def Info: wit-logo.png  used on input line 722.
 
 ] (./rozdzial4.tex
 Rozdzia\l  4.
-) [31
+<./pictures/zaleznosci.png, id=859, 349.305pt x 182.18062pt>
+File: ./pictures/zaleznosci.png Graphic file (type png)
+<use ./pictures/zaleznosci.png>
+Package pdftex.def Info: ./pictures/zaleznosci.png  used on input line 20.
+(pdftex.def)             Requested size: 174.65207pt x 91.09007pt.
+[31
 
-]
+ <./pictures/zaleznosci.png>])
 File: wit-logo.png Graphic file (type png)
 <use wit-logo.png>
 Package pdftex.def Info: wit-logo.png  used on input line 725.
 (pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
- [32
-
-] (./rozdzial5.tex
+ [32] (./rozdzial5.tex
 Rozdzia\l  5.
 ) [33
+
 
 ]
 File: wit-logo.png Graphic file (type png)
@@ -1363,12 +1367,12 @@ Package pdftex.def Info: wit-logo.png  used on input line 728.
 
 ] (./rozdzial6.tex
 Rozdzia\l  6.
-<./pictures/15_ułożona.png, id=891, 450.18187pt x 453.19313pt>
+<./pictures/15_ułożona.png, id=877, 450.18187pt x 453.19313pt>
 File: ./pictures/15_ułożona.png Graphic file (type png)
 <use ./pictures/15_ułożona.png>
 Package pdftex.def Info: ./pictures/15_ułożona.png  used on input line 16.
 (pdftex.def)             Requested size: 225.09038pt x 226.59601pt.
-<./pictures/15_losowe.png, id=892, 451.6875pt x 453.19313pt>
+<./pictures/15_losowe.png, id=878, 451.6875pt x 453.19313pt>
 File: ./pictures/15_losowe.png Graphic file (type png)
 <use ./pictures/15_losowe.png>
 Package pdftex.def Info: ./pictures/15_losowe.png  used on input line 22.
@@ -1379,7 +1383,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [35
 
  <./pictures/15_ułożona.png>]
-<./pictures/15_obrazkowa.png, id=897, 1204.5pt x 898.10532pt>
+<./pictures/15_obrazkowa.png, id=883, 1204.5pt x 898.10532pt>
 File: ./pictures/15_obrazkowa.png Graphic file (type png)
 <use ./pictures/15_obrazkowa.png>
 Package pdftex.def Info: ./pictures/15_obrazkowa.png  used on input line 28.
@@ -1389,12 +1393,12 @@ File: wit-logo.png Graphic file (type png)
 Package pdftex.def Info: wit-logo.png  used on input line 50.
 (pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
  [36 <./pictures/15_losowe.png> <./pictures/15_obrazkowa.png>]
-<./pictures/15_przyklad.png, id=912, 451.6875pt x 452.4403pt>
+<./pictures/15_przyklad.png, id=898, 451.6875pt x 452.4403pt>
 File: ./pictures/15_przyklad.png Graphic file (type png)
 <use ./pictures/15_przyklad.png>
 Package pdftex.def Info: ./pictures/15_przyklad.png  used on input line 67.
 (pdftex.def)             Requested size: 225.84319pt x 226.2196pt.
-<./pictures/15_zbiory_akcji.png, id=913, 1062.21844pt x 525.46312pt>
+<./pictures/15_zbiory_akcji.png, id=899, 1062.21844pt x 525.46312pt>
 File: ./pictures/15_zbiory_akcji.png Graphic file (type png)
 <use ./pictures/15_zbiory_akcji.png>
 Package pdftex.def Info: ./pictures/15_zbiory_akcji.png  used on input line 78.
@@ -1413,7 +1417,7 @@ File: pwr-logo.png Graphic file (type png)
 Package pdftex.def Info: pwr-logo.png  used on input line 82.
 (pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
  [37 <./pictures/15_przyklad.png>]
-<./pictures/15_graphplan.png, id=920, 1466.47874pt x 1216.545pt>
+<./pictures/15_graphplan.png, id=906, 1466.47874pt x 1216.545pt>
 File: ./pictures/15_graphplan.png Graphic file (type png)
 <use ./pictures/15_graphplan.png>
 Package pdftex.def Info: ./pictures/15_graphplan.png  used on input line 84.
@@ -1433,56 +1437,40 @@ File: pwr-logo.png Graphic file (type png)
 Package pdftex.def Info: pwr-logo.png  used on input line 731.
 (pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
  [39 <./pictures/15_graphplan.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 File: wit-logo.png Graphic file (type png)
 <use wit-logo.png>
 Package pdftex.def Info: wit-logo.png  used on input line 731.
 (pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
- [40]
-Overfull \vbox (92.83783pt too high) has occurred while \output is active []
+ [40] (./podsumowanie.tex) [41
 
-File: pwr-logo.png Graphic file (type png)
-<use pwr-logo.png>
-Package pdftex.def Info: pwr-logo.png  used on input line 731.
-(pdftex.def)             Requested size: 22.89163pt x 22.7839pt.
-
-[41]
-File: wit-logo.png Graphic file (type png)
-<use wit-logo.png>
-Package pdftex.def Info: wit-logo.png  used on input line 731.
-(pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
- [42
-
-] (./podsumowanie.tex) [43
 
 ]
 File: wit-logo.png Graphic file (type png)
 <use wit-logo.png>
 Package pdftex.def Info: wit-logo.png  used on input line 734.
 (pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
- [44
+ [42
 
-] (./praca.bbl) [45
+] (./praca.bbl)
+[43
 
 ]
 File: wit-logo.png Graphic file (type png)
 <use wit-logo.png>
 Package pdftex.def Info: wit-logo.png  used on input line 747.
 (pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
- [46
+ [44
 
-]
-(./dodatek1.tex
+] (./dodatek1.tex
 Załącznik A.
-) [47
+) [45
 
 ]
 File: wit-logo.png Graphic file (type png)
 <use wit-logo.png>
 Package pdftex.def Info: wit-logo.png  used on input line 759.
 (pdftex.def)             Requested size: 22.89163pt x 22.88895pt.
- [48
+ [46
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 761.
@@ -1491,7 +1479,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 761.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 761.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 761.
 Package rerunfilecheck Info: File `praca.out' has not changed.
-(rerunfilecheck)             Checksum: 577EB93E601E544A36F720383FF4F625;5571.
+(rerunfilecheck)             Checksum: B780F6772C74ED5A77510687F22CFB68;5314.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1499,10 +1487,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 761.
  ) 
 Here is how much of TeX's memory you used:
- 15187 strings out of 483075
- 228849 string characters out of 5963834
- 540546 words of memory out of 5000000
- 29569 multiletter control sequences out of 15000+600000
+ 15186 strings out of 483075
+ 228880 string characters out of 5963834
+ 541607 words of memory out of 5000000
+ 29573 multiletter control sequences out of 15000+600000
  599780 words of font info for 67 fonts, out of 8000000 for 9000
  118 hyphenation exceptions out of 8191
  41i,19n,54p,533b,589s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1522,10 +1510,10 @@ sr/share/texlive/texmf-dist/fonts/type1/public/pl/plmi7.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/pl/plr10.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/pl/plr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl
 /plsy10.pfb>
-Output written on praca.pdf (58 pages, 3790191 bytes).
+Output written on praca.pdf (56 pages, 3801254 bytes).
 PDF statistics:
- 1093 PDF objects out of 1200 (max. 8388607)
- 962 compressed objects within 10 object streams
- 254 named destinations out of 1000 (max. 500000)
- 826 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1069 PDF objects out of 1200 (max. 8388607)
+ 939 compressed objects within 10 object streams
+ 249 named destinations out of 1000 (max. 500000)
+ 799 words of extra memory for PDF output out of 10000 (max. 10000000)
 

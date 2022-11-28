@@ -143,7 +143,16 @@
     jest rozwiązywalne.
 
 \section{Ograniczenia globalne}
-
+    W teorii programowania ograniczeń istnieją również ograniczenia zwane \textbf{globalnymi}. Mimo swojej nazwy, 
+    globalne ograniczenia nie zawsze są związane ze wszystkimi zmiennymi wchodzącymi w skład problemu ograniczeń. 
+    Ich istnienie warunkowane jest występowaniem w świecie rzeczywistym zależności, które często się powtarzają i nie są 
+    unikalne dla jednego problemu. Przykładem takiego ograniczenia jest sytuacja, w której każda ze zmiennych ma mieć inną wartość.
+    Formalniej mówiąc, wszystkie zmienne muszą być parami różne. Ów ograniczenie jest na tyle popularne, iż nosi ono swoją nazwę 
+    \textbf{Alldiff} i jest często ograniczeniem wbudowanym w moduły zajmujące się programowaniem ograniczeń, co ułatwia i przyśpiesza 
+    pracę użytkownika. Innym ograniczeniem z rodziny ograniczeń globalnych jest \textbf{ograniczenie zasobów}. Jak sama nazwa wskazuje, 
+    rzeczone ograniczenie globalne wykorzystywane jest w modelowaniu sytuacji z dziedzin planowania bądź harmonogramowania zadań. 
+    Przy rozwiązywaniu tego typu ograniczenia częstą metodą jest sumowanie wartości zmiennych wchodzących w skład dziedziny \cite{AI}.
+    
     
 \section{Wyszukiwanie rozwiązań}
     Podstawowa metoda rozwiązywania problem z dziedziny ograniczeń nosi miano metody \textbf{cofającej} (ang. backtracking).
@@ -202,7 +211,7 @@
     \ref{GRAPHPLANRozdzial} dodano funkcjonalności opisane w powyższych rozdziałach. 
 
     Każdy ze stanów oraz akcji zawiera w sobie dodatkowy \textbf{indykator}. Jest to liczba ze zbioru liczb całkowitych, o której 
-    należy mysleć bardziej w kontekście wartości bool'owskich $\{prawda,fałsz\}$. Wartość liczby równa 0 indikuje fałszywość stanu, natomiast wartość większa od 0 indukuje jego
+    należy mysleć bardziej w kontekście wartości bool'owskich $\{prawda,fałsz\}$. Wartość liczby równa 0 indukuje fałszywość stanu, natomiast wartość większa od 0 indukuje jego
     prawdziwość. Przy pomocy indykatorów program ustala, które stany, bądź akcje 
     są w danej warstwie prawdziwe, czyli występują w świecie oraz takie, które w ów świecie w danym momencie nie występują, czyli są fałszywe. 
     Odbywa się to w następujący sposób:
@@ -225,6 +234,12 @@
         stan bądź która akcja na danym etapie przetwarzania świata znajdują się w nim bądź nie. Ów mechanizm jest silnie wykorzystywany 
         przy generowaniu grafów, przedstawiających zachodzące w świecie zmiany.
     \end{enumerate}
+
+    Dzięki tej z pozoru niewielkiej modyfikacji algorytmu GRAPHPLAN zyskuje on zdecydowane przyśpieszenie w fazie kreowania planu. Gdy GRAPHPLAN dojdzie do odpowiedniego
+    poziomu stanów, gdzie znajdują się wszystkie stany ze zbioru celów, wszystkie komponenty wchodzące w skład grafu planującego będą miały dodatkową informację o swojej prawdziwości 
+    w danej warstwie. Odnalezienie planu sprowadza się do rozwiązania problemu ograniczeń dla wszystkich stanów grafu. Dokonywane jest to wedle myśli przewodniej GRAPHPLANU, czyli 
+    poprzez mechanizm cofania wraz z propagacją ograniczenia przy zachowaniu lokalnej spójności. Bez tej modyfikacja wyłuskanie planu z grafu planującego przypominałoby wyszukiwanie 
+    w głąb w grafie. Przechowywanie dodatkowej informacji w formie indykatora znacznie usprawnia ten proces.
 
     Dokładne sformuowanie ograniczeń przy pomocy symboli matematycznych odbędzie się w sekcji poświęconej implementacji algorytmu.
     
