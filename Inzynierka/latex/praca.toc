@@ -32,9 +32,9 @@
 \contentsline {section}{\numberline {3.2}Pojęcie ustalenia i spójności}{26}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Ograniczenia globalne}{27}{section.3.3}%
 \contentsline {section}{\numberline {3.4}Wyszukiwanie rozwiązań}{27}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Programowanie w logice a ograniczenia}{28}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Obrazowe przykłady}{28}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Wykorzystanie w algorytmie}{28}{section.3.7}%
+\contentsline {section}{\numberline {3.5}Programowanie w logice z ograniczeniami}{28}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Obrazowe przykłady}{29}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Wykorzystanie w algorytmie}{29}{section.3.7}%
 \contentsline {chapter}{\numberline {4}Implementacja}{31}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Opis komponentów i ich połączeń}{31}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Implementacja algorytmu}{32}{section.4.2}%
@@ -80,6 +80,6 @@
 \contentsline {subsection}{\numberline {6.5.3}Szczegóły implementacyjne}{40}{subsection.6.5.3}%
 \contentsline {subsection}{\numberline {6.5.4}Wyniki}{40}{subsection.6.5.4}%
 \contentsline {subsection}{\numberline {6.5.5}Wnioski}{40}{subsection.6.5.5}%
-\contentsline {chapter}{Podsumowanie}{41}{chapter*.32}%
-\contentsline {chapter}{Bibliografia}{43}{chapter*.33}%
+\contentsline {chapter}{Podsumowanie}{41}{chapter*.33}%
+\contentsline {chapter}{Bibliografia}{43}{chapter*.34}%
 \contentsline {chapter}{\numberline {A}Zawartość płyty CD}{45}{appendix.A}%

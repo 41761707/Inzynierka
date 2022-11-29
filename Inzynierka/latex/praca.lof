@@ -26,12 +26,13 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Zależności między komponentami\relax }}{31}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Główna pętla algorytmu\relax }}{32}{figure.caption.26}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Wygląd układanki piętnastki wygenerowany przy pomocy zaimplementowanej w ramach pracy warstwy graficznej\relax }}{35}{figure.caption.26}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Losowa rozwiązywalna permutacja układanki\relax }}{36}{figure.caption.27}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Piętnastka w formie obrazkowej. Źródło: \url {http://mypuzzlecollection.blogspot.com/2012/08/mc-escher-birds-fish-and-turtles.html}\relax }}{36}{figure.caption.28}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Przykładowe startowe ułożenie przesuwanki\relax }}{37}{figure.caption.29}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Akcje rozpatrywane przez algorytm w danym kroku\relax }}{38}{figure.caption.30}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Uproszczony graf planujący wygenerowany przez algorytm GRAPHPLAN przedstawiający stan każdego kafelka w danej warstwie. Węzły wypełnione kolorem szarym obrazują stany, które są warunkami zajścia jak i efektami wykonywanej w danej warstwie akcji\relax }}{39}{figure.caption.31}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Wygląd układanki piętnastki wygenerowany przy pomocy zaimplementowanej w ramach pracy warstwy graficznej\relax }}{35}{figure.caption.27}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Losowa rozwiązywalna permutacja układanki\relax }}{36}{figure.caption.28}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Piętnastka w formie obrazkowej. Źródło: \url {http://mypuzzlecollection.blogspot.com/2012/08/mc-escher-birds-fish-and-turtles.html}\relax }}{36}{figure.caption.29}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Przykładowe startowe ułożenie przesuwanki\relax }}{37}{figure.caption.30}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Akcje rozpatrywane przez algorytm w danym kroku\relax }}{38}{figure.caption.31}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Uproszczony graf planujący wygenerowany przez algorytm GRAPHPLAN przedstawiający stan każdego kafelka w danej warstwie. Węzły wypełnione kolorem szarym obrazują stany, które są warunkami zajścia jak i efektami wykonywanej w danej warstwie akcji\relax }}{39}{figure.caption.32}%
 \addvspace {10\p@ }

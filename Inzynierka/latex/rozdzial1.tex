@@ -9,7 +9,7 @@
     Przyglądając się planom oraz ich własnościom można wyodrębnić następujące trzy aspekty:
     \begin{definition}
     \label{StanyPoczatkowe}
-        \textbf{Warunki początkowe} - stan świata przed zastosowaniem akcji. W dalszej części pracy również określane jako 
+        \textbf{Warunki początkowe} -- stan świata przed zastosowaniem akcji. W dalszej części pracy również określane jako 
         \textbf{stany początkowe}.
     \end{definition}
     \begin{itemize}
@@ -20,7 +20,7 @@
     \end{itemize}
     \begin{definition}
     \label{Akcje}
-        \textbf{Akcja} - działanie zmieniające przedstawiony świat w ściśle określony sposób. W dalszej części pracy również określana jako
+        \textbf{Akcja} -- działanie zmieniające przedstawiony świat w ściśle określony sposób. W dalszej części pracy również określana jako
         \textbf{operator}.
     \end{definition}
     \begin{itemize}
@@ -31,7 +31,7 @@
     \end{itemize}
     \begin{definition}
     \label{Cel}
-        \textbf{Cel} - Oczekiwany stan świata.
+        \textbf{Cel} -- Oczekiwany stan świata.
     \end{definition}
     \begin{itemize}
         \item Kwintesencją każdego planu jest cel, który należy uzyskać. Zwyczajowo plany składają się z celów możliwych do
@@ -41,7 +41,7 @@
     Przy pomocy powyższych definicji możliwym jest sformalizowanie pojęcia stojącego za słowem \textbf{plan}. 
     \begin{definition}
     \label{Plan}
-    \textbf{Plan}- lista akcji, której zastosowanie do stanu początkowego powoduje jego zmianę do stanu określonego w ramach celu. 
+    \textbf{Plan} -- lista akcji, której zastosowanie do stanu początkowego powoduje jego zmianę do stanu określonego w ramach celu. 
     \end{definition}
 
     Oczywiście nie każdy plan musi być wykonalny. Zdarzają się również sytuacje, w których nie da się utworzyć planu dla zadanych warunków 
@@ -81,7 +81,7 @@
     nakładzie sił w jak najkrótszym czasie. Z tego względu wprowadzono pojęcie \textbf{planu optymalnego}.
     \begin{definition}
         \label{PlanOptymalny}
-        \textbf{Plan optymalny}- Plan o minimalnej liczbie kroków satysfakcjonujący wskazany cel. 
+        \textbf{Plan optymalny} -- Plan o minimalnej liczbie kroków satysfakcjonujący wskazany cel. 
     \end{definition}
      
     W dalszej części pracy słowo \textbf{plan} najczęściej będzie utożsamiane z planem optymalnym.
@@ -121,25 +121,25 @@
     poza samą czynnością wchodzą dwie składowe, nazywane środowiskowymi- warunki zajścia oraz efekty zajścia. 
     \begin{definition}
         \label{WarunekAkcji}
-        \textbf{Warunkiem}- zajścia akcji jest istnienie odpowiedniej konfiguracji świata, dzięki której akcja może zostać wykonana.
+        \textbf{Warunkiem} zajścia akcji jest istnienie odpowiedniej konfiguracji świata, dzięki której akcja może zostać wykonana.
     \end{definition}
     \begin{definition}
         \label{EfektAkcji}
-        \textbf{Efektem}- zajścia akcji są zmiany, które zaszły w przedstawionym świecie ze względu na jej wykonanie.
+        \textbf{Efektem} zajścia akcji są zmiany, które zaszły w przedstawionym świecie ze względu na jej wykonanie.
     \end{definition}
     Mówiąc kolokwialnie, każda akcja ma swoją przyczynę oraz swój skutek. \textbf{Przyczyną} akcji w przykładzie \ref{Przyklad1} jest znajdowanie się klocka na lewej platformie. Gdyby
     klocek A znajdował się na prawej platformie, wykonanie akcji przesunięcia klocka z platformy lewej na prawą nie mogłoby zostać wykonane, natomiastem \textbf{efektem} akcji jest 
     przeniesienie klocka na prawą platformę. Łatwo zauważyć, iż brak innych obiektów na platformie prawej jest niezbędny, aby klocek mógł zostać tam przeniesiony.
     Kolejną naturalną obserwacją jest stwierdzenie, iż przeprowadzenie akcji dodaje nam nowe informacje o świecie w dwóch kontekstach:
     \begin{itemize}
-        \item Dodającym- pojawienie się lub podtrzymanie danej składowej świata
-        \item Usuwającym- pozbawienie świata danej składowej
+        \item Dodającym -- pojawienie się lub podtrzymanie danej składowej świata
+        \item Usuwającym -- pozbawienie świata danej składowej
     \end{itemize}
     Po wykonaniu czynności z przykładu \ref{Przyklad1} wyróżniamy trzy typy nowych informacji:
     \begin{itemize}
         \item Warunek- Obecnośc klocka na lewej platformie, prawa platforma jest pusta
-        \item Efekt dodający- Obecność klocka na prawej platformie
-        \item Efekt usuwający - Brak obecności klocka na lewej platformie (platforma lewa jest pusta)
+        \item Efekt dodający -- Obecność klocka na prawej platformie
+        \item Efekt usuwający -- Brak obecności klocka na lewej platformie (platforma lewa jest pusta)
     \end{itemize}
     W rozważanym podejściu każda z czynności zdefiniowana jest przy pomocy wyżej wskazanych trzech składowych.
 
