@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+            \PYG{l+s+sAtom}{\PYGZbs{}caption}\PYG{p}{\PYGZob{}}\PYG{n+nv}{Kod} \PYG{l+s+sAtom}{źródłowy} \PYG{l+s+sAtom}{implementacji} \PYG{l+s+sAtom}{predykatu} \PYG{l+s+sAtom}{create\PYGZbs{}}\PYG{k}{\PYGZus{}}\PYG{l+s+sAtom}{plan}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{\PYGZcb{}}
+            \PYG{c+c1}{\PYGZpc{} create\PYGZus{}plan(+StartState,+Goals,\PYGZhy{}Plan)}
+            \PYG{n+nf}{create\PYGZus{}plan}\PYG{p}{(}\PYG{n+nv}{StartState}\PYG{p}{,} \PYG{n+nv}{Goals}\PYG{p}{,} \PYG{n+nv}{Plan}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+            \PYG{n+nf}{findall}\PYG{p}{(}\PYG{n+nv}{State}\PYG{o}{/}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n+nf}{member}\PYG{p}{(}\PYG{n+nv}{State}\PYG{p}{,}\PYG{n+nv}{StartState}\PYG{p}{),}\PYG{n+nv}{StartLevel}\PYG{p}{),}
+            \PYG{n+nf}{setof}\PYG{p}{(}\PYG{n+nf}{action}\PYG{p}{(}\PYG{n+nv}{Action}\PYG{p}{,} \PYG{n+nv}{Precondition}\PYG{p}{,} \PYG{n+nv}{Effects}\PYG{p}{),(}
+            \PYG{n+nf}{effects}\PYG{p}{(}\PYG{n+nv}{Action}\PYG{p}{,}\PYG{n+nv}{Effects}\PYG{p}{),}\PYG{n+nf}{can}\PYG{p}{(}\PYG{n+nv}{Action}\PYG{p}{,}\PYG{n+nv}{Precondition}\PYG{p}{))}
+            \PYG{p}{,}\PYG{n+nv}{AllActions}\PYG{p}{),}
+            \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}StartLevel: \PYGZdq{}}\PYG{p}{),} \PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{StartLevel}\PYG{p}{),} \PYG{l+s+sAtom}{nl}\PYG{p}{,}
+            \PYG{n+nf}{graphplan}\PYG{p}{([}\PYG{n+nv}{StartLevel}\PYG{p}{],} \PYG{n+nv}{Goals}\PYG{p}{,} \PYG{n+nv}{Plan}\PYG{p}{,} \PYG{n+nv}{AllActions}\PYG{p}{).}
+\end{Verbatim}
