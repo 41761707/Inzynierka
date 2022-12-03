@@ -23,13 +23,11 @@ class SimplifiedGraph:
                     Effects = action_variables[variable]
             for item in PreCond:
                 if(action_id.startswith("zostan")):
-                    pass
                     g.edge(item+str(level),action_id+str(level),style='dashed')
                 else:
                     g.edge(item+str(level),action_id+str(level))
             for item in Effects:
                 if(action_id.startswith("zostan")):
-                    pass
                     g.edge(action_id+str(level),item+str(level_higher),style='dashed')
                 else:
                     g.edge(action_id+str(level),item+str(level_higher))
@@ -131,16 +129,18 @@ class SimplifiedGraph:
 
     def colorUsedActions(self,plan, max_level, g):
         nodes = []
+        print(plan)
         for item in plan:
             for i,element in enumerate(g.body):
                 if item+str(max_level) in element and '->' in element:
                     nodes_to_color = g.body[i].split('->')
-                    nodes_to_color[0] = nodes_to_color[0][2:-3]
-                    nodes_to_color[1] = nodes_to_color[1][2:-3]
+                    nodes_to_color[0] = nodes_to_color[0][2:-3]+str(max_level)
+                    nodes_to_color[1] = nodes_to_color[1][2:-3]+str(max_level+1)
                     nodes.append(nodes_to_color[0])
                     nodes.append(nodes_to_color[1])
                     #print(g.body[i])
                     g.body[i] = element[:len(element)-1] + ' [color=red]\n'
+        print(nodes)
         for node in nodes:
             for i,element in enumerate(g.body):
                 if node in element and '->' not in element and 'style=filled' not in element:
@@ -161,7 +161,6 @@ class SimplifiedGraph:
 
     def run_all(self):
         g = graphviz.Digraph('G', filename='graphs/SIMPLE_GRAPHPLAN.gv',format='pdf')
-        #g = graphviz.Digraph('G', filename='FULL_GRAPHPLAN.gv')
         file = self.readInput(self.filename)
         self.plan, max_level = self.parseInput(file, g)
         if(max_level < 5):
@@ -175,10 +174,3 @@ class SimplifiedGraph:
         g.render()     
         print(parsed_plan)
         return parsed_plan 
-
-def main():
-    g = SimplifiedGraph('outputs/output.txt')
-    g.run_all()
-
-if __name__ == '__main__':
-    main()

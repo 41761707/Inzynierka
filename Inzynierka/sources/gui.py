@@ -56,8 +56,8 @@ class GUI:
     def SquaresENV(self,robots,n,goal):
         graphplan = Prolog()
         graphplan.consult('graphplan.pl')
-        graphplan.assertz('can(zostan(P),[P])')
-        graphplan.assertz('can(idz(R,A,B), [na(R,A), pusty(B)]) :- robot(R), adjacent(A,B)')
+        graphplan.assertz('preconditions(zostan(P),[P])')
+        graphplan.assertz('preconditions(idz(R,A,B), [na(R,A), pusty(B)]) :- robot(R), adjacent(A,B)')
         graphplan.assertz('effects(zostan(P),[P])')
         graphplan.assertz('effects(idz(R,A,B), [na(R,B),pusty(A),~na(R,A),~pusty(B)])')
         #robots = ['a','b','c','d','e','f','g','h']
@@ -74,7 +74,7 @@ class GUI:
         graphplan.assertz('inconsistent(na(_,C),pusty(C))')
         graphplan.assertz('inconsistent(pusty(C),na(_,C))')
         graphplan.assertz('inconsistent(na(R1,C),na(R2,C)) :- R1 \== R2')
-        command = 'state0(['
+        command = 'inital_state(['
         for i,button in enumerate(self.buttons):
             if button['text'] == '':
                 command = command + 'pusty({}),'.format(i+1)
@@ -87,7 +87,7 @@ class GUI:
         plan = list(graphplan.query('call_plan([{}],Plan)'.format(goal),maxresult=1))
         self.printGraph(plan)
         graphplan.retractall('n(_,_)')
-        graphplan.retractall('can(_,_)')
+        graphplan.retractall('preconditions(_,_)')
         graphplan.retractall('effects(_,_)')
         graphplan.retractall('robot(_)')
         graphplan.retractall('adjacent(_,_)')
@@ -108,18 +108,24 @@ class GUI:
     def GRAPHPLANCargo(self):
         graphplan = Prolog()
         graphplan.consult('graphplan.pl')
-        inital_state = "state0(["
+        inital_state = "inital_state(["
         goal = "["
         print(self.cargo_blocks_left)
         for tab in self.cargo_blocks_left:
             graphplan.assertz("place({})".format(tab[0]))
             for i in range(len(tab)-1):
                 graphplan.assertz("block({})".format(tab[i+1]))
-        graphplan.assertz("can(zostan(P),[P])")
-        graphplan.assertz("can(idz(Block,From,To), [pusty(Block),pusty(To),na(Block,From)]) :- block(Block), object(To), To \==Block, object(From), From \==To, Block \== From")     
+        graphplan.assertz("preconditions(zostan(P),[P])")
+        graphplan.assertz("preconditions(idz(Block,From,To), [pusty(Block),pusty(To),na(Block,From)]) :- block(Block), object(To), To \==Block, object(From), From \==To, Block \== From")     
         graphplan.assertz("effects(zostan(P),[P])")
         graphplan.assertz("effects(idz(X,From,To),[na(X,To),pusty(From),~na(X,From),~pusty(To)])")   
         graphplan.assertz("object(X) :- place(X);block(X)")
+        graphplan.assertz('incosistent(G,~G)')
+        graphplan.assertz('incosistent(~G,G)')
+        graphplan.assertz('incosistent(na(R,C1),na(R,C2)) :- C1 \== C2')
+        graphplan.assertz('inconsistent(na(_,C),pusty(C))')
+        graphplan.assertz('inconsistent(pusty(C),na(_,C))')
+        graphplan.assertz('inconsistent(na(R1,C),na(R2,C)) :- R1 \== R2')
 
         for tab in self.cargo_blocks_left:
             inital_state = inital_state + "pusty({}),".format(tab[len(tab)-1])
@@ -134,17 +140,20 @@ class GUI:
                 goal = goal + "na({},{}),".format(tab[i+1],tab[i])
         goal = goal[:len(goal)-1]
         goal = goal+']'
-
+        print(inital_state)
+        print(goal)
         graphplan.assertz(inital_state)
         plan = list(graphplan.query('call_plan({},Plan)'.format(goal),maxresult=1))
         self.printGraph(plan)
 
+        graphplan.retractall('inital_state(_)')
         graphplan.retractall('object(_)')
-        graphplan.retractall('can(_,_)')
+        graphplan.retractall('preconditions(_,_)')
         graphplan.retractall('effects(_,_)')
         graphplan.retractall('block(_)')
         graphplan.retractall('place(_)')
-        graphplan.retract(inital_state)
+        graphplan.retractall(inital_state)
+        graphplan.retractall(goal)
 
         
     def initMenu(self):

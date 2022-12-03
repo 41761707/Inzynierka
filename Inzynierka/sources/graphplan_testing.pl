@@ -21,17 +21,21 @@
 :- dynamic inconsistent/2.
 
 %3x3
-
+/*
 %time(call_plan([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(f,6),na(g,7),na(h,8),pusty(9)],Plan)),write(Plan).
-%assert(state0([na(a,1),na(b,2),na(c,3),na(d,4),na(h,5),na(e,6),pusty(7),na(g,8),na(f,9)])).
-can(zostan(P),[P]).
-can(idz(R,A,B), [na(R,A), pusty(B)]) :-
+%assert(inital_state([na(a,1),na(b,2),na(c,3),na(d,4),na(h,5),na(e,6),pusty(7),na(g,8),na(f,9)])).
+%assert(inital_state([na(a,1),na(b,2),na(c,3),pusty(4),na(e,5),na(f,6),na(d,7),na(g,8),na(h,9)])).
+%assert(inital_state([na(b,1),na(c,2),na(f,3),na(a,4),na(e,5),pusty(6),na(d,7),na(g,8),na(h,9)])).
+%assert(inital_state([na(b,1),pusty(2),na(a,3),na(d,4),na(g,5),na(c,6),na(h,7),na(f,8),na(e,9)])).
+
+preconditions(zostan(P),[P]).
+preconditions(idz(R,A,B), [na(R,A), pusty(B)]) :-
     robot(R), 
     adjacent(A,B).
 
 
 effects(zostan(P),[P]).
-effects(idz(R,A,B), [na(R,B),pusty(A)]).
+effects(idz(R,A,B), [na(R,B),pusty(A),~na(R,A),~pusty(B)]).
 
 robot(a).
 robot(b).
@@ -67,6 +71,8 @@ inconsistent(pusty(C),na(_,C)).
 inconsistent(na(R1,C),na(R2,C)) :-
     R1 \== R2.
 
+*/
+
 %CargoBOT
 /*
 :- dynamic object/1.
@@ -98,9 +104,57 @@ place(2).
 place(3).
 place(4).
 
-%state0([pusty(2),pusty(4),pusty(b),pusty(c),na(a,1),na(b,3),na(c,a)]).
+incosistent(G,~G).
+incosistent(~G,G).
+
+%inital_state([pusty(2),pusty(4),pusty(b),pusty(c),na(a,1),na(b,3),na(c,a)]).
 
 */
+
+%CargoBOT kolory
+
+
+
+:- dynamic object/1.
+:- dynamic place/1.
+
+preconditions(zostan(P),[P]).
+preconditions(idz(Block,From,To), [pusty(Block),pusty(To),na(Block,From)]) :-
+    block(Block),
+    object(To),
+    To \==Block,
+    object(From),
+    From \==To,
+    Block \== From.
+
+effects(zostan(P),[P]).
+effects(idz(X,From,To),[na(X,To),pusty(From),~na(X,From),~pusty(To)]).
+
+object(X) :-
+    place(X)
+    ;
+    block(X).
+
+block(a).
+block(b).
+block(c).
+
+place(1).
+place(2).
+place(3).
+place(4).
+
+incosistent(na(R,C1),na(R,C2)) :-
+    C1 \== C2.
+
+inconsistent(na(_,C),pusty(C)).
+inconsistent(pusty(C),na(_,C)).
+inconsistent(na(R1,C),na(R2,C)) :-
+    R1 \== R2.
+
+%assert(inital_state([pusty(2),pusty(4),pusty(b),pusty(c),na(a,1),na(b,3),na(c,a)])).
+
+
 /*
 %4x4
 %assert(state0([na(b,1),na(a,2),na(c,3),pusty(4),na(e,5),na(f,6),na(g,7),na(d,8),na(i,9),na(j,10),na(k,11),na(h,12),na(m,13),na(n,14),na(o,15),na(l,16)])).
@@ -168,112 +222,143 @@ inconsistent(na(R1,C),na(R2,C)) :-
 
 
 
+%GRAPHPLAN wersja 1.2
+
+%TO-DO - sprawdzenie czy plan da sie zakonczyc
+%Proby wprowadzen ulepszen czasowych
+%use_module(library(clpfd)). <- wymagany import, programowanie ograniczeń
+
+/**
+*   Negacja stany wymagana, ze wzgledu na
+*   dzialanie prologa wedle zasady "zamknietego swiata".
+*   Dodanie negacji ulatwia okreslanie poprawnych stanow kosztem 
+*   gorszej czytelnosci generowanych grafow
+*/
+
+:-use_module(library(clpfd)).
+:-op(100,fx,~).
+:- dynamic inital_state/1.
+:- dynamic preconditions/2.
+:- dynamic effects/2.
+:- dynamic adjacent/2.
+:- dynamic n/2.
+:- dynamic inconsistent/2.
+
+
+
 remove(X,[X | Tail], Tail).
 remove(X,[Y | Tail], [Y|Tail1]) :-
     remove(X,Tail,Tail1).
 
 call_plan(Goals,Plan) :-
-    state0(S),
+    inital_state(S),
     create_plan(S,Goals,Plan).
 
 create_plan(StartState, Goals, Plan) :-
     findall(State/1, member(State,StartState),StartLevel),
-    setof(action(Action, Precondition, Effects), (effects(Action,Effects),can(Action,Precondition)),AllActions),
-    graphplan([StartLevel], Goals, Plan, AllActions,0).
+    setof(action(Action, Precondition, Effects), (effects(Action,Effects),preconditions(Action,Precondition)),AllActions),
+    graphplan([StartLevel], Goals, AllActions,Plan,0).
 
-graphplan([StateLevel | GraphPlan], Goals, Plan, AllActs,Round) :-
+graphplan([StateLevel | GraphPlan], Goals, AllActions,Plan,Round) :-
     satisfied(StateLevel, Goals),
     extract_plan([StateLevel | GraphPlan], Plan)
     ;
-    write("Round: "), writeln(Round),
     NewRound is Round+1,
-    expand(StateLevel, ActionLevel, NewStateLev, AllActs),
-
-    graphplan([NewStateLev, ActionLevel, StateLevel | GraphPlan], Goals, Plan, AllActs,NewRound).
+    write("Round: "), writeln(NewRound),
+    expand(StateLevel, ActionLevel, NewStateLevel, AllActions),
+    %length(StateLevel,A),
+    %length(NewStateLevel,B),
+    %B>A,
+    graphplan([NewStateLevel, ActionLevel, StateLevel | GraphPlan], Goals, AllActions, Plan,NewRound).
 
 satisfied(_,[]).
 
 satisfied(StateLevel, [G | Goals]) :-
-    member(G/TG, StateLevel), !,
-    TG #> 0,
+    member(G/IG, StateLevel),
+    IG #> 0,
     satisfied(StateLevel, Goals).
 
 
 extract_plan([_],[]).
 
 extract_plan([_,ActionLevel | RestOfGraph], Plan) :-
+    writeln("Extract"),
     collect_vars(ActionLevel, AVars),
-    labeling([],AVars),
+    label(AVars),
     findall(A,(member(A/1,ActionLevel),A \= zostan(_)), ChosenActions),
+    length(ChosenActions,CA),
+    writeln(ChosenActions),
+    CA>0,
     extract_plan(RestOfGraph, RestOfPlan),
     append(RestOfPlan, [ChosenActions], Plan).
 
 
-expand(StateLev, ActionLev, NextStateLev, AllActs) :-
-    findall(action(zostan(P),[P],[P]),member(P/_,StateLev),PersistActs),
-    add_actions(StateLev, PersistActs, [], _, [], NextStateLev1),
-    add_actions(StateLev, AllActs, [], ActionLev, NextStateLev1, NextStateLev),
-    mutex_constr(ActionLev), 
-    mutex_constr(NextStateLev).
+expand(StateLevel, ActionLevel, NextStateLevel, AllActions) :-
+    add_actions(StateLevel, AllActions, [], NewActionLevel, [], NewNextState),
+    findall(action(zostan(P),[P],[P]),member(P/_,StateLevel),PersistActs),
+    add_actions(StateLevel, PersistActs, NewActionLevel, ActionLevel, NewNextState, NextStateLevel),
+    mutex_list(ActionLevel), 
+    mutex_list(NextStateLevel).
 
-add_actions(_,[],ActionLev, ActionLev, NextStateLev, NextStateLev).
+add_actions(_,[],ActionLevel, ActionLevel, NextStateLevel, NextStateLevel).
 
-add_actions(StateLev, [action(A,Precondition,Effects) | Acts], ActLev0, ActLev, NextLev0, NextLev) :-
-    TA in 0..1, 
-    includes(StateLev, Precondition, TA),
-    add_effects(TA, Effects, NextLev0, NextLev1), !, 
-    add_actions(StateLev, Acts, [A/TA | ActLev0], ActLev, NextLev1, NextLev)
+add_actions(StateLevel, [action(A,Precondition,Effects) | Acts], ActLev0, ActLev, NextLev0, NextLev) :-
+    IA in 0..1, 
+    includes(StateLevel, Precondition, IA),
+    add_effects(IA, Effects, NextLev0, NextLev1), !, 
+    add_actions(StateLevel, Acts, [A/IA | ActLev0], ActLev, NextLev1, NextLev)
     ;
-    add_actions(StateLev, Acts, ActLev0, ActLev, NextLev0, NextLev).
+    add_actions(StateLevel, Acts, ActLev0, ActLev, NextLev0, NextLev).
 
 includes(_,[],_).
 
-includes(StateLev, [P|Ps],TA) :-
-    member(P/T, StateLev),
-    !,
-    TA #=< T,
-    includes(StateLev, Ps, TA).
+includes(StateLevel, [P|Ps],IA) :-
+    member(P/I, StateLevel),
+    IA #=< I,
+    includes(StateLevel, Ps, IA).
 
 
 
-add_effects(_,[],StateLev,StateLev).
+add_effects(_,[],StateLevel,StateLevel).
 
-add_effects(TA, [P | Ps], StateLev0, ExpandedState) :-
-    (remove(P/TP,StateLev0,StateLev1),!,
-    NewTP #= TP+TA,
-    StateLev = [P/NewTP | StateLev1]
+add_effects(IA, [P | Ps], StateLev0, ExpandedState) :-
+    (remove(P/IP,StateLev0,StateLev1),!,
+    NewIP #= IP+IA,
+    StateLevel = [P/NewIP | StateLev1]
     ;
-    StateLev = [P/TA | StateLev0], !
+    StateLevel = [P/IA | StateLev0], !
     ),
-    add_effects(TA, Ps, StateLev, ExpandedState).
+    add_effects(IA, Ps, StateLevel, ExpandedState).
 
-mutex_constr([]).
+mutex_list([]).
 
-mutex_constr([P | Ps]) :-
-    mutex_constr1(P,Ps),
-    mutex_constr(Ps).
+mutex_list([P | Ps]) :-
+    mutex_single(P,Ps),
+    mutex_list(Ps).
 
-mutex_constr1(_,[]).
+mutex_single(_,[]).
 
-mutex_constr1(P/T, [P1/T1 | Rest]) :-
-    ( mutex(P,P1), !, T*T1 #= 0
+mutex_single(P/I, [P1/I1 | Rest]) :-
+    ( mutex(P,P1), !, I*I1 #= 0
     ;
     true
     ),
-    mutex_constr1(P/T,Rest).
+    mutex_single(P/I,Rest).
 
-mutex(P,~P) :- !.
+mutex(P,~P) :- %!.
+    !.
 
-mutex(~P,P) :- !. 
+mutex(~P,P) :- %!.
+    !.  
 
 mutex(A,B) :-              
     inconsistent(A,B),
     !.
 
 mutex(A1,A2) :-
-    ( can(A1,Precondition),effects(A2,Effects)
+    ( preconditions(A1,Precondition),effects(A2,Effects)
       ;
-      can(A2,Precondition),effects(A1,Effects)
+      preconditions(A2,Precondition),effects(A1,Effects)
     ),
     member(P1,Precondition),
     member(P2,Effects),
@@ -287,6 +372,12 @@ collect_vars([X/V | Rest], Vars) :-
     ;
     Vars = RestVars),
     collect_vars(Rest,RestVars).
+
+
+
+
+
+
 
 
 
