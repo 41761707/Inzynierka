@@ -3,8 +3,8 @@
 \label{GRAPHPLANRozdzial}
 
 \section{Wprowadzenie}
-    \textbf{GRAPHPLAN} jest algorytmem do planowania akcji działający w dziedzinie zdefiniowanej
-    przez język STRIPS, dodatkowo bazuje na paradygmacie, który autorzy algorytmu określają jako "graf planujący" \cite{GRAPHPLAN}.
+    \textbf{GRAPHPLAN} jest algorytmem do planowania akcji działającym w dziedzinie zdefiniowanej
+    przez język STRIPS. Dodatkowo bazuje na paradygmacie, który autorzy algorytmu określają jako "graf planujący" \cite{GRAPHPLAN}.
     \begin{figure}[H]
         \includegraphics[scale=0.5]{PlanningGraph}
         \centering
@@ -13,8 +13,8 @@
         celu.}
         \label{PlanningGraph}
     \end{figure}
-    Pierwotną ideę grafu planującego przedstawiono na obrazku \ref{PlanningGraph}. W trakcie dalszego omawiania metodologii GRAPHPLAN powyższa 
-    rycina będzie pojawiała się ponownie z coraz to większym poziomiem szczegółowości.
+    Pierwotną ideę grafu planującego przedstawiono na obrazku \ref{PlanningGraph}. W trakcie dalszego omawiania metodologii GRAPHPLAN powyższy rysunek
+    będzie pojawiała się ponownie z coraz to większym poziomiem szczegółowości.
     Ze względu na fakt, iż Graphplan opiera się na języku STRIPS musi mieć jasno zdefiniowane: stan początkowy, akcje oraz cel, który należy uzyskać.
     Dzięki swojej strukturze Graphplan w swojej naturze podobny jest do programowania dynamicznego.
 
@@ -29,7 +29,7 @@
     iż GRAPHPLAN operuje zgodnie z definicją \ref{ZasadaSwiata}. 
     Przed dalszą częścią pracy należy dokonać pewnego wyróżnienia. Słowo \textbf{stan} pojawia się w dwóch znaczeniach:
     stan jako pojedyncza informacja o obiekcie w świecie (Przykład: klocek B na stole numer 3) oraz stan, jako zbiór wszystkich takich informacji w danym momencie czasu.
-    Z tego względu wprowadzono nowe pojęcie- "Poziom stanów", które należy stosować jako oznaczenie wszystkich informacji o świecie w danym momencie.
+    Z tego względu wprowadzono nowe pojęcie- "poziom stanów", które należy stosować jako oznaczenie wszystkich informacji o świecie w danym momencie.
     \begin{definition}
         \label{PoziomStanow}
         \textbf{Poziom stanów} - Zbiór informacji o stanach wszystkich obiektów w świecie w danej jednostce czasu \textit{t}
@@ -61,9 +61,9 @@
     Posiadając dobrze określony stan początkowy następnym krokiem będzie zdefiniowanie akcji. Zgodnie z \ref{Akcje} oraz wzmiance o akcjach w planerze STRIPS,
     akcja musi składać się z trzech komponentów:
     \begin{itemize}
-        \item Czynności
-        \item Warunków zajścia
-        \item Efektów zajścia
+        \item czynności
+        \item warunków zajścia
+        \item efektów zajścia
     \end{itemize}
     Z tego powodu każdą z akcji traktuje się jako trójkę 
     \begin{equation}
@@ -76,7 +76,7 @@
     \begin{equation}
         ruch(R,S,D)
     \end{equation}
-    , gdzie R odpowiada robotowi, który musi się przemieścić z kafelka oznaczonego literą S (kafelek startowy) na kafelek oznaczony
+    gdzie R odpowiada robotowi, który musi się przemieścić z kafelka oznaczonego literą S (kafelek startowy) na kafelek oznaczony
     literą D (kafelek docelowy).
     
     Następnymi składowymi są odpowiednio \textit{Warunki} jak i \textit{Efekty}. Warunki traktowane są jako zbiór wszystkich stanów, które muszą być 
@@ -93,7 +93,7 @@
         \label{PrzykladRuch}
     \end{figure}
     Niech rozpatrywaną akcją będzie przemieszczenie robota B z pozycji 3 na pozycję 2,
-    przedstawiona na \ref{PrzykladRuch}. Biorąc pod uwagę, iż stanem początkowym jest \ref{ZbiorPoczatkowy} Warunkami zajścia zdarzenia
+    przedstawiona na \ref{PrzykladRuch}. Biorąc pod uwagę, iż stanem początkowym jest \ref{ZbiorPoczatkowy}. Warunkami zajścia zdarzenia
     będą: $na(R,S)$ oraz $pusty(D)$. Dla efektów natomiast sytuacja wygląda następująco: efektami dodającymi są $na(R,D)$ oraz $pusty(S)$, które informują o tym, iż klocek 
     wykonał ruch z kafelka S na kafelek D, a efektami usuwającymi $\sim na(R,S)$ oraz $\sim pusty(D)$, które informują o tym, iż kafelek S został zwolniony, 
     robot nie znajduje się już na kafelku S oraz kafelek D już nie jest pusty. 
@@ -120,14 +120,14 @@
     generowania planu  dzieje się z robotem \textbf{A}. Otóż robot A w pierwszym ruchu zostaje na tym samym kafelku. 
     Jednakże ze względu na zamkniętość świata 
     algorytmu należy go również poinformować o tym, w jakim stanie po pierwszym kroku ma znajdować się robot A. Wykonywane jest to przy pomocy 
-    akcji, zwanych \textbf{akcjami potrzymującymi}.
+    akcji, zwanych \textbf{akcjami podrzymującymi}.
     \begin{definition}
         \label{Persist}
         \textbf{Akcja podtrzymująca} - Akcja, która przenosi stan obiektu w czasie $t$ nienaruszonym do poziomu stanów w czasie $t+1$
     \end{definition}
     Akcjami podtrzymującymi należy również informować świat o stanach kafelków, które nie brały udziału w akcji robota B. Przykładem takiego jest 
     kafelek 1, który w stanie początkowym, jak i w stanie następnym ciągle zachowuje swój stan jako pusty. Akcje podtrzymujące oznaczono 
-    słowem kluczowym \textbf{zostań}
+    słowem kluczowym \textbf{zostań}.
     Ponadto akcja typu \textit{ruch}, które aktywnie zmienia stan świata w dalszej części pracy otrzyma miano \textbf{akcji aktywnej}.
     \begin{definition}
         \label{Active}
@@ -188,11 +188,11 @@
 
     Oprócz definicji sąsiedztwa należy również zabezpieczyć się przed sytuacją, gdy dwa roboty będą chciały w tym samym momencie znaleźć się na tym samym 
     kafelku. Dodatkowo kafelek A nie może znajdować się w dwóch stanach jednocześnie: $pusty(A)$ oraz $na(R,A)$, gdzie R oznacza dowolnego robota. 
-    Wymodelowanie tych ograniczeń jest żmdunym, lecz istotnym zadaniem implementując przedstawianą metodologię, które zostanie poruszone w ramach 
+    Wymodelowanie tych ograniczeń jest żmudnym, lecz istotnym zadaniem implementując przedstawianą metodologię, które zostanie poruszone w ramach 
     przedstawiania pojęcia "wzajemnego wykluczania".
     
     
-    Odpowiednie wymodelowanie świata wedle wzorców języka STRIPS może wydawać się trudnym oraz żmudnym zajęciem, jednakże przebrnąwszy 
+    Odpowiednie wymodelowanie świata wedle wzorców języka STRIPS może wydawać się trudnym zajęciem, jednakże przebrnąwszy 
     przez ten etap algorytm jest zwarty i gotowy do generowania planów dla wprowadzonych celów.
 
 
@@ -214,7 +214,7 @@
     \end{definition}
     Przez $i$-tą warstwę grafu oznaczono stan świata w $i$-tym momencie czasu. Ze względu na charakterystykę planera czas traktowany jest w sposób dyskretny-
     każda ze zdefiniowanych akcji zajmuje zawsze tyle samo czasu oraz zawsze kończy się tym samym efektem. Poziomy stanów jak i poziomy akcji 
-    należące do tej samej $i$-tej warstwy nazwano poprzez dołączenie do ich nazwy numera, odpowiadającego obecnej iteracji algorytmu
+    należące do tej samej $i$-tej warstwy nazwano poprzez dołączenie do ich nazwy numeru, odpowiadającego obecnej iteracji algorytmu
     \begin{figure}[H]
         \includegraphics[scale=0.5]{PlanningGraphLevels}
         \centering
@@ -227,7 +227,7 @@
 
     \section{Równoległość}
     \label{Rownoleglosc}
-    W poprzednich paragrafach na pojedynczym poziomie akcji rozpatrywano conajwyżej jedną akcję aktywną, jednakże główną siła GRAPHPLANU, jest 
+    W poprzednich paragrafach na pojedynczym poziomie akcji rozpatrywano co najwyżej jedną akcję aktywną, jednakże główną siła GRAPHPLANU, jest 
     możliwość jego reprezentacji jako częściowego porządku. To pozwala w prosty sposób wprowadzić pojęcie równoległości między akcjami. 
     \begin{definition}
         \label{Warstwa}
@@ -235,7 +235,7 @@
         zawierała w sobie żadnych sprzeczności.
     \end{definition}
     Przyglądając się rysunkowi \ref{PrzykladSP} od razu należy zauważyć, iż w stanie początkowym ruch robota A nie wpływa w żaden sposób na otoczenie
-    robota B. Z tego względu dwie przykładowe akcje $ruch(A,4,5)$ oraz $ruch(B,3,2)$ wręcz należy wykonać w tej samej jednostce czasu, czyli w pierwszym
+    robota B. Z tego względu dwie przykładowe akcje $ruch(A,4,5)$ oraz $ruch(B,3,2)$ należy wykonać w tej samej jednostce czasu, czyli w pierwszym
     poziomie akcji. 
     \begin{figure}[H]
         \includegraphics[scale=0.5]{PrzykladRownolegle}
@@ -262,6 +262,7 @@
     $ruch(B,3,2)$ odbędzie się przed $ruch(A,4,5)$ nie ma większego znaczenia- efekt końcowy jest identyczny.
 
     \subsection{Wzajemne wykluczanie}
+    \label{WzajemneWykluczanieRozdzial}
     Twórcy algorytmu wprowadzając równoleglość, zdawali sobie sprawę z mocy tego podejścia. Dzięki temu ogromna liczba planów ulega redukcji
     jeśli chodzi o wymagany czas wykonania. Jednakże równoległość wprowadza kolejny istotny problem w prezentowanym świecie, a mianowicie- co, gdy
     wykonanie dwóch akcji będzie wprowadzało sprzeczność w następnym poziomie świata? Sytuacja ta została przedstawiona na poniższym rysunku
@@ -271,7 +272,7 @@
         \caption{Przykład świata, w którym wprowadzenie równoległości dla pierwszej warstwy algorytmu jest niemożliwe. 
         Dwa roboty próbują przejść na ten sam kafelek
         w tej samej jednostce czasu, co z perspektywy kafelka powoduje konflikt. Odpowiednio kolorami:
-        czerwnoym i niebieskim oznaczono roboty, oraz kafelki, które są ich celem.}
+        czerwonym i niebieskim oznaczono roboty oraz kafelki, które są ich celem.}
         \label{PrzykladRownolegle}
     \end{figure}
     
@@ -292,7 +293,7 @@
     Dwa stany są ze sobą w relacji wzajemnie wykluczającej w dwóch następujacych przypadkach:
     \begin{enumerate}
         \item Negacja- przypadek, w którym jeden ze stanów jest negacją drugiego
-        \item Niespójne powstanie- wszystkie akcje z poprzedniej warstwy, które prowadza 
+        \item Niespójne powstanie- wszystkie akcje z poprzedniej warstwy, które prowadzą 
         do utworzenia ów stanów są ze sobą parami w relacji wykluczającej
     \end{enumerate}
     Ze względu na naturalność pojęcia negacji zbędnym jest wprowadzenie większego przykładu niż przedstawienie, iż dla każdego obiektu istnieje 
@@ -328,7 +329,7 @@
         \item Konkurencyjne potrzeby- przypadek, w którym warunki zajścia akcji 
         są ze sobą w relacji wykluczającej.
     \end{enumerate}
-    Poniższe przykłady w obrazowy sposób przedstawiają każdy w wyżej wymienionych
+    Poniższe przykłady w obrazowy sposób przedstawiają każdy z wyżej wymienionych
     przypadków:
 
     \begin{figure}[H]
@@ -364,7 +365,7 @@
     \end{figure}
 
     Idea przedstawiona na rysunku \ref{PrzykladWykluczenie1} jest ciekawym przykładem, pozwalającym zrozumieć dokładniej definicję słowa 
-    \textbf{równoległość} odnośnie planów generowanych przez GRAPHPLAN. Gdyby roboty poruszając się z tą samą szybkością i ruszyły w tym samym momencie
+    \textbf{równoległość} odnośnie planów generowanych przez GRAPHPLAN. Gdyby roboty, poruszając się z tą samą szybkością, ruszyły w tym samym momencie
     to wykonanie ów sekwencji akcji byłoby w zupełności możliwe, jednakże w sekcji \ref{Rownoleglosc} wspomniano, iż każdy z wygenerowanych planów 
     musi być możliwy do przedstawienia w postaci porządku liniowego, czyli plan równoległy może zostać przerobiony w dowolny sposób na plan,
     w którym każda z akcji wykonywana jest w z góry ustalonej kolejności.
@@ -378,7 +379,7 @@
     Klocek A do wykonanaia ruchu potrzebuje znajdować się na kafelku środkowym, co oznacza, iż kafelek środowy musi byc niepusty, 
     jednakże klocek B potrzebuje, aby ów klocek był pusty. Relacja wykluczająca między tymi stanami bezpośrednio generuje wykluczanie się tych akcji.
     
-    Ponadto, omawiane akcje w ilustracji \ref{PrzykladWykluczenie1} znajdują się w relacji wykluczającej z powodu \textbf{Konkurencyjnych potrzeb}. 
+    Ponadto, omawiane akcje w ilustracji \ref{PrzykladWykluczenie1} znajdują się w relacji wykluczającej z powodu \textbf{konkurencyjnych potrzeb}. 
     Robot B przy przesunięciu \textbf{na} środkowy kafelek wymaga, aby on był pusty, natomiast robot A przy przesunięciu \textbf{z} środkowego klocka 
     musi się na nim znajdować, czyli kafelek musi być niepusty. Stany pusty i niepusty względem kafelka są w oczywistej relacji wykluczającej 
     co automatycznie generuje wykluczenie się wspomnianej pary akcji. Przykład ów przedstawia, iż jedna para akcji może być ze sobą w relacji wykluczającej 
@@ -387,7 +388,7 @@
 
     Należy zauważyć, iż dzięki wprowadzeniu relacji wzajemnego wykluczania pozbyto się porównań wielu akcji, których zajście jest niemożliwe w tej samej 
     warstwie grafu. Koszt jaki został poniesiony ze względu na zapamiętywanie dodatkowych informacji o relacjach między akcjami jest często zaniedbywalny,
-    ze względu na ogrom benefitów w postaci mniejszej liczbie sprawdzeń, a co za tym idzie- szybsze działanie algorytmu.
+    ze względu na ogrom benefitów w postaci mniejszej liczby sprawdzeń, a co za tym idzie- szybszego działanie algorytmu.
 
 
 \section{Wyszukiwanie planu}
@@ -469,9 +470,9 @@
     Po wygenerowaniu kolejnej warstwy algorytmu oraz zaznaczeniu wszystkich mutexów zauważono, iż stan $na(A,3)$ znajduje się w zbiorze stanów 
     \textbf{StateLevel3}. Następnym krokiem jest sprawdzenie, czy taki zbiór akcji, który doprowadzi nas do stanu $i-1$ bez wprowadzania żadnych sprzeczności.
     Okazuje się, iż istnieje taka para akcji: $idz(A,2,3) oraz zostan(pusty(1))$. Zgodnie z schematem generowania planu należy zejść iteracyjnie aż do 
-    warunków początkowych aby uzyskać poprawny plan. W omawiany przykładzie łatwo zauważyć, iż przy pomocy akcji $idz(A,1,2)$ oraz $pusty(3)$ udało się 
+    warunków początkowych aby uzyskać poprawny plan. W omawianym przykładzie łatwo zauważyć, iż przy pomocy akcji $idz(A,1,2)$ oraz $pusty(3)$ udało się 
     z powrotem otrzymać stan początkowy. Ze względu na fakt, iż człowiek jest w stanie sprawnie wydedukować akcje podtrzymujące na podstawie 
-    akcji aktywny dla każdego poziomu, przy graficznym przedstawieniu planu (w formie opisowej i graficznej) z reguły akcje podtrzymujące będą 
+    akcji aktywnej, dla każdego poziomu przy graficznym przedstawieniu planu (w formie opisowej i graficznej) z reguły akcje podtrzymujące będą 
     pomijane.
 
     \begin{figure}[H]
@@ -493,9 +494,9 @@
 
 \section{Własności GRAPHPLAN'u}
     Działanie GRAPHPLAN'u można przedstawić również jako swego rodzaju iteratywne przeszukiwane wszerz. 
-    Dla każdego poziomu generowane są wszystkie możliwe stany, by następnie móc sprawdzić, czy cele do osiągnięcia 
+    Dla każdego poziomu generowane są wszystkie możliwe stany, by następnie móc sprawdzić, czy wyznaczone cele 
     znajdują się w utworzonym zbiorze. Jeśli rzeczone cele nie znajdują się, algorytm wykonuje kolejną iterację, 
-    poszerzając swoją wiedzę o świecie. Powyższe przeszukiwanie wykonuje się aż do momemntu, gdy uda się utworzyć satysfakcjonujący plan
+    poszerzając swoją wiedzę o świecie. Powyższe przeszukiwanie wykonuje się aż do momentu, gdy uda się utworzyć satysfakcjonujący plan
     Dzięki tej własności łatwo pokazać, iż:
     \begin{theorem}
         Każdy wyprodukowany plan przez algorytm GRAPHPLAN jest planem legalnym, czyli spełnialnym dla zadanych 
@@ -509,16 +510,16 @@
     \begin{proof}
         W pierwszym kroku algorytm generuje nowy poziom stanów. Następnie sprawdza, czy cele znajdują się wśród stanów. Jeśli odpowiedź jest twierdząca,
         dobiera zbiór akcji, dzięki którym udało się spełnić postawione wymagania. Jeśli odpowiedź jest przecząca, algorytm generuje kolejną warstwę.
-        Niech warstwa $i$ będzie warstwa, w której nie znajdują się wszystkie stany ze zbioru determinowanego przez zdefiniowane cele. W tym przpyadku
+        Niech warstwa $i$ będzie warstwa, w której nie znajdują się wszystkie stany ze zbioru determinowanego przez zdefiniowane cele. W tym przypadku
         dla $i+1$ warstwy algorytm próbuje wygenerować plan cofając się do stanu $i$. Jeśli uda się odpowiednio dobrać akcje 
         cofa się jeszcze dalej aż do stanu początkowego i kończy działanie, jako wynik zwracając plan. Powyższy opis determinuje optymalność planu.
     \end{proof}
 
 
     Ponadto należy się również przyjrzeć mechanizmom kreowania kolejnych stanów dla poszczególnych warstw. Algorytm robi to przyrostowo. 
-    Wszystkie istniejące już stane przenoszone są przy pomocy akcji podtrzymujących do następnej warstwy, natomiast akcje aktywne produkują 
+    Wszystkie istniejące już stany przenoszone są przy pomocy akcji podtrzymujących do następnej warstwy, natomiast akcje aktywne produkują 
     nowe efekty- dodające bądź usuwające. Mimo iż akcja z perspektywy człowieka jest \textbf{usuwająca}, 
-    z perspektywy komputera jest kolejną informacja, która również zostaje dodana do zbioru stanów.
+    z perspektywy komputera jest kolejną informacją, która również zostaje dodana do zbioru stanów.
 
     Korzystając z powyższej własności sformułowano następujący wniosek:
     \begin{theorem}
@@ -550,7 +551,7 @@
     \end{proof}
 
     \begin{definition}
-        \textbf{Spłaszczeniem} algorytmu jest sytuacja, w której wygenerowanie kolejnego stanu nie prowadzi 
+        \textbf{Spłaszczeniem} algorytmu jest sytuacja, w której wygenerowanie kolejnego poziomu stanów nie prowadzi 
         do uzyskania nowych informacji o świecie.
     \end{definition}
 
@@ -583,11 +584,13 @@
     Z tego powodu pierwszym pomysłem na uzbrojenie algorytm w mechanizm detekcji nieskończonej pętli jest sprawdzenie rozmiaru zbioru stanów dla dwóch 
     następujących po sobie warstw. Jeśli warstwa nowsza składa się z większej liczby stanów, algorytm uzyskuje nowe informacje o świecie i jest 
     przygotowany do dalszego trawersowania po grafie planującym, jednakże gdy ów liczby są sobie równe dochodzi do swego rodzaju stagnacji- wszystkie 
-    możliwe ruchy nie wprowadzają nowych informacji o świecie. Jeśli dla poprzedniego stanu nie udało się utworzyć planu, algorytm wnioskuje, iż 
-    również dla tego, jak i przyszłych, utworzenie stanu będzie niemożliwe, co powoduje zwrócenie przez program informacji o braku 
-    możliwości utworzenia odpowiedniego planu i jego terminację.
+    możliwe ruchy nie wprowadzają nowych informacji o świecie. Mimo poczucia, iż rzeczony mechanizm mógłby poprawnie wykrywać nieskończone generowanie 
+    planu, okazuje się, iż porównanie następujących po sobie poziomów stanów, co do wartości, jest zdecydowanie niewystarczające, co pokazuje następujący 
+    przykład.
 
-    Po wprowadzeniu powyższej modyfikacji możliwym jest wyciągnąć następujący wniosek 
+    \begin{example}
+        
+    \end{example}
 
     \begin{corollary}
         GRAPHPLAN zawsze kończy swoje działanie.

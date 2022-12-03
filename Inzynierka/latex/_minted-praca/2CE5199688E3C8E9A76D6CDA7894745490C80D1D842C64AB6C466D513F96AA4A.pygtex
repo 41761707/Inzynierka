@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+            \PYG{n+nf}{add\PYGZus{}actions}\PYG{p}{(}\PYG{k}{\PYGZus{}}\PYG{p}{,[],}\PYG{n+nv}{ActionLevel}\PYG{p}{,} \PYG{n+nv}{ActionLevel}\PYG{p}{,} \PYG{n+nv}{NextStateLevel}\PYG{p}{,} \PYG{n+nv}{NextStateLevel}\PYG{p}{).}
+
+            \PYG{n+nf}{add\PYGZus{}actions}\PYG{p}{(}\PYG{n+nv}{StateLevel}\PYG{p}{,} \PYG{p}{[}\PYG{n+nf}{action}\PYG{p}{(}\PYG{n+nv}{A}\PYG{p}{,}\PYG{n+nv}{Precondition}\PYG{p}{,}\PYG{n+nv}{Effects}\PYG{p}{)} \PYG{p}{|} \PYG{n+nv}{Acts}\PYG{p}{],}
+            \PYG{n+nv}{ActLev0}\PYG{p}{,} \PYG{n+nv}{ActLev}\PYG{p}{,} \PYG{n+nv}{NextLev0}\PYG{p}{,} \PYG{n+nv}{NextLev}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+                \PYG{n+nv}{IA} \PYG{l+s+sAtom}{in} \PYG{l+m+mf}{0..1}\PYG{p}{,}
+                \PYG{n+nf}{includes}\PYG{p}{(}\PYG{n+nv}{StateLevel}\PYG{p}{,} \PYG{n+nv}{Precondition}\PYG{p}{,} \PYG{n+nv}{IA}\PYG{p}{),}
+                \PYG{n+nf}{add\PYGZus{}effects}\PYG{p}{(}\PYG{n+nv}{IA}\PYG{p}{,} \PYG{n+nv}{Effects}\PYG{p}{,} \PYG{n+nv}{NextLev0}\PYG{p}{,} \PYG{n+nv}{NextLev1}\PYG{p}{),} \PYG{p}{!,}
+                \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}A: \PYGZdq{}}\PYG{p}{),} \PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{A}\PYG{p}{),} \PYG{l+s+sAtom}{nl}\PYG{p}{,}
+                \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Precondition: \PYGZdq{}}\PYG{p}{),} \PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{Precondition}\PYG{p}{),} \PYG{l+s+sAtom}{nl}\PYG{p}{,}
+                \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Effects: \PYGZdq{}}\PYG{p}{),} \PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{Effects}\PYG{p}{),} \PYG{l+s+sAtom}{nl}\PYG{p}{,}
+                \PYG{n+nf}{add\PYGZus{}actions}\PYG{p}{(}\PYG{n+nv}{StateLevel}\PYG{p}{,} \PYG{n+nv}{Acts}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{A}\PYG{o}{/}\PYG{n+nv}{IA} \PYG{p}{|} \PYG{n+nv}{ActLev0}\PYG{p}{],} \PYG{n+nv}{ActLev}\PYG{p}{,} \PYG{n+nv}{NextLev1}\PYG{p}{,} \PYG{n+nv}{NextLev}\PYG{p}{)}
+                \PYG{p}{;}
+                \PYG{n+nf}{add\PYGZus{}actions}\PYG{p}{(}\PYG{n+nv}{StateLevel}\PYG{p}{,} \PYG{n+nv}{Acts}\PYG{p}{,} \PYG{n+nv}{ActLev0}\PYG{p}{,} \PYG{n+nv}{ActLev}\PYG{p}{,} \PYG{n+nv}{NextLev0}\PYG{p}{,} \PYG{n+nv}{NextLev}\PYG{p}{).}
+\end{Verbatim}

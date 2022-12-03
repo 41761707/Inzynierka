@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+            \PYG{c+c1}{\PYGZpc{}mutex(+State1,+State2)}
+            \PYG{n+nf}{mutex}\PYG{p}{(}\PYG{n+nv}{P}\PYG{p}{,}\PYG{l+s+sAtom}{\PYGZti{}}\PYG{n+nv}{P}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+            \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Mutex: [\PYGZdq{}}\PYG{p}{),} \PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{P}\PYG{p}{),} \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{},\PYGZdq{}}\PYG{p}{),}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+sAtom}{\PYGZti{}}\PYG{n+nv}{P}\PYG{p}{),} \PYG{n+nf}{writeln}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}]\PYGZdq{}}\PYG{p}{),!.}
+
+        \PYG{n+nf}{mutex}\PYG{p}{(}\PYG{l+s+sAtom}{\PYGZti{}}\PYG{n+nv}{P}\PYG{p}{,}\PYG{n+nv}{P}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+            \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Mutex: [\PYGZdq{}}\PYG{p}{),} \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+sAtom}{\PYGZti{}}\PYG{n+nv}{P}\PYG{p}{),} \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{},\PYGZdq{}}\PYG{p}{),}\PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{P}\PYG{p}{),} \PYG{n+nf}{writeln}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}]\PYGZdq{}}\PYG{p}{),!.}
+
+        \PYG{n+nf}{mutex}\PYG{p}{(}\PYG{n+nv}{A}\PYG{p}{,}\PYG{n+nv}{B}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+            \PYG{n+nf}{inconsistent}\PYG{p}{(}\PYG{n+nv}{A}\PYG{p}{,}\PYG{n+nv}{B}\PYG{p}{),}
+            \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Mutex: [\PYGZdq{}}\PYG{p}{),} \PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{A}\PYG{p}{),} \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{},\PYGZdq{}}\PYG{p}{),}\PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{B}\PYG{p}{),} \PYG{n+nf}{writeln}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}]\PYGZdq{}}\PYG{p}{),}
+            \PYG{p}{!.}
+\end{Verbatim}

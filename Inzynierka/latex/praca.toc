@@ -34,52 +34,57 @@
 \contentsline {section}{\numberline {3.4}Wyszukiwanie rozwiązań}{27}{section.3.4}%
 \contentsline {section}{\numberline {3.5}Programowanie w logice z ograniczeniami}{28}{section.3.5}%
 \contentsline {section}{\numberline {3.6}Obrazowe przykłady}{29}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Problem plecakowy}{29}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Krypto-arytmetyczna łamigłówka}{29}{subsection.3.6.2}%
 \contentsline {section}{\numberline {3.7}Wykorzystanie w algorytmie}{29}{section.3.7}%
 \contentsline {chapter}{\numberline {4}Implementacja}{31}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Opis komponentów i ich połączeń}{31}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Implementacja algorytmu}{32}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Generowanie grafów}{34}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Interfejs użytkownika}{34}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Uruchomienie algorytmu z linii komend}{34}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Instalacja i wdrożenie}{35}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Instalacja pakietu SWI-Prolog}{35}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Instalacja języka Python}{35}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Dokumentacja}{35}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Sposób uruchomienia programu}{35}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Testy}{37}{chapter.6}%
-\contentsline {section}{\numberline {6.1}15}{37}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Wprowadzenie}{37}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Teoria}{38}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Przykład}{39}{subsection.6.1.3}%
-\contentsline {subsection}{\numberline {6.1.4}Szczegóły implementacyjne}{41}{subsection.6.1.4}%
-\contentsline {subsection}{\numberline {6.1.5}Wyniki}{41}{subsection.6.1.5}%
-\contentsline {subsection}{\numberline {6.1.6}Młodsza siostra- ósemka}{42}{subsection.6.1.6}%
-\contentsline {subsection}{\numberline {6.1.7}Wyniki dla 8}{42}{subsection.6.1.7}%
-\contentsline {subsection}{\numberline {6.1.8}Wnioski}{42}{subsection.6.1.8}%
-\contentsline {section}{\numberline {6.2}CargoBot}{42}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Wprowadzenie}{42}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Przykład}{42}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}Szczegóły implementacyjne}{42}{subsection.6.2.3}%
-\contentsline {subsection}{\numberline {6.2.4}Wyniki}{42}{subsection.6.2.4}%
-\contentsline {subsection}{\numberline {6.2.5}Wnioski}{42}{subsection.6.2.5}%
-\contentsline {section}{\numberline {6.3}Przemieszczanie w przestrzeni}{42}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Wprowadzenie}{42}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Przykład}{42}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}Szczegóły implementacyjne}{42}{subsection.6.3.3}%
-\contentsline {subsection}{\numberline {6.3.4}Wyniki}{42}{subsection.6.3.4}%
-\contentsline {subsection}{\numberline {6.3.5}Wnioski}{42}{subsection.6.3.5}%
-\contentsline {section}{\numberline {6.4}Wieża Hanoi}{42}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Wprowadzenie}{42}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}Przykład}{42}{subsection.6.4.2}%
-\contentsline {subsection}{\numberline {6.4.3}Szczegóły implementacyjne}{42}{subsection.6.4.3}%
-\contentsline {subsection}{\numberline {6.4.4}Wyniki}{42}{subsection.6.4.4}%
-\contentsline {subsection}{\numberline {6.4.5}Wnioski}{42}{subsection.6.4.5}%
-\contentsline {section}{\numberline {6.5}Osiem Hetmanów}{42}{section.6.5}%
-\contentsline {subsection}{\numberline {6.5.1}Wprowadzenie}{42}{subsection.6.5.1}%
-\contentsline {subsection}{\numberline {6.5.2}Przykład}{42}{subsection.6.5.2}%
-\contentsline {subsection}{\numberline {6.5.3}Szczegóły implementacyjne}{42}{subsection.6.5.3}%
-\contentsline {subsection}{\numberline {6.5.4}Wyniki}{42}{subsection.6.5.4}%
-\contentsline {subsection}{\numberline {6.5.5}Wnioski}{42}{subsection.6.5.5}%
-\contentsline {chapter}{Podsumowanie}{43}{chapter*.34}%
-\contentsline {chapter}{Bibliografia}{45}{chapter*.35}%
-\contentsline {chapter}{\numberline {A}Zawartość płyty CD}{47}{appendix.A}%
+\contentsline {section}{\numberline {4.3}Generowanie grafów}{39}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Struktura pliku tekstowego}{39}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Graf prosty}{39}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Graf pełny}{39}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Interfejs użytkownika}{39}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Uruchomienie algorytmu z linii komend}{40}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Instalacja i wdrożenie}{41}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Instalacja pakietu SWI-Prolog}{41}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Instalacja języka Python}{41}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Dokumentacja}{41}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Sposób uruchomienia programu}{41}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Testy}{43}{chapter.6}%
+\contentsline {section}{\numberline {6.1}15}{43}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Wprowadzenie}{43}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Teoria}{44}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Przykład}{45}{subsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.1.4}Szczegóły implementacyjne}{47}{subsection.6.1.4}%
+\contentsline {subsection}{\numberline {6.1.5}Wyniki}{47}{subsection.6.1.5}%
+\contentsline {subsection}{\numberline {6.1.6}Młodsza siostra- ósemka}{48}{subsection.6.1.6}%
+\contentsline {subsection}{\numberline {6.1.7}Wyniki dla 8}{48}{subsection.6.1.7}%
+\contentsline {subsection}{\numberline {6.1.8}Wnioski}{48}{subsection.6.1.8}%
+\contentsline {section}{\numberline {6.2}CargoBot}{48}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Wprowadzenie}{48}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Przykład}{48}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Szczegóły implementacyjne}{48}{subsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.2.4}Wyniki}{48}{subsection.6.2.4}%
+\contentsline {subsection}{\numberline {6.2.5}Wnioski}{48}{subsection.6.2.5}%
+\contentsline {section}{\numberline {6.3}Przemieszczanie w przestrzeni}{48}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Wprowadzenie}{48}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Przykład}{48}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Szczegóły implementacyjne}{48}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}Wyniki}{48}{subsection.6.3.4}%
+\contentsline {subsection}{\numberline {6.3.5}Wnioski}{48}{subsection.6.3.5}%
+\contentsline {section}{\numberline {6.4}Wieża Hanoi}{48}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Wprowadzenie}{48}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Przykład}{48}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}Szczegóły implementacyjne}{48}{subsection.6.4.3}%
+\contentsline {subsection}{\numberline {6.4.4}Wyniki}{48}{subsection.6.4.4}%
+\contentsline {subsection}{\numberline {6.4.5}Wnioski}{48}{subsection.6.4.5}%
+\contentsline {section}{\numberline {6.5}Osiem Hetmanów}{48}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Wprowadzenie}{48}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Przykład}{48}{subsection.6.5.2}%
+\contentsline {subsection}{\numberline {6.5.3}Szczegóły implementacyjne}{48}{subsection.6.5.3}%
+\contentsline {subsection}{\numberline {6.5.4}Wyniki}{48}{subsection.6.5.4}%
+\contentsline {subsection}{\numberline {6.5.5}Wnioski}{48}{subsection.6.5.5}%
+\contentsline {chapter}{Podsumowanie}{49}{chapter*.36}%
+\contentsline {chapter}{Bibliografia}{51}{chapter*.37}%
+\contentsline {chapter}{\numberline {A}Zawartość płyty CD}{53}{appendix.A}%

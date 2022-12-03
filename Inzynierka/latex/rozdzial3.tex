@@ -208,13 +208,15 @@
 
     \begin{example}
         Programowanie ograniczeń zastosowane w języku PROLOG, który jest językiem programowania logicznego:
-        
-        \begin{lstlisting}[language=PROLOG, caption=Funkcja wypisująca liczby gdy ich suma jest większa od 0]
-            FUNC(X,Y) :-
-            X+Y > 0,
-            writeln(X),
-            wirteln(Y).
-        \end{lstlisting}
+        \begin{listing}[H]
+            \begin{minted}{prolog}
+                FUNC(X,Y) :-
+                X+Y > 0,
+                writeln(X),
+                wirteln(Y).
+            \end{minted}
+            \caption{Metoda wypisująca liczby gdy ich suma jest większa od 0}
+        \end{listing}
     \end{example}
     W powyższym przykładzie zastosowano najprostsze z możliwych ograniczeń: wartość sumy zmiennych musi być większa od 0. 
     Ze względu na częste parowanie programowania ograniczeń z programowaniem w logice, wiele implementacji języków programowania w 
@@ -227,10 +229,11 @@
         \item clpq - moduł, w którym dziedziny składają się z liczb wymiernych w formie dziesiętnej
         \item clpr - moduł, w którym dziedziny składają się z liczb rzeczywistych zmiennopozycyjnych 
     \end{itemize}
-    Dzięki powyższym modułom można tworzyć bardziej zmyślne ograniczenia niż zwykłe relacje równości, mniejszości bądź nierówności. Z przykładami takich zastosowań
+    Dzięki powyższym modułom można tworzyć bardziej zmyślne ograniczenia. Z przykładami takich zastosowań
     czytelnik będzie mógł się zapoznać w sekcji opisującej implementację algorytmu.
 
 \section{Obrazowe przykłady}
+    \subsection{Problem plecakowy}
     Przykładem realizacji problemu ograniczeń poprzez wykonanie operacji propagacji ograniczeń wraz z mechanizmem cofania będzie popularny \textbf{Problem plecakowy}
     \begin{example}
         \textbf{Dyskretny problem plecakowy}- (ang. discrete knapsack problem) problem wyboru przedmiotów w taki sposób, aby spełniały następujące założenia:
@@ -238,6 +241,10 @@
             \item suma wartości wybranych przedmiotów musi być jak największa 
             \item suma wag wybranych przedmiotów nie może przekraczać wartości plecaka
         \end{itemize}
+
+    \subsection{Krypto-arytmetyczna łamigłówka}
+
+
 
     \end{example}
 

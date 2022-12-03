@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+            \PYG{c+c1}{\PYGZpc{} includes(+StateLevel, +Preconditions, +Indykator)}
+            \PYG{n+nf}{includes}\PYG{p}{(}\PYG{k}{\PYGZus{}}\PYG{p}{,[],}\PYG{k}{\PYGZus{}}\PYG{p}{).}
+
+            \PYG{n+nf}{includes}\PYG{p}{(}\PYG{n+nv}{StateLevel}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{P}\PYG{p}{|}\PYG{n+nv}{Ps}\PYG{p}{],}\PYG{n+nv}{IA}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+                \PYG{n+nf}{member}\PYG{p}{(}\PYG{n+nv}{P}\PYG{o}{/}\PYG{n+nv}{I}\PYG{p}{,} \PYG{n+nv}{StateLevel}\PYG{p}{),}
+                \PYG{n+nv}{IA} \PYG{l+s+sAtom}{\PYGZsh{}=\PYGZlt{}} \PYG{n+nv}{I}\PYG{p}{,}
+                \PYG{n+nf}{includes}\PYG{p}{(}\PYG{n+nv}{StateLevel}\PYG{p}{,} \PYG{n+nv}{Ps}\PYG{p}{,} \PYG{n+nv}{IA}\PYG{p}{).}
+\end{Verbatim}

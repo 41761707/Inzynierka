@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+            \PYG{c+c1}{\PYGZpc{}add\PYGZus{}effects(+Indykator,+PreviousStateLevel,\PYGZhy{}NextStateLevel)}
+            \PYG{n+nf}{add\PYGZus{}effects}\PYG{p}{(}\PYG{k}{\PYGZus{}}\PYG{p}{,[],}\PYG{n+nv}{StateLevel}\PYG{p}{,}\PYG{n+nv}{StateLevel}\PYG{p}{).}
+
+            \PYG{n+nf}{add\PYGZus{}effects}\PYG{p}{(}\PYG{n+nv}{IA}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{P} \PYG{p}{|} \PYG{n+nv}{Ps}\PYG{p}{],} \PYG{n+nv}{StateLev0}\PYG{p}{,} \PYG{n+nv}{ExpandedState}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+                \PYG{p}{(}\PYG{n+nf}{remove}\PYG{p}{(}\PYG{n+nv}{P}\PYG{o}{/}\PYG{n+nv}{IP}\PYG{p}{,}\PYG{n+nv}{StateLev0}\PYG{p}{,}\PYG{n+nv}{StateLev1}\PYG{p}{),!,}
+                \PYG{n+nv}{NewIP} \PYG{l+s+sAtom}{\PYGZsh{}=} \PYG{n+nv}{IP}\PYG{o}{+}\PYG{n+nv}{IA}\PYG{p}{,}
+                \PYG{n+nv}{StateLevel} \PYG{o}{=} \PYG{p}{[}\PYG{n+nv}{P}\PYG{o}{/}\PYG{n+nv}{NewIP} \PYG{p}{|} \PYG{n+nv}{StateLev1}\PYG{p}{]}
+                \PYG{p}{;}
+                \PYG{n+nv}{StateLevel} \PYG{o}{=} \PYG{p}{[}\PYG{n+nv}{P}\PYG{o}{/}\PYG{n+nv}{IA} \PYG{p}{|} \PYG{n+nv}{StateLev0}\PYG{p}{],} \PYG{p}{!}
+                \PYG{p}{),}
+                \PYG{n+nf}{add\PYGZus{}effects}\PYG{p}{(}\PYG{n+nv}{IA}\PYG{p}{,} \PYG{n+nv}{Ps}\PYG{p}{,} \PYG{n+nv}{StateLevel}\PYG{p}{,} \PYG{n+nv}{ExpandedState}\PYG{p}{).}
+\end{Verbatim}

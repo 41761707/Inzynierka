@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+            \PYG{c+c1}{\PYGZpc{}mutex\PYGZus{}state(StateLevel)}
+            \PYG{n+nf}{mutex\PYGZus{}state}\PYG{p}{([]).}
+
+            \PYG{n+nf}{mutex\PYGZus{}state}\PYG{p}{([}\PYG{n+nv}{P} \PYG{p}{|} \PYG{n+nv}{Ps}\PYG{p}{])} \PYG{p}{:\PYGZhy{}}
+            \PYG{n+nf}{mutex\PYGZus{}single}\PYG{p}{(}\PYG{n+nv}{P}\PYG{p}{,}\PYG{n+nv}{Ps}\PYG{p}{),}
+            \PYG{n+nf}{mutex\PYGZus{}state}\PYG{p}{(}\PYG{n+nv}{Ps}\PYG{p}{).}
+\end{Verbatim}

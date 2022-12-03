@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+            \PYG{c+c1}{\PYGZpc{} graphplan(+GraphPlan,+Goals,+AllActions,\PYGZhy{}Plan)}
+            \PYG{n+nf}{graphplan}\PYG{p}{([}\PYG{n+nv}{StateLevel} \PYG{p}{|} \PYG{n+nv}{GraphPlan}\PYG{p}{],} \PYG{n+nv}{Goals}\PYG{p}{,} \PYG{n+nv}{AllActions}\PYG{p}{,}\PYG{n+nv}{Plan}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+                \PYG{n+nf}{satisfied}\PYG{p}{(}\PYG{n+nv}{StateLevel}\PYG{p}{,} \PYG{n+nv}{Goals}\PYG{p}{),}
+                \PYG{n+nf}{extract\PYGZus{}plan}\PYG{p}{([}\PYG{n+nv}{StateLevel} \PYG{p}{|} \PYG{n+nv}{GraphPlan}\PYG{p}{],} \PYG{n+nv}{Plan}\PYG{p}{)}
+                \PYG{p}{;}
+                \PYG{n+nf}{expand}\PYG{p}{(}\PYG{n+nv}{StateLevel}\PYG{p}{,} \PYG{n+nv}{ActionLevel}\PYG{p}{,} \PYG{n+nv}{NewStateLevel}\PYG{p}{,} \PYG{n+nv}{AllActions}\PYG{p}{),}
+                \PYG{n+nf}{graphplan}\PYG{p}{([}\PYG{n+nv}{NewStateLevel}\PYG{p}{,} \PYG{n+nv}{ActionLevel}\PYG{p}{,} \PYG{n+nv}{StateLevel} \PYG{p}{|} \PYG{n+nv}{GraphPlan}\PYG{p}{],}
+                \PYG{n+nv}{Goals}\PYG{p}{,} \PYG{n+nv}{AllActions}\PYG{p}{,} \PYG{n+nv}{Plan}\PYG{p}{).}
+\end{Verbatim}

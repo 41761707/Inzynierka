@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+            \PYG{c+c1}{\PYGZpc{}apply\PYGZus{}mutex(+EffectsSet, +A1,+A2,+StateLevel)}
+            \PYG{n+nf}{apply\PYGZus{}mutex}\PYG{p}{([],}\PYG{k}{\PYGZus{}}\PYG{p}{,}\PYG{k}{\PYGZus{}}\PYG{p}{,}\PYG{k}{\PYGZus{}}\PYG{p}{).}
+
+            \PYG{n+nf}{apply\PYGZus{}mutex}\PYG{p}{([}\PYG{n+nv}{H} \PYG{p}{|} \PYG{n+nv}{T}\PYG{p}{],} \PYG{n+nv}{A1}\PYG{o}{/}\PYG{n+nv}{I1}\PYG{p}{,}\PYG{n+nv}{A2}\PYG{o}{/}\PYG{n+nv}{I2}\PYG{p}{,}\PYG{n+nv}{StateLevel}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+                \PYG{p}{[}\PYG{n+nv}{First}\PYG{p}{,}\PYG{n+nv}{Second}\PYG{p}{]} \PYG{o}{=} \PYG{n+nv}{H}\PYG{p}{,}
+                \PYG{n+nf}{member}\PYG{p}{(}\PYG{n+nv}{First}\PYG{o}{/}\PYG{n+nv}{F}\PYG{p}{,}\PYG{n+nv}{StateLevel}\PYG{p}{),}
+                \PYG{n+nf}{member}\PYG{p}{(}\PYG{n+nv}{Second}\PYG{o}{/}\PYG{n+nv}{S}\PYG{p}{,}\PYG{n+nv}{StateLevel}\PYG{p}{),}
+                \PYG{n+nv}{F}\PYG{o}{*}\PYG{n+nv}{S} \PYG{l+s+sAtom}{\PYGZsh{}=\PYGZlt{}} \PYG{n+nv}{I1}\PYG{o}{*}\PYG{n+nv}{I2}\PYG{p}{,}
+                \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Mutex: [\PYGZdq{}}\PYG{p}{),} \PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{First}\PYG{p}{),} \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{},\PYGZdq{}}\PYG{p}{),}\PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{Second}\PYG{p}{),} \PYG{n+nf}{writeln}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}]\PYGZdq{}}\PYG{p}{),}
+                \PYG{n+nf}{apply\PYGZus{}mutex}\PYG{p}{(}\PYG{n+nv}{T}\PYG{p}{,}\PYG{n+nv}{StateLevel}\PYG{p}{).}
+            \PYG{p}{!.}
+\end{Verbatim}
