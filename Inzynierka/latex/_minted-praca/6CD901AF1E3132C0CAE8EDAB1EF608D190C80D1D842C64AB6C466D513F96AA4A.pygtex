@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+            \PYG{c+c1}{\PYGZpc{}preconditions(+Action,\PYGZhy{}States)}
+            \PYG{n+nf}{preconditions}\PYG{p}{(}\PYG{n+nf}{zostan}\PYG{p}{(}\PYG{n+nv}{P}\PYG{p}{),[}\PYG{n+nv}{P}\PYG{p}{]).}
+
+            \PYG{n+nf}{preconditions}\PYG{p}{(}\PYG{n+nf}{idz}\PYG{p}{(}\PYG{n+nv}{R}\PYG{p}{,}\PYG{n+nv}{A}\PYG{p}{,}\PYG{n+nv}{B}\PYG{p}{),} \PYG{p}{[}\PYG{n+nf}{na}\PYG{p}{(}\PYG{n+nv}{R}\PYG{p}{,}\PYG{n+nv}{A}\PYG{p}{),} \PYG{n+nf}{pusty}\PYG{p}{(}\PYG{n+nv}{B}\PYG{p}{)])} \PYG{p}{:\PYGZhy{}}
+                \PYG{n+nf}{robot}\PYG{p}{(}\PYG{n+nv}{R}\PYG{p}{),}
+                \PYG{n+nf}{adjacent}\PYG{p}{(}\PYG{n+nv}{A}\PYG{p}{,}\PYG{n+nv}{B}\PYG{p}{).}
+\end{Verbatim}

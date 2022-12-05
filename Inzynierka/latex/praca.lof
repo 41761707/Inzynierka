@@ -1,40 +1,55 @@
 \babel@toc {polish}{}
 \babel@toc {polish}{}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Przeniesienie klocka z jednej półki na drugą jako przykład sytuacji dla której istnieje możliwość utworzenia planu. Po lewej stronie od strzałki znajduje się stan początkowy, natomiast po prawej- oczekiwany cel. Naturalną akcją w przedstawionym świecie jest akcja \textit {przenieś}, która zadany klocek przenosi z jednej półki na drugą.\relax }}{4}{figure.caption.2}%
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Problem komiwojażera (Travelling Salesman Problem, TSP). Na rysunku pomocniczym liczby symbolizują wagi krawędzi. Węzeł oznaczony kolorem czerwonym odpowiada węzłowi startowemu, do którego należy wrócić. Długości krawędzi nie zachowują wskazanych przez wagi proporcji.\relax }}{5}{figure.caption.3}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Przeniesienie klocka z jednej półki na drugą jako przykład sytuacji dla której istnieje możliwość utworzenia planu. Po lewej stronie od strzałki znajduje się stan początkowy, natomiast po prawej- oczekiwany cel. Naturalną akcją w przedstawionym świecie jest akcja \textit {przenieś}, która zadany klocek przenosi z jednej półki na drugą.\relax }}{4}{figure.caption.3}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Problem komiwojażera (Travelling Salesman Problem, TSP). Na rysunku pomocniczym liczby symbolizują wagi krawędzi. Węzeł oznaczony kolorem czerwonym odpowiada węzłowi startowemu, do którego należy wrócić. Długości krawędzi nie zachowują wskazanych przez wagi proporcji.\relax }}{5}{figure.caption.4}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Najogólniejsza forma grafu planującego. Składa się on z węzłów, zwanych stanami oraz krawędzi zwanych akcjami. Docelowo poszczególne stany oraz akcje są parami różne, jednak mogą zajść sytuacje, gdy powtórzenie któregoś z komponentów będzie wymagane do uzyskania odpowiedniego celu.\relax }}{9}{figure.caption.4}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Przykładowy moment startowy przyszłego planu. Za pomocą okręgów oznaczono roboty, natomiast poprzez kwadraty oznaczone są kafelki- miejsca, po których mogą poruszać się roboty.\relax }}{10}{figure.caption.5}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Obrazowe przedstawienie ruchu robota B z kafelka 3 na kafelek 2\relax }}{11}{figure.caption.6}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Obrazowe przedstawienie wszystkich akcji w pierwszym kroku algorytmu, akcje opisane przy użyciu czcionki o kolorze zielonym symbolizują akcje podtrzymujące, natomiast o kolorze czerwonym- akcje aktywne\relax }}{12}{figure.caption.7}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Graficzne przedstawienie relacji sąsiedztwa dla kafelka numer 4. Kolorem kremowym oznaczono miejsca, z którymi sąsiaduje, natomiast pomarańczowym- te, z którymi nie sąsiaduje. Oznacza to, iż do kafelków pomarańczowych nie można dostać się wykonując jeden ruch\relax }}{13}{figure.caption.8}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Modyfikacja do grafu planującego wprowadzona w poprzednich podrozdziałach. Wprowadzono zależności akcji od stanu poprzedniego, oraz stanu następnego od akcji.\relax }}{14}{figure.caption.9}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Przedstawienie sposobu wyznaczania warstw w grafie planującym. Poziom stanów oraz akcji wchodzący w skład danej warstwy wyróżniony jest poprzez konkatenację nazwy oraz liczby symbolizującej numer warstwy.\relax }}{14}{figure.caption.10}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Przykład możliwości zastosowania równoległości w planowaniu działania. Należy zauważyć, iż ruchy robotów w żaden sposób ze sobą nie kolidują.\relax }}{15}{figure.caption.11}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Przykład świata, w którym wprowadzenie równoległości dla pierwszej warstwy algorytmu jest niemożliwe. Dwa roboty próbują przejść na ten sam kafelek w tej samej jednostce czasu, co z perspektywy kafelka powoduje konflikt. Odpowiednio kolorami: czerwonym i niebieskim oznaczono roboty oraz kafelki, które są ich celem.\relax }}{16}{figure.caption.12}%
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Urywek planu przedstawiający sytuację, w której dwa stany powstają w sposób niespójny. Zgodnie z założeniami akcje oznaczone są przy pomocy prostokątów, stany- okręgów, miedzy akcjami a stanami czerwone linie symbolizują które stany są efektami których akcji, natomiast linie niebieskie między akcjami symbolizują powstałe między nimi \textit {mutexy}\relax }}{17}{figure.caption.14}%
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Przykład wykluczania się akcji aktywnych z podtrzymującymi\relax }}{17}{figure.caption.16}%
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Przykład świata, w którym każdy z robotów próbuje przesunąć się na sąsiadujący z lewej strony klocek. Uwidoczniona sytuacja jest przykładem wykluczających się akcji\relax }}{18}{figure.caption.17}%
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Sytuacja początkowa świata, dla którego odbędzie się przykładowe generowanie planu. Kolorem niebieskim zaznaczono kafelek docelowy robota\relax }}{19}{figure.caption.18}%
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Warunki początkowe omawianego świata. Obrazki ułatwiające analizę przykładu w całości zostały wykonane przez oprogramowanie utworzone na rzecz pracy. \relax }}{19}{figure.caption.19}%
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Wygenerowane akcje na podstawie warunków początkowych\relax }}{20}{figure.caption.20}%
-\contentsline {figure}{\numberline {2.16}{\ignorespaces Wygenerowany drugi stan grafu bezpośrednio wynikający z pierwszego poziomu akcji\relax }}{20}{figure.caption.21}%
-\contentsline {figure}{\numberline {2.17}{\ignorespaces Przykład kolejnej iteracji algorytmu\relax }}{21}{figure.caption.22}%
-\contentsline {figure}{\numberline {2.18}{\ignorespaces Graf planujący z zaznaczonymi akcjami aktywnymi prowadzącymi do uzyskania wskazanego celu\relax }}{21}{figure.caption.23}%
-\contentsline {figure}{\numberline {2.19}{\ignorespaces Przykład świata, w którym osiągnięcie celu, którym jest kafelek oznaczony kolorem takim jak kolor użytej czcionki do oznaczenia sygnatury robota, jest niemożliwe ze względu na absencję jednego z kafelków, będących łącznikiem, między robotem a jego celem.\relax }}{23}{figure.caption.24}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Najogólniejsza forma grafu planującego. Składa się on z węzłów, zwanych stanami oraz krawędzi zwanych akcjami. Docelowo poszczególne stany oraz akcje są parami różne, jednak mogą zajść sytuacje, gdy powtórzenie któregoś z komponentów będzie wymagane do uzyskania odpowiedniego celu.\relax }}{9}{figure.caption.5}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Przykładowy moment startowy przyszłego planu. Za pomocą okręgów oznaczono roboty, natomiast poprzez kwadraty oznaczone są kafelki- miejsca, po których mogą poruszać się roboty.\relax }}{10}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Obrazowe przedstawienie ruchu robota B z kafelka 3 na kafelek 2\relax }}{11}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Obrazowe przedstawienie wszystkich akcji w pierwszym kroku algorytmu, akcje opisane przy użyciu czcionki o kolorze zielonym symbolizują akcje podtrzymujące, natomiast o kolorze czerwonym- akcje aktywne\relax }}{12}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Graficzne przedstawienie relacji sąsiedztwa dla kafelka numer 4. Kolorem kremowym oznaczono miejsca, z którymi sąsiaduje, natomiast pomarańczowym- te, z którymi nie sąsiaduje. Oznacza to, iż do kafelków pomarańczowych nie można dostać się wykonując jeden ruch\relax }}{13}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Modyfikacja do grafu planującego wprowadzona w poprzednich podrozdziałach. Wprowadzono zależności akcji od stanu poprzedniego, oraz stanu następnego od akcji.\relax }}{14}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Przedstawienie sposobu wyznaczania warstw w grafie planującym. Poziom stanów oraz akcji wchodzący w skład danej warstwy wyróżniony jest poprzez konkatenację nazwy oraz liczby symbolizującej numer warstwy.\relax }}{14}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Przykład możliwości zastosowania równoległości w planowaniu działania. Należy zauważyć, iż ruchy robotów w żaden sposób ze sobą nie kolidują.\relax }}{15}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Przykład świata, w którym wprowadzenie równoległości dla pierwszej warstwy algorytmu jest niemożliwe. Dwa roboty próbują przejść na ten sam kafelek w tej samej jednostce czasu, co z perspektywy kafelka powoduje konflikt. Odpowiednio kolorami: czerwonym i niebieskim oznaczono roboty oraz kafelki, które są ich celem.\relax }}{16}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Urywek planu przedstawiający sytuację, w której dwa stany powstają w sposób niespójny. Zgodnie z założeniami akcje oznaczone są przy pomocy prostokątów, stany- okręgów, miedzy akcjami a stanami czerwone linie symbolizują które stany są efektami których akcji, natomiast linie niebieskie między akcjami symbolizują powstałe między nimi \textit {mutexy}\relax }}{17}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Przykład wykluczania się akcji aktywnych z podtrzymującymi\relax }}{17}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Przykład świata, w którym każdy z robotów próbuje przesunąć się na sąsiadujący z lewej strony klocek. Uwidoczniona sytuacja jest przykładem wykluczających się akcji\relax }}{18}{figure.caption.18}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Sytuacja początkowa świata, dla którego odbędzie się przykładowe generowanie planu. Kolorem niebieskim zaznaczono kafelek docelowy robota\relax }}{19}{figure.caption.19}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Warunki początkowe omawianego świata. Obrazki ułatwiające analizę przykładu w całości zostały wykonane przez oprogramowanie utworzone na rzecz pracy. \relax }}{19}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Wygenerowane akcje na podstawie warunków początkowych\relax }}{20}{figure.caption.21}%
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Wygenerowany drugi stan grafu bezpośrednio wynikający z pierwszego poziomu akcji\relax }}{20}{figure.caption.22}%
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Przykład kolejnej iteracji algorytmu\relax }}{21}{figure.caption.23}%
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Graf planujący z zaznaczonymi akcjami aktywnymi prowadzącymi do uzyskania wskazanego celu\relax }}{21}{figure.caption.24}%
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Przykład świata, w którym osiągnięcie celu, którym jest kafelek oznaczony kolorem takim jak kolor użytej czcionki do oznaczenia sygnatury robota, jest niemożliwe ze względu na absencję jednego z kafelków, będących łącznikiem, między robotem a jego celem.\relax }}{23}{figure.caption.25}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Przykładowa łamigłówka krypto-arytmetyczna\relax }}{30}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Przykładowe rozwiązanie wskazanej łamigłówki\relax }}{31}{figure.caption.27}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Zależności między komponentami\relax }}{33}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Główna pętla algorytmu\relax }}{34}{figure.caption.30}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Urywek przykładowego pliku tekstowego wygenerowanego przez algorytm\relax }}{41}{figure.caption.31}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagram przepływu dla generowania pojedynczego grafu pełnego\relax }}{42}{figure.caption.33}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Przykład grafu pełnego dla prostego przypadku\relax }}{45}{figure.caption.36}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Przykład grafu pełnego dla złożonego przypadku\relax }}{45}{figure.caption.37}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Diagram przepływu dla generowania pojedynczego grafu prostego\relax }}{46}{figure.caption.38}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Przykład grafu prostego dla prostego przypadku\relax }}{47}{figure.caption.39}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Przykład grafu pełnego dla złożonego przypadku\relax }}{47}{figure.caption.40}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Okno startowe programu\relax }}{48}{figure.caption.41}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Widok po wybraniu opcji "3x3"\relax }}{48}{figure.caption.42}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Widok po wybraniu opcji CargoBOT\relax }}{49}{figure.caption.43}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Proces definiowania świata\relax }}{49}{figure.caption.44}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Stan po wygenerowaniu planu\relax }}{50}{figure.caption.45}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Zrzut ekranu prezentujący przykładowe uruchomienie algorytmu z linii komend\relax }}{51}{figure.caption.48}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Zależności między komponentami\relax }}{31}{figure.caption.25}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Główna pętla algorytmu\relax }}{32}{figure.caption.26}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagram przepływu dla generowania pojedynczego grafu prostego\relax }}{39}{figure.caption.27}%
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Wygląd układanki piętnastki wygenerowany przy pomocy zaimplementowanej w ramach pracy warstwy graficznej\relax }}{43}{figure.caption.28}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Losowa rozwiązywalna permutacja układanki\relax }}{44}{figure.caption.29}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Piętnastka w formie obrazkowej. Źródło: \url {http://mypuzzlecollection.blogspot.com/2012/08/mc-escher-birds-fish-and-turtles.html}\relax }}{44}{figure.caption.30}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Przykładowe startowe ułożenie przesuwanki\relax }}{45}{figure.caption.31}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Akcje rozpatrywane przez algorytm w danym kroku\relax }}{46}{figure.caption.32}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Uproszczony graf planujący wygenerowany przez algorytm GRAPHPLAN przedstawiający stan każdego kafelka w danej warstwie. Węzły wypełnione kolorem szarym obrazują stany, które są warunkami zajścia jak i efektami wykonywanej w danej warstwie akcji\relax }}{46}{figure.caption.33}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Obrazowe rozwiązanie na podstawie wygenerowanego grafu\relax }}{47}{figure.caption.34}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Wygląd układanki piętnastki wygenerowany przy pomocy zaimplementowanej w ramach pracy warstwy graficznej\relax }}{55}{figure.caption.49}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Losowa rozwiązywalna permutacja układanki\relax }}{56}{figure.caption.50}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Piętnastka w formie obrazkowej. Źródło: \url {http://mypuzzlecollection.blogspot.com/2012/08/mc-escher-birds-fish-and-turtles.html}\relax }}{56}{figure.caption.51}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Przykładowe startowe ułożenie przesuwanki\relax }}{57}{figure.caption.52}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Akcje rozpatrywane przez algorytm w danym kroku\relax }}{58}{figure.caption.53}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Uproszczony graf planujący wygenerowany przez algorytm GRAPHPLAN przedstawiający stan każdego kafelka w danej warstwie. Węzły wypełnione kolorem szarym obrazują stany, które są warunkami zajścia jak i efektami wykonywanej w danej warstwie akcji\relax }}{58}{figure.caption.54}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Obrazowe rozwiązanie na podstawie wygenerowanego grafu\relax }}{59}{figure.caption.55}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Przyporządkowywanie klockom odpowiednich liter\relax }}{59}{figure.caption.56}%
 \addvspace {10\p@ }

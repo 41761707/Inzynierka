@@ -228,7 +228,6 @@
                 IA #=< I,
                 includes(StateLevel, Ps, IA).
     \end{minted}
-    \caption{Implementacja predykatu add\_actions/6}
     \end{listing}
 
     \begin{listing}[H]
@@ -278,7 +277,7 @@
             mutex_state([P | Ps]) :-
             mutex_single(P,Ps),
             mutex_state(Ps).
-    \end{minted}
+        \end{minted}
     \caption{Implementacja predykatu mutex\_state/1}
     \end{listing}
 
@@ -357,12 +356,11 @@
             apply_mutex(C,A1,A2,StateLevel).
     \end{minted}
     \caption{Implementacja predykatu mutex\_all\_states/3}
-
+    \end{listing}
     Jeśli dwie akcje są ze sobą w relacji wykluczającej to ich efekty także muszą się w niej znaleźć. Wykonywane jest to przy pomocy powyższego 
     predykatu \textbf{mutex\_all\_states/3}, który zbiera efekty dwóch akcji, tworzy z nich iloczyn kartezjański przy pomocy predykatów 
     $findall/3$ oraz $member/2$. Wygenerowany iloczyn przekazuje do predykatu \textbf{apply\_mutex/4}, którego zadaniem jest wygenerowanie 
     odpowiednich ograniczeń względem wskazanego zbioru efektów.
-    \end{listing}
 
     \begin{listing}[H]
         \begin{minted}{prolog}
@@ -390,33 +388,322 @@
 \section{Generowanie grafów}
     Moduł generowania grafów utworzony w języku programowania \textbf{python} przy użyciu biblioteki \textbf{graphviz}, zgodnie ze swoją nazwą,
     przeznaczony jest do generowania grafów na podstawie otrzymanych informacji od algorytmu.
-    \subsection{Struktura pliku tekstowego}
 
-    \begin{lstlisting}
-        Struktura pliku tekstowego
-    \end{lstlisting}
+    \textbf{UWAGA:} Metody wykorzystywane w generowaniu grafów, jak i późniejszych sekcjach tego rozdziału, zostaną zaprezentowane w formie pseudokodów.
+    Dodatkowo, ze względu na prostotę bądź dużą objętość jeśli chodzi o linię kodu, niektóre metody zostały zawarte jedynie w formie opisowej.  
+    Kompletne kody źródłowe znajdują się na płycie CD dołączonej do niniejszej pracy w katalogu \texttt{sources} (patrz Dodatek~\ref{plytaCD}).
+    \subsection{Struktura pliku tekstowego}
+    \begin{figure}[H]
+        \includegraphics[scale=0.5]{txt_file}
+        \centering
+        \caption{Urywek przykładowego pliku tekstowego wygenerowanego przez algorytm}
+    \end{figure}
+    Algorytm na każdym etapie kreowania grafu planującego dokonuje zapisu do pliku tekstowego. Zapisywane są takie informacje jak poziom stanów, 
+    akcji czy mutexy. Każda linia pliku rozpoczyna się sygnaturą, po której występuje symbol \textbf{:}, który pełni rolę separatora. 
+    Na tej podstawie algorytm dokonuje klasyfikacji informacji występującej po separatorze. 
+    Poniżej znajduje się tabela z sygnaturami jak i ich objaśnieniami:
+    \begin{table}[H]
+        \centering
+         \begin{tabular}{||c | c||} 
+         \hline
+         Sygnatura & Objaśnienie \\ [0.5ex] 
+         \hline\hline
+         \textit{StartLevel} & Warunki początkowe przedstawionego świata \\ 
+         \hline
+         \textit{A} &  Obecnie rozpatrywana akcja \\
+         \hline
+         \textit{Precondition} & Warunki zajścia wyżej wymienionej akcji \\
+         \hline
+         \textit{Effects} & Efekty wyżej wymienionej akcji \\
+         \hline
+         \textit{Mutex} & Pary stanów bądź akcji w relacji wykluczającej \\ 
+         \hline
+         \textit{ActionLevel} & Zbiór wszystkich akcji dla danej warstwy \\ 
+         \hline
+         \textit{StateLevel} & Zbiór wszystkich stanów dla danej warstwy\\ 
+         \hline
+         \textit{ChosenActions} & Zbiór akcji wybranych przez planer dla danej warstwy\\ 
+         \hline
+         \textit{ChosenStates} & Zbiór stanów zdetermionwanych przez wybrane akcje\\ 
+         \hline
+         \end{tabular}
+         \caption{Tabela sygnatur linii w pliku tekstowym}
+    \end{table}
+
+    \subsection{Graf pełny}
+
+    \begin{figure}[H]
+        \includegraphics[scale=0.5]{UML_simplified}
+        \centering
+        \caption{Diagram przepływu dla generowania pojedynczego grafu pełnego}
+    \end{figure}
+
+    Na podstawie otrzymanego pliku tekstowego moduł \textit{parsePlanFULL.py}, w którym zaimplementowana została klasa \textit{Graph},
+    rozpoczyna generowanie grafu. Pierwszym krokiem jest zainicjalizowanie obiektu klasy \textit{Graph} co jest wykonywane przez warstwę graficzną.
+    Następnie przy pomocy metody \textit{run\_all()} dochodzi do uruchomienia procesu generowania grafu. Na powyższym diagramie przepływu należy 
+    zauważyć, iż moment oznaczony symbolem \textit{Start} odnosi się do momentu uruchomienia przez warstwę graficzną wyżej wskazanej metody.
+    Po uruchomieniu generatora, moduł wczytuje plik by następnie dokonać jego parsowania.
+
+    \subsubsection{Funkcja $parse\_input()$}
+    \begin{pseudokod}[H]
+        \SetArgSty{normalfont}
+        \SetKwFunction{parse}{parse}
+        \SetKwFunction{generateLayer}{generateLayer}
+        \SetKwFunction{generateArcs}{generateArcs}
+        \SetKwFunction{generateMutexArcs}{generateMutexArcs}
+        \KwIn{plik tekstowy $Filename$}
+        $current\_level\_actions \leftarrow Dict \{\}$ \\
+        $prev\_action \leftarrow  String()$ \\
+        $mutex\_states \leftarrow List []$ \\
+        \ForEach{$linia \in Filename$}{
+            $name$, $variables \leftarrow linia$; \\
+            $variables \leftarrow parse(variables)$; \\
+            \If{$name$ = StartLevel}{
+                $generateLayer(variables)$;
+            } 
+            \If{$name$ = A}{
+                $prev\_action \leftarrow variables$; \\
+                Dodaj $prev\_action$ jako klucz do słownika $current\_level\_actions$;
+            }
+            \If{$name$ = Precondition}{
+                Dodaj $variables$ jako warunki zajścia w słowniku $current\_level\_actions$ dla $prev\_action$;
+            }
+            \If{$name$ = Effects}{
+                Dodaj $variables$ jako efekty w słowniku $current\_level\_actions$ dla $prev\_action$;
+            }
+            \If{$name$ = Mutex}{
+                Dodaj $variables$ do $mutex\_states$;
+            }
+            \If{$name$ = ActionLevel}{
+                $generateMutexArcs(mutex\_states)$; \\
+                $mutex\_states \leftarrow []$; \\\
+                $generateLayer(variables)$; \\
+            }
+            \If{$name$ = StateLevel}{
+                $generateArcs(current\_level\_actions)$; \\
+                $generateLayer(variables)$; \\
+                $current\_level\_actions \leftarrow \{\}$;
+            }
+            \If{$name$ = Plan}{
+                return $variables$;
+            }
+        }
+        \caption{Schemat działania funkcji parse\_input()}
+    \end{pseudokod}
+
+    Funkcja w zależności od aktualnej sygnatury zmienia swoje działanie. Należy zauważyć, iż wszystkie akcje, a co za tym idzie ich efekty oraz 
+    warunki zajścia są zbierane w strukturze określonej mianem \textbf{Dict}, czyli tablicy asosjacyjnej (inna nazwa: słownik). 
+    Dane w tej strukturze są przechowywane w formie par $(klucz,wartość)$. Dokładniej rzecz biorąc, $current\_level\_action$ składa się ze słownika 
+    słowników. Kluczem zewnętrznego słownika jest akcja (przykład: $idz(a,1,2)$), nastepnie kluczem wewnętrznego słownika są dwie wartości: 
+    \textit{Precondition} oraz \textit{Effects}, do których w formie wartości dodawane są odpowiednio warunki zajścia jak i efekty zgodnie 
+    z nomenklaturą STRIPS.
+    Dodatkowo funkcja składa się z dodatkowej listy o nazwie $mutex\_states()$, która zbiera wszystkie relacje wzajemnego wykluczania w 
+    danej warstwie grafu. 
+
+    Funkcja parsująca $parse()$ jest \textit{wyrażeniem regularnym}, które konwertuje jeden duży ciąg znaków na listę pomniejszych względem 
+    separatora przecinka (textit{,}). To co należy zauważyć, to fakt, iż wyrażenie regularne zostało skonstruowane w taki sposób, aby nie 
+    dokonywało podziału linii względem przecinków znajdujących się w nawiasach. Gdyby taka funkcjonalność nie została zaimplementowana, napis 
+    \textit{idz(a,2,3)} zostałby podzielony na listę napisów: "[idz(a","2","3)]". 
+
+    \begin{listing}[H]
+        \begin{minted}{python}
+            variables = re.split(',(?![^(]*\\))',variables)
+        \end{minted}
+    \caption{Implementacja parsowania pliku tekstowego}
+    \label{REGEX}
+    \end{listing}
+    Wynik działania ów parsera dla przykładowego napisu "[pusty(3),na(a,3)]" to ["[pusty(3)","na(a,3)]"].
+
+    Kolejnym krokiem jest uruchomienie funkcji odpowiedzialnych za generowanie grafu w momencie pojawienia się odpowiedniej sygnatury. 
+    Ów funkcje to odpowiednio: $generateLayer(), generateArcs()$ oraz $generateMutexArcs()$.
+
+    Metoda $generateLayer()$ ma za zadanie wygenerowanie poziomu stanów na podstawie otrzymanej listy stanów. Robi to, dodając do istniejącej instancji 
+    grafu dostarczonej dzięki bibliotece \textbf{graphviz}, kolejnego klastra, który w grafie symbolizowany jest poprzez szarą ramkę.
+    \begin{listing}[H]
+        \begin{minted}{python}
+            def generateLayer(self,name,variables,g,level,type):
+            layer_name = 'cluster_' + name
+            with g.subgraph(name=layer_name) as layer:
+                layer.attr(color='gray')
+                layer.attr(label=name)
+                for item in variables:
+                    layer.node(item+str(level),item, shape=type)
+        \end{minted}
+    \caption{Implementacja funkcji generateLayer()}
+    \end{listing}
+    Każdy z klastrów musi posiadać swoje unikalne imię. Generowane jest ono na takiej samej zasadzie jak nazwy poziomy stanów oraz akcji, poprzez 
+    konkatenację słów kluczowych oraz wartości iteratora, który symbolizuje aktualną warstwę grafu planującego. 
+
+    Metoda $generateArcs()$ odpowiada za utworzenie krawędzi między stanami a akcjami. Iterując po zbiorze akcji dla danej warstwy łączy warunki 
+    zajścia z akcją oraz akcję z jej efektami. W przypadku, gdy nazwa akcji zawiera w sobie frazę \textit{zostań} generowana jest przerywana linia, 
+    symbolizująca akcję podtrzymującą. Krawędzie ciągłe charakteryzują się tym, iż strzałka składa się z linii ciągłej. Graf planujący jest 
+    grafem acyklicznym skierowany, co powoduje, iż każda z krawędzi zakończona jest strzałką- symbolizuje to skierowaność, którą można
+    interpretować jako jednostronne połączenie.
+
+    Metoda $generateMutexArcs()$ odpowiada za utworzenie krawędzi między stanami bądź akcjami, które są ze sobą w relacji wzajemnie wykluczającej. 
+    Efektem działania tej funkcji jest niebieska, przerywana linia łącząca w pary odpowiednie obiekty grafu.
+
+    Każdy plik kończy się linią zawierającą plan. Jeśli funkcja $parse\_input()$ natrafi na rzeczoną linię, parsuje ją i zwraca jej zawartość 
+    jako utworzony przez algorytm \textbf{plan}.
+
+    \subsubsection{Oznaczenie planu na grafie}
+
+    Po zakończeniu działania metody $parse\_input()$ główna jednostka sterująca przepływem działania generatora grafu przechodzi do funkcji, której 
+    zadaniem jest rozbicie planu na warstwy oraz akcje, która w danej warstwie należy wykonać, aby uzyskać wskazany cel. Realizowane jest to przy 
+    pomocy funkcji $parsePlan()$ oraz wyrażenia regularnego (kod źródłowy \ref{REGEX}). Dodatkowo w celu wyelimiowania nieczytelnych dla człowieka informacji z 
+    listy akcji elimionwane są akcje podtrzymujące (w odróżnieniu od algorytmu człowiek wie, iż brak któreś z komponentów w 
+    akcjach danej warstwy skutkuje brakiem zmiany jego stanu). Wykonywane jest to za pomocą metody $planWoPersist$, która eliminuje wszystkie 
+    elementy z planu zawierające frazę \textit{zostań}. 
+    Następnie program przechodzi do ostatniego etapu: zaznaczania akcji wchodzących w skład planu poprzez zmianę kolory na czerwonych wszystkich 
+    krawędzi, które z ów akcją są połączone. Implementacja tego mechanizmu została wykonana w ramach funkcji $colorUsedActions()$ i w swoim działaniu 
+    jest bardzo prosta- wyszukuje warunki zajścia, jak i efekty dla wskazanej akcji i zmienia kolory krawędzi, które je łączą. Ważnym jest, iż ze 
+    względu na odfiltrowanie akcji podtrzymujących, barwa ich krawędzi nie zostanie zmieniona w wygenerowanym grafie. 
+
+    Gdy wszystkie krawędzie zmieniające świat zgodnie z zawartością planu zmienią swój kolor, program wykonuje procedurę $render()$, która 
+    generuje graf o zadanych własnościach. Procedura $render()$ pochodzi bezpośrednio z biblioteki \textit{graphviz}.
+
+    Efektem działania programu jest następujący graf pełny:
+
+    \begin{figure}[H]
+        \includegraphics[scale=0.25]{GrafPelny1}
+        \centering
+        \caption{Przykład grafu pełnego dla prostego przypadku}
+    \end{figure}
+    Jednakże ze względu na liczbę stanów, jakie mogą wchodzić w skład danego poziomu stanów czy akcji oraz na liczbę krawędzi między stanami, graf 
+    pełny bardzo szybko staje się nieczytelny dla człowieka, co przedstawia następująca ilustracja:
+    \begin{figure}[H]
+        \includegraphics[scale=0.02]{GrafPelny2}
+        \centering
+        \caption{Przykład grafu pełnego dla złożonego przypadku}
+    \end{figure}
+    Z tego powodu utworzono dodatkową klasę, która generuje podgraf grafu pełnego, który zawieraja jedynie istotne z perspektywy człowieka informacje.
+    Taki graf w dalszej części pracy będzie nosił miano \textit{grafu prostego}.
 
     \subsection{Graf prosty}
 
+    Graf prosty tworzony jest na podstawie grafu pełnego z wyelimiowaniem pewnych elementów w celu zwiększenia czytelności prezentowanych danych.
     \begin{figure}[H]
         \includegraphics[scale=0.5]{UML_simplified}
         \centering
         \caption{Diagram przepływu dla generowania pojedynczego grafu prostego}
     \end{figure}
-
-    \subsection{Graf pełny}
-
-
+    Większość znajdujących się na diagramie funkcji, których implementację można znaleźć w pliku \textit{parseplanSIMPLFIED.py} w ramach klasy 
+    \textit{SimplifiedGraph}, jest identyczna względem grafu prostego. Główne różnice występują w mechanizmie parsowania planu, ze względu na obiekty, 
+    które zostały wyeliminowane na rzecz czytelności grafu. Graf prosty składa się z:
+    \begin{enumerate}
+        \item Stanu dla każdego obiektu, które są prawdziwe w danej warstwie
+        \item Akcji dla każdego obiektu w danej warstwie
+        \item Specjalnego oznaczenia wykorzystywanych akcji aktywnych wraz z oznaczeniem krawędzi, rodem z grafu pełnego
+    \end{enumerate}
+    Różnica względem grafu pełnego jest brak generowania mutex'ów, hipotetycznych stanów, w których dany obiekt mógłby się znaleźć oraz efektów usuwających.
+    
+    Efektem działania programu jest następujący graf:
+    \begin{figure}[H]
+        \includegraphics[scale=0.5]{GrafProsty1}
+        \centering
+        \caption{Przykład grafu prostego dla prostego przypadku}
+    \end{figure}
+    Dla przypadku złożonego czytelność planu wzrosła diametralnie przy drobnej utracie wiedzy o planie. Jednakże, z perspektywy człowieka wykonujacego 
+    wskazany plan na podstawie grafu, występowanie hipotetycznych stanów jest całkowicie zbędny, istnienie negatywnych efektów funkcji jest dla 
+    człowieka naturalnym do wydedukowania, a brak oznaczonych mutex'ów wynika z faktu, iż w skład grafu wchodzą jedynie akcje, 
+    które należy wykonać aby otrzymać dany cel. Poniższy przykład przedstawia graf dla złożonego przypadku:
+    \begin{figure}[H]
+        \includegraphics[scale=0.25]{GrafProsty2}
+        \centering
+        \caption{Przykład grafu pełnego dla złożonego przypadku}
+    \end{figure}
 
 \section{Interfejs użytkownika}
     Interfejs użytkownika wykonany w języku \textbf{python} stanowi spoiwo, łącząc w sobie wygenerowany plan przez algorytm oraz wygenerowane grafy przez 
-    odpowiedni moduł. Poniższa rycina przedstawia w sposób ogólny diagram przepływu w trakcie obsługi programu przez użytkownika:
-
+    odpowiedni moduł. Poniższa ilustacja przedstawia w sposób ogólny diagram przepływu w trakcie obsługi programu przez użytkownika: \\
     //Tutaj rysunek + opis ważniejszych funkcji
 
+    Po uruchomieniu pliku \textit{gui.py} (preferowana ścieżka uruchomienia to linia komend, przy użyciu komendy python3 gui.py).
+    pojawia się następujace okienko:
+    \begin{figure}[H]
+        \includegraphics[scale=0.3]{GUIMain}
+        \centering
+        \caption{Okno startowe programu}
+    \end{figure}
 
+    W górnym panelu znajdują się przyciski, które odpowiadają odpowiednim światom. Sygnatury znajdujące się na przyciskach zostały 
+    dokładniej przedstawione w sekcji odpowiedzialnej za testy algorytmu (3x3 i 4x4: \ref{15Test}, CargoBOT: \ref{CargoBotTest}, 
+    Osiem Hetmanów: \ref{OsiemHetmanowTest}). Po wybraniu jednej z opcji, użytkownik zostaje przeniesiony w obszar roboczy związany z wybranym
+    otoczeniem.
+
+    \begin{figure}[H]
+        \includegraphics[scale=0.3]{GUI3x3Empty}
+        \centering
+        \caption{Widok po wybraniu opcji "3x3"}
+    \end{figure}
+
+    \begin{figure}[H]
+        \includegraphics[scale=0.3]{CargoBOTEmpty}
+        \centering
+        \caption{Widok po wybraniu opcji CargoBOT}
+    \end{figure}
+
+    Powyższe ilustracje przedstawiają dwa typy światów: jeden, w którym cel jest z góry ustalony, więc użytkownik dysponuje jedynie lewym panelem w 
+    celu określenia stanu początkowego, oraz drugi, w którym użytkownik samodzielnie definiuje warunki początkowe jak i wymagany cel.
+
+    Po zdefiniowniu odpowiedniego stanu początkowego, przy pomocy przycisku "Wygeneruj graf" dokonywane jest generowanie grafu wraz z graficznym 
+    przedstawieniem planu z podziałem na kroki:
+
+    \begin{figure}[H]
+        \includegraphics[scale=0.3]{GUI3x3Wypelnianie}
+        \centering
+        \caption{Proces definiowania świata}
+    \end{figure}
+
+    \begin{figure}[H]
+        \includegraphics[scale=0.3]{GUI3x3Wynik}
+        \centering
+        \caption{Stan po wygenerowaniu planu}
+    \end{figure}
+
+    Odpowiednie grafy generowane są w folderze \texttt{graphs} o nazwach wskazanych przez okno wynikowe.
 \section{Uruchomienie algorytmu z linii komend}
     \label{CommandLine}
     Zalecanym sposobem uruchomienia algorytmu jest wykorzystanie specjalnie przygotowanego programu graficznego, jednakże implementacja zezwala na 
     wykonywanie planów z linii komend. Ów funkcjonalność została wykorzystana między innymi w testach, których opis można znaleźć w ostatnim rozdziale pracy.
-    //Jak odpalić z terminala + co należy dodać
+    Aby uruchomić program z linii komend należy wprowadzić następującą komendę \textit{swipl}, która uruchomi środowisko języka programowania PROLOG.
+    Jeśli użytkownik posiada inną implementację języka, zobowiązany jest do samodzielnego zapoznaia się ze sposobem uruchomienia interaktywnego 
+    środowiska wewnątrz terminala (więcej w sekcji \ref{SWI-PROLOGRozdzial})
+    \subsubsection{Definicje świata}
+    Przeglądając plik \textit{graphplan.pl} można zauważyć, iż jest on pozbawiony podstawowych definicji wchodzących w skład opisu STRIPS. Wynika 
+    to z faktu, iż uruchamiając program przy pomocy graficznego interfejsu, przy wyborze odpowiedniego świata, 
+    generowane są wszystkie niezbędne relacje i dołączane do środowiska, w którym znajduje się kod źródłowy algorytmu.
+    Użytkownik samodzielnie musi zadbać o wprowadzenie odpowiednich informacji o świecie. Może to wykonać w następujący sposób:
+    \begin{itemize}
+        \item Przed wczytaniem zawartości pliku \textit{graphplan.pl} do środowiska interaktywnego może "dokleić" własne linijki kodu 
+        zawierające opis świata, w którym chciałby wygenerować odpowiedni plan. Doklejanie należy wykonać po ostatniej komendzie zaczynającej 
+        się słowem \textit{dynamic}. Dodatkowo, definiując własne relacje, których nazwy nie zawierają się w sekcji dynamic, użytkownik 
+        zobowiązany jest do jej uzupełnienia zgodnie z wzorcem, który znajduje się w pliku źródłowym
+        \item Po wczytaniu zawartości pliku \textit{graphplan.pl} użytkownik może manipulować relacjami w świecie poprzez wykorzystywanie 
+        predykatów $assert/1$ bądź $retract/1$. 
+    \end{itemize}
+    Wczytywanie pliku w środwisku interaktywny SWI-PROLOG można wykonać na dwa sposoby, poprzez zastosowanie nawiasów kwadratowych, wewnątrz których 
+    znajduje się nazwa plik ($[graphplan].$), bądź przy użyciu predykatu $consult/1$. Oba sposoby są sobie równoważne. Opis wczytania pliku zakłada,
+    iż środowisko interkatywne zostało uruchomione w tym samym katalogu, w którym znajduje się kod źródłowy algorytmu.
+    \subsubsection{Uruchomienie algorytmu}
+    Zakładając poprawność definicji świata przez użytkownika należy zaopatrzyć algorytm w dwa istotne aspekty: stan początkowy oraz stan końcowy. 
+    Stan początkowy wprowadzany jest przy pomocy predykatu $inital\_state/1$, który przyjmuje listę stanów prawdziwych przed rozpoczęciem działań.
+    Następnie należy wywołać procedurę $call\_plan/2$ według następującego schematu 
+    \begin{equation}
+        call\_plan(A,Plan).
+    \end{equation}
+    gdzie A oznacza listę stanów docelowych.
+    Przykładowe uruchomienie algorytmu z poziomu linii komend:
+
+    \begin{figure}[H]
+        \includegraphics[scale=0.5]{LiniaKomendWywolanie}
+        \centering
+        \caption{Zrzut ekranu prezentujący przykładowe uruchomienie algorytmu z linii komend}
+    \end{figure}
+
+    W pliku \textit{worlds.pl} znajdują się definicje światów wykorzystywanych w ramach badań. Każdy ze światów odzielony jest komentarzem 
+    jednolinijkowym wraz z oznaczeniem świata (np. CargoBOT). Kod znajdujący się między sygnaturami komentarza wielolinijkowego przedstawia 
+    definicję wskazanego świata.
+    Dodatkowo każdy ze światów zawiera kilka przykładów, aby oswoić użytkownika ze specyficznym mechanizmem wprowadzania danych 
+    z poziomu linii komend.
+

@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+            \PYG{c+c1}{\PYGZpc{}eadjacent(+From, +To)}
+            \PYG{n+nf}{adjacent}\PYG{p}{(}\PYG{n+nv}{A}\PYG{p}{,}\PYG{n+nv}{B}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+            \PYG{n+nf}{n}\PYG{p}{(}\PYG{n+nv}{A}\PYG{p}{,}\PYG{n+nv}{B}\PYG{p}{)}
+            \PYG{p}{;}
+            \PYG{n+nf}{n}\PYG{p}{(}\PYG{n+nv}{B}\PYG{p}{,}\PYG{n+nv}{A}\PYG{p}{).}
+\end{Verbatim}

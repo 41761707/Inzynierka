@@ -241,16 +241,122 @@
             \item suma wartości wybranych przedmiotów musi być jak największa 
             \item suma wag wybranych przedmiotów nie może przekraczać wartości plecaka
         \end{itemize}
+        oraz został osiągnięty następujący cel: suma wartości wybranch przedmiotów ma być jak największa.
+    \end{example}
+
+    Pierwszym podejściem, automatycznie nasuwającym się przy próbie rozwiązania tego problemu, 
+    jest itercyjne pakowanie przedmiotów o najwyżej wartości aż do zajścia
+    sytuacji, w której plecak nie jest w stanie pomieścić następnego przedmiotu tego typu. Wtedy dochodzi do zmiany przedmiotu na ten, który jest 
+    drugi co do wartości oraz powtórzenia dla niego wyżej opisanego procesu. Łatwo zauważyć, iż takie rozwiązanie, mimo tego, że zawsze wyprodukuje 
+    jakiś wynik, jest mało optymalne. Mogą zdażyć się sytuacje, w których przedmiot o dużej wartości jest na tyle ciężki, że warto byłoby z niego 
+    zrezygnować na rzecz mniej wartych, ale za to lżejszych przedmiotów. Takie sytuacje nie zostaną wychwycone przez takowe podejście. 
+    Przedstawiony powyżej sposób rozwiązania problemu nosi nazwę rozwiązania \textbf{zachłannego}, które cechuje się wyszukiwaniem lokalnego, a
+    nie globalnego, \textbf{ekstremum} funkcji.
+
+    Łatwo zauważyć, iż sposób zachłanny jest modelowany na wzór zachowania człowieka postawionego we wskazanej sytuacji. Drugie podejście natomiast 
+    wykorzystuje analityczne podejście, które w świecie informatycznym nosi nazwę \textbf{programowania dynamicznego}. Ten typ programowania 
+    opiera się na podziale występującego problemu na mniejsze podproblemy względem ustalonych parametrów. Dla wskazanego problemu 
+    definiuje się ciąg wag jako $w_{1},...,w_{n}$ oraz wartości $v1,...,v_{n}$, gdzie \textbf{n} oznacza liczbę branych pod uwagę przedmiotów, 
+    oraz funkcję $A(i,j)$, gdzie \textbf{i} oznacza liczbę rozpatrzonych elementów, a \textbf{j}- maksymalną wartośc, którą można otrzymać z wskazanych 
+    elementów. Problem sprowadza się do wyznaczenia wartości $A(n,W)$, gdzie \textbf{W} oznacza maksymalną wagę plecaka.
+    Funkcja $A(i,j)$ definiowana jest następującym wzorem:
+    \begin{gather}
+        \nonumber A(0,j) = 0 \\
+        \nonumber A(i,0) = 0 \\
+        \nonumber A(i,j) = A(i-1,j) dla w_{i} > j\\
+        A(i,j) = max(A(i-1,j), A(i-1,j-w_{i}) + v_{i}) dla w_{i} \leq j
+    \end{gather}
+    Funkcja ta nosi nazwę \textit{funkcji rekurencyjnej Bellman'a}
+
+
+    Alternatywnym metoda do skomplikowanego podejścia w programowaniu dynamicznym jest użycie wcześniej wspomnianego programowania ograniczeń.
+    Ograniczenie na liczbę przedmiotów prezentowane jest w postaci $w_{1}*A + w_{2}*B + ... =< W$, gdzie współczyniki $A,B,...$ to liczba elementów do wzięcia.
+    Następnie należy zmaksymalizować etykietowanie współczynników $A,B,...$ względem funkcji $v_{1} * A + v_{2} * B + ...$.
+
 
     \subsection{Krypto-arytmetyczna łamigłówka}
-
-
-
+    Krypto-arytmetyczna łamigłówka jest przykładem matematycznego równania, w którym cyfry zastąpiono przez litery. Zadaniem rozwiązującego 
+    jest zamiana odpowiednich liter na cyfry w taki sposób, aby prezentowane równanie było matematycznie poprawne.
+    \begin{example}
+        \begin{figure}[H]
+            \includegraphics[scale=0.5]{constraint_example}
+            \centering
+            \caption{Przykładowa łamigłówka krypto-arytmetyczna}
+        \end{figure} 
     \end{example}
+    Najważniejszymi założeniami łamigłówki są:
+    \begin{itemize}
+        \item Wartości ukryte pod literami T,W,O,F,U,R są parami różne
+        \item Najbardziej znacząca cyfra jest niezerowa (w tym przypadku $T \neq 0 $ oraz $F \neq 0$)
+    \end{itemize}
+
+    Pierwszy sposób na rozwiązanie, bez użycia programowania ograniczeń:
+
+    \begin{listing}[H]
+        \begin{minted}{prolog}
+        digit(0). digit(1). digit(2). digit(3). digit(4).
+        digit(5). digit(6). digit(7). digit(8). digit(9).
+
+        riddle([T,W,O],[T,W,O],[F,O,U,R]) :-
+            digit(T), digit(W), digit(O),
+            digit(F), digit(U), digit(R),
+            T =\= W, T =\= O, T =\= F, T =\= U, T =\= R,
+            W =\= T, W =\= O, W =\= F, W =\= U, W =\= R, 
+            O =\= T, O =\= W, O =\= F, O =\= U, O =\= R,
+            F =\= T, F =\= W, F =\= O, F =\= U, F =\= R,
+            U =\= T, U =\= W, U =\= O, U =\= F, U =\= R,  
+            R =\= T, R =\= W, R =\= O, R =\= F, R =\= U,
+            T > 0, F > 0,
+            100*T + 10*W + O + 100*T + 10*W + O  =:= 1000*F + 100*O + 10*U + R. 
+        \end{minted}
+    \caption{Implementacja rozwiązania łamigłówki krypto-arytmetycznej bez użycia programowania ograniczeń}
+    \end{listing}
+
+    Drugi sposób na rozwiązanie problemu, z użyciem programowania ograniczeń:
+
+    \begin{listing}[H]
+        \begin{minted}{prolog}
+        :- use_module(library(clpfd)).
+
+        riddle([T,W,O],[T,W,O],[F,O,U,R]) :-
+            Values = [T,W,O,F,U,R],
+            Values ins 0..9,
+            all_different(Values),
+            T #> 0,
+            F #> 0,
+            100*T + 10*W + O + 100*T + 10*W + O #= 1000*F + 100*O + 10*U + R,
+            label(Values).
+        \end{minted}
+    \caption{Implementacja rozwiązania łamigłówki krypto-arytmetycznej z użyciem programowania ograniczeń}
+    \end{listing}
+
+    Otrzymane przykładowe rozwiązanie $T=7, W=3, O=4, F=1, U=6, R=8$.
+
+    \begin{figure}[H]
+        \includegraphics[scale=0.5]{constraint_example_solved}
+        \centering
+        \caption{Przykładowe rozwiązanie wskazanej łamigłówki}
+    \end{figure} 
+
+    Porównanie osiągnięc wskazanych rozwiązań:
+    
+    \begin{table}[H]
+        \centering
+         \begin{tabular}{||c | c | c||} 
+         \hline
+         Sposób & Wnioskowania & Czas[s] \\ [0.5ex] 
+         \hline\hline
+         Bez CLP & 8 679 856 & 0.449 \\ 
+         \hline
+         Z CLP & 19 119 & 0.002  \\ [1ex]
+         \hline
+         \end{tabular}
+         \caption{Otrzymane wyniki dla znalezienia pierwszego rozwiązania łamigłówki}
+    \end{table}
 
 \section{Wykorzystanie w algorytmie}
 
-    Podczas graficznego prezentowania przykładów programowania ograniczeń często wykorzystywaną strukturą był graf, chociażby w sekcji omawiającej 
+    Podczas opisywania mechanizmów stojących za programowaniem ograniczeń często wykorzystywaną strukturą był graf, chociażby w sekcji omawiającej 
     pojęcie lokalnych spójności (\ref{SpójnośćRodział}). Ze względu na ów powiązanie między programowaniem ograniczeń a GRAPHPLAN'em do podstawowego opisu GRAPHPLANU z rodziału 2 
     \ref{GRAPHPLANRozdzial} dodano funkcjonalności opisane w powyższych rozdziałach. 
 
@@ -287,4 +393,3 @@
 
     Dokładne sformuowanie ograniczeń przy pomocy symboli matematycznych odbędzie się w sekcji poświęconej implementacji algorytmu.
     
-

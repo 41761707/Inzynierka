@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+        \PYG{p}{:\PYGZhy{}} \PYG{n+nf}{use\PYGZus{}module}\PYG{p}{(}\PYG{n+nf}{library}\PYG{p}{(}\PYG{l+s+sAtom}{clpfd}\PYG{p}{)).}
+
+        \PYG{n+nf}{riddle}\PYG{p}{([}\PYG{n+nv}{T}\PYG{p}{,}\PYG{n+nv}{W}\PYG{p}{,}\PYG{n+nv}{O}\PYG{p}{],[}\PYG{n+nv}{T}\PYG{p}{,}\PYG{n+nv}{W}\PYG{p}{,}\PYG{n+nv}{O}\PYG{p}{],[}\PYG{n+nv}{F}\PYG{p}{,}\PYG{n+nv}{O}\PYG{p}{,}\PYG{n+nv}{U}\PYG{p}{,}\PYG{n+nv}{R}\PYG{p}{])} \PYG{p}{:\PYGZhy{}}
+            \PYG{n+nv}{Values} \PYG{o}{=} \PYG{p}{[}\PYG{n+nv}{T}\PYG{p}{,}\PYG{n+nv}{W}\PYG{p}{,}\PYG{n+nv}{O}\PYG{p}{,}\PYG{n+nv}{F}\PYG{p}{,}\PYG{n+nv}{U}\PYG{p}{,}\PYG{n+nv}{R}\PYG{p}{],}
+            \PYG{n+nv}{Values} \PYG{l+s+sAtom}{ins} \PYG{l+m+mf}{0..9}\PYG{p}{,}
+            \PYG{n+nf}{all\PYGZus{}different}\PYG{p}{(}\PYG{n+nv}{Values}\PYG{p}{),}
+            \PYG{n+nv}{T} \PYG{l+s+sAtom}{\PYGZsh{}\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{,}
+            \PYG{n+nv}{F} \PYG{l+s+sAtom}{\PYGZsh{}\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{,}
+            \PYG{l+m+mi}{100}\PYG{o}{*}\PYG{n+nv}{T} \PYG{o}{+} \PYG{l+m+mi}{10}\PYG{o}{*}\PYG{n+nv}{W} \PYG{o}{+} \PYG{n+nv}{O} \PYG{o}{+} \PYG{l+m+mi}{100}\PYG{o}{*}\PYG{n+nv}{T} \PYG{o}{+} \PYG{l+m+mi}{10}\PYG{o}{*}\PYG{n+nv}{W} \PYG{o}{+} \PYG{n+nv}{O} \PYG{l+s+sAtom}{\PYGZsh{}=} \PYG{l+m+mi}{1000}\PYG{o}{*}\PYG{n+nv}{F} \PYG{o}{+} \PYG{l+m+mi}{100}\PYG{o}{*}\PYG{n+nv}{O} \PYG{o}{+} \PYG{l+m+mi}{10}\PYG{o}{*}\PYG{n+nv}{U} \PYG{o}{+} \PYG{n+nv}{R}\PYG{p}{,}
+            \PYG{n+nf}{label}\PYG{p}{(}\PYG{n+nv}{Values}\PYG{p}{).}
+\end{Verbatim}

@@ -2,6 +2,7 @@
 \thispagestyle{chapterBeginStyle}
 
 \section{15}
+\label{15Test}
     \subsection{Wprowadzenie}
         Piętnastka (fr. taquin), znana również w Polsce o nazwie \textit{przesuwanka}, w zapisie często podawana przy pomocy liczbowego
         odpowiednika (15) jest grą w formie specyficznej
@@ -94,14 +95,116 @@
             \caption{Obrazowe rozwiązanie na podstawie wygenerowanego grafu}
         \end{figure}
 
-
-
-
-
     \subsection{Szczegóły implementacyjne}
     Ważnym jest, aby przedstawić omawiany świat zgodnie z wytycznymi ustalonymi przez język \textbf{STRIPS}. Z tego powodu należy dokładnie okreslić 
-    każdą z istniejących w świecie relacji oraz poprawnie określić cel, jak i warunki początkowe.
+    każdą istniejącą relację, które zostaną użytę do definiowania stanów, akcji, warunków początkowych oraz celów. 
+    Pierwszą określoną relacją będzie dwuargumentowa relacja na, której opis został już zawarty w sekcji \ref{RozdzialAkcje}. W ramach,
+    relacja $na(A,B)$ informuje algorytm o tym, iż klocek $A$ znajduje się na pozycji $B$. Następnie należy zdefiniować każdy z klocków. 
+    Wykorzystano do tego jednoargumentowy predykat o nazwie $robot(R)$. Ze względu na to, iż stałe w prologu oznaczane są przy pomocy 
+    małych liter każdy z klocków zawiera swoje odzworowanie w literach. Poniższa ilustracja przedstawia proces mapowania klocka na literę:
 
+    \begin{figure}[H]
+        \includegraphics[scale=0.25]{mapowanieKlockow}
+        \centering
+        \caption{Przyporządkowywanie klockom odpowiednich liter}
+    \end{figure}
+
+    W tym momencie należy wprowadzić rozróżnienie między klockiem a pozycją. Pozycje na planszy są stałe, numerowane rzędami od lewej do prawej,
+    natomiast klocki mogą dynamicznie zmieniać swoją pozycję. Oznacza to tyle, iż numer klocka nie jest jednoznaczy z numerem pozycji. 
+    Zrozumienie tego aspektu jest kluczowe, gdyż konwersja liczb na litery może prowadzić do zmieszania. 
+    Dodatkowo należy zdefiniować relację $pusty(A)$, która informuje o tym, iż dana pozycja jest pusta, lub formalniej, jest okupowana 
+    przez klocek o pustej sygnaturze. 
+
+    Jedyną akcją aktywną zdefiniowaną w ramach przesuwanki jest akcja $idz(R,A,B)$, która przesuwa klocek $R$ z pozycji $A$ na pozycję $B$.
+    Zgodnie z wprowadzeniem literowych oznaczeń klocków, akcję $idz(a,4,8)$ należy rozumieć jako przesunięcie klocka z numerem 1 z pozycji 4 
+    na pozycję 8 (czyli pionowo o jedną pozycję w dół w ostatniej kolumnie). Dla każdej akcji należy zdefiniować jej warunki zajścia jak i efekty.
+    W przypadku przesuwanki dokonano tego przy pomocy predykatów $preconditions/2$ oraz $effects/2$. Poniżej znajdują się ich implementacje 
+    w języku programowania PROLOG:
+    \begin{listing}[H]
+        \begin{minted}{prolog}
+            %preconditions(+Action,-States)
+            preconditions(zostan(P),[P]).
+
+            preconditions(idz(R,A,B), [na(R,A), pusty(B)]) :-
+                robot(R), 
+                adjacent(A,B).
+        \end{minted}
+    \caption{Implementacja predykatu preconditions/2}
+    \end{listing}
+
+    \begin{listing}[H]
+        \begin{minted}{prolog}
+            %effects(+Action,-States)
+            effects(zostan(P),[P]).
+
+            effects(idz(R,A,B), [na(R,B),pusty(A),~na(R,A),~pusty(B)]).
+        \end{minted}
+    \caption{Implementacja predykatu effects/2}
+    \end{listing}
+
+    Należy zwrócić uwagę na fakt, iż każdy z predykatów występuje w dwóch wersjach, jedna odpowiada za akcje podtrzymującą, w skład której 
+    zawsze wchodzi jeden warunek zajścia oraz jeden efekt, oraz drugą, która odpowiada akcji aktywnej. W przypadku predykatu $preconditions/2$
+    wykorzystaną relację $adjacent(A,B)$ która zachodzi w sytuacji, gdy pozycja $A$ sąsiaduje z pozycją $B$. Definicja sąsiedztwa jest identyczna 
+    względem definicji wprowadzonej w \ref{DefinicjeSwiata}.
+
+    \begin{listing}[H]
+        \begin{minted}{prolog}
+            %eadjacent(+From, +To)
+            adjacent(A,B) :-
+            n(A,B)
+            ;
+            n(B,A).
+        \end{minted}
+    \caption{Implementacja predykatu adjacent/2}
+    \end{listing}
+    
+    Gdzie relacja $n(A,B)$ (n od angielskiego słowa neighbor, oznaczajacego sąsiada)
+    przedstawia relację sąsiedztwa pozycji $A$ z pozycją $B$. Poniżej przedstawiono rozkład relacji 
+    sąsiedztwa dla każdej z pozycji wchodzącej w skład przesuwanki.
+
+    \begin{listing}[H]
+        \begin{minted}{prolog}
+            n(1,2). n(1,5).
+            n(2,1). n(2,6). n(2,3).
+            n(3,2). n(3,7). n(3,4).
+            n(4,3). n(4,8).
+            n(5,1). n(5,6). n(5,9).
+            n(6,5). n(6,2). n(6,7). n(6,10).
+            n(7,6). n(7,3). n(7,8). n(7,11).
+            n(8,7). n(8,4). n(8,12).
+            n(9,5). n(9,10). n(9,13).
+            n(10,9). n(10,6). n(10,11). n(10,14).
+            n(11,10). n(11,7). n(11,12). n(11,15).
+            n(12,11). n(12,8). n(12,16). 
+            n(13,9). n(13,14).
+            n(14,13). n(14,10). n(14,15).
+            n(15,14). n(15,11). n(15,16).
+            n(16,15). n(16,12).
+        \end{minted}
+    \caption{Modelowanie relacji sąsiedztwa}
+    \end{listing}
+    Ostatnim aspektem, bez którego wykonywanie działań w opiswyanym świecie jest wprowadzenie stanów niespójnych, takich jak znajdowanie 
+    się jednego bloczka na dwóch różnych pozycjach, bądź okupowanie jednej pozycji przez dwa różne klocki. Zostały to wykonane 
+    przy pomocy predykatu $incosinstent/2$
+
+    \begin{listing}[H]
+        \begin{minted}{prolog}
+            incosistent(+State1,+State2)
+            incosistent(G,~G).
+            incosistent(~G,G).
+            incosistent(na(R,C1),na(R,C2)) :-
+                C1 \== C2.
+            
+            inconsistent(na(_,C),pusty(C)).
+            inconsistent(pusty(C),na(_,C)).
+            inconsistent(na(R1,C),na(R2,C)) :-
+                R1 \== R2.
+        \end{minted}
+    \caption{Implementacja predykatu adjacent/2}
+    \end{listing}
+
+    Po zdefiniowaniu powyższych predykatów, algorytm jest gotowy do generowania odpowiednich planów mających za zadanie ułożenie 
+    układanki z dowolnej rozwiązywalnej pozycji początkowej.
     \subsection{Wyniki}
 
     \textbf{UWAGA:} Testy czasowe zaprezentowane w poniższych tabelach tyczą się osiągów samego algorytmu. Oznacza to, iż na czas wykonywania prób
@@ -137,6 +240,7 @@
     \subsection{Wyniki dla 8}
     \subsection{Wnioski}
 \section{CargoBot}
+\label{CargoBotTest}
     \subsection{Wprowadzenie}
         
     \subsection{Przykład}
@@ -156,6 +260,7 @@
     \subsection{Wyniki}
     \subsection{Wnioski}
 \section{Osiem Hetmanów}
+\label{OsiemHetmanowTest}
     \subsection{Wprowadzenie}
     \subsection{Przykład}
     \subsection{Szczegóły implementacyjne}

@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+            \PYG{k}{def} \PYG{n+nf}{generateLayer}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,}\PYG{n}{name}\PYG{p}{,}\PYG{n}{variables}\PYG{p}{,}\PYG{n}{g}\PYG{p}{,}\PYG{n}{level}\PYG{p}{,}\PYG{n+nb}{type}\PYG{p}{):}
+            \PYG{n}{layer\PYGZus{}name} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}cluster\PYGZus{}\PYGZsq{}} \PYG{o}{+} \PYG{n}{name}
+            \PYG{k}{with} \PYG{n}{g}\PYG{o}{.}\PYG{n}{subgraph}\PYG{p}{(}\PYG{n}{name}\PYG{o}{=}\PYG{n}{layer\PYGZus{}name}\PYG{p}{)} \PYG{k}{as} \PYG{n}{layer}\PYG{p}{:}
+                \PYG{n}{layer}\PYG{o}{.}\PYG{n}{attr}\PYG{p}{(}\PYG{n}{color}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}gray\PYGZsq{}}\PYG{p}{)}
+                \PYG{n}{layer}\PYG{o}{.}\PYG{n}{attr}\PYG{p}{(}\PYG{n}{label}\PYG{o}{=}\PYG{n}{name}\PYG{p}{)}
+                \PYG{k}{for} \PYG{n}{item} \PYG{o+ow}{in} \PYG{n}{variables}\PYG{p}{:}
+                    \PYG{n}{layer}\PYG{o}{.}\PYG{n}{node}\PYG{p}{(}\PYG{n}{item}\PYG{o}{+}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{level}\PYG{p}{),}\PYG{n}{item}\PYG{p}{,} \PYG{n}{shape}\PYG{o}{=}\PYG{n+nb}{type}\PYG{p}{)}
+\end{Verbatim}
