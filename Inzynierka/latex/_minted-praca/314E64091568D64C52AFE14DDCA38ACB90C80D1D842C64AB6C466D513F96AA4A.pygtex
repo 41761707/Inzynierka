@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+            \PYG{n+nf}{incosistent}\PYG{p}{(}\PYG{o}{+}\PYG{n+nv}{State1}\PYG{p}{,}\PYG{o}{+}\PYG{n+nv}{State2}\PYG{p}{)}
+            \PYG{n+nf}{incosistent}\PYG{p}{(}\PYG{n+nv}{G}\PYG{p}{,}\PYG{l+s+sAtom}{\PYGZti{}}\PYG{n+nv}{G}\PYG{p}{).}
+            \PYG{n+nf}{incosistent}\PYG{p}{(}\PYG{l+s+sAtom}{\PYGZti{}}\PYG{n+nv}{G}\PYG{p}{,}\PYG{n+nv}{G}\PYG{p}{).}
+            \PYG{n+nf}{incosistent}\PYG{p}{(}\PYG{n+nf}{na}\PYG{p}{(}\PYG{n+nv}{R}\PYG{p}{,}\PYG{n+nv}{C1}\PYG{p}{),}\PYG{n+nf}{na}\PYG{p}{(}\PYG{n+nv}{R}\PYG{p}{,}\PYG{n+nv}{C2}\PYG{p}{))} \PYG{p}{:\PYGZhy{}}
+                \PYG{n+nv}{C1} \PYG{l+s+sAtom}{\PYGZbs{}==} \PYG{n+nv}{C2}\PYG{p}{.}
+
+            \PYG{n+nf}{inconsistent}\PYG{p}{(}\PYG{n+nf}{na}\PYG{p}{(}\PYG{k}{\PYGZus{}}\PYG{p}{,}\PYG{n+nv}{C}\PYG{p}{),}\PYG{n+nf}{pusty}\PYG{p}{(}\PYG{n+nv}{C}\PYG{p}{)).}
+            \PYG{n+nf}{inconsistent}\PYG{p}{(}\PYG{n+nf}{pusty}\PYG{p}{(}\PYG{n+nv}{C}\PYG{p}{),}\PYG{n+nf}{na}\PYG{p}{(}\PYG{k}{\PYGZus{}}\PYG{p}{,}\PYG{n+nv}{C}\PYG{p}{)).}
+            \PYG{n+nf}{inconsistent}\PYG{p}{(}\PYG{n+nf}{na}\PYG{p}{(}\PYG{n+nv}{R1}\PYG{p}{,}\PYG{n+nv}{C}\PYG{p}{),}\PYG{n+nf}{na}\PYG{p}{(}\PYG{n+nv}{R2}\PYG{p}{,}\PYG{n+nv}{C}\PYG{p}{))} \PYG{p}{:\PYGZhy{}}
+                \PYG{n+nv}{R1} \PYG{l+s+sAtom}{\PYGZbs{}==} \PYG{n+nv}{R2}\PYG{p}{.}
+\end{Verbatim}

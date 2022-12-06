@@ -302,8 +302,9 @@ class GUI:
         canvas.configure(background='white')
         canvas.pack()
         canvas.create_text(300,30,text='Plik z grafami znajduja sie pod nastepujaca nazwa')
-        canvas.create_text(300,60,text='FULL_GRAPHPLAN.gv.png')
-        canvas.create_text(300,90,text='Wygenerowany plan: ')
+        canvas.create_text(300,60,text='FULL_GRAPHPLAN.gv.png - graf pelny')
+        canvas.create_text(300,90,text='SIMPLE_GRAPHPLAN.gv.png - graf prosty')
+        canvas.create_text(300,120,text='Wygenerowany plan: ')
 
         counter = 0
         if(self.chosen_option in (1,2)):
@@ -314,7 +315,7 @@ class GUI:
                     command = action.rstrip(')').split(',')
                     command[0] = command[0][6:]
                     print(command[0])
-                    canvas.create_text(300,120+(30*counter),text='Krok {}: Zamien klocek pusty z klockiem {}'.format(i+1,self.convert(command[0])))
+                    canvas.create_text(300,150+(30*counter),text='Krok {}: Zamien klocek pusty z klockiem {}'.format(i+1,self.convert(command[0])))
                     counter = counter + 1
         else:
             for i in range(len(simple_plan)):
@@ -323,7 +324,7 @@ class GUI:
                 for action in current_plan:
                     command = action.rstrip(')').split(',')
                     command[0] = command[0][6:]
-                    canvas.create_text(300,120+(30*counter),text='Krok {}: Przenies klocek {} z {} na {}'.format(i+1,command[0],command[1],command[2]))
+                    canvas.create_text(300,150+(30*counter),text='Krok {}: Przenies klocek {} z {} na {}'.format(i+1,command[0],command[1],command[2]))
                     counter = counter + 1
         
 

@@ -47,41 +47,40 @@
 \BOOKMARK [1][-]{section.5.1}{Instalacja pakietu SWI-Prolog}{chapter.5}% 47
 \BOOKMARK [1][-]{section.5.2}{Instalacja jezyka Python}{chapter.5}% 48
 \BOOKMARK [1][-]{section.5.3}{Dokumentacja}{chapter.5}% 49
-\BOOKMARK [1][-]{section.5.4}{Spos\363b uruchomienia programu}{chapter.5}% 50
-\BOOKMARK [0][-]{chapter.6}{Testy}{}% 51
-\BOOKMARK [1][-]{section.6.1}{15}{chapter.6}% 52
-\BOOKMARK [2][-]{subsection.6.1.1}{Wprowadzenie}{section.6.1}% 53
-\BOOKMARK [2][-]{subsection.6.1.2}{Teoria}{section.6.1}% 54
-\BOOKMARK [2][-]{subsection.6.1.3}{Przyk\233ad}{section.6.1}% 55
-\BOOKMARK [2][-]{subsection.6.1.4}{Szczeg\363\233y implementacyjne}{section.6.1}% 56
-\BOOKMARK [2][-]{subsection.6.1.5}{Wyniki}{section.6.1}% 57
-\BOOKMARK [2][-]{subsection.6.1.6}{M\233odsza siostra- \363semka}{section.6.1}% 58
-\BOOKMARK [2][-]{subsection.6.1.7}{Wyniki dla 8}{section.6.1}% 59
-\BOOKMARK [2][-]{subsection.6.1.8}{Wnioski}{section.6.1}% 60
-\BOOKMARK [1][-]{section.6.2}{CargoBot}{chapter.6}% 61
-\BOOKMARK [2][-]{subsection.6.2.1}{Wprowadzenie}{section.6.2}% 62
-\BOOKMARK [2][-]{subsection.6.2.2}{Przyk\233ad}{section.6.2}% 63
-\BOOKMARK [2][-]{subsection.6.2.3}{Szczeg\363\233y implementacyjne}{section.6.2}% 64
-\BOOKMARK [2][-]{subsection.6.2.4}{Wyniki}{section.6.2}% 65
-\BOOKMARK [2][-]{subsection.6.2.5}{Wnioski}{section.6.2}% 66
-\BOOKMARK [1][-]{section.6.3}{Przemieszczanie w przestrzeni}{chapter.6}% 67
-\BOOKMARK [2][-]{subsection.6.3.1}{Wprowadzenie}{section.6.3}% 68
-\BOOKMARK [2][-]{subsection.6.3.2}{Przyk\233ad}{section.6.3}% 69
-\BOOKMARK [2][-]{subsection.6.3.3}{Szczeg\363\233y implementacyjne}{section.6.3}% 70
-\BOOKMARK [2][-]{subsection.6.3.4}{Wyniki}{section.6.3}% 71
-\BOOKMARK [2][-]{subsection.6.3.5}{Wnioski}{section.6.3}% 72
-\BOOKMARK [1][-]{section.6.4}{Wieza Hanoi}{chapter.6}% 73
-\BOOKMARK [2][-]{subsection.6.4.1}{Wprowadzenie}{section.6.4}% 74
-\BOOKMARK [2][-]{subsection.6.4.2}{Przyk\233ad}{section.6.4}% 75
-\BOOKMARK [2][-]{subsection.6.4.3}{Szczeg\363\233y implementacyjne}{section.6.4}% 76
-\BOOKMARK [2][-]{subsection.6.4.4}{Wyniki}{section.6.4}% 77
-\BOOKMARK [2][-]{subsection.6.4.5}{Wnioski}{section.6.4}% 78
-\BOOKMARK [1][-]{section.6.5}{Osiem Hetman\363w}{chapter.6}% 79
-\BOOKMARK [2][-]{subsection.6.5.1}{Wprowadzenie}{section.6.5}% 80
-\BOOKMARK [2][-]{subsection.6.5.2}{Przyk\233ad}{section.6.5}% 81
-\BOOKMARK [2][-]{subsection.6.5.3}{Szczeg\363\233y implementacyjne}{section.6.5}% 82
-\BOOKMARK [2][-]{subsection.6.5.4}{Wyniki}{section.6.5}% 83
-\BOOKMARK [2][-]{subsection.6.5.5}{Wnioski}{section.6.5}% 84
-\BOOKMARK [0][-]{chapter*.58}{Podsumowanie}{}% 85
-\BOOKMARK [0][-]{chapter*.59}{Bibliografia}{}% 86
-\BOOKMARK [0][-]{appendix.A}{Zawartosc p\233yty CD}{}% 87
+\BOOKMARK [0][-]{chapter.6}{Testy}{}% 50
+\BOOKMARK [1][-]{section.6.1}{15}{chapter.6}% 51
+\BOOKMARK [2][-]{subsection.6.1.1}{Wprowadzenie}{section.6.1}% 52
+\BOOKMARK [2][-]{subsection.6.1.2}{Teoria}{section.6.1}% 53
+\BOOKMARK [2][-]{subsection.6.1.3}{Przyk\233ad}{section.6.1}% 54
+\BOOKMARK [2][-]{subsection.6.1.4}{Szczeg\363\233y implementacyjne}{section.6.1}% 55
+\BOOKMARK [2][-]{subsection.6.1.5}{Wyniki}{section.6.1}% 56
+\BOOKMARK [2][-]{subsection.6.1.6}{M\233odsza siostra- \363semka}{section.6.1}% 57
+\BOOKMARK [2][-]{subsection.6.1.7}{Wyniki dla 8}{section.6.1}% 58
+\BOOKMARK [2][-]{subsection.6.1.8}{Wnioski}{section.6.1}% 59
+\BOOKMARK [1][-]{section.6.2}{CargoBot}{chapter.6}% 60
+\BOOKMARK [2][-]{subsection.6.2.1}{Wprowadzenie}{section.6.2}% 61
+\BOOKMARK [2][-]{subsection.6.2.2}{Przyk\233ad}{section.6.2}% 62
+\BOOKMARK [2][-]{subsection.6.2.3}{Szczeg\363\233y implementacyjne}{section.6.2}% 63
+\BOOKMARK [2][-]{subsection.6.2.4}{Wyniki}{section.6.2}% 64
+\BOOKMARK [2][-]{subsection.6.2.5}{Wnioski}{section.6.2}% 65
+\BOOKMARK [1][-]{section.6.3}{Przemieszczanie w przestrzeni}{chapter.6}% 66
+\BOOKMARK [2][-]{subsection.6.3.1}{Wprowadzenie}{section.6.3}% 67
+\BOOKMARK [2][-]{subsection.6.3.2}{Przyk\233ad}{section.6.3}% 68
+\BOOKMARK [2][-]{subsection.6.3.3}{Szczeg\363\233y implementacyjne}{section.6.3}% 69
+\BOOKMARK [2][-]{subsection.6.3.4}{Wyniki}{section.6.3}% 70
+\BOOKMARK [2][-]{subsection.6.3.5}{Wnioski}{section.6.3}% 71
+\BOOKMARK [1][-]{section.6.4}{Wieza Hanoi}{chapter.6}% 72
+\BOOKMARK [2][-]{subsection.6.4.1}{Wprowadzenie}{section.6.4}% 73
+\BOOKMARK [2][-]{subsection.6.4.2}{Przyk\233ad}{section.6.4}% 74
+\BOOKMARK [2][-]{subsection.6.4.3}{Szczeg\363\233y implementacyjne}{section.6.4}% 75
+\BOOKMARK [2][-]{subsection.6.4.4}{Wyniki}{section.6.4}% 76
+\BOOKMARK [2][-]{subsection.6.4.5}{Wnioski}{section.6.4}% 77
+\BOOKMARK [1][-]{section.6.5}{Osiem Hetman\363w}{chapter.6}% 78
+\BOOKMARK [2][-]{subsection.6.5.1}{Wprowadzenie}{section.6.5}% 79
+\BOOKMARK [2][-]{subsection.6.5.2}{Przyk\233ad}{section.6.5}% 80
+\BOOKMARK [2][-]{subsection.6.5.3}{Szczeg\363\233y implementacyjne}{section.6.5}% 81
+\BOOKMARK [2][-]{subsection.6.5.4}{Wyniki}{section.6.5}% 82
+\BOOKMARK [2][-]{subsection.6.5.5}{Wnioski}{section.6.5}% 83
+\BOOKMARK [0][-]{chapter*.59}{Podsumowanie}{}% 84
+\BOOKMARK [0][-]{chapter*.60}{Bibliografia}{}% 85
+\BOOKMARK [0][-]{appendix.A}{Zawartosc p\233yty CD}{}% 86

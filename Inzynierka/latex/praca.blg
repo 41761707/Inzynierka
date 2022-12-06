@@ -3,51 +3,46 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: praca.aux
 The style file: plabbrv.bst
 Database file #1: literatura.bib
-Warning--to sort, need author or key in GRAPHPLAN
-Warning--to sort, need author or key in STRIPS
-Warning--to sort, need author or key in CP
-Warning--to sort, need author or key in FifteenLoydProblem
-Warning--to sort, need author or key in Fifteen
-Warning--to sort, need author or key in 80Moves
+Warning--empty publisher in CP
 You've used 8 entries,
             2129 wiz_defined-function locations,
-            538 strings with 4969 characters,
-and the built_in function-call counts, 1408 in all, are:
-= -- 128
-> -- 20
+            546 strings with 4845 characters,
+and the built_in function-call counts, 1723 in all, are:
+= -- 153
+> -- 62
 < -- 0
-+ -- 14
-- -- 4
-* -- 48
-:= -- 187
-add.period$ -- 18
++ -- 28
+- -- 18
+* -- 62
+:= -- 296
+add.period$ -- 22
 call.type$ -- 8
-change.case$ -- 24
+change.case$ -- 30
 chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 66
-empty$ -- 183
-format.name$ -- 4
-if$ -- 333
+cite$ -- 9
+duplicate$ -- 71
+empty$ -- 177
+format.name$ -- 18
+if$ -- 369
 int.to.chr$ -- 0
 int.to.str$ -- 8
-missing$ -- 4
-newline$ -- 37
-num.names$ -- 4
-pop$ -- 64
+missing$ -- 6
+newline$ -- 41
+num.names$ -- 16
+pop$ -- 68
 preamble$ -- 1
-purify$ -- 18
+purify$ -- 25
 quote$ -- 0
-skip$ -- 60
+skip$ -- 57
 stack$ -- 0
 substring$ -- 42
 swap$ -- 8
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 28
-warning$ -- 6
-while$ -- 4
+type$ -- 26
+warning$ -- 1
+while$ -- 16
 width$ -- 9
-write$ -- 64
-(There were 6 warnings)
+write$ -- 76
+(There was 1 warning)

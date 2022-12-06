@@ -1,11 +1,62 @@
 \chapter{Instalacja i wdrożenie}
 \thispagestyle{chapterBeginStyle}
 
+\textbf{UWAGA:} Poniższy opis przedstawia sposób instalacji odpowiednich pakietów dla komputerów korzystających z systemu operacyjnego 
+\textbf{Linux}, a dokładniej- dystrybucji \textbf{Ubuntu}. Użytkownik chcąc zainstalować aplikację wraz z jej komponentami na 
+komputerze z innym systemem operacjnym zobowiązany jest do samodzielnego zapoznania się ze wszystkimi komendami bądź mechanizami 
+umożliwającymi instalację wskazanych pakietów.
+
 \section{Instalacja pakietu SWI-Prolog}
 \label{SWI-PROLOGRozdzial}
-//DO DOKŁADNEGO ZREDAGOWANIA W OSTATNI WEEKEND LISTOPADA PO WPROWADZENIU POPRAWEK W WARSTWIE GRAFICZNEJ
+    Korzystając z dystrybucji Linuxa o nazie Ubuntu, wystarczającą czynnością do poprawnej instalacji pakietu SWI-Prolog jest uruchomienie 
+    następującej komendy z poziomu linii komend wraz z prawami administratora 
+    \begin{listing}[H]
+        \begin{verbatim}
+            sudo apt install swi-prolog-core
+        \end{verbatim}
+        \caption{Instalacja pakietu SWI-PROLOG z poziomu linii komend}
+    \end{listing}
+    W momencie, w którym komputer zakończy pobieranie oraz instalację pakietu wprowadzenie komendy \textit{swipl} powinno spodoować uruchomienie 
+    interaktywnego interpretera języka PROLOG. Jeśli powyższa czynność zakończyła się sukcesem, komputer jest gotowy do uruchomienia kodu źródłowego 
+    algorytmu oraz rozpoczęcia pracy nad kreowanie odpowiednich planów
 \section{Instalacja języka Python}
+    Większość dystrybucji Linuxa posiada wbudowany w sobie język programowania python. Z reguły można to zweryfikować poprzez wpisanie komendy 
+    \begin{listing}[H]
+        \begin{verbatim}
+            python3 --version
+        \end{verbatim}
+        \caption{Komenda sprawdzająca wersję zainstalowanego języka python}
+    \end{listing}
+    Należy zauważyć, iż wszystkie komponenty zostały napisane dla wersji języka python 3.x. Użytkownik korzystając ze starszych wersji 
+    może spotkać się z anomaliami negatywnie wpływającymi na funkcjonowanie aplikacji, dlatego zaleca się korzystanie ze wskazanej powyżej wersji.
+    Do poprawnego uruchomienia aplikacji wymagane są następujaće biblioteki 
+    \begin{itemize}
+        \item Tkinter
+        \item graphviz 
+        \item PIL
+        \item pyswip
+    \end{itemize}
+    Poniżej znajdują się odpowiednie komendy, który użycie z poziomu linii komend zagwarantuje poprawne uruchomienie aplikacji:
+    \begin{listing}[H]
+        \begin{verbatim}
+            sudo apt install python3-tk
+            pip3 install graphviz
+            pip3 install Pillow
+            pip3 install pyswip
+        \end{verbatim}
+        \caption{Instalacja odpowiednich bibliotek dla języka python}
+    \end{listing}
+    Przed uruchomienie powyższy komend użytkownik winien posiadać zainstalowany pakiet \textit{pip}. Jeśli pobieranie powyższych bibliotek zakończy 
+    się błędem, należy uprzednio wykonać następującą komendę: texttt{sudo apt install python3-pip}
+    Całą aplikację również uruchamia się z poziomu linii komend. Bo pobraniu odpowiednich plików, w folderze \texttt{sources} znajduje się plik
+    \texttt{gui.py}, który zawiera kod rozruchowy interfejsu użytkownika. Będąc we wskazany katalogu należy uruchomić terminal i wprowadzić następującą
+    komendę:
+    \begin{listing}[H]
+        \begin{verbatim}
+            python3 gui.py
+        \end{verbatim}
+        \caption{Uruchomienie interfejsu użytkownika}
+    \end{listing}
+    Jeśli operacja zakończy się sukcese, użytkownik powinien ujrzeć okienko identyczne do tego, które zostało przedstawione w ramach sekcji \ref{GUIRozdzial}
 
 \section{Dokumentacja}
-
-\section{Sposób uruchomienia programu}

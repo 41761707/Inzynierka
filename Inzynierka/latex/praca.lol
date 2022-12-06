@@ -15,10 +15,14 @@
 \contentsline {listing}{\numberline {15}{\ignorespaces Implementacja predykatu mutex\_for\_action/3\relax }}{39}{listing.15}%
 \contentsline {listing}{\numberline {16}{\ignorespaces Implementacja predykatu mutex\_all\_states/3\relax }}{40}{listing.16}%
 \contentsline {listing}{\numberline {17}{\ignorespaces Implementacja predykatu apply\_mutex/4\relax }}{40}{listing.17}%
-\contentsline {listing}{\numberline {18}{\ignorespaces Implementacja parsowania pliku tekstowego\relax }}{43}{listing.18}%
+\contentsline {listing}{\numberline {18}{\ignorespaces Implementacja parsowania pliku tekstowego\relax }}{44}{listing.18}%
 \contentsline {listing}{\numberline {19}{\ignorespaces Implementacja funkcji generateLayer()\relax }}{44}{listing.19}%
-\contentsline {listing}{\numberline {20}{\ignorespaces Implementacja predykatu preconditions/2\relax }}{60}{listing.20}%
-\contentsline {listing}{\numberline {21}{\ignorespaces Implementacja predykatu effects/2\relax }}{60}{listing.21}%
-\contentsline {listing}{\numberline {22}{\ignorespaces Implementacja predykatu adjacent/2\relax }}{60}{listing.22}%
-\contentsline {listing}{\numberline {23}{\ignorespaces Modelowanie relacji sąsiedztwa\relax }}{61}{listing.23}%
-\contentsline {listing}{\numberline {24}{\ignorespaces Implementacja predykatu adjacent/2\relax }}{61}{listing.24}%
+\contentsline {listing}{\numberline {20}{\ignorespaces Instalacja pakietu SWI-PROLOG z poziomu linii komend\relax }}{53}{listing.20}%
+\contentsline {listing}{\numberline {21}{\ignorespaces Komenda sprawdzająca wersję zainstalowanego języka python\relax }}{53}{listing.21}%
+\contentsline {listing}{\numberline {22}{\ignorespaces Instalacja odpowiednich bibliotek dla języka python\relax }}{54}{listing.22}%
+\contentsline {listing}{\numberline {23}{\ignorespaces Uruchomienie interfejsu użytkownika\relax }}{54}{listing.23}%
+\contentsline {listing}{\numberline {24}{\ignorespaces Implementacja predykatu preconditions/2\relax }}{60}{listing.24}%
+\contentsline {listing}{\numberline {25}{\ignorespaces Implementacja predykatu effects/2\relax }}{60}{listing.25}%
+\contentsline {listing}{\numberline {26}{\ignorespaces Implementacja predykatu adjacent/2\relax }}{60}{listing.26}%
+\contentsline {listing}{\numberline {27}{\ignorespaces Modelowanie relacji sąsiedztwa\relax }}{61}{listing.27}%
+\contentsline {listing}{\numberline {28}{\ignorespaces Implementacja predykatu incosistent/2\relax }}{61}{listing.28}%

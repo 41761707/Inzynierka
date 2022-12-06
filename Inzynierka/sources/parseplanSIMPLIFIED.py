@@ -160,7 +160,8 @@ class SimplifiedGraph:
         
 
     def run_all(self):
-        g = graphviz.Digraph('G', filename='graphs/SIMPLE_GRAPHPLAN.gv',format='pdf')
+        #g = graphviz.Digraph('G', filename='graphs/SIMPLE_GRAPHPLAN.gv',format='pdf')
+        g = graphviz.Digraph('G', filename='graphs/SIMPLE_GRAPHPLAN.gv',format='png')
         file = self.readInput(self.filename)
         self.plan, max_level = self.parseInput(file, g)
         if(max_level < 5):

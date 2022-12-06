@@ -127,8 +127,8 @@ class Graph:
             plan_wo_persist.append(element)
 
     def run_all(self):
-        g = graphviz.Digraph('G', filename='graphs/FULL_GRAPHPLAN.gv',format='pdf')
-        #g = graphviz.Digraph('G', filename='FULL_GRAPHPLAN_DEMO2.gv',format='png')
+        #g = graphviz.Digraph('G', filename='graphs/FULL_GRAPHPLAN.gv',format='pdf')
+        g = graphviz.Digraph('G', filename='graphs/FULL_GRAPHPLAN.gv',format='png')
         g.attr(ranksep = '2')
         file = self.readInput(self.filename)
         self.plan, max_level = self.parseInput(file, g)

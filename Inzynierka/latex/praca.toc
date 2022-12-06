@@ -43,19 +43,18 @@
 \contentsline {section}{\numberline {4.2}Implementacja algorytmu}{34}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Generowanie grafów}{40}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Struktura pliku tekstowego}{41}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Graf pełny}{42}{subsection.4.3.2}%
-\contentsline {subsubsection}{Funkcja $parse\_input()$}{43}{section*.34}%
-\contentsline {subsubsection}{Oznaczenie planu na grafie}{44}{section*.35}%
-\contentsline {subsection}{\numberline {4.3.3}Graf prosty}{45}{subsection.4.3.3}%
-\contentsline {section}{\numberline {4.4}Interfejs użytkownika}{47}{section.4.4}%
+\contentsline {subsection}{\numberline {4.3.2}Graf pełny}{41}{subsection.4.3.2}%
+\contentsline {subsubsection}{Funkcja $parse\_input()$}{42}{section*.35}%
+\contentsline {subsubsection}{Oznaczenie planu na grafie}{45}{section*.36}%
+\contentsline {subsection}{\numberline {4.3.3}Graf prosty}{46}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Interfejs użytkownika}{48}{section.4.4}%
 \contentsline {section}{\numberline {4.5}Uruchomienie algorytmu z linii komend}{50}{section.4.5}%
-\contentsline {subsubsection}{Definicje świata}{50}{section*.46}%
-\contentsline {subsubsection}{Uruchomienie algorytmu}{51}{section*.47}%
+\contentsline {subsubsection}{Definicje świata}{51}{section*.47}%
+\contentsline {subsubsection}{Uruchomienie algorytmu}{51}{section*.48}%
 \contentsline {chapter}{\numberline {5}Instalacja i wdrożenie}{53}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Instalacja pakietu SWI-Prolog}{53}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Instalacja języka Python}{53}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Dokumentacja}{53}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Sposób uruchomienia programu}{53}{section.5.4}%
+\contentsline {section}{\numberline {5.3}Dokumentacja}{54}{section.5.3}%
 \contentsline {chapter}{\numberline {6}Testy}{55}{chapter.6}%
 \contentsline {section}{\numberline {6.1}15}{55}{section.6.1}%
 \contentsline {subsection}{\numberline {6.1.1}Wprowadzenie}{55}{subsection.6.1.1}%
@@ -90,6 +89,6 @@
 \contentsline {subsection}{\numberline {6.5.3}Szczegóły implementacyjne}{63}{subsection.6.5.3}%
 \contentsline {subsection}{\numberline {6.5.4}Wyniki}{63}{subsection.6.5.4}%
 \contentsline {subsection}{\numberline {6.5.5}Wnioski}{63}{subsection.6.5.5}%
-\contentsline {chapter}{Podsumowanie}{65}{chapter*.58}%
-\contentsline {chapter}{Bibliografia}{67}{chapter*.59}%
+\contentsline {chapter}{Podsumowanie}{65}{chapter*.59}%
+\contentsline {chapter}{Bibliografia}{67}{chapter*.60}%
 \contentsline {chapter}{\numberline {A}Zawartość płyty CD}{69}{appendix.A}%

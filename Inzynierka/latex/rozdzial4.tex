@@ -432,10 +432,16 @@
 
     \subsection{Graf pełny}
 
-    \begin{figure}[H]
-        \includegraphics[scale=0.5]{UML_simplified}
+    \begin{figure}
+        \includegraphics[scale=0.5]{GrafPelnyGen}
         \centering
         \caption{Diagram przepływu dla generowania pojedynczego grafu pełnego}
+    \end{figure}
+
+    \begin{figure}
+        \includegraphics[scale=0.5]{parseInputInDepth}
+        \centering
+        \caption{Szczegółowy diagram przepływu dla parsowania pliku tekstowego}
     \end{figure}
 
     Na podstawie otrzymanego pliku tekstowego moduł \textit{parsePlanFULL.py}, w którym zaimplementowana została klasa \textit{Graph},
@@ -614,8 +620,10 @@
     \end{figure}
 
 \section{Interfejs użytkownika}
+    \label{GUIRozdzial}
     Interfejs użytkownika wykonany w języku \textbf{python} stanowi spoiwo, łącząc w sobie wygenerowany plan przez algorytm oraz wygenerowane grafy przez 
     odpowiedni moduł. Poniższa ilustacja przedstawia w sposób ogólny diagram przepływu w trakcie obsługi programu przez użytkownika: \\
+    \\
     //Tutaj rysunek + opis ważniejszych funkcji
 
     Po uruchomieniu pliku \textit{gui.py} (preferowana ścieżka uruchomienia to linia komend, przy użyciu komendy python3 gui.py).

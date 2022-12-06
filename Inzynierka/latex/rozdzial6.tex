@@ -66,6 +66,7 @@
     \subsection{Przykład}
         Na podstawie następującego przykładu zostanie przedstawiony schemat rozwiązywania układanki przez algorytm:
         \begin{figure}[H]
+            \label{15Przyklad}
             \includegraphics[scale=0.5]{15_przyklad}
             \centering
             \caption{Przykładowe startowe ułożenie przesuwanki}
@@ -200,7 +201,7 @@
             inconsistent(na(R1,C),na(R2,C)) :-
                 R1 \== R2.
         \end{minted}
-    \caption{Implementacja predykatu adjacent/2}
+    \caption{Implementacja predykatu incosistent/2}
     \end{listing}
 
     Po zdefiniowaniu powyższych predykatów, algorytm jest gotowy do generowania odpowiednich planów mających za zadanie ułożenie 
@@ -214,25 +215,37 @@
 
     \begin{table}[H]
         \centering
-         \begin{tabular}{||c c c c||} 
+         \begin{tabular}{||c | c | c|} 
          \hline
-         Col1 & Col2 & Col2 & Col3 \\ [0.5ex] 
+         Przesunięcia & Wnioskowania & Czas \\ [0.5ex] 
          \hline\hline
-         1 & 6 & 87837 & 787 \\ 
+         1 &  &  \\ 
          \hline
-         2 & 7 & 78 & 5415 \\
+         2 &  &  \\
          \hline
-         3 & 545 & 778 & 7507 \\
+         3 &  &   \\
          \hline
-         4 & 545 & 18744 & 7560 \\
+         4 &  &   \\
          \hline
-         5 & 88 & 788 & 6344 \\ [1ex] 
+         5 &  &  \\
+         \hline
+         6 &  &  \\ 
+         \hline
+         7 &  &  \\
+         \hline
+         8 &  &   \\
+         \hline
+         9 &  &   \\
+         \hline
+         10 &  &  \\ [1ex]
          \hline
          \end{tabular}
     \end{table}
-
-    
-
+    Przez \textit{przesunięcia} należy rozumieć liczbę przesunięć, którą należy wykonać, aby wrócić do początkowego stanu. Dla początkowych wartości 
+    wskazanych w tabelach zostało to wyznaczone poprzez ręczne przestawienie kafelków o daną liczbę przesunięc oraz zapisanie otrzymanego stanu 
+    przy użyciu nomenklatury opisanej w rozdziale definiujacym świat. Zgodnie z powyższym, analizując przykład \ref{15Przyklad} łatwo zauważyc, 
+    iż wymaganą liczbą przesunięc, potrzebną do powrotu do wyjściowego stanu przesuwanki jest liczba \textbf{3} (co w dalszej części udało się 
+    udowodnić konstruując odpowiedni plan).
 
 
     \subsection{Młodsza siostra- ósemka}
