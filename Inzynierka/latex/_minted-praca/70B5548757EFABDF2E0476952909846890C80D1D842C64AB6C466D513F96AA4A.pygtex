@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+            \PYG{c+c1}{\PYGZpc{}object(+Variable)}
+            \PYG{n+nf}{object}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+                \PYG{n+nf}{place}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{)}
+                \PYG{p}{;}
+                \PYG{n+nf}{block}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{).}
+\end{Verbatim}

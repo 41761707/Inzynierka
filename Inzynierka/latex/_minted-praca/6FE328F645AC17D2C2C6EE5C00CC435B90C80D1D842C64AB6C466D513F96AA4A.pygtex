@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+            \PYG{c+c1}{\PYGZpc{}effects(+Action,\PYGZhy{}States)}
+            \PYG{n+nf}{effects}\PYG{p}{(}\PYG{n+nf}{zostan}\PYG{p}{(}\PYG{n+nv}{P}\PYG{p}{),[}\PYG{n+nv}{P}\PYG{p}{]).}
+
+            \PYG{n+nf}{effects}\PYG{p}{(}\PYG{n+nf}{idz}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{,}\PYG{n+nv}{From}\PYG{p}{,}\PYG{n+nv}{To}\PYG{p}{),[}\PYG{n+nf}{na}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{,}\PYG{n+nv}{To}\PYG{p}{),}\PYG{n+nf}{pusty}\PYG{p}{(}\PYG{n+nv}{From}\PYG{p}{),}\PYG{l+s+sAtom}{\PYGZti{}}\PYG{n+nf}{na}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{,}\PYG{n+nv}{From}\PYG{p}{),}\PYG{l+s+sAtom}{\PYGZti{}}\PYG{n+nf}{pusty}\PYG{p}{(}\PYG{n+nv}{To}\PYG{p}{)]).}
+\end{Verbatim}

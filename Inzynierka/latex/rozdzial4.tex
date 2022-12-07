@@ -29,7 +29,8 @@
     generowanie. W skład komponentu "Grafy" wchodzą dwie klasy, przy czym każda z nim generuje unikalny graf.
 
 \section{Implementacja algorytmu}
-    Algorytm \textbf{GRAPHPLAN} został zaimplementowany w języku programowania PROLOG. Poniższe diagramy przedstawiają proces  
+    Algorytm \textbf{GRAPHPLAN} został zaimplementowany w języku programowania PROLOG. Ponadto wykorzystuje wbudowany moduł 
+    \textbf{clpfd} do implementacji programowania ograniczeń dla  Poniższe diagramy przedstawiają proces  
     generowania pojedynczego planu.
     \begin{figure}[H]
         \label{PetlaGlowna}
@@ -622,11 +623,9 @@
 \section{Interfejs użytkownika}
     \label{GUIRozdzial}
     Interfejs użytkownika wykonany w języku \textbf{python} stanowi spoiwo, łącząc w sobie wygenerowany plan przez algorytm oraz wygenerowane grafy przez 
-    odpowiedni moduł. Poniższa ilustacja przedstawia w sposób ogólny diagram przepływu w trakcie obsługi programu przez użytkownika: \\
-    \\
-    //Tutaj rysunek + opis ważniejszych funkcji
-
-    Po uruchomieniu pliku \textit{gui.py} (preferowana ścieżka uruchomienia to linia komend, przy użyciu komendy python3 gui.py).
+    odpowiedni moduł. Przy uruchomieniu programu dochodzi do utworzenia instancji klasy $GUI()$, której zadaniem jest utworzenie okna oraz zapewnienie 
+    poniżej opisanych funkcjonalności.
+    Po uruchomieniu pliku \textit{gui.py} (preferowana ścieżka uruchomienia to linia komend, przy użyciu komendy python3 gui.py, patrz \ref{InstallPython}).
     pojawia się następujace okienko:
     \begin{figure}[H]
         \includegraphics[scale=0.3]{GUIMain}

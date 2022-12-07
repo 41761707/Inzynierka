@@ -34,6 +34,13 @@ T.~W. Francesca~Rossi, Peter van~Beek.
 \newblock {\em Handbook of Constraint Programming}.
 \newblock 2006.
 
+\bibitem{Eight}
+A.~Reinefeld.
+\newblock Complete solution of the eight-puzzle and the benefit of node
+  ordering in ida*.
+\newblock \url{https://www.ijcai.org/Proceedings/93-1/Papers/035.pdf} [ostatni
+  dostęp: 06.12.2022].
+
 \bibitem{STRIPS}
 N.~J.~N. Richard E.~Fikes.
 \newblock Strips: A new approach to the application of theorem proving to

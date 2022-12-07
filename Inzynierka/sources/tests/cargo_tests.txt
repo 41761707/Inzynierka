@@ -1,0 +1,57 @@
+%Cargo101
+inital_state([pusty(a),na(a,2),pusty(4)])
+call_plan([pusty(2),pusty(a),na(a,4)],Plan)
+[[idz(a, 2, 4)]]:
+4,461 inferences, 0.001 CPU in 0.001 seconds
+
+%Transporter
+inital_state([pusty(a),na(a,2),pusty(4),pusty(6),pusty(8)])
+call_plan([pusty(2),pusty(4),pusty(6),pusty(a),na(a,8)],Plan)
+[[idz(a, 2, 8)]]:
+14,661 inferences, 0.001 CPU in 0.001 seconds
+
+%Re-curses
+inital_state([pusty(d),na(a,2),na(b,a),na(c,b),na(d,c),pusty(4)])
+call_plan([pusty(2),pusty(a),na(d,4),na(c,d),na(b,c),na(a,b)],Plan)
+[[idz(d, c, 4)], [idz(c, b, d)], [idz(b, a, c)], [idz(a, 2, b)]] :
+611,018 inferences, 0.060 CPU in 0.060 seconds
+
+%Inverter
+inital_state([pusty(d),na(a,2),na(b,a),na(c,b),na(d,c),pusty(4),pusty(6),pusty(8),pusty(10),pusty(12)])
+call_plan([pusty(2),pusty(4),pusty(6),pusty(8),pusty(10),pusty(a),na(d,12),na(c,d),na(b,c),na(a,b)],Plan)
+[[idz(d, c, 12)], [idz(c, b, d)], [idz(b, a, c)], [idz(a, 2, b)]]:
+6,705,348 inferences, 0.585 CPU in 0.585 seconds
+
+%Go Left
+inital_state([pusty(2),pusty(c),na(a,4),na(b,a),na(c,b),pusty(f),na(d,6),na(e,d),na(f,e),pusty(i),na(g,8),na(h,g),na(i,h)])
+call_plan([pusty(a),na(c,2),na(b,c),na(a,b),pusty(d),na(f,4),na(e,f),na(d,e),pusty(g),na(i,6),na(h,i),na(g,h),pusty(8)],Plan)
+
+
+%Double Flip
+inital_state([pusty(d),na(a,2),na(b,a),na(c,b),na(d,c),pusty(4),pusty(6)])
+call_plan([pusty(2),pusty(4),pusty(d),na(a,6),na(b,a),na(c,b),na(d,c)],Plan)
+[[idz(d, c, 4)], [idz(c, b, d)], [idz(b, a, c)], [idz(a, 2, 6)], [idz(b, c, a)], [idz(c, d, b)], [idz(d, 4, c)]]:
+8,770,406 inferences, 0.739 CPU in 0.739 seconds
+
+
+%Shuffle Sort
+inital_state([pusty(2),pusty(f),na(a,4),na(b,a),na(c,b),na(d,c),na(e,d),na(f,e),pusty(6)])
+time(call_plan([pusty(a),na(e,2),na(c,e),na(a,c),pusty(4),pusty(b),na(f,6),na(d,f),na(b,d)],Plan)).
+[[idz(f, e, 6)], [idz(e, d, 2)], [idz(d, c, f)], [idz(c, b, e)], [idz(b, a, d)], [idz(a, 4, c)]]:
+10,285,196 inferences, 0.909 CPU in 0.909 seconds
+
+%Go to the distance
+inital_state([pusty(a),na(a,2),pusty(b),na(b,4),pusty(c),na(c,6),pusty(d),na(d,8),pusty(e),na(e,10),pusty(f),na(f,12),pusty(14),pusty(j),na(g,16),na(h,g),na(i,h),na(j,i)])
+call_plan([pusty(a),na(a,2),pusty(b),na(b,4),pusty(c),na(c,6),pusty(d),na(d,8),pusty(e),na(e,10),pusty(f),na(f,12),pusty(g),na(j,14),na(i,j),na(h,i),na(g,h),pusty(16)],Plan)
+[[idz(j, i, 14)], [idz(i, h, j)], [idz(h, g, i)], [idz(g, 16, h)]]:
+377,831,393 inferences, 35.486 CPU in 35.487 seconds
+
+%Color sort
+inital_state([pusty(2),pusty(f),na(a,4),na(b,a),na(c,b),na(d,c),na(e,d),na(f,e),pusty(6)])
+call_plan([pusty(c),na(f,2),na(e,f),na(c,e),pusty(4),pusty(a),na(d,6),na(b,d),na(a,b)],Plan)
+[[idz(f, e, 2)], [idz(e, d, f)], [idz(d, c, 6)], [idz(c, b, e)], [idz(b, a, d)], [idz(a, 4, b)]]:
+10,431,817 inferences, 0.915 CPU in 0.915 seconds
+
+%Walking piles
+inital_state([pusty(c),na(a,2),na(b,a),na(c,b),pusty(f),na(d,4),na(e,d),na(f,e),pusty(i),na(g,6),na(h,g),na(i,h),pusty(8),pusty(10),pusty(12),pusty(14)])
+call_plan([pusty(2),pusty(4),pusty(6),pusty(8),pusty(a),na(c,10),na(b,c),na(a,b),pusty(d),na(f,12),na(e,f),na(d,e),pusty(g),na(i,14),na(h,i),na(g,h)],Plan)

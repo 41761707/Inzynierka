@@ -20,7 +20,7 @@
 \contentsline {subsection}{\numberline {2.3.1}Typy akcji}{11}{subsection.2.3.1}%
 \contentsline {section}{\numberline {2.4}Definiowanie świata}{12}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Warstwy grafu}{13}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Równoległość}{15}{section.2.6}%
+\contentsline {section}{\numberline {2.6}Równoległość}{14}{section.2.6}%
 \contentsline {subsection}{\numberline {2.6.1}Wzajemne wykluczanie}{15}{subsection.2.6.1}%
 \contentsline {subsubsection}{Wykluczanie się stanów}{16}{section*.14}%
 \contentsline {subsubsection}{Wykluczanie się akcji}{17}{section*.16}%
@@ -64,31 +64,31 @@
 \contentsline {subsection}{\numberline {6.1.5}Wyniki}{61}{subsection.6.1.5}%
 \contentsline {subsection}{\numberline {6.1.6}Młodsza siostra- ósemka}{63}{subsection.6.1.6}%
 \contentsline {subsection}{\numberline {6.1.7}Wyniki dla 8}{63}{subsection.6.1.7}%
-\contentsline {subsection}{\numberline {6.1.8}Wnioski}{63}{subsection.6.1.8}%
-\contentsline {section}{\numberline {6.2}CargoBot}{63}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Wprowadzenie}{63}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Przykład}{63}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}Szczegóły implementacyjne}{63}{subsection.6.2.3}%
-\contentsline {subsection}{\numberline {6.2.4}Wyniki}{63}{subsection.6.2.4}%
-\contentsline {subsection}{\numberline {6.2.5}Wnioski}{63}{subsection.6.2.5}%
-\contentsline {section}{\numberline {6.3}Przemieszczanie w przestrzeni}{63}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Wprowadzenie}{63}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Przykład}{63}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}Szczegóły implementacyjne}{63}{subsection.6.3.3}%
-\contentsline {subsection}{\numberline {6.3.4}Wyniki}{63}{subsection.6.3.4}%
-\contentsline {subsection}{\numberline {6.3.5}Wnioski}{63}{subsection.6.3.5}%
-\contentsline {section}{\numberline {6.4}Wieża Hanoi}{63}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Wprowadzenie}{63}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}Przykład}{63}{subsection.6.4.2}%
-\contentsline {subsection}{\numberline {6.4.3}Szczegóły implementacyjne}{63}{subsection.6.4.3}%
-\contentsline {subsection}{\numberline {6.4.4}Wyniki}{63}{subsection.6.4.4}%
-\contentsline {subsection}{\numberline {6.4.5}Wnioski}{63}{subsection.6.4.5}%
-\contentsline {section}{\numberline {6.5}Osiem Hetmanów}{63}{section.6.5}%
-\contentsline {subsection}{\numberline {6.5.1}Wprowadzenie}{63}{subsection.6.5.1}%
-\contentsline {subsection}{\numberline {6.5.2}Przykład}{63}{subsection.6.5.2}%
-\contentsline {subsection}{\numberline {6.5.3}Szczegóły implementacyjne}{63}{subsection.6.5.3}%
-\contentsline {subsection}{\numberline {6.5.4}Wyniki}{63}{subsection.6.5.4}%
-\contentsline {subsection}{\numberline {6.5.5}Wnioski}{63}{subsection.6.5.5}%
-\contentsline {chapter}{Podsumowanie}{65}{chapter*.59}%
-\contentsline {chapter}{Bibliografia}{67}{chapter*.60}%
-\contentsline {chapter}{\numberline {A}Zawartość płyty CD}{69}{appendix.A}%
+\contentsline {subsection}{\numberline {6.1.8}Wnioski}{64}{subsection.6.1.8}%
+\contentsline {section}{\numberline {6.2}CargoBot}{64}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Wprowadzenie}{64}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Szczegóły implementacyjne}{64}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Przykład}{66}{subsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.2.4}Wyniki}{68}{subsection.6.2.4}%
+\contentsline {subsection}{\numberline {6.2.5}Wnioski}{68}{subsection.6.2.5}%
+\contentsline {section}{\numberline {6.3}Przemieszczanie w przestrzeni}{68}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Wprowadzenie}{68}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Przykład}{68}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Szczegóły implementacyjne}{68}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}Wyniki}{68}{subsection.6.3.4}%
+\contentsline {subsection}{\numberline {6.3.5}Wnioski}{68}{subsection.6.3.5}%
+\contentsline {section}{\numberline {6.4}Wieża Hanoi}{68}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Wprowadzenie}{68}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Przykład}{68}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}Szczegóły implementacyjne}{68}{subsection.6.4.3}%
+\contentsline {subsection}{\numberline {6.4.4}Wyniki}{68}{subsection.6.4.4}%
+\contentsline {subsection}{\numberline {6.4.5}Wnioski}{68}{subsection.6.4.5}%
+\contentsline {section}{\numberline {6.5}Osiem Hetmanów}{68}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Wprowadzenie}{68}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Przykład}{68}{subsection.6.5.2}%
+\contentsline {subsection}{\numberline {6.5.3}Szczegóły implementacyjne}{68}{subsection.6.5.3}%
+\contentsline {subsection}{\numberline {6.5.4}Wyniki}{68}{subsection.6.5.4}%
+\contentsline {subsection}{\numberline {6.5.5}Wnioski}{68}{subsection.6.5.5}%
+\contentsline {chapter}{Podsumowanie}{69}{chapter*.68}%
+\contentsline {chapter}{Bibliografia}{71}{chapter*.69}%
+\contentsline {chapter}{\numberline {A}Zawartość płyty CD}{73}{appendix.A}%

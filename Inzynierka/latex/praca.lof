@@ -9,7 +9,7 @@
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Obrazowe przedstawienie ruchu robota B z kafelka 3 na kafelek 2\relax }}{11}{figure.caption.7}%
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Obrazowe przedstawienie wszystkich akcji w pierwszym kroku algorytmu, akcje opisane przy użyciu czcionki o kolorze zielonym symbolizują akcje podtrzymujące, natomiast o kolorze czerwonym- akcje aktywne\relax }}{12}{figure.caption.8}%
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Graficzne przedstawienie relacji sąsiedztwa dla kafelka numer 4. Kolorem kremowym oznaczono miejsca, z którymi sąsiaduje, natomiast pomarańczowym- te, z którymi nie sąsiaduje. Oznacza to, iż do kafelków pomarańczowych nie można dostać się wykonując jeden ruch\relax }}{13}{figure.caption.9}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Modyfikacja do grafu planującego wprowadzona w poprzednich podrozdziałach. Wprowadzono zależności akcji od stanu poprzedniego, oraz stanu następnego od akcji.\relax }}{14}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Modyfikacja do grafu planującego wprowadzona w poprzednich podrozdziałach. Wprowadzono zależności akcji od stanu poprzedniego, oraz stanu następnego od akcji.\relax }}{13}{figure.caption.10}%
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Przedstawienie sposobu wyznaczania warstw w grafie planującym. Poziom stanów oraz akcji wchodzący w skład danej warstwy wyróżniony jest poprzez konkatenację nazwy oraz liczby symbolizującej numer warstwy.\relax }}{14}{figure.caption.11}%
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Przykład możliwości zastosowania równoległości w planowaniu działania. Należy zauważyć, iż ruchy robotów w żaden sposób ze sobą nie kolidują.\relax }}{15}{figure.caption.12}%
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Przykład świata, w którym wprowadzenie równoległości dla pierwszej warstwy algorytmu jest niemożliwe. Dwa roboty próbują przejść na ten sam kafelek w tej samej jednostce czasu, co z perspektywy kafelka powoduje konflikt. Odpowiednio kolorami: czerwonym i niebieskim oznaczono roboty oraz kafelki, które są ich celem.\relax }}{16}{figure.caption.13}%
@@ -53,4 +53,8 @@
 \contentsline {figure}{\numberline {6.6}{\ignorespaces Uproszczony graf planujący wygenerowany przez algorytm GRAPHPLAN przedstawiający stan każdego kafelka w danej warstwie. Węzły wypełnione kolorem szarym obrazują stany, które są warunkami zajścia jak i efektami wykonywanej w danej warstwie akcji\relax }}{58}{figure.caption.55}%
 \contentsline {figure}{\numberline {6.7}{\ignorespaces Obrazowe rozwiązanie na podstawie wygenerowanego grafu\relax }}{59}{figure.caption.56}%
 \contentsline {figure}{\numberline {6.8}{\ignorespaces Przyporządkowywanie klockom odpowiednich liter\relax }}{59}{figure.caption.57}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Przykładowa łamigłówka, źródło zdjęcia: \url {https://i4ds.github.io/CargoBot/?state=3}[ostatni dostęp:06.12.2022]\relax }}{66}{figure.caption.64}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Reprezentacja łamigłówki w aplikacji\relax }}{66}{figure.caption.65}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Rozwiązanie w formie listy kroków zaprezentowane w aplikacji\relax }}{67}{figure.caption.66}%
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Reprezentacja łamigłówki w aplikacji\relax }}{67}{figure.caption.67}%
 \addvspace {10\p@ }

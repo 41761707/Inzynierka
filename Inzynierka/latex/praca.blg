@@ -4,45 +4,45 @@ The top-level auxiliary file: praca.aux
 The style file: plabbrv.bst
 Database file #1: literatura.bib
 Warning--empty publisher in CP
-You've used 8 entries,
+You've used 9 entries,
             2129 wiz_defined-function locations,
-            546 strings with 4845 characters,
-and the built_in function-call counts, 1723 in all, are:
-= -- 153
-> -- 62
+            551 strings with 5041 characters,
+and the built_in function-call counts, 1927 in all, are:
+= -- 172
+> -- 69
 < -- 0
-+ -- 28
-- -- 18
-* -- 62
-:= -- 296
-add.period$ -- 22
-call.type$ -- 8
-change.case$ -- 30
++ -- 31
+- -- 20
+* -- 67
+:= -- 330
+add.period$ -- 25
+call.type$ -- 9
+change.case$ -- 34
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 71
-empty$ -- 177
-format.name$ -- 18
-if$ -- 369
+cite$ -- 10
+duplicate$ -- 78
+empty$ -- 199
+format.name$ -- 20
+if$ -- 414
 int.to.chr$ -- 0
-int.to.str$ -- 8
+int.to.str$ -- 9
 missing$ -- 6
-newline$ -- 41
-num.names$ -- 16
-pop$ -- 68
+newline$ -- 46
+num.names$ -- 18
+pop$ -- 76
 preamble$ -- 1
-purify$ -- 25
+purify$ -- 28
 quote$ -- 0
-skip$ -- 57
+skip$ -- 65
 stack$ -- 0
-substring$ -- 42
-swap$ -- 8
+substring$ -- 47
+swap$ -- 9
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 26
+type$ -- 30
 warning$ -- 1
-while$ -- 16
-width$ -- 9
-write$ -- 76
+while$ -- 18
+width$ -- 10
+write$ -- 85
 (There was 1 warning)

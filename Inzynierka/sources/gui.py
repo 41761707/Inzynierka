@@ -68,9 +68,9 @@ class GUI:
         for i in range(len(n)):
             for element in n[i]:
                 graphplan.assertz('n({},{})'.format(i+1,element))
-        graphplan.assertz('incosistent(G,~G)')
-        graphplan.assertz('incosistent(~G,G)')
-        graphplan.assertz('incosistent(na(R,C1),na(R,C2)) :- C1 \== C2')
+        graphplan.assertz('inconsistent(G,~G)')
+        graphplan.assertz('inconsistent(~G,G)')
+        graphplan.assertz('inconsistent(na(R,C1),na(R,C2)) :- C1 \== C2')
         graphplan.assertz('inconsistent(na(_,C),pusty(C))')
         graphplan.assertz('inconsistent(pusty(C),na(_,C))')
         graphplan.assertz('inconsistent(na(R1,C),na(R2,C)) :- R1 \== R2')

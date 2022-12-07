@@ -1,4 +1,4 @@
-\contentsline {listing}{\numberline {1}{\ignorespaces Metoda wypisująca liczby gdy ich suma jest większa od 0\relax }}{29}{listing.1}%
+\contentsline {listing}{\numberline {1}{\ignorespaces Metoda wypisująca liczby gdy ich suma jest większa od 0\relax }}{28}{listing.1}%
 \contentsline {listing}{\numberline {2}{\ignorespaces Implementacja rozwiązania łamigłówki krypto-arytmetycznej bez użycia programowania ograniczeń\relax }}{30}{listing.2}%
 \contentsline {listing}{\numberline {3}{\ignorespaces Implementacja rozwiązania łamigłówki krypto-arytmetycznej z użyciem programowania ograniczeń\relax }}{31}{listing.3}%
 \contentsline {listing}{\numberline {4}{\ignorespaces Implementacja predykatu call\_plan/2\relax }}{35}{listing.4}%
@@ -21,8 +21,11 @@
 \contentsline {listing}{\numberline {21}{\ignorespaces Komenda sprawdzająca wersję zainstalowanego języka python\relax }}{53}{listing.21}%
 \contentsline {listing}{\numberline {22}{\ignorespaces Instalacja odpowiednich bibliotek dla języka python\relax }}{54}{listing.22}%
 \contentsline {listing}{\numberline {23}{\ignorespaces Uruchomienie interfejsu użytkownika\relax }}{54}{listing.23}%
-\contentsline {listing}{\numberline {24}{\ignorespaces Implementacja predykatu preconditions/2\relax }}{60}{listing.24}%
-\contentsline {listing}{\numberline {25}{\ignorespaces Implementacja predykatu effects/2\relax }}{60}{listing.25}%
+\contentsline {listing}{\numberline {24}{\ignorespaces Implementacja predykatu preconditions/2 dla przesuwanki\relax }}{60}{listing.24}%
+\contentsline {listing}{\numberline {25}{\ignorespaces Implementacja predykatu effects/2 dla przesuwanki\relax }}{60}{listing.25}%
 \contentsline {listing}{\numberline {26}{\ignorespaces Implementacja predykatu adjacent/2\relax }}{60}{listing.26}%
 \contentsline {listing}{\numberline {27}{\ignorespaces Modelowanie relacji sąsiedztwa\relax }}{61}{listing.27}%
-\contentsline {listing}{\numberline {28}{\ignorespaces Implementacja predykatu incosistent/2\relax }}{61}{listing.28}%
+\contentsline {listing}{\numberline {28}{\ignorespaces Implementacja predykatu inconsistent/2\relax }}{61}{listing.28}%
+\contentsline {listing}{\numberline {29}{\ignorespaces Implementacja predykatu preconditions/2 dla CargoBOT'a\relax }}{65}{listing.29}%
+\contentsline {listing}{\numberline {30}{\ignorespaces Implementacja predykatu effects/2 CargoBOT'a\relax }}{65}{listing.30}%
+\contentsline {listing}{\numberline {31}{\ignorespaces Implementacja predykatu object/1\relax }}{65}{listing.31}%

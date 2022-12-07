@@ -66,7 +66,7 @@
     \subsection{Przykład}
         Na podstawie następującego przykładu zostanie przedstawiony schemat rozwiązywania układanki przez algorytm:
         \begin{figure}[H]
-            \label{15Przyklad}
+            \label{Przyklad15}
             \includegraphics[scale=0.5]{15_przyklad}
             \centering
             \caption{Przykładowe startowe ułożenie przesuwanki}
@@ -130,7 +130,7 @@
                 robot(R), 
                 adjacent(A,B).
         \end{minted}
-    \caption{Implementacja predykatu preconditions/2}
+    \caption{Implementacja predykatu preconditions/2 dla przesuwanki}
     \end{listing}
 
     \begin{listing}[H]
@@ -140,7 +140,7 @@
 
             effects(idz(R,A,B), [na(R,B),pusty(A),~na(R,A),~pusty(B)]).
         \end{minted}
-    \caption{Implementacja predykatu effects/2}
+    \caption{Implementacja predykatu effects/2 dla przesuwanki}
     \end{listing}
 
     Należy zwrócić uwagę na fakt, iż każdy z predykatów występuje w dwóch wersjach, jedna odpowiada za akcje podtrzymującą, w skład której 
@@ -190,10 +190,10 @@
 
     \begin{listing}[H]
         \begin{minted}{prolog}
-            incosistent(+State1,+State2)
-            incosistent(G,~G).
-            incosistent(~G,G).
-            incosistent(na(R,C1),na(R,C2)) :-
+            inconsistent(+State1,+State2)
+            inconsistent(G,~G).
+            inconsistent(~G,G).
+            inconsistent(na(R,C1),na(R,C2)) :-
                 C1 \== C2.
             
             inconsistent(na(_,C),pusty(C)).
@@ -201,7 +201,7 @@
             inconsistent(na(R1,C),na(R2,C)) :-
                 R1 \== R2.
         \end{minted}
-    \caption{Implementacja predykatu incosistent/2}
+    \caption{Implementacja predykatu inconsistent/2}
     \end{listing}
 
     Po zdefiniowaniu powyższych predykatów, algorytm jest gotowy do generowania odpowiednich planów mających za zadanie ułożenie 
@@ -210,8 +210,73 @@
 
     \textbf{UWAGA:} Testy czasowe zaprezentowane w poniższych tabelach tyczą się osiągów samego algorytmu. Oznacza to, iż na czas wykonywania prób
     wyłączone zostały wszystkie poboczne funkcjonalności takie jak generowanie grafu, czy prezentowanie rozwiązania w formie graficznej. 
-    Wykonanie poniższych badań w aplikacji może skutkować innymi wynikami, zwykle dłuższymi. Należy mieć to na uwadze przy potencjalnej 
-    próbie odtwarzania badań.
+    Wykonanie poniższych badań w aplikacji może skutkować innymi wynikami, zwykle dłuższymi. Ponadto testy czasowe obarczone są nieprawidłowościami 
+    związanymi z działaniem innych, równoległych procesów w trakcie uruchamiania programu. Należy mieć to na uwadze przy potencjalnej 
+    próbie odtwarzania badań. \\
+    W kodach źródłowych (patrz Dodatek~\ref{plytaCD}) w katalogu \texttt{sources} znajduje się plik o nazwie \texttt{15\_tests.txt}, w którym 
+    przedstawione są dokładne stany początkowe, dla których algorytm został uruchomiony, całkowity plan wygenerowany przez algorytm oraz 
+    liczbę wnioskowań jak i wykorzystany czas dla każdego z przypadków. Ze względów objętościowych, w niniejszej pracy zostaną zamieszczone 
+    jedyne najważniejsze informacje.
+
+    \begin{table}[H]
+        \centering
+         \begin{tabular}{||c | c | c | c | c | c |} 
+         \hline
+         Przesunięcia & Test1 & Test2 & Test3 & Test4 & Test5 \\ [0.5ex] 
+         \hline\hline
+         1 & 0.009 & 0.009 & --- & --- & --- \\ 
+         \hline
+         2 &  & 0.026 & --- & --- & --- \\
+         \hline
+         3 &  & 0.126 & --- & --- & --- \\
+         \hline
+         4 &  & 0.519 & --- & --- & --- \\
+         \hline
+         5 &  & 1.214 & --- & --- & --- \\
+         \hline
+         6 &  & 1.847 & --- & --- & ---\\ 
+         \hline
+         7 &  & 5.539 & --- & --- & --- \\
+         \hline
+         8 &  & 9.082 & --- & --- & --- \\
+         \hline
+         9 &  & 10.964 & --- & --- & --- \\
+         \hline
+         10 &  & 30.142 & --- & --- & --- \\ [1ex]
+         \hline
+         \end{tabular}
+         \caption{Przykładowe czasy dla wybranych przykładów}
+    \end{table}
+
+    \begin{table}[H]
+        \centering
+         \begin{tabular}{||c | c | c | c | c | c |} 
+         \hline
+         Przesunięcia & Test1 & Test2 & Test3 & Test4 & Test5 \\ [0.5ex] 
+         \hline\hline
+         1 & 0.009 & 0.009 & --- & --- & --- \\ 
+         \hline
+         2 &  & 0.026 & --- & --- & --- \\
+         \hline
+         3 &  & 0.126 & --- & --- & --- \\
+         \hline
+         4 &  & 0.519 & --- & --- & --- \\
+         \hline
+         5 &  & 1.214 & --- & --- & --- \\
+         \hline
+         6 &  & 1.847 & --- & --- & ---\\ 
+         \hline
+         7 &  & 5.539 & --- & --- & --- \\
+         \hline
+         8 &  & 9.082 & --- & --- & --- \\
+         \hline
+         9 &  & 10.964 & --- & --- & --- \\
+         \hline
+         10 &  & 30.142 & --- & --- & --- \\ [1ex]
+         \hline
+         \end{tabular}
+         \caption{Przykładowa liczba wnioskowań dla wybranych przykładów}
+    \end{table}
 
     \begin{table}[H]
         \centering
@@ -219,45 +284,255 @@
          \hline
          Przesunięcia & Wnioskowania & Czas \\ [0.5ex] 
          \hline\hline
-         1 &  &  \\ 
+         1 &  & 0.009 \\ 
          \hline
-         2 &  &  \\
+         2 &  & 0.026 \\
          \hline
-         3 &  &   \\
+         3 &  & 0.126  \\
          \hline
-         4 &  &   \\
+         4 &  & 0.519  \\
          \hline
-         5 &  &  \\
+         5 &  & 1.214 \\
          \hline
-         6 &  &  \\ 
+         6 &  & 1.847 \\ 
          \hline
-         7 &  &  \\
+         7 &  & 5.539 \\
          \hline
-         8 &  &   \\
+         8 &  & 9.082 \\
          \hline
-         9 &  &   \\
+         9 &  & 10.964 \\
          \hline
-         10 &  &  \\ [1ex]
+         10 &  & 30.142 \\ [1ex]
          \hline
          \end{tabular}
+         \caption{Średnia liczba wnioskowania oraz czasów wykonania}
     \end{table}
     Przez \textit{przesunięcia} należy rozumieć liczbę przesunięć, którą należy wykonać, aby wrócić do początkowego stanu. Dla początkowych wartości 
     wskazanych w tabelach zostało to wyznaczone poprzez ręczne przestawienie kafelków o daną liczbę przesunięc oraz zapisanie otrzymanego stanu 
-    przy użyciu nomenklatury opisanej w rozdziale definiujacym świat. Zgodnie z powyższym, analizując przykład \ref{15Przyklad} łatwo zauważyc, 
+    przy użyciu nomenklatury opisanej w rozdziale definiujacym świat. Zgodnie z powyższym, analizując przykład \ref{Przyklad15} łatwo zauważyc, 
     iż wymaganą liczbą przesunięc, potrzebną do powrotu do wyjściowego stanu przesuwanki jest liczba \textbf{3} (co w dalszej części udało się 
     udowodnić konstruując odpowiedni plan).
 
 
-    \subsection{Młodsza siostra- ósemka}
 
+    \subsection{Młodsza siostra- ósemka}
+        Ósemka jest inną formą przesuwanki- zamiast tradycyjnego ułożenia 15 klocków w kształcie kwadratu 4 na 4 z jednym wolnym miejscem, w ósemka 
+        składa się z osmiu klocków, które ułożone zostały w kształcie kwadratu 3 na 3. Powoduje to zmniejszenie dziedziny, a co za tym idzie- 
+        łatwiejsze i szybsze układanie. Dla ósemki wszystkie definicje i własności są identyczne jak dla pietnastki, z drobnym wyjątkiem- dla 
+        układanki o osmiu klockach i jednym pustym polu \textbf{boska liczba} wynosi nie 80 a 31\cite{Eight}, oraz liczba możliwych ułożeń wynosi 
+        \begin{equation}
+            \frac{8!}{2} = 181440
+        \end{equation} 
     \subsection{Wyniki dla 8}
+        Wersja ze zmniejszoną liczbą klocków została poddana identycznym testom jak piętnastka. Poniżej przedstawione zostały rezultaty 
+        przeprowadzonych badania:
+
+        \begin{table}[H]
+            \centering
+             \begin{tabular}{||c | c | c | c | c | c |} 
+             \hline
+             Przesunięcia & Test1 & Test2 & Test3 & Test4 & Test5 \\ [0.5ex] 
+             \hline\hline
+             1 & 0.009 & 0.009 & --- & --- & --- \\ 
+             \hline
+             2 &  & 0.026 & --- & --- & --- \\
+             \hline
+             3 &  & 0.126 & --- & --- & --- \\
+             \hline
+             4 &  & 0.519 & --- & --- & --- \\
+             \hline
+             5 &  & 1.214 & --- & --- & --- \\
+             \hline
+             6 &  & 1.847 & --- & --- & ---\\ 
+             \hline
+             7 &  & 5.539 & --- & --- & --- \\
+             \hline
+             8 &  & 9.082 & --- & --- & --- \\
+             \hline
+             9 &  & 10.964 & --- & --- & --- \\
+             \hline
+             10 &  & 30.142 & --- & --- & --- \\ [1ex]
+             \hline
+             \end{tabular}
+             \caption{Przykładowe czasy dla wybranych przykładów}
+        \end{table}
+    
+        \begin{table}[H]
+            \centering
+             \begin{tabular}{||c | c | c | c | c | c |} 
+             \hline
+             Przesunięcia & Test1 & Test2 & Test3 & Test4 & Test5 \\ [0.5ex] 
+             \hline\hline
+             1 & 0.009 & 0.009 & --- & --- & --- \\ 
+             \hline
+             2 &  & 0.026 & --- & --- & --- \\
+             \hline
+             3 &  & 0.126 & --- & --- & --- \\
+             \hline
+             4 &  & 0.519 & --- & --- & --- \\
+             \hline
+             5 &  & 1.214 & --- & --- & --- \\
+             \hline
+             6 &  & 1.847 & --- & --- & ---\\ 
+             \hline
+             7 &  & 5.539 & --- & --- & --- \\
+             \hline
+             8 &  & 9.082 & --- & --- & --- \\
+             \hline
+             9 &  & 10.964 & --- & --- & --- \\
+             \hline
+             10 &  & 30.142 & --- & --- & --- \\ [1ex]
+             \hline
+             \end{tabular}
+             \caption{Przykładowa liczba wnioskowań dla wybranych przykładów}
+        \end{table}
+    
+        \begin{table}[H]
+            \centering
+             \begin{tabular}{||c | c | c|} 
+             \hline
+             Przesunięcia & Wnioskowania & Czas \\ [0.5ex] 
+             \hline\hline
+             1 &  & 0.009 \\ 
+             \hline
+             2 &  & 0.026 \\
+             \hline
+             3 &  & 0.126  \\
+             \hline
+             4 &  & 0.519  \\
+             \hline
+             5 &  & 1.214 \\
+             \hline
+             6 &  & 1.847 \\ 
+             \hline
+             7 &  & 5.539 \\
+             \hline
+             8 &  & 9.082 \\
+             \hline
+             9 &  & 10.964 \\
+             \hline
+             10 &  & 30.142 \\ [1ex]
+             \hline
+             \end{tabular}
+             \caption{Średnia liczba wnioskowania oraz czasów wykonania}
+        \end{table}
+
     \subsection{Wnioski}
+        Dla zdefiniowanego świata GRAPHPLAN poprawnie generuje plany. Empiryczne sprawdzenie wykazało, iż faktycznie są to plany optymalne. Ponadto 
+        dla mniejszych przykladów generowanie planów trwa stosunkowo krótko, jednakże w sytuacji, gdy dojdzie do spłaszczenia grafu planującego, 
+        co dla przesuwanki z 15 klockami dzieje się w okolicach 10 iteracji, wydajność algorytmu znacznie spada. Podobne efekty zostały 
+        zaobserwowane dla układanki z 8 klockami. Porównanie z specjalnie utworzonymi na potrzeby układanki heurstykami pokazały, iż są one 
+        znacząco szybsze niż algorytm planujący, jednakże duża zaletą GRAPHPLAN'u jest uniwersalność, gdyż można go stosować do innych problemów,
+        heurstyki natomiast rozwiązuję problem jedynie dla danej układanki.
 \section{CargoBot}
 \label{CargoBotTest}
     \subsection{Wprowadzenie}
-        
-    \subsection{Przykład}
+        \textbf{CargoBOT} (Twórcy: \textbf{Two Lives Left}) jest grą dostępną w platformie dystrybucji cyfrowej o nazwie \textbf{App Store}, \
+        która znajduje się na urządzeniach wyprodukowanych przez firmę \textbf{Apple}. 
+        Głównym celem gry jest przestawienie skrzynek z pozycji początkowej na przedstawioną 
+        pozycję końcową przy użyciu ramienia, które może poruszać się w prawo, w lewo oraz opuszczać na dół. Podczas opuszczania, jeśli w 
+        ramieniu znajduje się skrzynka to zostanie opuszczona, natomiast jeśli ramię nie trzyma żadnej skrzynki podniesie pierwszą na jaką 
+        natrafi. Przypatrując się bliżej powyższemu opisowi, nie sposób nie zauważyć połączenia przedstawionego świata z językiem opisowym 
+        STRIPS. Z tego powodu kolejnym testem możliwości GRAPHPLAN'u będzie rozwiązywanie zagadek przedstawionych przez aplikację \textbf{CargoBOT}.
+        \textbf{UWAGA: } W grze CargoBOT celem użytkownika jest zaprojektowanie algorytmu przy pomocy specjalnego panelu do rozwiązywania łamigłówki.
+        Ze względu na to, iż celem testu jest przedstawienie optymalnego planu otrzymującego stan końcowy ze stanu początkowego, wynik algorytmu 
+        nie będzie bezpośrednio rozwiązaniem korzystającym z nomenklatury aplikacji.
     \subsection{Szczegóły implementacyjne}
+    Przed rozpoczęciem generowania planu, podobnie jak w przypadku poprzednich testów, należy rozpocząć modelowanie świata zgodnie z wytycznymi 
+    języka opisu STRIPS. Pierwsze zaimplementowane predykaty to $block/1$ oraz $place/1$. Fakt $block(a)$ oznacza skrzynkę z etykietą a, natomiast 
+    $place(1)$ oznacza miejsce z etykietą 1. Ze względu na ograniczenia językowe, każdy z bloków oraz każde z miejsc musi mieć unikatową etykietę. 
+    Spowoduje to, iż nie wszystkie łamigłówki z aplikacji będą możliwe do reprodukcji ze względu na to, iż paczki w grze rozróżnialne są od siebie 
+    jedynie ze względu na \textit{kolor}. Dodatkowo przez pojęcie miejsca rozumie się przestrzeń, na której może leżeć bloczek. Miejsca można
+    wyobrażać sobie jakie półki, bądź platformy, które są od siebie odzielone pewną przeszkodą bądź wolną przestrzenią. Przykład \ref{CargoObrazek}
+    przedstawia reprezetancję miejsc w formie czerwonych platform. 
+    
+    To co odróżnia opis świata dla aplikacji CargoBOT od przesuwanki to fakt, iż liczba skrzynek oraz platform może zmieniać się dynamicznie w zależności 
+    od świata. Z tego powodu za każdym razem należy upewnić się, iż wszystkie obiekty zostały opisane w języku algorytmu przy pomocy wyżej przedstawionych 
+    predykatów. 
+
+    Jedyną akcją rozpatrywaną jest przesuwanie przy użyciu ramienia skrzynki z jednej platformy na drugą. Akcja ta będzie nazwana identycznie jak w 
+    przypadku przesuwanki przy pomocy czasownika $idz$. Trójargumentowa relacja $idz(S,A,B)$ oznacza przesunięcie skrzynki $S$ z platformy $A$
+    na platformę $B$. Poniżej przedstawiono implementację warunków zajścia jak i efektów przedstawionej akcji:
+
+    \begin{listing}[H]
+        \begin{minted}{prolog}
+            %preconditions(+Action,-States)
+            preconditions(zostan(P),[P]).
+
+            preconditions(idz(Block,From,To), [pusty(Block),pusty(To),na(Block,From)]) :-
+                block(Block),
+                object(To),
+                To \==Block,
+                object(From),
+                From \==To,
+                Block \== From.
+        \end{minted}
+    \caption{Implementacja predykatu preconditions/2 dla CargoBOT'a}
+    \end{listing}
+
+    \begin{listing}[H]
+        \begin{minted}{prolog}
+            %effects(+Action,-States)
+            effects(zostan(P),[P]).
+
+            effects(idz(X,From,To),[na(X,To),pusty(From),~na(X,From),~pusty(To)]).
+        \end{minted}
+    \caption{Implementacja predykatu effects/2 CargoBOT'a}
+    \end{listing}
+    W przypadku akcji przesunięcia warto zaznaczyć, iż może zaistnieć sytuacja, w której najlepszą drogą uzyskania stanu końcowego jest 
+    umieszczenie jednej paczki na drugiej. Stąd znane już czytelnikowi predykaty $na/2$ oraz $pusty/1$ w tym przypadku będą się odnosić do skrzynek, 
+    ale również do platform. Przyglądając się ciele predykatu $preconditions/2$ należy zauważyć, iż dochodzi do sprawdzenia, czy 
+    to co znajduje się w zmiennej $Block$ jest na pewno typu block, oraz czy zmienne $From$ oraz $To$ są obiektami świata. 
+    Predykat $object/1$ realizowany jest w następujący sposób:
+
+    \begin{listing}[H]
+        \begin{minted}{prolog}
+            %object(+Variable)
+            object(X) :-
+                place(X)
+                ;
+                block(X).
+        \end{minted}
+    \caption{Implementacja predykatu object/1}
+    \end{listing}
+
+    Zgodnie z powyższą definicją platformy również są obiektami, dlatego należy dokonać dodatkowego sprawdzenia, aby uniemożliwić powstanie 
+    takich anomalii jak umieszczanie całej platformy na jednej ze skrzynek.
+
+    Dodatkowe sprawdzenia wykonywane w ramach warunków zajścią mają za zadanie uniknięcie sytuacji, w której planer chciałbym przenieść skrzynkę 
+    na samą siebie.
+    Implementacja relacji wzajemnie wykluczającej odbyła się w sposób identyczny jak dla 15. Użyty został predykat $inconsistent/2$.
+    W powyższy sposób ukończono implementację świata z gry CargoBOT.
+
+    \subsection{Przykład}  
+    Celem algorytmu będzie rozwiązanie następującego problemu:
+    \begin{figure}[H]
+        \label{CargoObrazek}
+        \includegraphics[scale=0.35]{cargoBOT_przyklad}
+        \centering
+        \caption{Przykładowa łamigłówka, źródło zdjęcia: \url{https://i4ds.github.io/CargoBot/?state=3}[ostatni dostęp:06.12.2022]}
+    \end{figure}
+    Sytuacja ta została odzworowana w aplikacji graficznej w następujący sposób:
+    \begin{figure}[H]
+        \label{CargoObrazek}
+        \includegraphics[scale=0.35]{cargo_przyklad1}
+        \centering
+        \caption{Reprezentacja łamigłówki w aplikacji}
+    \end{figure}
+    Po naciśnięciu przycisku \textit{Wygeneruj graf} widok zmienia się w następujący sposób:
+    \begin{figure}[H]
+        \label{CargoObrazek}
+        \includegraphics[scale=0.4]{cargo_przyklad2}
+        \centering
+        \caption{Rozwiązanie w formie listy kroków zaprezentowane w aplikacji}
+    \end{figure}
+    Poniżej zamieszczono wygenerowany graf prosty dla rozpatrywanego przypadku:
+    \begin{figure}[H]
+        \label{CargoObrazek}
+        \includegraphics[scale=0.25]{cargo_przyklad1_graf}
+        \centering
+        \caption{Reprezentacja łamigłówki w aplikacji}
+    \end{figure}
     \subsection{Wyniki}
     \subsection{Wnioski}
 \section{Przemieszczanie w przestrzeni}

@@ -16,8 +16,6 @@
 :- dynamic n/2.
 :- dynamic inconsistent/2.
 
-/*
-
 %3x3
 %time(call_plan([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(f,6),na(g,7),na(h,8),pusty(9)],Plan)),write(Plan).
 %assert(inital_state([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(f,6),na(g,7),na(h,8),pusty(9)])).
@@ -59,9 +57,9 @@ n(7,4). n(7,8).
 n(8,7). n(8,5). n(8,9).
 n(9,8). n(9,6).
 
-incosistent(G,~G).
-incosistent(~G,G).
-incosistent(na(R,C1),na(R,C2)) :-
+inconsistent(G,~G).
+inconsistent(~G,G).
+inconsistent(na(R,C1),na(R,C2)) :-
     C1 \== C2.
 
 inconsistent(na(_,C),pusty(C)).
@@ -69,15 +67,16 @@ inconsistent(pusty(C),na(_,C)).
 inconsistent(na(R1,C),na(R2,C)) :-
     R1 \== R2.
 
-*/
 
-%CargoBOT
 /*
+%CargoBOT
+call_plan([pusty(2),pusty(a),na(c,4),na(b,c),na(a,b),pusty(6),pusty(8),pusty(10),pusty(d),na(f,12),na(e,f),na(d,e),pusty(14)],Plan) <- równoległe
 :- dynamic object/1.
+:- dynamic block/1.
 :- dynamic place/1.
 
-can(zostan(P),[P]).
-can(idz(Block,From,To), [pusty(Block),pusty(To),na(Block,From)]) :-
+preconditions(zostan(P),[P]).
+preconditions(idz(Block,From,To), [pusty(Block),pusty(To),na(Block,From)]) :-
     block(Block),
     object(To),
     To \==Block,
@@ -96,17 +95,37 @@ object(X) :-
 block(a).
 block(b).
 block(c).
+block(d).
+block(e).
+block(f).
+/*block(g).
+block(h).
+block(i).
+block(j).
+block(k).
+block(l).*/
 
-place(1).
 place(2).
-place(3).
 place(4).
+place(6).
+place(8).
+place(10).
+place(12).
+place(14).
+/*place(16).
+place(18).*/
 
-incosistent(G,~G).
-incosistent(~G,G).
+inconsistent(G,~G).
+inconsistent(~G,G).
+inconsistent(na(R,C1),na(R,C2)) :-
+    C1 \== C2.
+
+inconsistent(na(_,C),pusty(C)).
+inconsistent(pusty(C),na(_,C)).
+inconsistent(na(R1,C),na(R2,C)) :-
+    R1 \== R2.
 
 %inital_state([pusty(2),pusty(4),pusty(b),pusty(c),na(a,1),na(b,3),na(c,a)]).
-
 */
 
 %HANOI
@@ -139,6 +158,7 @@ block(b).
 block(c).
 block(d).
 
+
 place(1).
 place(2).
 place(3).
@@ -151,7 +171,7 @@ n(b,a). n(b,1). n(b,2). n(b,3).
 n(c,a). n(c,b). n(c,1). n(c,2). n(c,3).
 n(d,a). n(d,b). n(d,c). n(d,1). n(d,2). n(d,3).
 
-incosistent(na(R,C1),na(R,C2)) :-
+inconsistent(na(R,C1),na(R,C2)) :-
     C1 \== C2.
 
 inconsistent(na(_,C),pusty(C)).
@@ -163,8 +183,9 @@ inconsistent(na(R1,C),na(R2,C)) :-
 
 */
 
-/*
+
 %4x4
+/*
 %assert(inital_state([na(b,1),na(a,2),na(c,3),pusty(4),na(e,5),na(f,6),na(g,7),na(d,8),na(i,9),na(j,10),na(k,11),na(h,12),na(m,13),na(n,14),na(o,15),na(l,16)])).
 %time(call_plan([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(f,6),na(g,7),na(h,8),na(i,9),na(j,10),na(k,11),na(l,12),na(m,13),na(n,14),na(o,15),pusty(16)],Plan)).
 
@@ -217,9 +238,7 @@ n(14,13). n(14,10). n(14,15).
 n(15,14). n(15,11). n(15,16).
 n(16,15). n(16,12).
 
-incosistent(G,~G).
-incosistent(~G,G).
-incosistent(na(R,C1),na(R,C2)) :-
+inconsistent(na(R,C1),na(R,C2)) :-
     C1 \== C2.
 
 inconsistent(na(_,C),pusty(C)).
@@ -228,22 +247,6 @@ inconsistent(na(R1,C),na(R2,C)) :-
     R1 \== R2.
 
 */
-
-
-
-%GRAPHPLAN wersja 1.2
-
-%TO-DO - sprawdzenie czy plan da sie zakonczyc
-%Proby wprowadzen ulepszen czasowych
-%use_module(library(clpfd)). <- wymagany import, programowanie ograniczeń
-
-/**
-*   Negacja stany wymagana, ze wzgledu na
-*   dzialanie prologa wedle zasady "zamknietego swiata".
-*   Dodanie negacji ulatwia okreslanie poprawnych stanow kosztem 
-*   gorszej czytelnosci generowanych grafow
-*/
-
 :-use_module(library(clpfd)).
 :-op(100,fx,~).
 :- dynamic inital_state/1.
@@ -276,13 +279,15 @@ graphplan([StateLevel | GraphPlan], Goals, AllActions,Plan,Round) :-
     extract_plan([StateLevel | GraphPlan], Plan)
     ;
     NewRound is Round+1,
-    %write("Round: "), writeln(NewRound),
+    write("Round: "), writeln(NewRound),
     expand(StateLevel, ActionLevel, NewStateLevel, AllActions),
     %length(NewStateLevel,NSL),
     %writeln(NSL),
     %outState(NewStateLevel),
     %outAction(ActionLevel),
     graphplan([NewStateLevel, ActionLevel, StateLevel | GraphPlan], Goals, AllActions, Plan,NewRound).
+
+
 
 outState([]) :- writeln("").
 
@@ -440,15 +445,4 @@ collect_vars([X/V | Rest], Vars) :-
     ;
     Vars = RestVars),
     collect_vars(Rest,RestVars).
-
-
-
-
-
-
-
-
-
-
-
 
