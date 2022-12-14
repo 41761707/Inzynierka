@@ -57,7 +57,7 @@
         \item Ograniczenia o arności 3, zwane ograniczeniami \textbf{ternarnymi}
     \end{enumerate} 
 
-    Tak jak ograniczenie może mieć swoją arność, tak dla CSP również zdefiniowano pojęcie arności w lekko zmodyfikowany sposób 
+    Tak jak ograniczenie może mieć swoją arność, tak dla CSP również zdefiniowano pojęcie arności w zmodyfikowany sposób 
     \begin{definition}
         \textbf{Arność} CSP o wartości $i$ zawiera w sobie wszystkie typy ograniczeń od arności 1 aż do arności $i$
     \end{definition}
@@ -87,7 +87,7 @@
 
 \section{Pojęcie ustalenia i spójności}
     \label{SpójnośćRodział}
-    W ostatecznej formie problem ograniczeń wyszukuje rozwiązanie przy pomocy ustalenia wartości zmiennych, jednakże naistotniejsza 
+    W ostatecznej formie problem ograniczeń wyszukuje rozwiązanie przy pomocy ustalenia wartości zmiennych, jednakże najistotniejsza 
     jest droga, jaką pokonuje, aby ów ustalenia uzyskać. W tej sekcji należy wprowadzić kilka dodatkowych definicji:
     \begin{definition}
         Ustalenie zmiennych jest \textbf{spójne}, gdy nie jest w konflikcie z żadnym z ograniczeń.
@@ -102,8 +102,9 @@
         Każde rozwiązanie problemu ograniczeń jest spójne.
     \end{corollary}
 
-    Dodatkowo w źródłach \cite{AI} definiuje się częściowe ustalenie oraz częściowe rozwiązanie. Zgodnie z nazewnictwem 
-    częściowe ustalenie związane jest z sytuacją, gdy jeszcze nie wszystkie zmienne mają dokładnie określone wartości, natomiast 
+    Dodatkowo definiuje się częściowe ustalenie oraz częściowe rozwiązanie \cite{AI}. Zgodnie \\
+    z nazewnictwem 
+    częściowe ustalenie związane jest z sytuacją, gdy nie wszystkie zmienne mają dokładnie określone wartości, natomiast 
     częściowe rozwiązanie w praktyce identyfikuje się jako spójne częściowe ustalenie.
 
     Po wprowadzeniu powyższych definicji należy rozpocząć rozważania na temat tego, w jaki sposób 
@@ -124,7 +125,8 @@
         \item \textbf{Spójność wierzchołkowa} (ang. node consistency) - Zmienna jest wierzchołkowo spójna, 
         gdy wszystkie wartości znajdujące się w jej dziedzine spełniają zdefiniowane przez nią ograniczenie unarne.
         Graf jest wierzchołkowo spójny, gdy wszystkie wierzchołki wchodzące w skład grafu są wierzchołkowo spójne.
-        Zachowanie wierzchołkowej spójności z reguły sprowadza się do \textbf{zawężania} dziedziny zmiennej.
+        Zachowanie wierzchołkowej spójności \\
+        z reguły sprowadza się do \textbf{zawężania} dziedziny zmiennej.
         \item \textbf{Spójność krawędziowa} (ang. arc consistency/edge consistency)- Zmienna jest spójna krawędziowo wtedy, 
         gdy każda wartość z jej dziedziny spełnia binarne ograniczenia zmiennej. Graf jest krawędziowo spójny gdy każda para 
         zmiennych jest ze sobą krawędziowo spójna.
@@ -135,19 +137,19 @@
         bez załamiania spóności. Pojęcie 2-spójność jest tożsame z spójnością krawędziową, a 3-spójność- ze spójnością ścieżki.
     \end{itemize}
 
-    Sprowadzanie problemu ograniczeń do sytuacji, w której zachodzi lokalna spójność jest określane mianem \textbf{propagacją ograniczeń}. 
-    Jest to o tyle istotne, iż jedną z głównych metod rozwiązywania problemu ograniczeń jest sprowadzenie dziedzin zmiennych do pojedynczej wartości- 
+    Sprowadzanie problemu ograniczeń do sytuacji, w której zachodzi lokalna spójność jest określane mianem \textbf{propagacji ograniczeń}. 
+    Jest to o tyle istotne, iż jedną z głównych metod rozwiązywania problemu ograniczeń jest sprowadzenie, o ile to możliwe, dziedzin zmiennych do pojedynczej wartości- 
     wtedy całkowitym ustaleniem jest nadanie zmiennej jedynej wartości w swojej dziedzinie. Propagacja ograniczeń jest silnym mechanizmem wykrywającym 
     niespójności- jeśli przy próbie propagacji któraś z wartości zostałaby z pustą dziedziną, wtedy należałoby przerwać rozwiązywanie problemu wraz 
     ze zwróceniem informacji o fakcie, iż nie ma takiego ustalenia zmiennych przy obecnych dziedzinach, dla którego rozpatrywane ograniczenie 
     jest rozwiązywalne.
 
 \section{Ograniczenia globalne}
-    W teorii programowania ograniczeń istnieją również ograniczenia zwane \textbf{globalnymi}. Mimo swojej nazwy, 
+    W teorii programowania ograniczeń istnieją również ograniczenia zwane \textbf{globalnymi} \cite{CP}. Mimo swojej nazwy, 
     globalne ograniczenia nie zawsze są związane ze wszystkimi zmiennymi wchodzącymi w skład problemu ograniczeń. 
     Ich istnienie warunkowane jest występowaniem w świecie rzeczywistym zależności, które często się powtarzają i nie są 
     unikalne dla jednego problemu. Przykładem takiego ograniczenia jest sytuacja, w której każda ze zmiennych ma mieć inną wartość.
-    Formalniej mówiąc, wszystkie zmienne muszą być parami różne. Ów ograniczenie jest na tyle popularne, iż nosi ono swoją nazwę 
+    Formalniej mówiąc, wszystkie zmienne muszą być parami różne. Ograniczenie to jest na tyle popularne, iż nosi ono swoją nazwę 
     \textbf{Alldiff} i jest często ograniczeniem wbudowanym w moduły zajmujące się programowaniem ograniczeń, co ułatwia i przyśpiesza 
     pracę użytkownika. Innym ograniczeniem z rodziny ograniczeń globalnych jest \textbf{ograniczenie zasobów}. Jak sama nazwa wskazuje, 
     rzeczone ograniczenie globalne wykorzystywane jest w modelowaniu sytuacji z dziedzin planowania bądź harmonogramowania zadań. 
@@ -155,7 +157,7 @@
     
     
 \section{Wyszukiwanie rozwiązań}
-    Podstawowa metoda rozwiązywania problem z dziedziny ograniczeń nosi miano metody \textbf{cofającej} (ang. backtracking).
+    Podstawową metodą rozwiązywania problemów z dziedziny ograniczeń nosi miano metody \textbf{cofającej}, bądź też programowania wstecz (ang. backtracking).
     Działa ona zbliżenie do mechanizmu przeszukiwania grafu wgłąb. Na początku wybierana jest jedna ze zmiennych. Dla każdej wartości 
     z dziedziny dochodzi do częściowego ustalenia- zmienna otrzymuje wartość równą pierwszej wartości w swojej dziedzinie. Następnie, 
     korzystając z tej informacji dochodzi do propagacji ograniczeń. Jeśli wybrana została poprawna wartość propagacja ograniczeń doprowadzi 
@@ -167,11 +169,13 @@
     dochodzi do sytuacji, w której wyżej wymienione ślepe zaułki są eliminowane zanim mechanizm cofania je rozpatrzy. 
     
     Drugą metodą jest metoda nazywana \textbf{wyszukiwaniem lokalnym} (ang. local search). Metoda cofająca, jak sama nazwa wskazuje, próbowała dokonać 
-    częściowego ustalenia, by następnie przy propagacji ograniczeń udowodnić, iż rozpatrywane częściowe ustalenie jest prawidłowe 
-    i generuje odpowiednie całkowite ustalenie. Metodologia wyszukiwania lokalnego różni się w swojej filozofii tym, iż na samym 
-    początku dochodzi do pełnego ustalenia zmiennych. W znacznej większości przypadków ów pełne ustalenie jest 
-    nieprawidłowe, to znaczy nie spełnia wszystkich ograniczeń. Wtedy mechanizm próbuje na bieżąco naprawiać sytuację modyfikując całkowite ustalenie w takich 
-    sposób, aby ustalenie nadal było całkowite jednocześnie spełniając ograniczenie, które wcześniej powodowało konflikty. Jeśli algorytm będzie w stanie 
+    częściowego ustalenia, \\
+    aby następnie przy propagacji ograniczeń udowodnić, iż rozpatrywane częściowe ustalenie jest prawidłowe 
+    i wygenerować odpowiednie całkowite ustalenie. Metodologia wyszukiwania lokalnego różni się w swojej filozofii tym, iż na samym 
+    początku dochodzi do pełnego ustalenia zmiennych. W znacznej większości przypadków pełne ustalenie jest 
+    nieprawidłowe, to znaczy nie spełnia wszystkich ograniczeń. Wtedy mechanizm próbuje na bieżąco naprawiać sytuację modyfikując całkowite ustalenie w taki 
+    sposób, aby ustalenie nadal było całkowite jednocześnie spełniając ograniczenie, które wcześniej powodowało konflikty. Jeśli algorytm będzie
+    w stanie 
     rozwiązać wszystkie ograniczenia uzyska odpowiednie ustalenie zmiennych.
 
     Porównując powyższe dwie metody łatwo zauważyć, iż różnią się one od siebie w znacznym stopniu, nie tylko w samej filozofii działania, lecz także 
@@ -185,24 +189,22 @@
 
     Przeciwieństwem algorytmu kompletnego jest algorytm \textbf{niekompletny}, czyli taki, który nie gwarantuje 
     uzyskania optymalnego rozwiązania oraz wykrycia, czy problem posiada rozwiązanie. Algorytmy niekompletne natomiast są o wiele 
-    szybsze oraz dobrze przybliżają optymalne rozwiązanie. 
+    szybsze oraz dla wielu przypadków dobrze przybliżają optymalne rozwiązanie. 
 
     Zgodnie z powyższym metoda cofająca jest przykładem algorytmu kompletnego- systematycznie generuje nowe ustalenia oraz propagacje ograniczeń,
-    natomiast wyszukiwanie lokalne jest przykładem algorytmu niekompletnego- łatwo sobie wyobrazić sytuację, iż naprawienie jednego ograniczenia 
-    może nieustannie generować zepsucie kolejnego. W trakcie wyboru algorytmu ważnym jest, aby znać jego zalety jak i wady. Do implementacji 
+    natomiast wyszukiwanie lokalne jest przykładem algorytmu niekompletnego- łatwo sobie wyobrazić sytuację nierozwiązywalną, dla której naprawienie jednego ograniczenia 
+    może nieustannie generować zepsucie kolejnego. Dla takiej sytuacji algorytm będzie próbował w nieskończoność przestawiać elementy, 
+    nie wiedząc o tym, iż poprawne ustawienie nie istnieje.W trakcie wyboru algorytmu ważnym jest, aby znać jego zalety jak i wady. Do implementacji 
     GRAPHPLANU został wykorzystany mechanizm cofania, aby zwracany przez algorytm plan był zawsze optymalny.
 
-
-
-    Powyżej wymienione metody posiadają wiele dodatkowych usprawnień oraz specjalnie zdefiniowanych heurystyk,
-    z którymi czytelnik może zapoznać się kierująć się do następującej pozycji w bibliografii \cite{CP}
+    Powyżej wymienione metody posiadają wiele dodatkowych usprawnień oraz specjalnie zdefiniowanych heurystyk. \cite{CP}
     
 \section{Programowanie w logice z ograniczeniami}
-    Ze względu na wiele podobieństw w mechanizmach, jak i w samej idei, między technologią więzów a programowanie w logice, takich jak chociażby mechanizm cofania, który jest 
+    Ze względu na wiele podobieństw w mechanizmach, jak i w samej idei, między technologią więzów a programowaniem w logice, takich jak chociażby mechanizm cofania, który jest 
     powszechnie wykorzystywany w obu podejściach, zdecydowano się na utworzenie połączenia między nimi w celu uzyskania korzystniejszych wyników. Z tej kombinacji powstał 
     typ programowania nazywany \textbf{Programowaniem w logice z ograniczeniami}.
     \begin{definition}
-        \textbf{Programowanie w logice z ograniczeniami} (ang. Constraint logic programming) jest jedną z form programowania ograniczeń,
+        \textbf{Programowanie w logice z ograniczeniami} (ang. Constraint logic programming) jest jedną z form programowania,
         w której podstawowe mechanizmy programowania w logice zostały rozszerzone o koncpecje pochodzące z programowania ograniczeń.
     \end{definition}
 
@@ -219,15 +221,16 @@
         \end{listing}
     \end{example}
     W powyższym przykładzie zastosowano najprostsze z możliwych ograniczeń: wartość sumy zmiennych musi być większa od 0. 
-    Ze względu na częste parowanie programowania ograniczeń z programowaniem w logice, wiele implementacji języków programowania w 
-    logice implementuje gotowe moduły, które dostarczają technologię więzów dla różnych typów dziedzin. Dla przykładu, dla 
+    Ze względu na częste parowanie programowania ograniczeń z programowaniem w logice, wiele implementacji języków logicznych zawiera
+    gotowe moduły, które dostarczają technologię więzów dla różnych typów dziedzin. Dla
     jednej z najpopularniejszych implementacji języka programowania PROLOG dostępne są następujące moduły:
     \begin{itemize}
-        \item clpfd- moduł, w którym dziedziny są skończone i składają się z liczb całkowitych. Ów moduł 
+        \item \textbf{clpfd} -- moduł, w którym dziedziny są skończone i składają się z liczb całkowitych. \\
+        Ów moduł 
         wykorzystywany jest w zaimplementowanym algorytmie GRAPHPLAN
-        \item clpb - moduł, w którym dziedziny składają się z wartości boolowskich
-        \item clpq - moduł, w którym dziedziny składają się z liczb wymiernych w formie dziesiętnej
-        \item clpr - moduł, w którym dziedziny składają się z liczb rzeczywistych zmiennopozycyjnych 
+        \item \textbf{clpb} -- moduł, w którym dziedziny składają się z wartości boolowskich
+        \item \textbf{clpq} -- moduł, w którym dziedziny składają się z liczb wymiernych w formie dziesiętnej
+        \item \textbf{clpr} -- moduł, w którym dziedziny składają się z liczb rzeczywistych zmiennopozycyjnych 
     \end{itemize}
     Dzięki powyższym modułom można tworzyć bardziej zmyślne ograniczenia. Z przykładami takich zastosowań
     czytelnik będzie mógł się zapoznać w sekcji opisującej implementację algorytmu.
@@ -239,38 +242,40 @@
         \textbf{Dyskretny problem plecakowy}- (ang. discrete knapsack problem) problem wyboru przedmiotów w taki sposób, aby spełniały następujące założenia:
         \begin{itemize}
             \item suma wartości wybranych przedmiotów musi być jak największa 
-            \item suma wag wybranych przedmiotów nie może przekraczać wartości plecaka
+            \item suma wag wybranych przedmiotów nie może przekraczać pojemności plecaka
         \end{itemize}
-        oraz został osiągnięty następujący cel: suma wartości wybranch przedmiotów ma być jak największa.
     \end{example}
 
     Pierwszym podejściem, automatycznie nasuwającym się przy próbie rozwiązania tego problemu, 
     jest itercyjne pakowanie przedmiotów o najwyżej wartości aż do zajścia
-    sytuacji, w której plecak nie jest w stanie pomieścić następnego przedmiotu tego typu. Wtedy dochodzi do zmiany przedmiotu na ten, który jest 
+    sytuacji, \\
+    w której plecak nie jest w stanie pomieścić następnego przedmiotu lub nie ma więcej przedmiotów wskazanego typu. 
+    Wtedy dochodzi do zmiany przedmiotu na ten, który jest 
     drugi co do wartości oraz powtórzenia dla niego wyżej opisanego procesu. Łatwo zauważyć, iż takie rozwiązanie, mimo tego, że zawsze wyprodukuje 
-    jakiś wynik, jest mało optymalne. Mogą zdażyć się sytuacje, w których przedmiot o dużej wartości jest na tyle ciężki, że warto byłoby z niego 
-    zrezygnować na rzecz mniej wartych, ale za to lżejszych przedmiotów. Takie sytuacje nie zostaną wychwycone przez takowe podejście. 
+    wynik, jest mało optymalne. Mogą zdarzyć się sytuacje, w których przedmiot o dużej wartości jest na tyle ciężki, że warto byłoby z niego 
+    zrezygnować na rzecz mniej wartościowych, ale za to lżejszych przedmiotów. Takie sytuacje nie zostaną wychwycone przez takowe podejście. 
     Przedstawiony powyżej sposób rozwiązania problemu nosi nazwę rozwiązania \textbf{zachłannego}, które cechuje się wyszukiwaniem lokalnego, a
     nie globalnego, \textbf{ekstremum} funkcji.
 
     Łatwo zauważyć, iż sposób zachłanny jest modelowany na wzór zachowania człowieka postawionego we wskazanej sytuacji. Drugie podejście natomiast 
     wykorzystuje analityczne podejście, które w świecie informatycznym nosi nazwę \textbf{programowania dynamicznego}. Ten typ programowania 
     opiera się na podziale występującego problemu na mniejsze podproblemy względem ustalonych parametrów. Dla wskazanego problemu 
-    definiuje się ciąg wag jako $w_{1},...,w_{n}$ oraz wartości $v1,...,v_{n}$, gdzie \textbf{n} oznacza liczbę branych pod uwagę przedmiotów, 
-    oraz funkcję $A(i,j)$, gdzie \textbf{i} oznacza liczbę rozpatrzonych elementów, a \textbf{j}- maksymalną wartośc, którą można otrzymać z wskazanych 
+    definiuje się ciąg wag jako $w_{1},...,w_{n}$ oraz wartości $v_{1},...,v_{n}$, gdzie \textbf{n} oznacza liczbę branych pod uwagę przedmiotów, 
+    oraz funkcję $A(i,j)$, gdzie \textbf{i} oznacza liczbę rozpatrzonych już elementów, a \textbf{j}- maksymalną wartość, którą można otrzymać ze wskazanych 
     elementów. Problem sprowadza się do wyznaczenia wartości $A(n,W)$, gdzie \textbf{W} oznacza maksymalną wagę plecaka.
     Funkcja $A(i,j)$ definiowana jest następującym wzorem:
     \begin{gather}
         \nonumber A(0,j) = 0 \\
         \nonumber A(i,0) = 0 \\
-        \nonumber A(i,j) = A(i-1,j) dla w_{i} > j\\
-        A(i,j) = max(A(i-1,j), A(i-1,j-w_{i}) + v_{i}) dla w_{i} \leq j
+        \nonumber A(i,j) = A(i-1,j) : w_{i} > j\\
+        A(i,j) = max(A(i-1,j), A(i-1,j-w_{i}) + v_{i}) : w_{i} \leq j
     \end{gather}
     Funkcja ta nosi nazwę \textit{funkcji rekurencyjnej Bellman'a}
 
 
-    Alternatywnym metoda do skomplikowanego podejścia w programowaniu dynamicznym jest użycie wcześniej wspomnianego programowania ograniczeń.
-    Ograniczenie na liczbę przedmiotów prezentowane jest w postaci $w_{1}*A + w_{2}*B + ... =< W$, gdzie współczyniki $A,B,...$ to liczba elementów do wzięcia.
+    Alternatywną metoda do skomplikowanego podejścia w programowaniu dynamicznym jest użycie wcześniej wspomnianego programowania ograniczeń.
+    Ograniczenie na liczbę przedmiotów prezentowane jest w postaci $w_{1}*A + w_{2}*B + ... =< W$, gdzie współczyniki $A,B,...$ \\
+    to liczba elementów do wzięcia.
     Następnie należy zmaksymalizować etykietowanie współczynników $A,B,...$ względem funkcji $v_{1} * A + v_{2} * B + ...$.
 
 
@@ -281,7 +286,7 @@
         \begin{figure}[H]
             \includegraphics[scale=0.5]{constraint_example}
             \centering
-            \caption{Przykładowa łamigłówka krypto-arytmetyczna}
+            \caption{Przykładowa łamigłówka krypto-arytmetyczna \cite{AI}}
         \end{figure} 
     \end{example}
     Najważniejszymi założeniami łamigłówki są:
@@ -357,28 +362,30 @@
 \section{Wykorzystanie w algorytmie}
 
     Podczas opisywania mechanizmów stojących za programowaniem ograniczeń często wykorzystywaną strukturą był graf, chociażby w sekcji omawiającej 
-    pojęcie lokalnych spójności (\ref{SpójnośćRodział}). Ze względu na ów powiązanie między programowaniem ograniczeń a GRAPHPLAN'em do podstawowego opisu GRAPHPLANU z rodziału 2 
+    pojęcie lokalnych spójności (\ref{SpójnośćRodział}). Ze względu na ów powiązanie między programowaniem ograniczeń a GRAPHPLAN'em do podstawowego opisu GRAPHPLAN'u z rodziału 
     \ref{GRAPHPLANRozdzial} dodano funkcjonalności opisane w powyższych rozdziałach. 
 
     Każdy ze stanów oraz akcji zawiera w sobie dodatkowy \textbf{indykator}. Jest to liczba ze zbioru liczb całkowitych, o której 
-    należy mysleć bardziej w kontekście wartości bool'owskich $\{prawda,fałsz\}$. Wartość liczby równa 0 indukuje fałszywość stanu, natomiast wartość większa od 0 indukuje jego
+    należy mysleć bardziej w kontekście wartości bool'owskich $\{prawda,fałsz\}$. Wartość liczby równa 0 jest równoważna fałszywość stanu, natomiast wartość większa od 0 generuje jego
     prawdziwość. Przy pomocy indykatorów program ustala, które stany, bądź akcje 
-    są w danej warstwie prawdziwe, czyli występują w świecie oraz takie, które w ów świecie w danym momencie nie występują, czyli są fałszywe. 
+    są w danej warstwie prawdziwe, czyli występują w świecie oraz takie, które
+    w ów świecie w danym momencie nie występują, czyli są fałszywe. 
     Odbywa się to w następujący sposób:
     \begin{enumerate}
         \item Wszystkie stany wchodzące w stan początkowy otrzymują indykator równy 1, gdyż są aktualnie prawdziwe 
         w rozpatrywanym świecie.
         \item W trakcie generowania akcji następuje utworzenie powiązania między warunkami zajścia, akcjami oraz ich efektami.
-        Akcja zostaje powiązane ze swoim warunkiem następującym ograniczeniem: wartośc indykatora akcji jest mniejsza bądź równa wartości 
+        Akcja zostaje powiązana ze swoim warunkiem następującym ograniczeniem: wartośc indykatora akcji jest mniejsza bądź równa wartości 
         indykatora warunku. Należy to rozumieć w następujący sposób- jeśli warunek jest prawdziwy to akcja \textbf{może} zachodzić w świecie, natomiast 
         jeśli warunek jest nieprawdziwy, czyli ma indykator równy 0, akcja automatycznie dostaje indykator równy 0.
         Efekt zostaje powiązany ze swoją akcją poprzez następujące ograniczenie: jeśli jakakolwiek akcja w danej warstwie, 
-        która ma dany stan za efekt zachodzi, wtedy również i efekt w nim występuje. Jeśli wszystkie akcje generujące ów efekt mają indykator równy 0 
+        która ma dany stan za efekt, zachodzi, wtedy również i efekt w nim występuje. Jeśli wszystkie akcje generujące ów efekt mają indykator równy 0 
         wtedy efekt nie może zachodzić na danym poziomie, więc również otrzymuje indykator równy 0.
         \item Dochodzi do sprawdzenia relacji wzajemnego wykluczania poprzez sprawdzenie indykatorów dwóch stanów- Jeśli ich iloczyn jest równy 0, wtedy 
         dwa stany nie mogą razem występować na danym poziomie.
         \item Przy dokładnej realizacji kroków 2 i 3 algorytm jest w stanie wygenerować kolejny poziom stanów. Po wygenerowaniu 
-        dochodzi do sprawdzenia, czy wszystkie stany zawarte w zbiorze przechowującym cele mają indykatory równe 1. Jeśli nie, 
+        dochodzi do sprawdzenia, czy istnieje takie ustalenie wartości ograniczeń na stanach zawartych w danej warstwie algorytmu, aby wszystkie 
+        stany wchodzące w zbiór celów otrzymały indyaktor równy 1. Jeśli nie, 
         rzeczony proces jest powtarzany aż do otrzymania pożądanego skutku.
         \item Gdy wszystkie cele otrzymają indykator 1, program przelicza wszystkie indykatory, dzięki czemu jest w stanie bezbłędnie określić, który 
         stan bądź która akcja na danym etapie przetwarzania świata znajdują się w nim bądź nie. Ów mechanizm jest silnie wykorzystywany 

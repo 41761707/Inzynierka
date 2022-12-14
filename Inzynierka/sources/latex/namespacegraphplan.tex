@@ -1,0 +1,401 @@
+\hypertarget{namespacegraphplan}{}\doxysection{graphplan Namespace Reference}
+\label{namespacegraphplan}\index{graphplan@{graphplan}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacegraphplan_abdfbaa5f63eaa355dd61060a2078f56f}\label{namespacegraphplan_abdfbaa5f63eaa355dd61060a2078f56f}} 
+def {\bfseries remove} (X, List0, List1)
+\item 
+def \mbox{\hyperlink{namespacegraphplan_ae3f846d98024c5254978086175afab88}{call\+\_\+plan}} (Goals, Plan)
+\begin{DoxyCompactList}\small\item\em Predykat odpowiedzialny za rozruch programu oraz przekierowanie strumienia danych do pliku tekstowego. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacegraphplan_a592d4c8a72736d89e9f65ad14bafb248}{create\+\_\+plan}} (Start\+State, Goals, Plan)
+\begin{DoxyCompactList}\small\item\em Predykat odpowiedzialny za kreowanie planu. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegraphplan_a61400f86245adebebcd519c466a40ee5}\label{namespacegraphplan_a61400f86245adebebcd519c466a40ee5}} 
+def {\bfseries graphplan} (Graph\+Plan, Goals, All\+Actions, Plan)
+\item 
+def \mbox{\hyperlink{namespacegraphplan_a8075e14ef33c67cf2416f3cd47dc7d54}{check\+\_\+constraint}} (State\+Level, Goals)
+\begin{DoxyCompactList}\small\item\em Predykat odpowiedzialny za kreowanie planu. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacegraphplan_a348d73dd933e51d62787d7548c838792}{generate\+\_\+plan}} (Graph\+Plan, Plan)
+\begin{DoxyCompactList}\small\item\em Predykat odpowiedzialny za kreowanie planu. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacegraphplan_a1b276e97c651133b9a0983d04c590f80}{expand}} (State\+Level, Action\+Level, Next\+State\+Level, All\+Actions)
+\begin{DoxyCompactList}\small\item\em Predykat odpowiedzialny za kreowanie planu. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacegraphplan_a7ebc3c158cfcee679b469d0508f6fee3}{actions}} (State\+Level, Action, Previous\+Action\+Level, New\+Action\+Level, Previous\+State\+Level, New\+State\+Level)
+\begin{DoxyCompactList}\small\item\em Predykat odpowiedzialny za kreowanie planu. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacegraphplan_af9e49da8e082f04598178b12440aef1c}{actions\+\_\+constraint}} (State\+Level, Preconditions, Indykator)
+\begin{DoxyCompactList}\small\item\em Predykat odpowiedzialny za kreowanie planu. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacegraphplan_a9305f18a7f4f725e433568af93771c9e}{effects}} (Indykator, Previous\+State\+Level, Next\+State\+Level)
+\begin{DoxyCompactList}\small\item\em Predykat odpowiedzialny za kreowanie planu. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacegraphplan_a07a2257d67fa2641b8161b5b0238b461}{mutex\+\_\+state}} (State\+Level)
+\begin{DoxyCompactList}\small\item\em Predykat odpowiedzialny za kreowanie planu. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacegraphplan_a4aca6c3f18ce5aba6fb1a5f198e9f605}{mutex\+\_\+single}} (State, State\+Level)
+\begin{DoxyCompactList}\small\item\em Predykat odpowiedzialny za kreowanie planu. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacegraphplan_a6ac5c85efcea7e2d680b91636f9b978b}{mutex}} (A, B)
+\begin{DoxyCompactList}\small\item\em Predykat odpowiedzialny za kreowanie planu. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacegraphplan_a4d515fc041b795b0c87fc25b22ca3715}{mutex\+\_\+action}} (Action, State\+Level)
+\begin{DoxyCompactList}\small\item\em Predykat odpowiedzialny za kreowanie planu. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacegraphplan_a9c619eea6e29dde0504dc31b89030d83}{mutex\+\_\+single\+\_\+action}} (A, Action\+Level)
+\begin{DoxyCompactList}\small\item\em Predykat odpowiedzialny za kreowanie planu. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacegraphplan_a4f8ff155172b270752c9de8a32f83a43}{mutex\+\_\+for\+\_\+action\+\_\+1}} (A1, A2)
+\begin{DoxyCompactList}\small\item\em Predykat odpowiedzialny za kreowanie planu. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacegraphplan_a8aac755848d538cfc26c2216191caf95}{mutex\+\_\+for\+\_\+action\+\_\+2}} (A1, A2)
+\begin{DoxyCompactList}\small\item\em Predykat odpowiedzialny za kreowanie planu. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacegraphplan_a2ed85c823adbed3c657c76174388c243}{mutex\+\_\+for\+\_\+action\+\_\+3}} (A1, A2)
+\begin{DoxyCompactList}\small\item\em Predykat odpowiedzialny za kreowanie planu. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacegraphplan_af8e324a1d68fd437730db8bbf0f4e368}{collect\+\_\+vars}} (Action\+Indicators, Vars)
+\begin{DoxyCompactList}\small\item\em Predykat odpowiedzialny za kreowanie planu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Plik zawierający implementację klasy Simplified\+Graph kreującej uproszczony graf dla zadanego problemu
+
+Predykat usuwająca element z listy 
+\begin{DoxyParams}{Parameters}
+{\em X} & Element do usunięcia \\
+\hline
+{\em List0} & Lista \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List1 Lista bez wskazanego elementu 
+\end{DoxyReturn}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacegraphplan_a7ebc3c158cfcee679b469d0508f6fee3}\label{namespacegraphplan_a7ebc3c158cfcee679b469d0508f6fee3}} 
+\index{graphplan@{graphplan}!actions@{actions}}
+\index{actions@{actions}!graphplan@{graphplan}}
+\doxysubsubsection{\texorpdfstring{actions()}{actions()}}
+{\footnotesize\ttfamily def graphplan.\+actions (\begin{DoxyParamCaption}\item[{}]{State\+Level,  }\item[{}]{Action,  }\item[{}]{Previous\+Action\+Level,  }\item[{}]{New\+Action\+Level,  }\item[{}]{Previous\+State\+Level,  }\item[{}]{New\+State\+Level }\end{DoxyParamCaption})}
+
+
+
+Predykat odpowiedzialny za kreowanie planu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Start\+State} & Warunki początkowe \\
+\hline
+{\em Goals} & Zdefiniowane cele \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Plan Wykreowany plan 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacegraphplan_af9e49da8e082f04598178b12440aef1c}\label{namespacegraphplan_af9e49da8e082f04598178b12440aef1c}} 
+\index{graphplan@{graphplan}!actions\_constraint@{actions\_constraint}}
+\index{actions\_constraint@{actions\_constraint}!graphplan@{graphplan}}
+\doxysubsubsection{\texorpdfstring{actions\_constraint()}{actions\_constraint()}}
+{\footnotesize\ttfamily def graphplan.\+actions\+\_\+constraint (\begin{DoxyParamCaption}\item[{}]{State\+Level,  }\item[{}]{Preconditions,  }\item[{}]{Indykator }\end{DoxyParamCaption})}
+
+
+
+Predykat odpowiedzialny za kreowanie planu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Start\+State} & Warunki początkowe \\
+\hline
+{\em Goals} & Zdefiniowane cele \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Plan Wykreowany plan 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacegraphplan_ae3f846d98024c5254978086175afab88}\label{namespacegraphplan_ae3f846d98024c5254978086175afab88}} 
+\index{graphplan@{graphplan}!call\_plan@{call\_plan}}
+\index{call\_plan@{call\_plan}!graphplan@{graphplan}}
+\doxysubsubsection{\texorpdfstring{call\_plan()}{call\_plan()}}
+{\footnotesize\ttfamily def graphplan.\+call\+\_\+plan (\begin{DoxyParamCaption}\item[{}]{Goals,  }\item[{}]{Plan }\end{DoxyParamCaption})}
+
+
+
+Predykat odpowiedzialny za rozruch programu oraz przekierowanie strumienia danych do pliku tekstowego. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Goals} & Cele do osiągnięcia w zdefiniowanym świecie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Plan Wykreowany plan 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacegraphplan_a8075e14ef33c67cf2416f3cd47dc7d54}\label{namespacegraphplan_a8075e14ef33c67cf2416f3cd47dc7d54}} 
+\index{graphplan@{graphplan}!check\_constraint@{check\_constraint}}
+\index{check\_constraint@{check\_constraint}!graphplan@{graphplan}}
+\doxysubsubsection{\texorpdfstring{check\_constraint()}{check\_constraint()}}
+{\footnotesize\ttfamily def graphplan.\+check\+\_\+constraint (\begin{DoxyParamCaption}\item[{}]{State\+Level,  }\item[{}]{Goals }\end{DoxyParamCaption})}
+
+
+
+Predykat odpowiedzialny za kreowanie planu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Start\+State} & Warunki początkowe \\
+\hline
+{\em Goals} & Zdefiniowane cele \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Plan Wykreowany plan 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacegraphplan_af8e324a1d68fd437730db8bbf0f4e368}\label{namespacegraphplan_af8e324a1d68fd437730db8bbf0f4e368}} 
+\index{graphplan@{graphplan}!collect\_vars@{collect\_vars}}
+\index{collect\_vars@{collect\_vars}!graphplan@{graphplan}}
+\doxysubsubsection{\texorpdfstring{collect\_vars()}{collect\_vars()}}
+{\footnotesize\ttfamily def graphplan.\+collect\+\_\+vars (\begin{DoxyParamCaption}\item[{}]{Action\+Indicators,  }\item[{}]{Vars }\end{DoxyParamCaption})}
+
+
+
+Predykat odpowiedzialny za kreowanie planu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Start\+State} & Warunki początkowe \\
+\hline
+{\em Goals} & Zdefiniowane cele \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Plan Wykreowany plan 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacegraphplan_a592d4c8a72736d89e9f65ad14bafb248}\label{namespacegraphplan_a592d4c8a72736d89e9f65ad14bafb248}} 
+\index{graphplan@{graphplan}!create\_plan@{create\_plan}}
+\index{create\_plan@{create\_plan}!graphplan@{graphplan}}
+\doxysubsubsection{\texorpdfstring{create\_plan()}{create\_plan()}}
+{\footnotesize\ttfamily def graphplan.\+create\+\_\+plan (\begin{DoxyParamCaption}\item[{}]{Start\+State,  }\item[{}]{Goals,  }\item[{}]{Plan }\end{DoxyParamCaption})}
+
+
+
+Predykat odpowiedzialny za kreowanie planu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Start\+State} & Warunki początkowe \\
+\hline
+{\em Goals} & Zdefiniowane cele \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Plan Wykreowany plan 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacegraphplan_a9305f18a7f4f725e433568af93771c9e}\label{namespacegraphplan_a9305f18a7f4f725e433568af93771c9e}} 
+\index{graphplan@{graphplan}!effects@{effects}}
+\index{effects@{effects}!graphplan@{graphplan}}
+\doxysubsubsection{\texorpdfstring{effects()}{effects()}}
+{\footnotesize\ttfamily def graphplan.\+effects (\begin{DoxyParamCaption}\item[{}]{Indykator,  }\item[{}]{Previous\+State\+Level,  }\item[{}]{Next\+State\+Level }\end{DoxyParamCaption})}
+
+
+
+Predykat odpowiedzialny za kreowanie planu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Start\+State} & Warunki początkowe \\
+\hline
+{\em Goals} & Zdefiniowane cele \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Plan Wykreowany plan 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacegraphplan_a1b276e97c651133b9a0983d04c590f80}\label{namespacegraphplan_a1b276e97c651133b9a0983d04c590f80}} 
+\index{graphplan@{graphplan}!expand@{expand}}
+\index{expand@{expand}!graphplan@{graphplan}}
+\doxysubsubsection{\texorpdfstring{expand()}{expand()}}
+{\footnotesize\ttfamily def graphplan.\+expand (\begin{DoxyParamCaption}\item[{}]{State\+Level,  }\item[{}]{Action\+Level,  }\item[{}]{Next\+State\+Level,  }\item[{}]{All\+Actions }\end{DoxyParamCaption})}
+
+
+
+Predykat odpowiedzialny za kreowanie planu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Start\+State} & Warunki początkowe \\
+\hline
+{\em Goals} & Zdefiniowane cele \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Plan Wykreowany plan 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacegraphplan_a348d73dd933e51d62787d7548c838792}\label{namespacegraphplan_a348d73dd933e51d62787d7548c838792}} 
+\index{graphplan@{graphplan}!generate\_plan@{generate\_plan}}
+\index{generate\_plan@{generate\_plan}!graphplan@{graphplan}}
+\doxysubsubsection{\texorpdfstring{generate\_plan()}{generate\_plan()}}
+{\footnotesize\ttfamily def graphplan.\+generate\+\_\+plan (\begin{DoxyParamCaption}\item[{}]{Graph\+Plan,  }\item[{}]{Plan }\end{DoxyParamCaption})}
+
+
+
+Predykat odpowiedzialny za kreowanie planu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Start\+State} & Warunki początkowe \\
+\hline
+{\em Goals} & Zdefiniowane cele \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Plan Wykreowany plan 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacegraphplan_a6ac5c85efcea7e2d680b91636f9b978b}\label{namespacegraphplan_a6ac5c85efcea7e2d680b91636f9b978b}} 
+\index{graphplan@{graphplan}!mutex@{mutex}}
+\index{mutex@{mutex}!graphplan@{graphplan}}
+\doxysubsubsection{\texorpdfstring{mutex()}{mutex()}}
+{\footnotesize\ttfamily def graphplan.\+mutex (\begin{DoxyParamCaption}\item[{}]{A,  }\item[{}]{B }\end{DoxyParamCaption})}
+
+
+
+Predykat odpowiedzialny za kreowanie planu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Start\+State} & Warunki początkowe \\
+\hline
+{\em Goals} & Zdefiniowane cele \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Plan Wykreowany plan 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacegraphplan_a4d515fc041b795b0c87fc25b22ca3715}\label{namespacegraphplan_a4d515fc041b795b0c87fc25b22ca3715}} 
+\index{graphplan@{graphplan}!mutex\_action@{mutex\_action}}
+\index{mutex\_action@{mutex\_action}!graphplan@{graphplan}}
+\doxysubsubsection{\texorpdfstring{mutex\_action()}{mutex\_action()}}
+{\footnotesize\ttfamily def graphplan.\+mutex\+\_\+action (\begin{DoxyParamCaption}\item[{}]{Action,  }\item[{}]{State\+Level }\end{DoxyParamCaption})}
+
+
+
+Predykat odpowiedzialny za kreowanie planu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Start\+State} & Warunki początkowe \\
+\hline
+{\em Goals} & Zdefiniowane cele \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Plan Wykreowany plan 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacegraphplan_a4f8ff155172b270752c9de8a32f83a43}\label{namespacegraphplan_a4f8ff155172b270752c9de8a32f83a43}} 
+\index{graphplan@{graphplan}!mutex\_for\_action\_1@{mutex\_for\_action\_1}}
+\index{mutex\_for\_action\_1@{mutex\_for\_action\_1}!graphplan@{graphplan}}
+\doxysubsubsection{\texorpdfstring{mutex\_for\_action\_1()}{mutex\_for\_action\_1()}}
+{\footnotesize\ttfamily def graphplan.\+mutex\+\_\+for\+\_\+action\+\_\+1 (\begin{DoxyParamCaption}\item[{}]{A1,  }\item[{}]{A2 }\end{DoxyParamCaption})}
+
+
+
+Predykat odpowiedzialny za kreowanie planu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Start\+State} & Warunki początkowe \\
+\hline
+{\em Goals} & Zdefiniowane cele \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Plan Wykreowany plan 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacegraphplan_a8aac755848d538cfc26c2216191caf95}\label{namespacegraphplan_a8aac755848d538cfc26c2216191caf95}} 
+\index{graphplan@{graphplan}!mutex\_for\_action\_2@{mutex\_for\_action\_2}}
+\index{mutex\_for\_action\_2@{mutex\_for\_action\_2}!graphplan@{graphplan}}
+\doxysubsubsection{\texorpdfstring{mutex\_for\_action\_2()}{mutex\_for\_action\_2()}}
+{\footnotesize\ttfamily def graphplan.\+mutex\+\_\+for\+\_\+action\+\_\+2 (\begin{DoxyParamCaption}\item[{}]{A1,  }\item[{}]{A2 }\end{DoxyParamCaption})}
+
+
+
+Predykat odpowiedzialny za kreowanie planu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Start\+State} & Warunki początkowe \\
+\hline
+{\em Goals} & Zdefiniowane cele \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Plan Wykreowany plan 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacegraphplan_a2ed85c823adbed3c657c76174388c243}\label{namespacegraphplan_a2ed85c823adbed3c657c76174388c243}} 
+\index{graphplan@{graphplan}!mutex\_for\_action\_3@{mutex\_for\_action\_3}}
+\index{mutex\_for\_action\_3@{mutex\_for\_action\_3}!graphplan@{graphplan}}
+\doxysubsubsection{\texorpdfstring{mutex\_for\_action\_3()}{mutex\_for\_action\_3()}}
+{\footnotesize\ttfamily def graphplan.\+mutex\+\_\+for\+\_\+action\+\_\+3 (\begin{DoxyParamCaption}\item[{}]{A1,  }\item[{}]{A2 }\end{DoxyParamCaption})}
+
+
+
+Predykat odpowiedzialny za kreowanie planu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Start\+State} & Warunki początkowe \\
+\hline
+{\em Goals} & Zdefiniowane cele \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Plan Wykreowany plan 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacegraphplan_a4aca6c3f18ce5aba6fb1a5f198e9f605}\label{namespacegraphplan_a4aca6c3f18ce5aba6fb1a5f198e9f605}} 
+\index{graphplan@{graphplan}!mutex\_single@{mutex\_single}}
+\index{mutex\_single@{mutex\_single}!graphplan@{graphplan}}
+\doxysubsubsection{\texorpdfstring{mutex\_single()}{mutex\_single()}}
+{\footnotesize\ttfamily def graphplan.\+mutex\+\_\+single (\begin{DoxyParamCaption}\item[{}]{State,  }\item[{}]{State\+Level }\end{DoxyParamCaption})}
+
+
+
+Predykat odpowiedzialny za kreowanie planu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Start\+State} & Warunki początkowe \\
+\hline
+{\em Goals} & Zdefiniowane cele \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Plan Wykreowany plan 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacegraphplan_a9c619eea6e29dde0504dc31b89030d83}\label{namespacegraphplan_a9c619eea6e29dde0504dc31b89030d83}} 
+\index{graphplan@{graphplan}!mutex\_single\_action@{mutex\_single\_action}}
+\index{mutex\_single\_action@{mutex\_single\_action}!graphplan@{graphplan}}
+\doxysubsubsection{\texorpdfstring{mutex\_single\_action()}{mutex\_single\_action()}}
+{\footnotesize\ttfamily def graphplan.\+mutex\+\_\+single\+\_\+action (\begin{DoxyParamCaption}\item[{}]{A,  }\item[{}]{Action\+Level }\end{DoxyParamCaption})}
+
+
+
+Predykat odpowiedzialny za kreowanie planu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Start\+State} & Warunki początkowe \\
+\hline
+{\em Goals} & Zdefiniowane cele \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Plan Wykreowany plan 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacegraphplan_a07a2257d67fa2641b8161b5b0238b461}\label{namespacegraphplan_a07a2257d67fa2641b8161b5b0238b461}} 
+\index{graphplan@{graphplan}!mutex\_state@{mutex\_state}}
+\index{mutex\_state@{mutex\_state}!graphplan@{graphplan}}
+\doxysubsubsection{\texorpdfstring{mutex\_state()}{mutex\_state()}}
+{\footnotesize\ttfamily def graphplan.\+mutex\+\_\+state (\begin{DoxyParamCaption}\item[{}]{State\+Level }\end{DoxyParamCaption})}
+
+
+
+Predykat odpowiedzialny za kreowanie planu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Start\+State} & Warunki początkowe \\
+\hline
+{\em Goals} & Zdefiniowane cele \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Plan Wykreowany plan 
+\end{DoxyReturn}

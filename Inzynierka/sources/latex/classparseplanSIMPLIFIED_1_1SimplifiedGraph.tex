@@ -1,0 +1,186 @@
+\hypertarget{classparseplanSIMPLIFIED_1_1SimplifiedGraph}{}\doxysection{parseplan\+S\+I\+M\+P\+L\+I\+F\+I\+E\+D.\+Simplified\+Graph Class Reference}
+\label{classparseplanSIMPLIFIED_1_1SimplifiedGraph}\index{parseplanSIMPLIFIED.SimplifiedGraph@{parseplanSIMPLIFIED.SimplifiedGraph}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classparseplanSIMPLIFIED_1_1SimplifiedGraph_a13cd2f8546a94602224d670b208d47ac}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, filename)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \mbox{\hyperlink{classparseplanSIMPLIFIED_1_1SimplifiedGraph}{Simplified\+Graph}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classparseplanSIMPLIFIED_1_1SimplifiedGraph_ab4f615ceda0b7319675659b2231489f8}\label{classparseplanSIMPLIFIED_1_1SimplifiedGraph_ab4f615ceda0b7319675659b2231489f8}} 
+def \mbox{\hyperlink{classparseplanSIMPLIFIED_1_1SimplifiedGraph_ab4f615ceda0b7319675659b2231489f8}{return\+\_\+plan}} (self)
+\begin{DoxyCompactList}\small\item\em Funkcja zwracająca plan. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classparseplanSIMPLIFIED_1_1SimplifiedGraph_ada439afbb12d0e3c3bfeab9a14aa071a}{generate\+Arcs}} (self, actions, g, level)
+\begin{DoxyCompactList}\small\item\em Funkcja odpowiedzialna za utworzenie krawędzi między stanami a akcjami. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classparseplanSIMPLIFIED_1_1SimplifiedGraph_aefd62eadb33117851788409d4979c6a1}{generate\+Layer}} (self, name, variables, g, level, type)
+\begin{DoxyCompactList}\small\item\em Funkcja odpowiedzialna za utworzenie poziomu stanów bądź akcji w grafie. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classparseplanSIMPLIFIED_1_1SimplifiedGraph_ad10b23aa74fcac9dc02752c270e34d0b}{read\+Input}} (self, filename)
+\begin{DoxyCompactList}\small\item\em Funkcja odpowiedzialna za wczytanie pliku do zmiennej. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classparseplanSIMPLIFIED_1_1SimplifiedGraph_a0af8f04ee3a415eb13623eb3f4791600}{parse\+Input}} (self, file, g)
+\begin{DoxyCompactList}\small\item\em Funkcja parsująca plik. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classparseplanSIMPLIFIED_1_1SimplifiedGraph_a36ba99129beaa8d012fb494b2d90f1f9}{parse\+Plan}} (self)
+\begin{DoxyCompactList}\small\item\em Funkcja odpowiedzialna za oczyszczenie planu ze zbędnych elementów. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classparseplanSIMPLIFIED_1_1SimplifiedGraph_ae08ac88a72cc0415634695364a541d8e}{color\+Used\+Actions}} (self, plan, max\+\_\+level, g)
+\begin{DoxyCompactList}\small\item\em Funkcja odpowiedzialna za zmianę koloru krawędzi prowadzących do otrzymania wskazanego rezultatu. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classparseplanSIMPLIFIED_1_1SimplifiedGraph_aaca500f753c3a045c21dc9f790e80a0b}{remove\+Negations}} (self, g)
+\begin{DoxyCompactList}\small\item\em Funkcja wymazująca efekty usuwające z grafu. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classparseplanSIMPLIFIED_1_1SimplifiedGraph_a9b17c5b17cd6648d2588b16f9f8bbb74}\label{classparseplanSIMPLIFIED_1_1SimplifiedGraph_a9b17c5b17cd6648d2588b16f9f8bbb74}} 
+def \mbox{\hyperlink{classparseplanSIMPLIFIED_1_1SimplifiedGraph_a9b17c5b17cd6648d2588b16f9f8bbb74}{run\+\_\+all}} (self)
+\begin{DoxyCompactList}\small\item\em Funkcja odpowiedzialna za utworzenie grafu w formiace P\+NG. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classparseplanSIMPLIFIED_1_1SimplifiedGraph_a34cee893c9290bad4a4b1f9ec7582d40}\label{classparseplanSIMPLIFIED_1_1SimplifiedGraph_a34cee893c9290bad4a4b1f9ec7582d40}} 
+{\bfseries filename}
+\item 
+\mbox{\Hypertarget{classparseplanSIMPLIFIED_1_1SimplifiedGraph_af13135fee23e66877f3f909548cb4587}\label{classparseplanSIMPLIFIED_1_1SimplifiedGraph_af13135fee23e66877f3f909548cb4587}} 
+{\bfseries plan}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classparseplanSIMPLIFIED_1_1SimplifiedGraph_a13cd2f8546a94602224d670b208d47ac}\label{classparseplanSIMPLIFIED_1_1SimplifiedGraph_a13cd2f8546a94602224d670b208d47ac}} 
+\index{parseplanSIMPLIFIED.SimplifiedGraph@{parseplanSIMPLIFIED.SimplifiedGraph}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!parseplanSIMPLIFIED.SimplifiedGraph@{parseplanSIMPLIFIED.SimplifiedGraph}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def parseplan\+S\+I\+M\+P\+L\+I\+F\+I\+E\+D.\+Simplified\+Graph.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename }\end{DoxyParamCaption})}
+
+
+
+Konstruktor klasy \mbox{\hyperlink{classparseplanSIMPLIFIED_1_1SimplifiedGraph}{Simplified\+Graph}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & nazwa pliku, z którego zostanie wygenerowany graf \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classparseplanSIMPLIFIED_1_1SimplifiedGraph_ae08ac88a72cc0415634695364a541d8e}\label{classparseplanSIMPLIFIED_1_1SimplifiedGraph_ae08ac88a72cc0415634695364a541d8e}} 
+\index{parseplanSIMPLIFIED.SimplifiedGraph@{parseplanSIMPLIFIED.SimplifiedGraph}!colorUsedActions@{colorUsedActions}}
+\index{colorUsedActions@{colorUsedActions}!parseplanSIMPLIFIED.SimplifiedGraph@{parseplanSIMPLIFIED.SimplifiedGraph}}
+\doxysubsubsection{\texorpdfstring{colorUsedActions()}{colorUsedActions()}}
+{\footnotesize\ttfamily def parseplan\+S\+I\+M\+P\+L\+I\+F\+I\+E\+D.\+Simplified\+Graph.\+color\+Used\+Actions (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{plan,  }\item[{}]{max\+\_\+level,  }\item[{}]{g }\end{DoxyParamCaption})}
+
+
+
+Funkcja odpowiedzialna za zmianę koloru krawędzi prowadzących do otrzymania wskazanego rezultatu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plan} & Plan zawierajacy akcje, których krawędzie należy wyszczególnić \\
+\hline
+{\em max\+\_\+level} & Maksymalny rozmiar grafu \\
+\hline
+{\em g} & Graf \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classparseplanSIMPLIFIED_1_1SimplifiedGraph_ada439afbb12d0e3c3bfeab9a14aa071a}\label{classparseplanSIMPLIFIED_1_1SimplifiedGraph_ada439afbb12d0e3c3bfeab9a14aa071a}} 
+\index{parseplanSIMPLIFIED.SimplifiedGraph@{parseplanSIMPLIFIED.SimplifiedGraph}!generateArcs@{generateArcs}}
+\index{generateArcs@{generateArcs}!parseplanSIMPLIFIED.SimplifiedGraph@{parseplanSIMPLIFIED.SimplifiedGraph}}
+\doxysubsubsection{\texorpdfstring{generateArcs()}{generateArcs()}}
+{\footnotesize\ttfamily def parseplan\+S\+I\+M\+P\+L\+I\+F\+I\+E\+D.\+Simplified\+Graph.\+generate\+Arcs (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{actions,  }\item[{}]{g,  }\item[{}]{level }\end{DoxyParamCaption})}
+
+
+
+Funkcja odpowiedzialna za utworzenie krawędzi między stanami a akcjami. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em actions} & Zbiór akcji \\
+\hline
+{\em g} & Graf \\
+\hline
+{\em level} & Poziom, dla którego kreowane są krawędzie \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classparseplanSIMPLIFIED_1_1SimplifiedGraph_aefd62eadb33117851788409d4979c6a1}\label{classparseplanSIMPLIFIED_1_1SimplifiedGraph_aefd62eadb33117851788409d4979c6a1}} 
+\index{parseplanSIMPLIFIED.SimplifiedGraph@{parseplanSIMPLIFIED.SimplifiedGraph}!generateLayer@{generateLayer}}
+\index{generateLayer@{generateLayer}!parseplanSIMPLIFIED.SimplifiedGraph@{parseplanSIMPLIFIED.SimplifiedGraph}}
+\doxysubsubsection{\texorpdfstring{generateLayer()}{generateLayer()}}
+{\footnotesize\ttfamily def parseplan\+S\+I\+M\+P\+L\+I\+F\+I\+E\+D.\+Simplified\+Graph.\+generate\+Layer (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{variables,  }\item[{}]{g,  }\item[{}]{level,  }\item[{}]{type }\end{DoxyParamCaption})}
+
+
+
+Funkcja odpowiedzialna za utworzenie poziomu stanów bądź akcji w grafie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nazwa zbioru \\
+\hline
+{\em variables} & Stany(\+Akcje), które należy dodać do grafu \\
+\hline
+{\em g} & Graf \\
+\hline
+{\em level} & Poziom, dla którego należy wygenerować mutex\textquotesingle{}y \\
+\hline
+{\em type} & Typ węzła (okrąg-\/ stan, prostokąt-\/ akcja) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classparseplanSIMPLIFIED_1_1SimplifiedGraph_a0af8f04ee3a415eb13623eb3f4791600}\label{classparseplanSIMPLIFIED_1_1SimplifiedGraph_a0af8f04ee3a415eb13623eb3f4791600}} 
+\index{parseplanSIMPLIFIED.SimplifiedGraph@{parseplanSIMPLIFIED.SimplifiedGraph}!parseInput@{parseInput}}
+\index{parseInput@{parseInput}!parseplanSIMPLIFIED.SimplifiedGraph@{parseplanSIMPLIFIED.SimplifiedGraph}}
+\doxysubsubsection{\texorpdfstring{parseInput()}{parseInput()}}
+{\footnotesize\ttfamily def parseplan\+S\+I\+M\+P\+L\+I\+F\+I\+E\+D.\+Simplified\+Graph.\+parse\+Input (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{file,  }\item[{}]{g }\end{DoxyParamCaption})}
+
+
+
+Funkcja parsująca plik. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & wczytany plik w formie napisu \\
+\hline
+{\em g} & Graf \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classparseplanSIMPLIFIED_1_1SimplifiedGraph_a36ba99129beaa8d012fb494b2d90f1f9}\label{classparseplanSIMPLIFIED_1_1SimplifiedGraph_a36ba99129beaa8d012fb494b2d90f1f9}} 
+\index{parseplanSIMPLIFIED.SimplifiedGraph@{parseplanSIMPLIFIED.SimplifiedGraph}!parsePlan@{parsePlan}}
+\index{parsePlan@{parsePlan}!parseplanSIMPLIFIED.SimplifiedGraph@{parseplanSIMPLIFIED.SimplifiedGraph}}
+\doxysubsubsection{\texorpdfstring{parsePlan()}{parsePlan()}}
+{\footnotesize\ttfamily def parseplan\+S\+I\+M\+P\+L\+I\+F\+I\+E\+D.\+Simplified\+Graph.\+parse\+Plan (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Funkcja odpowiedzialna za oczyszczenie planu ze zbędnych elementów. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plan} & Plan, który należy oczyścić \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classparseplanSIMPLIFIED_1_1SimplifiedGraph_ad10b23aa74fcac9dc02752c270e34d0b}\label{classparseplanSIMPLIFIED_1_1SimplifiedGraph_ad10b23aa74fcac9dc02752c270e34d0b}} 
+\index{parseplanSIMPLIFIED.SimplifiedGraph@{parseplanSIMPLIFIED.SimplifiedGraph}!readInput@{readInput}}
+\index{readInput@{readInput}!parseplanSIMPLIFIED.SimplifiedGraph@{parseplanSIMPLIFIED.SimplifiedGraph}}
+\doxysubsubsection{\texorpdfstring{readInput()}{readInput()}}
+{\footnotesize\ttfamily def parseplan\+S\+I\+M\+P\+L\+I\+F\+I\+E\+D.\+Simplified\+Graph.\+read\+Input (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename }\end{DoxyParamCaption})}
+
+
+
+Funkcja odpowiedzialna za wczytanie pliku do zmiennej. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & nazwa pliku ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classparseplanSIMPLIFIED_1_1SimplifiedGraph_aaca500f753c3a045c21dc9f790e80a0b}\label{classparseplanSIMPLIFIED_1_1SimplifiedGraph_aaca500f753c3a045c21dc9f790e80a0b}} 
+\index{parseplanSIMPLIFIED.SimplifiedGraph@{parseplanSIMPLIFIED.SimplifiedGraph}!removeNegations@{removeNegations}}
+\index{removeNegations@{removeNegations}!parseplanSIMPLIFIED.SimplifiedGraph@{parseplanSIMPLIFIED.SimplifiedGraph}}
+\doxysubsubsection{\texorpdfstring{removeNegations()}{removeNegations()}}
+{\footnotesize\ttfamily def parseplan\+S\+I\+M\+P\+L\+I\+F\+I\+E\+D.\+Simplified\+Graph.\+remove\+Negations (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{g }\end{DoxyParamCaption})}
+
+
+
+Funkcja wymazująca efekty usuwające z grafu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Graf \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+parseplan\+S\+I\+M\+P\+L\+I\+F\+I\+E\+D.\+py\end{DoxyCompactItemize}

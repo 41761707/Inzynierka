@@ -3,23 +3,25 @@
 \thispagestyle{chapterBeginStyle}
 
     Główny cel pracy, którym była implementacja algorytmu GRAPHPLAN wraz z programowaniem ograniczeń, został osiagnięty. Przy pomocy 
-    nowego podejścia do programowania udało się ułatwić proces implementacji jak i przyśpieszyć czas tworzenia planu przez algorytm. Użytkownik 
+    nowego podejścia do programowania udało się ułatwić proces implementacji jak \\
+    i przyśpieszyć czas tworzenia planu przez algorytm. Użytkownik 
     może skorzystać z wbudowanych światów w ramach interfejsu graficznego, bądź uruchomić program z poziomu linii komend przy okazji 
     definiując własne środowisko pracy. Na żądanie użytkownika generowane są odpowiednie grafy reprezentujące plan, jak i schemat 
     transformacji świata z wyszczególnieniem sytuacji, w jakiej znajduje się każdy stan początkowy na dowolnym etapie realizacji planu.
     W ramach sprawdzenia funkcjonalności wykonano testy na prostych, lecz obrazowych przykładach. Na ich podstawie można wywnioskować, iż GRAPHPLAN,
     zgodnie ze swoim założeniem generuje plany, które są optymalne, czyli składają się jak najmniejszej liczby kroków. Wykonując testy na 
-    popularnej \textit{przesuwance} można było zauważyć, iż rozszerzanie grafu planującego znacznie wpływa na długość wykonywania algorytmu. 
-    Wprowadzenie świata z mniejszą liczbą stanów, w postaci ósemki, dokonało lekkiej poprawy sytuacji. 
+    popularnej \textit{przesuwance} można było zauważyć, iż rozszerzanie grafu o nowe obiekty świata znacznie wpływa na długość wykonywania algorytmu. 
+    Z tego powodu dokonano dodatkowych testów na zmniejszonej układance, z którą algorytm poradził sobie zdecydowanie lepiej. 
 
     Algorytm posiada szereg możliwości pozwalających na rozszerzenie jego funkcjonalności oraz zwiększenie efektywności generowania planów. W trakcie 
     implementacji można zastosować mechanizm \textit{podwójnego szukania}, który miałby za zadanie układać plan symultanicznie korzystająć z mechanizmu 
-    cofania oraz, na wzór ludzki, dynamicznie zmieniając świat próbując w ten sposób uzyskać wyznaczony cel. Dodatkowo wartym uwagi jest fakt, iż
-    w niektórych sytuacjach można zrezygnować z gwarancji najkrótszego możliwego rozwiązania na rzecz szybszego generowania algorytmu. Ponadto 
+    cofania oraz, na wzór ludzki, wyszukując rozwiązania do przodu, dynamicznie zmieniając świat próbując w ten sposób uzyskać wyznaczony cel. \\
+    Dodatkowo wartym uwagi jest fakt, iż
+    w niektórych sytuacjach można zrezygnować z gwarancji najkrótszego możliwego rozwiązania na rzecz szybszego generowania planu. Ponadto 
     algorytm w swojej istocie bazuje głównie na relacji wzajemnego wykluczania. Istnieje możliwość, iż w zdefiniowanych światach istnieją inne informacje,
     które prowadziłyby do szybszego wyszukiwania odpowiedniego planu.
 
     Dalsze możliwe kierunki rozwoju oprogramowania to między innymi generowanie większej liczby grafów o różnych własnościach, które
-    w dokładniejszy sposób prezentowałyby użytkownik esencję algorytmu, rozbudowa warty graficznej algorytmu pod kątem estetycznym jak i 
+    w dokładniejszy sposób prezentowałyby użytkownikowi esencję algorytmu, rozbudowa warstwy graficznej algorytmu pod kątem estetycznym jak i 
     pod kątem liczby światów w jakich użytkownik może generować plany.
 

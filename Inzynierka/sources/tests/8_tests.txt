@@ -138,11 +138,11 @@ inital_state([na(a,1),na(c,2),na(f,3),na(e,4),na(b,5),na(h,6),na(d,7),na(g,8),pu
 [[idz(h,6,9)],[idz(f,3,6)],[idz(c,2,3)],[idz(b,5,2)],[idz(e,4,5)],[idz(d,7,4)],[idz(g,8,7)],[idz(h,9,8)]]:
 33,527,967 inferences, 2.330 CPU in 2.330 seconds
 
-//inital_state([na(b,1),na(c,2),na(f,3),na(a,4),pusty(5),na(d,6),na(c,7),na(e,8),na(h,9)])
+inital_state([na(a,1),na(f,2),na(b,3),na(e,4),pusty(5),na(c,6),na(d,7),na(g,8),na(h,9)])
+[[idz(c,2,3)],[idz(b,1,2)],[idz(a,4,1)],[idz(d,7,4)],[idz(g,8,7)],[idz(h,5,8)],[idz(e,6,5)],[idz(f,9,6)]]
+46,587,789 inferences, 3.228 CPU in 3.228 seconds
 
-
-
-inital_state([na(a,1),na(e,2),na(b,3),na(h,4),pusty(5),na(c,6),na(d,7),na(g,8),na(f,9)])
+inital_state([na(b,1),na(c,2),pusty(3),na(a,4),na(h,5),na(e,6),na(d,7),na(g,8),na(f,9)]
 [[idz(h,4,5)],[idz(d,7,4)],[idz(g,8,7)],[idz(h,5,8)],[idz(e,2,5)],[idz(b,3,2)],[idz(c,6,3)],[idz(f,9,6)]]:
 57,258,855 inferences, 4.085 CPU in 4.085 seconds
 

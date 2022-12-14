@@ -16,7 +16,60 @@
 :- dynamic n/2.
 :- dynamic inconsistent/2.
 
+% 2 Rockets
+/*
+place(london).
+place(paris).
+%place(jfk).
+
+rocket(rocket1).
+%rocket(rocket2).
+
+cargo(a).
+cargo(b).
+cargo(c).
+%cargo(d).
+
+preconditions(zostan(P),[P]).
+
+preconditions(idz(Rocket,From,To), [na(Rocket,From)]) :-
+    rocket(Rocket),
+    place(From),
+    place(To),
+    From \== To.
+
+preconditions(rozladuj(Rocket,Place,Cargo),[na(Rocket,Place),w(Cargo,Rocket)]) :-
+    rocket(Rocket),
+    cargo(Cargo),
+    place(Place).
+
+preconditions(zaladuj(Rocket,Place,Cargo),[na(Rocket,Place),na(Cargo,Place)]) :-
+    rocket(Rocket),
+    cargo(Cargo),
+    place(Place).
+
+
+effects(zostan(P),[P]).
+
+effects(idz(Rocket,From,To), [na(Rocket,To)]).
+
+effects(rozladuj(Rocket,Place,Cargo),[na(Cargo,Place)]).
+
+effects(zaladuj(Rocket,Place,Cargo),[w(Cargo,Rocket)]).
+
+inconsistent(G,~G).
+inconsistent(~G,G).
+inconsistent(w(Rocket1,C),w(Rocket2,C)) :-
+    Rocket1 \== Rocket2.
+inconsistent(w(Rocket,Cargo1),w(Rocket,Cargo2)) :-
+    Cargo1 \== Cargo2.
+inconsistent(na(Rocket,Place1),na(Rocket,Place2)) :-
+    Place1 \== Place2.
+inconsistent(na(Cargo,Place1), na(Cargo,Place2)) :-
+    Place1 \== Place2.
+*/
 %3x3
+
 %time(call_plan([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(f,6),na(g,7),na(h,8),pusty(9)],Plan)),write(Plan).
 %assert(inital_state([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(f,6),na(g,7),na(h,8),pusty(9)])).
 %assert(inital_state([na(a,1),na(b,2),na(c,3),na(d,4),na(h,5),na(e,6),pusty(7),na(g,8),na(f,9)])).
@@ -70,7 +123,8 @@ inconsistent(na(R1,C),na(R2,C)) :-
 
 /*
 %CargoBOT
-call_plan([pusty(2),pusty(a),na(c,4),na(b,c),na(a,b),pusty(6),pusty(8),pusty(10),pusty(d),na(f,12),na(e,f),na(d,e),pusty(14)],Plan) <- równoległe
+%call_plan([pusty(2),pusty(a),na(c,4),na(b,c),na(a,b),pusty(6),pusty(8),pusty(10),pusty(d),na(f,12),na(e,f),na(d,e),pusty(14)],Plan) <- równoległe
+
 :- dynamic object/1.
 :- dynamic block/1.
 :- dynamic place/1.
@@ -98,12 +152,12 @@ block(c).
 block(d).
 block(e).
 block(f).
-/*block(g).
+block(g).
 block(h).
 block(i).
 block(j).
 block(k).
-block(l).*/
+block(l).
 
 place(2).
 place(4).
@@ -112,8 +166,8 @@ place(8).
 place(10).
 place(12).
 place(14).
-/*place(16).
-place(18).*/
+place(16).
+place(18).
 
 inconsistent(G,~G).
 inconsistent(~G,G).
@@ -125,8 +179,9 @@ inconsistent(pusty(C),na(_,C)).
 inconsistent(na(R1,C),na(R2,C)) :-
     R1 \== R2.
 
-%inital_state([pusty(2),pusty(4),pusty(b),pusty(c),na(a,1),na(b,3),na(c,a)]).
 */
+
+%inital_state([pusty(2),pusty(4),pusty(b),pusty(c),na(a,1),na(b,3),na(c,a)]).
 
 %HANOI
 
@@ -247,6 +302,12 @@ inconsistent(na(R1,C),na(R2,C)) :-
     R1 \== R2.
 
 */
+
+
+
+
+
+
 :-use_module(library(clpfd)).
 :-op(100,fx,~).
 :- dynamic inital_state/1.
@@ -255,7 +316,6 @@ inconsistent(na(R1,C),na(R2,C)) :-
 :- dynamic adjacent/2.
 :- dynamic n/2.
 :- dynamic inconsistent/2.
-
 
 
 remove(X,[X | Tail], Tail).
@@ -276,36 +336,12 @@ create_plan(StartState, Goals, Plan) :-
 
 graphplan([StateLevel | GraphPlan], Goals, AllActions,Plan,Round) :-
     satisfied(StateLevel, Goals),
-    extract_plan([StateLevel | GraphPlan], Plan)
+    extract_plan([StateLevel | GraphPlan], Plan,Goals)
     ;
     NewRound is Round+1,
     write("Round: "), writeln(NewRound),
     expand(StateLevel, ActionLevel, NewStateLevel, AllActions),
-    %length(NewStateLevel,NSL),
-    %writeln(NSL),
-    %outState(NewStateLevel),
-    %outAction(ActionLevel),
     graphplan([NewStateLevel, ActionLevel, StateLevel | GraphPlan], Goals, AllActions, Plan,NewRound).
-
-
-
-outState([]) :- writeln("").
-
-outState([S/_ | Rest]) :-
-    write(S),
-    write(", "),
-    outState(Rest).
-
-outAction([]) :- writeln("").   
-
-outAction([S/_ | Rest]) :-
-    S \= zostan(_),
-    write(S),
-    write(", "),
-    outAction(Rest).
-
-outAction([ _ | Rest]) :-
-    outAction(Rest).
 
 satisfied(_,[]).
 
@@ -315,26 +351,24 @@ satisfied(StateLevel, [G | Goals]) :-
     satisfied(StateLevel, Goals).
 
 
-extract_plan([_],[]).
+extract_plan([_],[],_).
 
-extract_plan([_,ActionLevel | RestOfGraph], Plan) :-
-    %writeln("Extract"),
+extract_plan([_,ActionLevel | RestOfGraph], Plan,Goals) :-
     collect_vars(ActionLevel, AVars),
     label(AVars),
     findall(A,(member(A/1,ActionLevel),A \= zostan(_)), ChosenActions),
-    %writeln(ChosenActions),
-    extract_plan(RestOfGraph, RestOfPlan),
+    extract_plan(RestOfGraph, RestOfPlan,Goals),
     append(RestOfPlan, [ChosenActions], Plan).
 
 
 
 
 expand(StateLevel, ActionLevel, NextStateLevel, AllActions) :-
+    %writeln("EXPAND"),
     add_actions(StateLevel, AllActions, [], NewActionLevel, [], NewNextState),
     findall(action(zostan(P),[P],[P]),member(P/_,StateLevel),PersistActs),
     add_actions(StateLevel, PersistActs, NewActionLevel, ActionLevel, NewNextState, NextStateLevel),
-    mutex_action(ActionLevel,NextStateLevel), 
-    %mutex_list(ActionLevel),
+    %mutex_action(ActionLevel,NextStateLevel), 
     mutex_list(NextStateLevel).
 
 add_actions(_,[],ActionLevel, ActionLevel, NextStateLevel, NextStateLevel).
@@ -402,41 +436,57 @@ mutex_action([A | As], StateLevel) :-
 
 mutex_single_action(_,[],_).
     
-mutex_single_action(A/I, [A1/I1 | Rest],StateLevel) :-
-    ( mutex_for_action(A,A1,StateLevel), !, I*I1 #= 0
-    ;
-    true
-    ),
-    mutex_single_action(A/I,Rest,StateLevel).
+mutex_single_action(A/I, [A1/I1 | Rest],_) :-
+    mutex_for_action_1(A,A1), 
+    !, 
+    I * I1 #= 0,
+    mutex_single_action(A/I,Rest,_).
 
-mutex_for_action(A1,A2,StateLevel) :-
-    ( preconditions(A1,Precondition),effects(A2,Effects)
-      ;
-      preconditions(A2,Precondition),effects(A1,Effects)
+mutex_single_action(A/I, [A1/I1 | Rest],_) :-
+    mutex_for_action_2(A,A1), 
+    !, 
+    I * I1 #= 0,
+    mutex_single_action(A/I,Rest,_).
+
+mutex_single_action(A/I, [A1/I1 | Rest],_) :-
+    mutex_for_action_3(A,A1), 
+    !, 
+    I * I1 #= 0,
+    mutex_single_action(A/I,Rest,_).
+
+mutex_single_action(A/I, [_ | Rest],_) :-
+    true,
+    mutex_single_action(A/I,Rest,_).
+
+mutex_for_action_1(A1,A2) :-
+    ( 
+        preconditions(A1,Precondition),effects(A2,Effects)
+    ;
+        preconditions(A2,Precondition),effects(A1,Effects)
     ),
     member(P1,Precondition),
     member(P2,Effects),
     mutex(P1,P2),
-    %write("Mutex: ["), write(A1), write(","),write(A2), writeln("]"),
-    mutex_all_states(A1,A2,StateLevel),
+    %write("Mutex1: ["), write(A1), write(","),write(A2), writeln("]"),
     !.
 
-mutex_all_states(A1,A2,StateLevel) :-
-    effects(A1,E1),
-    effects(A2,E2),
-    findall([X,Y],(member(X,E1),member(Y,E2)),C),
-    %writeln(C),
-    apply_mutex(C,A1,A2,StateLevel).
+mutex_for_action_2(A1,A2) :-
+    preconditions(A1,Precondition1),
+    preconditions(A2,Precondition2),
+    member(P1,Precondition1),
+    member(P2,Precondition2),
+    mutex(P1,P2),
+    %write("Mutex2: ["), write(A1), write(","),write(A2), writeln("]"),
+    !.
 
-apply_mutex([],_).
-
-apply_mutex([H | T], _/I1,_/I2,StateLevel) :-
-    [First,Second] = H, 
-    member(First/F,StateLevel),
-    member(Second/S,StateLevel),
-    F*S #=< I1*I2,
-    %write("MutexALL: ["), write(First), write(","),write(Second), writeln("]"),
-    apply_mutex(T,StateLevel).
+mutex_for_action_3(A1,A2) :-
+    effects(A1,Effects1),
+    effects(A2,Effects2),
+    member(P1,Effects1),
+    member(P2,Effects2),
+    mutex(P1,P2),
+    %write("Mutex3: ["), write(A1), write(","),write(A2), writeln("]"),
+    !.
 
 collect_vars([],[]).
 

@@ -3,14 +3,26 @@ import graphviz
 import re
 import itertools
 
+## @package parsePlanSIMPLIFIED
+#  Plik zawierający implementację klasy
+#  SimplifiedGraph kreującej uproszczony graf dla zadanego problemu
 class SimplifiedGraph:
+
+    ## Konstruktor klasy SimplifiedGraph
+    # @param filename nazwa pliku, z którego zostanie wygenerowany graf
     def __init__(self,filename):
         self.filename = filename
         self.plan = []
 
+    ## Funkcja zwracająca plan
     def return_plan(self):
         return self.plan
 
+    ## Funkcja odpowiedzialna za utworzenie 
+    # krawędzi między stanami a akcjami
+    # @param actions Zbiór akcji 
+    # @param g Graf
+    # @param level Poziom, dla którego kreowane są krawędzie
     def generateArcs(self,actions,g,level):
         level_higher = level + 1
         PreCond = []
@@ -32,15 +44,12 @@ class SimplifiedGraph:
                 else:
                     g.edge(action_id+str(level),item+str(level_higher))
 
-
-    #TO-DO: split into generateMutexArcsStates and generateMutexArcsActions
-
-    def generateMutexArcs(self,variables,g,level):
-        for i,pair in enumerate(variables):
-            new_pair = [pair[1],pair[0]]
-            if new_pair not in variables[i:]:
-                g.edge(pair[0]+str(level),pair[1]+str(level), style='dotted',arrowhead='none',constraint='false')
-
+    ##  Funkcja odpowiedzialna za utworzenie poziomu stanów bądź akcji w grafie
+    #   @param name Nazwa zbioru
+    #   @param variables Stany(Akcje), które należy dodać do grafu
+    #   @param g Graf
+    #   @param level Poziom, dla którego należy wygenerować mutex'y
+    #   @param type Typ węzła (okrąg- stan, prostokąt- akcja)
 
     def generateLayer(self,name,variables,g,level,type):
         layer_name = 'cluster_' + name
@@ -53,9 +62,9 @@ class SimplifiedGraph:
                     layer.node(items[0]+str(level),items[0], shape=type)
                 else:
                     pass
-                    #layer.node(items[0]+str(level),items[0], shape=type)
-        
 
+    ##  Funkcja odpowiedzialna za wczytanie pliku do zmiennej
+    #   @param filename nazwa pliku    
     def readInput(self,filename):
         file = []
         with open(filename) as input:
@@ -64,6 +73,9 @@ class SimplifiedGraph:
                 file.append(current_line)
         return file
 
+    ## Funkcja parsująca plik
+    #   @param file wczytany plik w formie napisu
+    #   @param g Graf 
     def parseInput(self,file,g):
         current_level = 1
         all_actions = {}
@@ -107,6 +119,8 @@ class SimplifiedGraph:
             elif(name=='Plan'):
                 return variables,current_level
 
+    ##  Funkcja odpowiedzialna za oczyszczenie planu ze zbędnych elementów
+    #   @param plan Plan, który należy oczyścić
 
     def parsePlan(self):
         parsed_plan = []
@@ -125,7 +139,10 @@ class SimplifiedGraph:
             output_plan.append(new_row)
         return output_plan
         
-    
+    ## Funkcja odpowiedzialna za zmianę koloru krawędzi prowadzących do otrzymania wskazanego rezultatu
+    #   @param plan Plan zawierajacy akcje, których krawędzie należy wyszczególnić
+    #   @param max_level Maksymalny rozmiar grafu
+    #   @param g Graf
 
     def colorUsedActions(self,plan, max_level, g):
         nodes = []
@@ -149,16 +166,14 @@ class SimplifiedGraph:
                     else:
                         g.body[i] = element[:len(element)-11]+'colorfill=red shape=oval style=filled]\n'
                     break
-                    #colorfill=red shape=oval style=filled]
-                    #g.body[i] = element[:len(element)-2] + ' style=filled colorfill=red] \n'
-                    #print(g.body[i])
-            
+    ##  Funkcja wymazująca efekty usuwające z grafu
+    #   @param g Graf
     def removeNegations(self,g):
         for i in range(len(g.body)):
             if('~' in g.body[i] and 'styile=filled' not in g.body[i]):
                 g.body[i] = ''
         
-
+    ## Funkcja odpowiedzialna za utworzenie grafu w formiace PNG
     def run_all(self):
         #g = graphviz.Digraph('G', filename='graphs/SIMPLE_GRAPHPLAN.gv',format='pdf')
         g = graphviz.Digraph('G', filename='graphs/SIMPLE_GRAPHPLAN.gv',format='png')

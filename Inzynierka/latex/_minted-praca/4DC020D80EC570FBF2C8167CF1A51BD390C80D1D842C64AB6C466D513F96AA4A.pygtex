@@ -2,7 +2,8 @@
             \PYG{c+c1}{\PYGZpc{}preconditions(+Action,\PYGZhy{}States)}
             \PYG{n+nf}{preconditions}\PYG{p}{(}\PYG{n+nf}{zostan}\PYG{p}{(}\PYG{n+nv}{P}\PYG{p}{),[}\PYG{n+nv}{P}\PYG{p}{]).}
 
-            \PYG{n+nf}{preconditions}\PYG{p}{(}\PYG{n+nf}{idz}\PYG{p}{(}\PYG{n+nv}{Block}\PYG{p}{,}\PYG{n+nv}{From}\PYG{p}{,}\PYG{n+nv}{To}\PYG{p}{),} \PYG{p}{[}\PYG{n+nf}{pusty}\PYG{p}{(}\PYG{n+nv}{Block}\PYG{p}{),}\PYG{n+nf}{pusty}\PYG{p}{(}\PYG{n+nv}{To}\PYG{p}{),}\PYG{n+nf}{na}\PYG{p}{(}\PYG{n+nv}{Block}\PYG{p}{,}\PYG{n+nv}{From}\PYG{p}{)])} \PYG{p}{:\PYGZhy{}}
+            \PYG{n+nf}{preconditions}\PYG{p}{(}\PYG{n+nf}{idz}\PYG{p}{(}\PYG{n+nv}{Block}\PYG{p}{,}\PYG{n+nv}{From}\PYG{p}{,}\PYG{n+nv}{To}\PYG{p}{),}
+            \PYG{p}{[}\PYG{n+nf}{pusty}\PYG{p}{(}\PYG{n+nv}{Block}\PYG{p}{),}\PYG{n+nf}{pusty}\PYG{p}{(}\PYG{n+nv}{To}\PYG{p}{),}\PYG{n+nf}{na}\PYG{p}{(}\PYG{n+nv}{Block}\PYG{p}{,}\PYG{n+nv}{From}\PYG{p}{)])} \PYG{p}{:\PYGZhy{}}
                 \PYG{n+nf}{block}\PYG{p}{(}\PYG{n+nv}{Block}\PYG{p}{),}
                 \PYG{n+nf}{object}\PYG{p}{(}\PYG{n+nv}{To}\PYG{p}{),}
                 \PYG{n+nv}{To} \PYG{l+s+sAtom}{\PYGZbs{}==}\PYG{n+nv}{Block}\PYG{p}{,}

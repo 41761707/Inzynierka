@@ -4,15 +4,19 @@
 %Proby wprowadzen ulepszen czasowych
 %use_module(library(clpfd)). <- wymagany import, programowanie ograniczeń
 
+:-use_module(library(clpfd)).
 /**
 *   Negacja stany wymagana, ze wzgledu na
 *   dzialanie prologa wedle zasady "zamknietego swiata".
 *   Dodanie negacji ulatwia okreslanie poprawnych stanow kosztem 
 *   gorszej czytelnosci generowanych grafow
 */
-
-:-use_module(library(clpfd)).
 :-op(100,fx,~).
+/**
+*   Oznaczenie wykorzystywanych predykatów słowem kluczowym
+*   dynamic w celu dynamicznego manipulowania światem
+*   przy pomocy predykatów assert/1 czy retract/1
+*/
 :- dynamic inital_state/1.
 :- dynamic preconditions/2.
 :- dynamic effects/2.
@@ -20,11 +24,25 @@
 :- dynamic n/2.
 :- dynamic inconsistent/2.
 
-
+/**
+*   Predykat usuwająca element z listy
+*   @param X Element do usunięcia
+*   @param List0 Lista
+*   @return Lista1 Lista bez wskazanego elementu
+*/
 
 remove(X,[X | Tail], Tail).
 remove(X,[Y | Tail], [Y|Tail1]) :-
     remove(X,Tail,Tail1).
+
+/**
+*   Predykat odpowiedzialny za rozruch programu oraz
+*   przekierowanie strumienia danych do pliku tekstowego
+*   @param Goals Cele do osiągnięcia w zdefiniowanym świecie
+*   @return Plan Wykreowany plan
+*
+*
+*/
 
 call_plan(Goals,Plan) :-
     tell('outputs/output.txt'),
@@ -147,17 +165,29 @@ mutex_action([A | As], StateLevel) :-
 
 mutex_single_action(_,[],_).
     
-mutex_single_action(A/I, [A1/I1 | Rest],StateLevel) :-
-    ( 
-        mutex_for_action(A,A1,StateLevel), 
-        !, 
-        I*I1 #= 0
-    ;
-        true
-    ),
-    mutex_single_action(A/I,Rest,StateLevel).
+mutex_single_action(A/I, [A1/I1 | Rest],_) :-
+    mutex_for_action_1(A,A1), 
+    !, 
+    I * I1 #= 0,
+    mutex_single_action(A/I,Rest,_).
 
-mutex_for_action(A1,A2,StateLevel) :-
+mutex_single_action(A/I, [A1/I1 | Rest],_) :-
+    mutex_for_action_2(A,A1), 
+    !, 
+    I * I1 #= 0,
+    mutex_single_action(A/I,Rest,_).
+
+mutex_single_action(A/I, [A1/I1 | Rest],_) :-
+    mutex_for_action_3(A,A1), 
+    !, 
+    I * I1 #= 0,
+    mutex_single_action(A/I,Rest,_).
+
+mutex_single_action(A/I, [_ | Rest],_) :-
+    true,
+    mutex_single_action(A/I,Rest,_).
+
+mutex_for_action_1(A1,A2) :-
     ( 
         preconditions(A1,Precondition),effects(A2,Effects)
     ;
@@ -166,25 +196,26 @@ mutex_for_action(A1,A2,StateLevel) :-
     member(P1,Precondition),
     member(P2,Effects),
     mutex(P1,P2),
-    write("Mutex: ["), write(A1), write(","),write(A2), writeln("]"),
-    mutex_all_states(A1,A2,StateLevel),
+    %write("Mutex1: ["), write(A1), write(","),write(A2), writeln("]"),
     !.
 
-mutex_all_states(A1,A2,StateLevel) :-
-    effects(A1,E1),
-    effects(A2,E2),
-    findall([X,Y],(member(X,E1),member(Y,E2)),C),
-    apply_mutex(C,A1,A2,StateLevel).
+mutex_for_action_2(A1,A2) :-
+    preconditions(A1,Precondition1),
+    preconditions(A2,Precondition2),
+    member(P1,Precondition1),
+    member(P2,Precondition2),
+    mutex(P1,P2),
+    %write("Mutex2: ["), write(A1), write(","),write(A2), writeln("]"),
+    !.
 
-apply_mutex([],_,_,_).
-
-apply_mutex([H | T], _/I1,_/I2,StateLevel) :-
-    [First,Second] = H, 
-    member(First/F,StateLevel),
-    member(Second/S,StateLevel),
-    F*S #=< I1*I2,
-    write("Mutex: ["), write(First), write(","),write(Second), writeln("]"),
-    apply_mutex(T,StateLevel).
+mutex_for_action_3(A1,A2) :-
+    effects(A1,Effects1),
+    effects(A2,Effects2),
+    member(P1,Effects1),
+    member(P2,Effects2),
+    mutex(P1,P2),
+    %write("Mutex3: ["), write(A1), write(","),write(A2), writeln("]"),
+    !.
 
 collect_vars([],[]).
 

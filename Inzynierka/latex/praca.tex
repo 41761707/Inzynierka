@@ -8,8 +8,8 @@
 
 % Styl dwustronny z domyślną wielkością czcionki 10pt oraz oddzieloną stroną tytułową (titlepage).
 % Domyślnie rodziały rozpoczynają się na stronie prawej (openright).
-\documentclass[10pt]{book}
-\usepackage{times}
+\documentclass[12pt]{book}
+%\usepackage{times}
 
 
 % ***************************************************************************************************
@@ -28,6 +28,9 @@
 
 % Kodowanie dokumentu
 \usepackage[utf8]{inputenc}
+
+\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
 
 % Dowolny rozmiar czcionek, kodowanie znaków
 \usepackage{lmodern}
@@ -117,7 +120,8 @@
 
 % Listowanie kodów źródłowych
 \usepackage{listings} 
-\renewcommand{\lstlistingname}{Kod źródłowy} % Polska nazwa listingu
+\renewcommand*{\lstlistingname}{NewListing} % Polska nazwa listingu
+\renewcommand{\listoflistingscaption}{Spis kodów}
 \renewcommand\listingscaption{Kod źródłowy}
 
 
@@ -450,9 +454,9 @@
 
 %ALD- ustawienia wielkości fontów dla rozdziałów i sekcji
 \usepackage{sectsty}
-%\chapterfont{\fontsize{14}{17.6}\selectfont}
-\sectionfont{\fontsize{13}{16.8}\selectfont}
-\subsectionfont{\fontsize{12}{15.6}\selectfont}
+\chapterfont{\fontsize{14}{14}\selectfont}
+\sectionfont{\fontsize{13}{13}\selectfont}
+\subsectionfont{\fontsize{12}{12}\selectfont}
 
 % ***************************************************************************************************
 % Linki
@@ -593,6 +597,8 @@
 	\vspace*{4mm}
 \end{small}
 }
+%\linespread{1.25} 
+\raggedbottom
 
 % ***************************************************************************************************
 % Słownik

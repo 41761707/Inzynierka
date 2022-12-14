@@ -1,0 +1,193 @@
+% 1 ruch
+inital_state([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(f,6),na(g,7),na(h,8),na(i,9),na(j,10),na(k,11),na(l,12),na(m,13),na(n,14),pusty(15),na(o,16)])
+[['idz(o,16,15)']]: 
+% 95,276 inferences, 0.008 CPU in 0.008 seconds (100% CPU, 11305101 Lips)
+
+inital_state([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(f,6),na(g,7),na(h,8),na(i,9),na(j,10),na(k,11),pusty(12),na(m,13),na(n,14),na(o,15),na(l,16)])
+[['idz(l,16,12)']]:
+95,201 inferences, 0.009 CPU in 0.009 seconds
+
+% 2 ruchy 
+inital_state([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(f,6),na(g,7),pusty(8),na(i,9),na(j,10),na(k,11),na(h,12),na(m,13),na(n,14),na(o,15),na(l,16)])
+[['idz(h,12,8)'], ['idz(l,16,12)']]:
+252,690 inferences, 0.023 CPU in 0.023 seconds
+
+inital_state([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(f,6),na(g,7),na(h,8),na(i,9),na(j,10),pusty(11),na(k,12),na(m,13),na(n,14),na(o,15),na(l,16)])
+[['idz(k,12,11)'], ['idz(l,16,12)']]:
+306,508 inferences, 0.027 CPU in 0.027 seconds
+
+inital_state([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(f,6),na(g,7),na(h,8),na(i,9),na(j,10),na(k,11),na(l,12),na(m,13),pusty(14),na(n,15),na(o,16)])
+[['idz(n,15,14)'], ['idz(o,16,15)']]:
+253,300 inferences, 0.023 CPU in 0.023 seconds
+
+inital_state([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(f,6),na(g,7),na(h,8),na(i,9),na(j,10),pusty(11),na(l,12),na(m,13),na(n,14),na(k,15),na(o,16)])
+[[idz(k, 15, 11)], [idz(o, 16, 15)]:
+307,697 inferences, 0.025 CPU in 0.025 seconds
+
+% 3 ruchy 
+inital_state([na(a,1),na(b,2),na(c,3),pusty(4),na(e,5),na(f,6),na(g,7),na(d,8),na(i,9),na(j,10),na(k,11),na(h,12),na(m,13),na(n,14),na(o,15),na(l,16)])
+[['idz(d,8,4)'], ['idz(h,12,8)'], ['idz(l,16,12)']]:
+473,262 inferences, 0.037 CPU in 0.037 seconds
+
+inital_state([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(f,6),pusty(7),na(g,8),na(i,9),na(j,10),na(k,11),na(h,12),na(m,13),na(n,14),na(o,15),na(l,16)])
+[['idz(g,8,7)'], ['idz(h,12,8)'], ['idz(l,16,12)']]:
+1,058,124 inferences, 0.083 CPU in 0.083 seconds
+
+inital_state([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(f,6),na(g,7),na(h,8),na(i,9),pusty(10),na(j,11),na(k,12),na(m,13),na(n,14),na(o,15),na(l,16)])
+[['idz(j,11,10)'], ['idz(k,12,11)'], ['idz(l,16,12)']]:
+1,059,747 inferences, 0.090 CPU in 0.090 seconds 
+
+inital_state([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(f,6),na(g,7),na(h,8),na(i,9),na(j,10),na(k,11),na(l,12),pusty(13),na(m,14),na(n,15),na(o,16)])
+[['idz(m,14,13)'], ['idz(n,15,14)'], ['idz(o,16,15)']]:
+474,037 inferences, 0.042 CPU in 0.042 seconds
+
+inital_state([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(f,6),na(g,7),na(h,8),na(i,9),pusty(10),na(k,11),na(l,12),na(m,13),na(j,14),na(n,15),na(o,16)])
+[['idz(j,14,10)'], ['idz(n,15,14)'], ['idz(o,16,15)']]:
+1,070,690 inferences, 0.083 CPU in 0.083 seconds
+
+% 4 ruchy
+inital_state([na(a,1),na(b,2),pusty(3),na(c,4),na(e,5),na(f,6),na(g,7),na(d,8),na(i,9),na(j,10),na(k,11),na(h,12),na(m,13),na(n,14),na(o,15),na(l,16)])
+[['idz(c,4,3)'], ['idz(d,8,4)'], ['idz(h,12,8)'], ['idz(l,16,12)']]:
+1,901,772 inferences, 0.154 CPU in 0.154 seconds
+
+inital_state([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),pusty(6),na(f,7),na(g,8),na(i,9),na(j,10),na(k,11),na(h,12),na(m,13),na(n,14),na(o,15),na(l,16)])
+[['idz(f,7,6)'], ['idz(g,8,7)'], ['idz(h,12,8)'], ['idz(l,16,12)']]:
+3,313,833 inferences, 0.257 CPU in 0.257 seconds
+
+inital_state([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(f,6),na(g,7),na(h,8),pusty(9),na(i,10),na(j,11),na(k,12),na(m,13),na(n,14),na(o,15),na(l,16)])
+[['idz(i,10,9)'], ['idz(j,11,10)'], ['idz(k,12,11)'], ['idz(l,16,12)']]:
+1,920,528 inferences, 0.155 CPU in 0.155 seconds
+
+inital_state([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(f,6),na(g,7),na(h,8),pusty(9),na(j,10),na(k,11),na(l,12),na(i,13),na(m,14),na(n,15),na(o,16)])
+[['idz(i,13,9)'], ['idz(m,14,13)'], ['idz(n,15,14)'], ['idz(o,16,15)']]:
+1,949,063 inferences, 0.154 CPU in 0.154 seconds
+
+inital_state([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),pusty(6),na(g,7),na(h,8),na(i,9),na(f,10),na(k,11),na(l,12),na(m,13),na(j,14),na(n,15),na(o,16)])
+[['idz(f,10,6)'], ['idz(j,14,10)'], ['idz(n,15,14)'], ['idz(o,16,15)']]:
+3,348,189 inferences, 0.252 CPU in 0.252 seconds
+
+% 5 ruchow 
+inital_state([na(a,1),pusty(2),na(b,3),na(c,4),na(e,5),na(f,6),na(g,7),na(d,8),na(i,9),na(j,10),na(k,11),na(h,12),na(m,13),na(n,14),na(o,15),na(l,16)])
+[['idz(b,3,2)'], ['idz(c,4,3)'], ['idz(d,8,4)'], ['idz(h,12,8)'], ['idz(l,16,12)']]:
+4,813,687 inferences, 0.409 CPU in 0.410 seconds
+
+inital_state([na(a,1),na(b,2),na(c,3),na(d,4),pusty(5),na(e,6),na(f,7),na(g,8),na(i,9),na(j,10),na(k,11),na(h,12),na(m,13),na(n,14),na(o,15),na(l,16)])
+[['idz(e,6,5)'], ['idz(f,7,6)'], ['idz(g,8,7)'], ['idz(h,12,8)'], ['idz(l,16,12)']]:
+4,771,931 inferences, 0.384 CPU in 0.384 seconds
+
+inital_state([na(a,1),na(b,2),na(c,3),na(d,4),pusty(5),na(f,6),na(g,7),na(h,8),na(e,9),na(i,10),na(j,11),na(k,12),na(m,13),na(n,14),na(o,15),na(l,16)])
+[['idz(e,9,5)'], ['idz(i,10,9)'], ['idz(j,11,10)'], ['idz(k,12,11)'], ['idz(l,16,12)']]:
+4,972,184 inferences, 0.401 CPU in 0.401 seconds
+
+inital_state([na(a,1),na(b,2),na(c,3),na(d,4),pusty(5),na(f,6),na(g,7),na(h,8),na(e,9),na(j,10),na(k,11),na(l,12),na(i,13),na(m,14),na(n,15),na(o,16)])
+[['idz(e,9,5)'], ['idz(i,13,9)'], ['idz(m,14,13)'], ['idz(n,15,14)'], ['idz(o,16,15)']]:
+4,939,577 inferences, 0.391 CPU in 0.391 seconds
+
+inital_state([na(a,1),pusty(2),na(c,3),na(d,4),na(e,5),na(b,6),na(g,7),na(h,8),na(i,9),na(f,10),na(k,11),na(l,12),na(m,13),na(j,14),na(n,15),na(o,16)])
+[['idz(b,6,2)'], ['idz(f,10,6)'], ['idz(j,14,10)'], ['idz(n,15,14)'], ['idz(o,16,15)']]:
+4,888,112 inferences, 0.384 CPU in 0.384 seconds
+
+% 6 ruchow 
+inital_state([pusty(1),na(b,2),na(c,3),na(d,4),na(a,5),na(f,6),na(g,7),na(h,8),na(e,9),na(j,10),na(k,11),na(l,12),na(i,13),na(m,14),na(n,15),na(o,16)])
+[['idz(a,5,1)'], ['idz(e,9,5)'], ['idz(i,13,9)'], ['idz(m,14,13)'], ['idz(n,15,14)'], ['idz(o,16,15)']]:
+6,587,565 inferences, 0.503 CPU in 0.503 seconds
+
+inital_state([pusty(1),na(a,2),na(c,3),na(d,4),na(e,5),na(b,6),na(g,7),na(h,8),na(i,9),na(f,10),na(k,11),na(l,12),na(m,13),na(j,14),na(n,15),na(o,16)])
+[['idz(a,2,1)'], ['idz(b,6,2)'], ['idz(f,10,6)'], ['idz(j,14,10)'], ['idz(n,15,14)'], ['idz(o,16,15)']]:
+6,557,061 inferences, 0.501 CPU in 0.501 seconds
+
+inital_state([pusty(1),na(a,2),na(b,3),na(d,4),na(e,5),na(f,6),na(c,7),na(h,8),na(i,9),na(j,10),na(g,11),na(l,12),na(m,13),na(n,14),na(k,15),na(o,16)])
+[['idz(a,2,1)'], ['idz(b,3,2)'], ['idz(c,7,3)'], ['idz(g,11,7)'], ['idz(k,15,11)'], ['idz(o,16,15)']]:
+6,545,528 inferences, 0.503 CPU in 0.503 seconds
+
+inital_state([pusty(1),na(a,2),na(b,3),na(c,4),na(e,5),na(f,6),na(g,7),na(d,8),na(i,9),na(j,10),na(k,11),na(h,12),na(m,13),na(n,14),na(o,15),na(l,16)])
+[['idz(a,2,1)'], ['idz(b,3,2)'], ['idz(c,4,3)'], ['idz(d,8,4)'], ['idz(h,12,8)'], ['idz(l,16,12)']]:
+6,370,233 inferences, 0.488 CPU in 0.488 seconds
+
+inital_state([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(j,6),na(f,7),na(g,8),na(i,9),na(n,10),na(k,11),na(h,12),na(m,13),pusty(14),na(o,15),na(l,16)])
+[['idz(n,10,14)'], ['idz(j,6,10)'], ['idz(f,7,6)'], ['idz(g,8,7)'], ['idz(h,12,8)'], ['idz(l,16,12)']]:
+9,420,177 inferences, 0.783 CPU in 0.783 seconds
+
+% 7 ruchow 
+inital_state([na(b,1),pusty(2),na(c,3),na(d,4),na(a,5),na(e,6),na(f,7),na(g,8),na(i,9),na(j,10),na(k,11),na(h,12),na(m,13),na(n,14),na(o,15),na(l,16)])
+[[idz(b, 1, 2)], [idz(a, 5, 1)], [idz(e, 6, 5)], [idz(f, 7, 6)], [idz(g, 8, 7)], [idz(h, 12, 8)], [idz(l, 16, 12)]]:
+18,821,576 inferences, 1.587 CPU in 1.588 seconds
+
+inital_state([na(a,1),na(b,2),na(c,3),na(d,4),pusty(5),na(e,6),na(f,7),na(h,8),na(i,9),na(k,10),na(g,11),na(l,12),na(m,13),na(j,14),na(n,15),na(o,16)])
+[[idz(e, 6, 5)], [idz(f, 7, 6)], [idz(g, 11, 7)], [idz(k, 10, 11)], [idz(j, 14, 10)], [idz(n, 15, 14)], [idz(o, 16, 15)]]:
+18,878,460 inferences, 1.526 CPU in 1.526 seconds
+
+inital_state([na(a,1),na(b,2),na(c,3),na(d,4),pusty(5),na(e,6),na(f,7),na(g,8),na(i,9),na(j,10),na(l,11),na(h,12),na(m,13),na(n,14),na(k,15),na(o,16)])
+[[idz(e, 6, 5)], [idz(f, 7, 6)], [idz(g, 8, 7)], [idz(h, 12, 8)], [idz(l, 11, 12)], [idz(k, 15, 11)], [idz(o, 16, 15)]]:
+17,701,084 inferences, 1.444 CPU in 1.444 seconds
+
+inital_state([na(a,1),na(b,2),na(c,3),pusty(4),na(e,5),na(g,6),na(h,7),na(d,8),na(i,9),na(f,10),na(k,11),na(l,12),na(m,13),na(j,14),na(n,15),na(o,16)]
+[[idz(d, 8, 4)], [idz(h, 7, 8)], [idz(g, 6, 7)], [idz(f, 10, 6)], [idz(j, 14, 10)], [idz(n, 15, 14)], [idz(o, 16, 15)]]:
+12,525,401 inferences, 1.010 CPU in 1.011 seconds 
+
+inital_state([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(g,6),pusty(7),na(h,8),na(j,9),na(f,10),na(k,11),na(l,12),na(i,13),na(m,14),na(n,15),na(o,16)])
+[[idz(g, 6, 7)], [idz(f, 10, 6)], [idz(j, 9, 10)], [idz(i, 13, 9)], [idz(m, 14, 13)], [idz(n, 15, 14)], [idz(o, 16, 15)]]:
+23,855,311 inferences, 2.025 CPU in 2.025 seconds
+
+% 8 ruchow 
+inital_state([pusty(1),na(a,2),na(b,3),na(c,4),na(e,5),na(f,6),na(g,7),na(d,8),na(i,9),na(j,10),na(l,11),na(h,12),na(m,13),na(n,14),na(k,15),na(o,16)])
+[[idz(a,2,1)],[idz(b,3,2)],[idz(c,4,3)],[idz(d,8,4)],[idz(h,12,8)],[idz(l,11,12)],[idz(k,15,11)],[idz(o,16,15)]]:
+21,600,447 inferences, 1.789 CPU in 1.789 seconds
+
+inital_state([na(a,1),na(b,2),na(c,3),na(d,4),na(e,5),na(j,6),na(f,7),na(g,8),pusty(9),na(i,10),na(l,11),na(h,12),na(m,13),na(n,14),na(k,15),na(o,16)])
+[[idz(i,10,9)],[idz(j,6,10)],[idz(f,7,6)],[idz(g,8,7)],[idz(h,12,8)],[idz(l,11,12)],[idz(k,15,11)],[idz(o,16,15)]]:
+34,394,904 inferences, 2.717 CPU in 2.717 seconds
+
+inital_state([na(b,1),na(c,2),pusty(3),na(d,4),na(a,5),na(e,6),na(f,7),na(g,8),na(i,9),na(j,10),na(k,11),na(h,12),na(m,13),na(n,14),na(o,15),na(l,16)])
+[[idz(c,2,3)],[idz(b,1,2)],[idz(a,5,1)],[idz(e,6,5)],[idz(f,7,6)],[idz(g,8,7)],[idz(h,12,8)],[idz(l,16,12)]]:
+28,106,257 inferences, 2.363 CPU in 2.363 seconds
+
+inital_state([na(a,1),na(b,2),na(c,3),na(d,4),na(f,5),na(g,6),na(h,7),pusty(8),na(e,9),na(i,10),na(j,11),na(k,12),na(m,13),na(n,14),na(o,15),na(l,16)])
+[[idz(h,7,8)],[idz(g,6,7)],[idz(f,5,6)],[idz(e,9,5)],[idz(i,10,9)],[idz(j,11,10)],[idz(k,12,11)],[idz(l,16,12)]]:
+30,715,062 inferences, 2.494 CPU in 2.494 seconds
+
+inital_state([na(a,1),na(f,2),na(b,3),na(c,4),na(e,5),na(j,6),na(g,7),na(d,8),na(i,9),na(k,10),pusty(11),na(h,12),na(m,13),na(n,14),na(o,15),na(l,16)])
+[[idz(k,10,11)],[idz(j,6,10)],[idz(f,2,6)],[idz(b,3,2)],[idz(c,4,3)],[idz(d,8,4)],[idz(h,12,8)],[idz(l,16,12)]]:
+44,479,417 inferences, 3.384 CPU in 3.384 seconds
+
+% 9 ruchow 
+inital_state([na(b,1),pusty(2),na(c,3),na(d,4),na(a,5),na(j,6),na(f,7),na(g,8),na(e,9),na(i,10),na(k,11),na(h,12),na(m,13),na(n,14),na(o,15),na(l,16)])
+[[idz(b,1,2)],[idz(a,5,1)],[idz(e,9,5)],[idz(i,10,9)],[idz(j,6,10)],[idz(f,7,6)],[idz(g,8,7)],[idz(h,12,8)],[idz(l,16,12)]]:
+47,187,021 inferences, 3.954 CPU in 3.954 seconds
+
+inital_state([na(a,1),na(c,2),na(d,3),pusty(4),na(e,5),na(b,6),na(g,7),na(h,8),na(j,9),na(f,10),na(k,11),na(l,12),na(i,13),na(m,14),na(n,15),na(o,16)])
+[[idz(d,3,4)],[idz(c,2,3)],[idz(b,6,2)],[idz(f,10,6)],[idz(j,9,10)],[idz(i,13,9)],[idz(m,14,13)],[idz(n,15,14)],[idz(o,16,15)]]:
+31,074,399 inferences, 2.594 CPU in 2.594 seconds
+
+inital_state([na(e,1),na(a,2),na(b,3),na(c,4),pusty(5),na(f,6),na(g,7),na(d,8),na(i,9),na(j,10),na(l,11),na(h,12),na(m,13),na(n,14),na(k,15),na(o,16)])
+[[idz(e,1,5)],[idz(a,2,1)],[idz(b,3,2)],[idz(c,4,3)],[idz(d,8,4)],[idz(h,12,8)],[idz(l,11,12)],[idz(k,15,11)],[idz(o,16,15)]]:
+31,383,115 inferences, 2.734 CPU in 2.734 seconds
+
+inital_state([na(b,1),na(c,2),na(d,3),pusty(4),na(a,5),na(f,6),na(g,7),na(h,8),na(e,9),na(j,10),na(k,11),na(l,12),na(i,13),na(m,14),na(n,15),na(o,16)])
+[[idz(d,3,4)],[idz(c,2,3)],[idz(b,1,2)],[idz(a,5,1)],[idz(e,9,5)],[idz(i,13,9)],[idz(m,14,13)],[idz(n,15,14)],[idz(o,16,15)]]:
+31,183,115 inferences, 3.067 CPU in 3.067 seconds
+
+inital_state([na(a,1),na(b,2),na(g,3),na(c,4),na(e,5),na(f,6),na(k,7),na(d,8),na(i,9),na(j,10),na(o,11),na(h,12),pusty(13),na(m,14),na(n,15),na(l,16)])
+[[idz(m,14,13)],[idz(n,15,14)],[idz(o,11,15)],[idz(k,7,11)],[idz(g,3,7)],[idz(c,4,3)],[idz(d,8,4)],[idz(h,12,8)],[idz(l,16,12)]]:
+24,649,410 inferences, 2.050 CPU in 2.050 seconds
+
+% 10 ruchow
+inital_state([na(e,1),na(a,2),na(b,3),na(c,4),na(i,5),na(f,6),na(g,7),na(d,8),na(m,9),na(j,10),na(k,11),na(h,12),na(n,13),pusty(14),na(o,15),na(l,16)])
+[[idz(n,13,14)],[idz(m,9,13)],[idz(i,5,9)],[idz(e,1,5)],[idz(a,2,1)],[idz(b,3,2)],[idz(c,4,3)],[idz(d,8,4)],[idz(h,12,8)],[idz(l,16,12)]]:
+51,751,899 inferences, 4.329 CPU in 4.329 seconds
+
+inital_state([na(a,1),na(c,2),na(d,3),na(h,4),na(f,5),na(b,6),na(g,7),pusty(8),na(e,9),na(i,10),na(k,11),na(l,12),na(m,13),na(j,14),na(n,15),na(o,16)])
+[[idz(h,4,8)],[idz(d,3,4)],[idz(c,2,3)],[idz(b,6,2)],[idz(f,5,6)],[idz(e,9,5)],[idz(i,10,9)],[idz(j,14,10)],[idz(n,15,14)],[idz(o,16,15)]]:
+260,426,171 inferences, 17.071 CPU in 17.071 seconds 
+
+inital_state([na(b,1),na(c,2),pusty(3),na(d,4),na(a,5),na(e,6),na(f,7),na(h,8),na(i,9),na(k,10),na(g,11),na(l,12),na(m,13),na(j,14),na(n,15),na(o,16)])
+[[idz(c,2,3)],[idz(b,1,2)],[idz(a,5,1)],[idz(e,6,5)],[idz(f,7,6)],[idz(g,11,7)],[idz(k,10,11)],[idz(j,14,10)],[idz(n,15,14)],[idz(o,16,15)]]:
+101,423,470 inferences, 8.174 CPU in 8.174 seconds
+
+inital_state([na(a,1),na(c,2),na(d,3),na(h,4),na(e,5),na(b,6),na(f,7),pusty(8),na(i,9),na(k,10),na(g,11),na(l,12),na(m,13),na(j,14),na(n,15),na(o,16)])
+[[idz(h,4,8)],[idz(d,3,4)],[idz(c,2,3)],[idz(b,6,2)],[idz(f,7,6)],[idz(g,11,7)],[idz(k,10,11)],[idz(j,14,10)],[idz(n,15,14)],[idz(o,16,15)]]:
+306,363,396 inferences, 23.291 CPU in 23.291 seconds
+
+inital_state([na(a,1),na(f,2),na(b,3),na(d,4),na(e,5),pusty(6),na(c,7),na(h,8),na(j,9),na(k,10),na(g,11),na(l,12),na(i,13),na(m,14),na(n,15),na(o,16)])
+[[idz(f,2,6)],[idz(b,3,2)],[idz(c,7,3)],[idz(g,11,7)],[idz(k,10,11)],[idz(j,9,10)],[idz(i,13,9)],[idz(m,14,13)],[idz(n,15,14)],[idz(o,16,15)]]:
+578,136,950 inferences, 41.647 CPU in 41.647 seconds

@@ -31,12 +31,12 @@ call_plan([pusty(a),na(c,2),na(b,c),na(a,b),pusty(d),na(f,4),na(e,f),na(d,e),pus
 inital_state([pusty(d),na(a,2),na(b,a),na(c,b),na(d,c),pusty(4),pusty(6)])
 call_plan([pusty(2),pusty(4),pusty(d),na(a,6),na(b,a),na(c,b),na(d,c)],Plan)
 [[idz(d, c, 4)], [idz(c, b, d)], [idz(b, a, c)], [idz(a, 2, 6)], [idz(b, c, a)], [idz(c, d, b)], [idz(d, 4, c)]]:
-8,770,406 inferences, 0.739 CPU in 0.739 seconds
+49,091,704 inferences, 2.983 CPU in 2.983 seconds
 
 
 %Shuffle Sort
 inital_state([pusty(2),pusty(f),na(a,4),na(b,a),na(c,b),na(d,c),na(e,d),na(f,e),pusty(6)])
-time(call_plan([pusty(a),na(e,2),na(c,e),na(a,c),pusty(4),pusty(b),na(f,6),na(d,f),na(b,d)],Plan)).
+time(call_plan([pusty(a),na(e,2),na(c,e),na(a,c),pusty(4),pusty(b),na(f,6),na(d,f),na(b,d)],Plan))
 [[idz(f, e, 6)], [idz(e, d, 2)], [idz(d, c, f)], [idz(c, b, e)], [idz(b, a, d)], [idz(a, 4, c)]]:
 10,285,196 inferences, 0.909 CPU in 0.909 seconds
 

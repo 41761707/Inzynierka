@@ -3,13 +3,13 @@
 \label{rozdzial1}
 \section{Planowanie}
 
-    Każdy człowiek codziennie po wielokroć dokonuje proces określony mianem planowania, często nie zważając na to, jak skomplikowany proces wykonuje.
+    Każdy człowiek wielokrotnie w swoim życiu wykonuje proces określony mianem planowania, często nie zważając na to, jak skomplikowaną pracę wykonuje.
     Skonstruowane przez ludzi plany mogą odnosić się do tak trywialnych zagadnień jak utworzenie listy zakupów, która wprost jest generowana przez braki
     w domowej lodówce oraz upodobania gastronomiczne kupującego, do bardziej abstrakcyjnych form jak \textit{plan na życie}, czy \textit{plan na wygranie meczu}.
     Przyglądając się planom oraz ich własnościom można wyodrębnić następujące trzy aspekty:
     \begin{definition}
     \label{StanyPoczatkowe}
-        \textbf{Warunki początkowe} -- stan świata przed zastosowaniem akcji. W dalszej części pracy również określane jako 
+        \textbf{Warunki początkowe} -- stan świata przed rozpoczęciem wykonywania czynności. W dalszej części pracy również określane jako 
         \textbf{stany początkowe}.
     \end{definition}
     \begin{itemize}
@@ -24,10 +24,12 @@
         \textbf{operator}.
     \end{definition}
     \begin{itemize}
-        \item Akcje pozwalają na modyfikację przedstawionego świata. Każda z akcji składa się z podmiotu, na który działa oraz czynności,
+        \item Akcje pozwalają na modyfikację przedstawionego świata. Każda z akcji składa się \\
+        z podmiotu, na który działa oraz czynności,
         która jest względem wskazanego podmiotu wykonywana. Przykładem dobrze określonej akcji może być przeniesienie klocka z 
         jednego stolika na drugi- składa się ona z podmiotu w postaci klocka, oraz czynności w postaci przenoszenia, które możemy traktować
-        w ogólniejszy sposób jako ruch. Czynności mogą różnić się od siebie w kwestii skomplikowania, najważniejszym jest, aby były określone poprawnie i aby były wykonalne w zdefiniowanym świecie.
+        w ogólniejszy sposób jako ruch. Czynności mogą różnić się od siebie w kwestii skomplikowania, najważniejszym jest, aby były określone poprawnie i aby były wykonalne
+        w zdefiniowanym świecie.
     \end{itemize}
     \begin{definition}
     \label{Cel}
@@ -45,18 +47,19 @@
     \end{definition}
 
     Oczywiście nie każdy plan musi być wykonalny. Zdarzają się również sytuacje, w których nie da się utworzyć planu dla zadanych warunków 
-    początkowych oraz celu. Z takimi przypadkami algorytm jest sobie w stanie sprawnie poradzić (formalny dowód w dalszej części pracy), 
+    początkowych oraz celu. Implementowany algorytm jest w stanie sprawnie poradzić sobie z takimi przypadkami,
     jednakże istnieje inna grupa przypadków, która z persepktywy ów metodologii jest niemożliwa do realizacji. 
     Mowa tu o sytuacjach, gdy któraś z akcji zmienia się w akcję \textbf{warunkową}.
     \begin{definition}
         \label{Akcja warunkowa}
-        \textbf{Akcja warunkowa} to typ akcji, która w zależności od bieżącego stanu świata produkuje inne wyniki
+        \textbf{Akcja warunkowa} to typ akcji, która w zależności od bieżącego stanu świata produkuje różne wyniki
     \end{definition}
 
-    Przykładem akcji warunkowej jest kopnięcie dmuchanej piłki. W zależności od wiejącego wiatru, które często zmienia się w sposób dynamiczny, 
-    przyłożenie tej samej siły do kopnięcia skutkuje różnym punktem końcowym trasy piłki. Ze względu na ograniczenia języka STRIPS plany w 
-    takim kontekście są niemożliwe do utworzenia, dlatego w dalszej części pracy wszystkie przedstawione sytuacje będą możliwe do całkowitego 
-    opisu przy pomocy nomenklatury STRIPS.
+    Przykładem akcji warunkowej jest kopnięcie dmuchanej piłki. W zależności od wiejącego wiatru, który często zmienia się w sposób dynamiczny, 
+    przyłożenie tej samej siły do kopnięcia skutkuje różnym punktem końcowym trasy piłki. Ze względu na ograniczenia języka STRIPS,
+    o którym więcej w dalszej części rozdziału, plany w 
+    takim kontekście są niemożliwe do utworzenia. Z tej przyczyny wszystkie opisane w ramach badań sytuacje zostaną spreparowane w taki sposób, aby
+    były możliwe do całkowitego zrealizowania wykorzystując język akcji STRIPS.
     
     \begin{figure}[H]
         \includegraphics[scale=0.5]{Przyklad1}
@@ -68,25 +71,28 @@
         \label{Przyklad1}
     \end{figure}
     Łatwo zauważyć na podstawie przykładu \ref{Przyklad1}, iż można utworzyć wiele planów, które dla zadanego stanu początkowego 
-    osiągają wskazany cel. Dla powyższej sytuacji naturalnym planem jest przeniesienie klocka A z platformy po lewej na platformę po prawej, 
-    lecz nie jest to jedyna możliwość. Również satysfakcjonującym planem zgodnie z wprowadzoną wyżej definicją byłaby następująca sekwencja
+    osiągają wskazany cel. Dla powyższej sytuacji naturalnym planem jest przeniesienie klocka A z platformy po lewej stronie na platformę po prawej stronie, 
+    lecz nie jest to jedyna możliwość. Również satysfakcjonującym planem zgodnie\\
+    z wprowadzoną wyżej definicją byłaby następująca sekwencja
     akcji:
     \begin{enumerate}
         \item Przenieś klocek A z lewej platformy na prawą
         \item Przenieś klocek A z prawej platformy na lewą
         \item Przenieś klocek A z lewej platformy na prawą
     \end{enumerate}
-    Generowanie rekruencyjne nieskończonych planów poprzez bezużyteczne przestawienia "w miejscu", mimo tego, iż zawiera się w definicji \ref{Plan},
+    Generowanie rekruencyjne nieskończonych planów poprzez bezużyteczne przestawienia \\
+    w miejscu, mimo tego, iż zawiera się w definicji \ref{Plan},
     nie jest oczekiwanym efektem. Proces planowania odbywa się po to, by wykonać transformację świata przy jak najmniejszym
     nakładzie sił w jak najkrótszym czasie. Z tego względu wprowadzono pojęcie \textbf{planu optymalnego}.
     \begin{definition}
         \label{PlanOptymalny}
-        \textbf{Plan optymalny} -- Plan o minimalnej liczbie kroków satysfakcjonujący wskazany cel. 
+        \textbf{Plan optymalny} -- plan o minimalnej liczbie kroków satysfakcjonujący wskazany cel. 
     \end{definition}
      
     W dalszej części pracy słowo \textbf{plan} najczęściej będzie utożsamiane z planem optymalnym.
     
-    Wprowadzenie powyższej definicji wiąże się z powstaniem bardzo ważnego pytania: \textit{Jak utworzyć plan optymalny?}. Bazując na przykładach
+    Wprowadzenie powyższej definicji wiąże się z powstaniem bardzo ważnego pytania: \\
+    \textit{Jak utworzyć plan optymalny?}. Bazując na przykładach
     takich jak \ref{Przyklad1} złudną może być myśl, iż generowanie optymalnych planów jest rzeczą prostą. Niech kolejny przykład będzie tego
     dowodem.
     \begin{figure}[H]
@@ -98,10 +104,12 @@
     \end{figure}
     Problem komiwojażera jest popularnym zagadnieniem optymalizacyjnym, którego istotą jest wskazanie ścieżki o najmniejszej sumie wag krawędzi, 
     która przechodzi dokładnie jeden raz przez każdy wierzchołek i wraca do wierzchołka startowego. Często problem wędrującego 
-    komiwojażera przedstawiany jest przy pomocy kuriera oraz domów, które musi odwiedzić (za wierzchołek startowy uważa się magazyn,
+    komiwojażera przedstawiany jest przy pomocy kuriera oraz domów, które musi odwiedzić\\
+    (za wierzchołek startowy uważa się magazyn,
     w którym kurier rozpoczyna swoją pracę). Mimo faktu, iż w przykładzie \ref{TSP} występuje jedynie 5 miejsc, 
-    w których musi zatrzymać się kurier, utworzenie optymalnego planu dla przedstawionej sytuacji jest nielada wyzwaniem. Z tego powodu 
-    ludzie postanowili skorzystać z potężnych mocy obliczeniowych komputerów przy generowaniu bardziej skomplikowanych planów.
+    w których musi zatrzymać się kurier, utworzenie optymalnego planu dla przedstawionej sytuacji okazuje się być prawdziwym wyzwaniem. Z tego powodu 
+    ludzie postanowili skorzystać z mocy obliczeniowych komputerów przy generowaniu bardziej skomplikowanych planów, w celu zapewnienia ich 
+    optymalności.
 
 
 \section{Planowanie przy użyciu komputerów}
@@ -115,9 +123,10 @@
     \textbf{STRIPS} rozwiązuje wskazany problem poprzez przeszukiwanie wszystkich stanów świata, aż do momentu
     gdy znajdzie taki, w którym wskazane cele są spełnione. Ważnym założeniem programu jest istnienie
     ciągu akcji, który gwarantuje otrzymanie celu. Zadanie to jest realizowane poprzez znalezienie
-    sekwencji operatorów, która konwertuje wymodelowany stan początkowy, w model, w którym wszystkie 
-    zdefiniowane cele są spełnione. Defnicje operatorów, stanu początkowego oraz celu są niemalże identyczne jak 
-    \ref{StanyPoczatkowe}, \ref{Akcje} i \ref{Cel}, z tym, że definicja Akcji została w naturalny sposób rozwinięta o ciąg przyczynowo-skutkowy. Zauważono, iż w skład każdej akcji 
+    sekwencji operatorów, która konwertuje wymodelowany stan początkowy w model, w którym wszystkie 
+    zdefiniowane cele są spełnione. Defnicje operatorów, stanu początkowego oraz celu\\
+     są niemalże identyczne jak 
+    \ref{StanyPoczatkowe}, \ref{Akcje} i \ref{Cel}, z tym, że definicja akcji została w naturalny sposób rozwinięta o ciąg przyczynowo-skutkowy. Zauważono, iż w skład każdej akcji 
     poza samą czynnością wchodzą dwie składowe, nazywane środowiskowymi- warunki zajścia oraz efekty zajścia. 
     \begin{definition}
         \label{WarunekAkcji}
@@ -125,19 +134,25 @@
     \end{definition}
     \begin{definition}
         \label{EfektAkcji}
-        \textbf{Efektem} zajścia akcji są zmiany, które zaszły w przedstawionym świecie ze względu na jej wykonanie.
+        \textbf{Efektem} zajścia akcji są zmiany, które zaszły w przedstawionym świecie \\
+        ze względu na jej wykonanie.
     \end{definition}
-    Mówiąc kolokwialnie, każda akcja ma swoją przyczynę oraz swój skutek. \textbf{Przyczyną} akcji w przykładzie \ref{Przyklad1} jest znajdowanie się klocka na lewej platformie. Gdyby
-    klocek A znajdował się na prawej platformie, wykonanie akcji przesunięcia klocka z platformy lewej na prawą nie mogłoby zostać wykonane, natomiastem \textbf{efektem} akcji jest 
+    Reasumując, każda akcja ma swoją przyczynę oraz swój skutek. \textbf{Przyczyną} akcji w przykładzie \ref{Przyklad1} jest znajdowanie się klocka na lewej platformie. Gdyby
+    klocek A znajdował się na prawej platformie, wykonanie akcji przesunięcia klocka z platformy lewej na prawą byłoby niemożliwe do wykonania, natomiast \textbf{efektem} akcji jest 
     przeniesienie klocka na prawą platformę. Łatwo zauważyć, iż brak innych obiektów na platformie prawej jest niezbędny, aby klocek mógł zostać tam przeniesiony.
+    Jeśli na platformie prawej znajdowałby się inny klocek o sygnaturze \texttt{B}, wtedy przesunięcie klocka \texttt{A} odbyłoby się bezpośrednio na 
+    bloczek B \\ 
+    a nie na samą platformę. W takim przypadku, o fakcie pobytu klocka A na prawej platformie algorytm dowiedziałby się poprzez przechodniość 
+    relacji pobytu.
+
     Kolejną naturalną obserwacją jest stwierdzenie, iż przeprowadzenie akcji dodaje nam nowe informacje o świecie w dwóch kontekstach:
     \begin{itemize}
         \item Dodającym -- pojawienie się lub podtrzymanie danej składowej świata
         \item Usuwającym -- pozbawienie świata danej składowej
     \end{itemize}
-    Po wykonaniu czynności z przykładu \ref{Przyklad1} wyróżniamy trzy typy nowych informacji:
+    Po wykonaniu czynności z przykładu \ref{Przyklad1} wyróżniono trzy typy informacji:
     \begin{itemize}
-        \item Warunek- Obecnośc klocka na lewej platformie, prawa platforma jest pusta
+        \item Warunek- Obecność klocka na lewej platformie, prawa platforma jest pusta
         \item Efekt dodający -- Obecność klocka na prawej platformie
         \item Efekt usuwający -- Brak obecności klocka na lewej platformie (platforma lewa jest pusta)
     \end{itemize}
@@ -145,28 +160,30 @@
 
         Takie zdefiniowane świata okazuje się wystarczające do rozwiązywania problemów pokroju rearanżacji obiektów czy 
     nawigowania w ściśle zdefiniowanej przestrzeni, czego najlepszym przykładem, jest pierwszy robot do realizacji ów zadań- \textbf{Shakey}.
-    Shakey był pierwszym robotem, który dzięki zainstalowanemu oprogramowaniu,
+    Shakey dzięki zainstalowanemu oprogramowaniu,
     posiadał umiejętność analizy własnego otoczenia. Dzięki zaimplementowanemu podejściu 
     STRIPS (oczywiście z odpowiednimi dostosowaniami do sytuacji) był w stanie rozwiązywać problemy z zakresu wyznaczania drogi,
     czy planowania rozmieszczenia obiektów w pokojach.
     Ze względu na swoją innowacyjność i przełomowość często jest nazywany archetypem
-    dzisiejszych autonomicznych samochód czy militarnych dronów.
+    dzisiejszych autonomicznych samochodów czy militarnych dronów.
 
     Dzięki swojej roli w rozwoju planowania z użyciem komputerów, STRIPS został dodatkowo wyróżniony- od jego nazwy pochodzi język opisu świata korzystający
     z trójki: stan początkowy, akcja oraz cel. Przez następne lata rozwiązania w obszarze planowania silnie bazowały na wprowadzonym w powyższej pracy opisie świata.
 
     \subsection{Rozwiązywanie ludzkich problemów}
-    W 1972 roku Panowie Allen Newell i Herbet Simon opublikowali książkę pod nazwą \textbf{Human Problem Solving}, której tłumaczenie
-    znajduje się w tytule opisywanej sekcji. Założenie, odnośnie otrzymywanych przez algorytm rozwiązujący problem danych, 
+    W 1972 roku Allen Newell i Herbet Simon opublikowali książkę pod nazwą \textbf{Human Problem Solving}, której tłumaczenie
+    znajduje się w tytule opisywanej sekcji. Założenie, odnośnie otrzymywanych przez algorytm danych, 
     pozostało zgodne z opisem w sekcji \ref{STRIPSRozdział}, jednakże autorzy pracy zauważyli, iż utworzony w ten sposób 
     obszar działań (\textit{problem space}) może osiągać niebotyczne rozmiary. Chcąc odpowiedzieć na pytanie, 
-    w jaki sposób ludzie wybierają odpowiednie operacje w danej sytuacji, zauważyli, iż ludzie często wykorzystują \textit{skróty},
+    w jaki sposób ludzie wybierają odpowiednie operacje w danej sytuacji, zauważyli, iż często wykorzystują oni \textit{skróty},
     które wynikają bezpośrednio z intuicji. Człowiek ze względu na swoją naturę będzie dążył do zużycia jak najmniejszych 
-    pokładów energii w celu osiągnięcia wyznaczonego celu. Na tej podstawie rozpoczęło się formowanie 
+    pokładów energii w celu osiągnięcia wyznaczonego celu. \\ 
+    Na tej podstawie rozpoczęło się formowanie 
     technik rozwiązywania problemów zwanych \textbf{heurystykami}. Początkowe heurtystki ograniczały się do zastosowania 
     pewnych ograniczeń jeśli chodzi o wyznaczanie zbioru operatorów, na przykład poprzez unikanie powtórzeń (\textit{repeat-state avoidance})
-    oraz unikanie powrotów do stanów już znanych (\textit{backup avoidance}). Na przestrzeni następnych lat pojęcie heurystyki rozwinie się diametralnie, jednakże
-    zachowa swoją pierwotną definicję szukania rozwiązań na skróty lub kolokwialnie mówiąc \textit{na ludzkie oko}.  
+    oraz unikanie powrotów do stanów już znanych (\textit{backup avoidance}). \\
+    Na przestrzeni następnych lat pojęcie heurystyki rozwinie się diametralnie, jednakże
+    zachowa swoją pierwotną definicję szukania niekoniecznie najlepszych rozwiązań w zamian za znaczne przyśpieszenie otrzymywanych wyników.
 
     \subsection{Liniowy i częściowy porządek}
     Na początku lat 70 ubiegłego wieku do tworzenia prostych planów wykorzystywano również pojęcie 
@@ -179,22 +196,24 @@
 
     \subsection{ADL i PDDL}
     Action Description Language (w skrócie \textbf{ADL}) zostało zaproponowane przez Edwina Pednault'a  w 1987 roku jako usprawnienie 
-    języku opisu STRIPS. Ów system automatycznego planowania został zaprojektowany z myślą o przyszłej implementajci w nowoczesnych na tamten czas robotach.
+    języka opisu STRIPS. Ów system automatycznego planowania został zaprojektowany z myślą o przyszłej implementacji w nowoczesnych na tamten czas robotach.
     Główną ideą stojącą za utworzeniem tego języka opisu problemów było zauważenie, iż język STRIPS nie potrafi poradzić sobie z sytuacjami, gdy
-    powstanie danego efektu jest niedeterministyczne. Dodatkowym aspektem, którego wprowadzenie znacznie poprawiło wydajność metodologii ADL względem STRIPS 
+    powstanie danego efektu zależy od istniejących w świecie warunków. Dodatkowym aspektem, którego wprowadzenie znacznie poprawiło wydajność metodologii ADL względem STRIPS 
     było wykorzystanie zasady \textbf{otwartego świata}, która mówi, iż rzeczy nieokreślone w świecie są uznawane jako \textit{nieznane}, a nie jako 
-    fałszywe, jak to było w STRIPS (\textbf{zasada zamkniętego świata}). Dodatkowo, ostateczne cele w języku STRIPS mogły być jedynie przedstawione jako 
-    koniunkcje stanów (np. Dobra i Tania w kontekście restauracji), czyli jako cele bezwarunkowe. 
+    fałszywe, jak to było w STRIPS, który został stworzony wedle \textbf{zasady zamkniętego świata}. Dodatkowo, ostateczne cele w języku STRIPS mogły być jedynie przedstawione jako 
+    koniunkcje stanów (Przykład: Dobra i Tania w kontekście restauracji), czyli jako cele bezwarunkowe. 
     W nomenklaturze ADL cele można przedstawiać również przy pomocy alternatyw, to znaczy: 
-    nie wszystkie stany muszą być spełnione, mogły istnieć grupy stanów, w których spełnienie tylko jednego było wystarczające (np. Dobra i (Tania lub Blisko)). 
+    nie wszystkie stany muszą być spełnione, mogły istnieć grupy stanów, w których spełnienie tylko jednego było wystarczające (Przykład: Dobra i (Tania lub Blisko)). 
 
     Planning Domain Definition Language (w skrócie \textbf{PDDL}) było próbą ustandaryzowania języków wykorzystywanych 
     do planowania przy pomocy komputerów silnie inspirowaną przez swoich poprzedników- STRIPS i ADL. 
     Utworzeniem takiego standardu zajął się Drew McDermott wraz ze współpracownikami z \textbf{Yale University}.
-    Podstawową ideą stojąca za PDDL jest całkowite odseparowanie metod rozwiązywania problemów od środowisk, w których się 
-    znajdują. Techniki rozwiązywania problemów związanych z logistyką (ustalanie najkrótszej drogi) powinny być również aplikowalne do rozwiązywanie problemów 
+    Podstawową ideą stojąca \\
+    za PDDL jest całkowite odseparowanie metod rozwiązywania problemów od środowisk, \\
+    w których się 
+    znajdują. Techniki rozwiązywania problemów związanych z logistyką (ustalanie najkrótszej drogi) powinny być również aplikowalne do rozwiązywania problemów 
     związanych z produkcją (minimalizacja zużycia materiału). Pozostałe aspekty są porównywalne do języka STRIPS- 
-    istnienie warunków początkowych, zbioru operatorów oraz zbioru złożonego z celow do osiągnięcia.
+    istnienie warunków początkowych, zbioru operatorów oraz zbioru złożonego z celów do osiągnięcia.
 
 
 
@@ -206,9 +225,9 @@
     utworzenie planu, ale również zapewnienie zachowania preferencji wskazanych obiektów świata. Często taki typ planowania 
     może być wykorzystywany w sytuacjach, które obejmują ludzi, chociażby plan lekcji w szkole i preferencje nauczycieli odnośnie godzin pracy.
     Ponadto zaistniał diamentralny rozwój w programowaniu warunkowym, który może reagować na nieznane 
-    czynniki przedstawionego świata. Pozwala to na redukcję obszaru poszukiwań na kawałki, przez co sprowadza 
+    czynniki przedstawionego świata. Pozwala to na redukcję obszaru poszukiwań na kawałki,co sprowadza 
     się do łatwiejszego przedstawiania złożonych problemów oraz uzyskiwania szybszych wyników przez algorytmy implementujące podejście 
-    warunkowe. Poza rozwojem, jeśli chodzi o opis dopuszczalnych akcji, dokonano również rozbudowy opisu stanów w świecie.
+    warunkowe. Poza rozwojem opisu dopuszczalnych akcji, dokonano również rozbudowy opisu stanów w świecie.
     Dla przykładu, \textbf{algorytmy online} charakteryzują się tym, iż są w stanie generować plany mimo braku posiadania całkowitej 
     wiedzy o świecie w momencie rozpoczęcia pracy. Do algorytmu dane przekazywane są partiami. Na podstawie przesłanych informacji algorytm dokonuje 
     odpowiednich decyzji i udziela odpowiedzi. Proces kontynuowany jest aż do momentu przetworzenia wszystkich wprowadzonych danych. Sztandarowym 

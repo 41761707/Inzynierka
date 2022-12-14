@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+        \PYG{c+c1}{\PYGZpc{} expand(+StateLevel, \PYGZhy{}ActionLevel, \PYGZhy{}NextStateLevel, +AllActions)}
+        \PYG{n+nf}{expand}\PYG{p}{(}\PYG{n+nv}{StateLevel}\PYG{p}{,} \PYG{n+nv}{ActionLevel}\PYG{p}{,} \PYG{n+nv}{NextStateLevel}\PYG{p}{,} \PYG{n+nv}{AllActions}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+            \PYG{n+nf}{actions}\PYG{p}{(}\PYG{n+nv}{StateLevel}\PYG{p}{,} \PYG{n+nv}{AllActions}\PYG{p}{,} \PYG{p}{[],} \PYG{n+nv}{NewActionLevel}\PYG{p}{,} \PYG{p}{[],} \PYG{n+nv}{NewNextState}\PYG{p}{),}
+            \PYG{n+nf}{findall}\PYG{p}{(}\PYG{n+nf}{action}\PYG{p}{(}\PYG{n+nf}{zostan}\PYG{p}{(}\PYG{n+nv}{P}\PYG{p}{),[}\PYG{n+nv}{P}\PYG{p}{],[}\PYG{n+nv}{P}\PYG{p}{]),}\PYG{n+nf}{member}\PYG{p}{(}\PYG{n+nv}{P}\PYG{l+s+sAtom}{/}\PYG{k}{\PYGZus{}}\PYG{p}{,}\PYG{n+nv}{StateLevel}\PYG{p}{),}\PYG{n+nv}{PersistActs}\PYG{p}{),}
+            \PYG{n+nf}{actions}\PYG{p}{(}\PYG{n+nv}{StateLevel}\PYG{p}{,} \PYG{n+nv}{PersistActs}\PYG{p}{,} \PYG{n+nv}{NewActionLevel}\PYG{p}{,}
+            \PYG{n+nv}{ActionLevel}\PYG{p}{,} \PYG{n+nv}{NewNextState}\PYG{p}{,} \PYG{n+nv}{NextStateLevel}\PYG{p}{),}
+            \PYG{n+nf}{mutex\PYGZus{}action}\PYG{p}{(}\PYG{n+nv}{ActionLevel}\PYG{p}{,}\PYG{n+nv}{NextStateLevel}\PYG{p}{),}
+            \PYG{n+nf}{mutex\PYGZus{}state}\PYG{p}{(}\PYG{n+nv}{NextStateLevel}\PYG{p}{),}
+            \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}ActionLevel: \PYGZdq{}}\PYG{p}{),} \PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{ActionLevel}\PYG{p}{),}\PYG{l+s+sAtom}{nl}\PYG{p}{,}
+            \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}StateLevel: \PYGZdq{}}\PYG{p}{),} \PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{NextStateLevel}\PYG{p}{),} \PYG{l+s+sAtom}{nl}\PYG{p}{.}
+\end{Verbatim}

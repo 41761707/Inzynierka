@@ -1,0 +1,203 @@
+\hypertarget{classparsePlanFULL_1_1Graph}{}\doxysection{parse\+Plan\+F\+U\+L\+L.\+Graph Class Reference}
+\label{classparsePlanFULL_1_1Graph}\index{parsePlanFULL.Graph@{parsePlanFULL.Graph}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classparsePlanFULL_1_1Graph_aeff0a9ad650307f31fd1dc2aaa66cc2b}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classparsePlanFULL_1_1Graph_ab798255299951700b938cd264d040406}{filename}})
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \mbox{\hyperlink{classparsePlanFULL_1_1Graph}{Graph}}. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classparsePlanFULL_1_1Graph_ab1fbdb38eaff5c046905370ec403f8b5}{generate\+Arcs}} (self, actions, g, level)
+\begin{DoxyCompactList}\small\item\em Funkcja odpowiedzialna za utworzenie krawędzi między stanami a akcjami. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classparsePlanFULL_1_1Graph_accd1a518b1998fd3a044706f114d1894}{generate\+Mutex\+Arcs}} (self, variables, g, level)
+\begin{DoxyCompactList}\small\item\em Funkcja odpowiedzialna za zaznaczanie relacji wzajemnie wykluczających na grafie między stanami oraz między akcjami. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classparsePlanFULL_1_1Graph_a226cc22126da76bc2cf50b7e65dfd1c7}{generate\+Layer}} (self, name, variables, g, level, type)
+\begin{DoxyCompactList}\small\item\em Funkcja odpowiedzialna za utworzenie poziomu stanów bądź akcji w grafie. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classparsePlanFULL_1_1Graph_a28ee876eac6556387f20ff3b82f2c097}{read\+Input}} (self, \mbox{\hyperlink{classparsePlanFULL_1_1Graph_ab798255299951700b938cd264d040406}{filename}})
+\begin{DoxyCompactList}\small\item\em Funkcja odpowiedzialna za wczytanie pliku do zmiennej. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classparsePlanFULL_1_1Graph_a7e1d1c5063456b8f82f27df43561cf45}{parse\+Input}} (self, file, g)
+\begin{DoxyCompactList}\small\item\em Funkcja parsująca plik. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classparsePlanFULL_1_1Graph_a5a587819f8104fc3ceabc49a2873ea1c}{parse\+Plan}} (self, \mbox{\hyperlink{classparsePlanFULL_1_1Graph_ae1162e870676c5ed9a62d1cab4ae39b7}{plan}})
+\begin{DoxyCompactList}\small\item\em Funkcja odpowiedzialna za oczyszczenie planu ze zbędnych elementów. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classparsePlanFULL_1_1Graph_aff12112ac0f3260b114c82fa98722e9b}{color\+Used\+Actions}} (self, \mbox{\hyperlink{classparsePlanFULL_1_1Graph_ae1162e870676c5ed9a62d1cab4ae39b7}{plan}}, max\+\_\+level, g)
+\begin{DoxyCompactList}\small\item\em Funkcja odpowiedzialna za zmianę koloru krawędzi prowadzących do otrzymania wskazanego rezultatu. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classparsePlanFULL_1_1Graph_a18a175dc3a54644d8ce16343a8368408}{plan\+Wo\+Persist}} (self, \mbox{\hyperlink{classparsePlanFULL_1_1Graph_ae1162e870676c5ed9a62d1cab4ae39b7}{plan}})
+\begin{DoxyCompactList}\small\item\em Funkcja usuwająca z planu akcje podtrzymujące. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classparsePlanFULL_1_1Graph_a8098b3a81469e7d172772ee3224994cc}\label{classparsePlanFULL_1_1Graph_a8098b3a81469e7d172772ee3224994cc}} 
+def \mbox{\hyperlink{classparsePlanFULL_1_1Graph_a8098b3a81469e7d172772ee3224994cc}{run\+\_\+all}} (self)
+\begin{DoxyCompactList}\small\item\em Funkcja odpowiedzialna za utworzenie grafu w formiace P\+NG. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classparsePlanFULL_1_1Graph_ab798255299951700b938cd264d040406}\label{classparsePlanFULL_1_1Graph_ab798255299951700b938cd264d040406}} 
+\mbox{\hyperlink{classparsePlanFULL_1_1Graph_ab798255299951700b938cd264d040406}{filename}}
+\begin{DoxyCompactList}\small\item\em plik, z którego zostanie wygenerowany graf \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classparsePlanFULL_1_1Graph_ae1162e870676c5ed9a62d1cab4ae39b7}\label{classparsePlanFULL_1_1Graph_ae1162e870676c5ed9a62d1cab4ae39b7}} 
+\mbox{\hyperlink{classparsePlanFULL_1_1Graph_ae1162e870676c5ed9a62d1cab4ae39b7}{plan}}
+\begin{DoxyCompactList}\small\item\em Utworzony plan. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classparsePlanFULL_1_1Graph_aeff0a9ad650307f31fd1dc2aaa66cc2b}\label{classparsePlanFULL_1_1Graph_aeff0a9ad650307f31fd1dc2aaa66cc2b}} 
+\index{parsePlanFULL.Graph@{parsePlanFULL.Graph}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!parsePlanFULL.Graph@{parsePlanFULL.Graph}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def parse\+Plan\+F\+U\+L\+L.\+Graph.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename }\end{DoxyParamCaption})}
+
+
+
+Konstruktor klasy \mbox{\hyperlink{classparsePlanFULL_1_1Graph}{Graph}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & nazwa pliku, z którego zostanie wygenerowany graf \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classparsePlanFULL_1_1Graph_aff12112ac0f3260b114c82fa98722e9b}\label{classparsePlanFULL_1_1Graph_aff12112ac0f3260b114c82fa98722e9b}} 
+\index{parsePlanFULL.Graph@{parsePlanFULL.Graph}!colorUsedActions@{colorUsedActions}}
+\index{colorUsedActions@{colorUsedActions}!parsePlanFULL.Graph@{parsePlanFULL.Graph}}
+\doxysubsubsection{\texorpdfstring{colorUsedActions()}{colorUsedActions()}}
+{\footnotesize\ttfamily def parse\+Plan\+F\+U\+L\+L.\+Graph.\+color\+Used\+Actions (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{plan,  }\item[{}]{max\+\_\+level,  }\item[{}]{g }\end{DoxyParamCaption})}
+
+
+
+Funkcja odpowiedzialna za zmianę koloru krawędzi prowadzących do otrzymania wskazanego rezultatu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plan} & Plan zawierajacy akcje, których krawędzie należy wyszczególnić \\
+\hline
+{\em max\+\_\+level} & Maksymalny rozmiar grafu \\
+\hline
+{\em g} & Graf \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classparsePlanFULL_1_1Graph_ab1fbdb38eaff5c046905370ec403f8b5}\label{classparsePlanFULL_1_1Graph_ab1fbdb38eaff5c046905370ec403f8b5}} 
+\index{parsePlanFULL.Graph@{parsePlanFULL.Graph}!generateArcs@{generateArcs}}
+\index{generateArcs@{generateArcs}!parsePlanFULL.Graph@{parsePlanFULL.Graph}}
+\doxysubsubsection{\texorpdfstring{generateArcs()}{generateArcs()}}
+{\footnotesize\ttfamily def parse\+Plan\+F\+U\+L\+L.\+Graph.\+generate\+Arcs (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{actions,  }\item[{}]{g,  }\item[{}]{level }\end{DoxyParamCaption})}
+
+
+
+Funkcja odpowiedzialna za utworzenie krawędzi między stanami a akcjami. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em actions} & Zbiór akcji \\
+\hline
+{\em g} & Graf \\
+\hline
+{\em level} & Poziom, dla którego kreowane są krawędzie \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classparsePlanFULL_1_1Graph_a226cc22126da76bc2cf50b7e65dfd1c7}\label{classparsePlanFULL_1_1Graph_a226cc22126da76bc2cf50b7e65dfd1c7}} 
+\index{parsePlanFULL.Graph@{parsePlanFULL.Graph}!generateLayer@{generateLayer}}
+\index{generateLayer@{generateLayer}!parsePlanFULL.Graph@{parsePlanFULL.Graph}}
+\doxysubsubsection{\texorpdfstring{generateLayer()}{generateLayer()}}
+{\footnotesize\ttfamily def parse\+Plan\+F\+U\+L\+L.\+Graph.\+generate\+Layer (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{variables,  }\item[{}]{g,  }\item[{}]{level,  }\item[{}]{type }\end{DoxyParamCaption})}
+
+
+
+Funkcja odpowiedzialna za utworzenie poziomu stanów bądź akcji w grafie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nazwa zbioru \\
+\hline
+{\em variables} & Stany(\+Akcje), które należy dodać do grafu \\
+\hline
+{\em g} & Graf \\
+\hline
+{\em level} & Poziom, dla którego należy wygenerować mutex\textquotesingle{}y \\
+\hline
+{\em type} & Typ węzła (okrąg-\/ stan, prostokąt-\/ akcja) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classparsePlanFULL_1_1Graph_accd1a518b1998fd3a044706f114d1894}\label{classparsePlanFULL_1_1Graph_accd1a518b1998fd3a044706f114d1894}} 
+\index{parsePlanFULL.Graph@{parsePlanFULL.Graph}!generateMutexArcs@{generateMutexArcs}}
+\index{generateMutexArcs@{generateMutexArcs}!parsePlanFULL.Graph@{parsePlanFULL.Graph}}
+\doxysubsubsection{\texorpdfstring{generateMutexArcs()}{generateMutexArcs()}}
+{\footnotesize\ttfamily def parse\+Plan\+F\+U\+L\+L.\+Graph.\+generate\+Mutex\+Arcs (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{variables,  }\item[{}]{g,  }\item[{}]{level }\end{DoxyParamCaption})}
+
+
+
+Funkcja odpowiedzialna za zaznaczanie relacji wzajemnie wykluczających na grafie między stanami oraz między akcjami. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em variables} & Stany(\+Akcje), które należy oznaczyć relacją wzajemnie wykluczającą \\
+\hline
+{\em g} & Graf \\
+\hline
+{\em level} & Poziom, dla którego należy wygenerować mutex\textquotesingle{}y \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classparsePlanFULL_1_1Graph_a7e1d1c5063456b8f82f27df43561cf45}\label{classparsePlanFULL_1_1Graph_a7e1d1c5063456b8f82f27df43561cf45}} 
+\index{parsePlanFULL.Graph@{parsePlanFULL.Graph}!parseInput@{parseInput}}
+\index{parseInput@{parseInput}!parsePlanFULL.Graph@{parsePlanFULL.Graph}}
+\doxysubsubsection{\texorpdfstring{parseInput()}{parseInput()}}
+{\footnotesize\ttfamily def parse\+Plan\+F\+U\+L\+L.\+Graph.\+parse\+Input (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{file,  }\item[{}]{g }\end{DoxyParamCaption})}
+
+
+
+Funkcja parsująca plik. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & wczytany plik w formie napisu \\
+\hline
+{\em g} & Graf \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classparsePlanFULL_1_1Graph_a5a587819f8104fc3ceabc49a2873ea1c}\label{classparsePlanFULL_1_1Graph_a5a587819f8104fc3ceabc49a2873ea1c}} 
+\index{parsePlanFULL.Graph@{parsePlanFULL.Graph}!parsePlan@{parsePlan}}
+\index{parsePlan@{parsePlan}!parsePlanFULL.Graph@{parsePlanFULL.Graph}}
+\doxysubsubsection{\texorpdfstring{parsePlan()}{parsePlan()}}
+{\footnotesize\ttfamily def parse\+Plan\+F\+U\+L\+L.\+Graph.\+parse\+Plan (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{plan }\end{DoxyParamCaption})}
+
+
+
+Funkcja odpowiedzialna za oczyszczenie planu ze zbędnych elementów. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plan} & Plan, który należy oczyścić \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classparsePlanFULL_1_1Graph_a18a175dc3a54644d8ce16343a8368408}\label{classparsePlanFULL_1_1Graph_a18a175dc3a54644d8ce16343a8368408}} 
+\index{parsePlanFULL.Graph@{parsePlanFULL.Graph}!planWoPersist@{planWoPersist}}
+\index{planWoPersist@{planWoPersist}!parsePlanFULL.Graph@{parsePlanFULL.Graph}}
+\doxysubsubsection{\texorpdfstring{planWoPersist()}{planWoPersist()}}
+{\footnotesize\ttfamily def parse\+Plan\+F\+U\+L\+L.\+Graph.\+plan\+Wo\+Persist (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{plan }\end{DoxyParamCaption})}
+
+
+
+Funkcja usuwająca z planu akcje podtrzymujące. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plan} & Plan \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classparsePlanFULL_1_1Graph_a28ee876eac6556387f20ff3b82f2c097}\label{classparsePlanFULL_1_1Graph_a28ee876eac6556387f20ff3b82f2c097}} 
+\index{parsePlanFULL.Graph@{parsePlanFULL.Graph}!readInput@{readInput}}
+\index{readInput@{readInput}!parsePlanFULL.Graph@{parsePlanFULL.Graph}}
+\doxysubsubsection{\texorpdfstring{readInput()}{readInput()}}
+{\footnotesize\ttfamily def parse\+Plan\+F\+U\+L\+L.\+Graph.\+read\+Input (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename }\end{DoxyParamCaption})}
+
+
+
+Funkcja odpowiedzialna za wczytanie pliku do zmiennej. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & nazwa pliku \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+parse\+Plan\+F\+U\+L\+L.\+py\end{DoxyCompactItemize}

@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+            \PYG{c+c1}{\PYGZpc{} check\PYGZus{}constraint(+StateLevel, +Goals)}
+            \PYG{n+nf}{check\PYGZus{}constraint}\PYG{p}{(}\PYG{k}{\PYGZus{}}\PYG{p}{,[]).}
+
+            \PYG{n+nf}{check\PYGZus{}constraint}\PYG{p}{(}\PYG{n+nv}{StateLevel}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{G} \PYG{p}{|} \PYG{n+nv}{Goals}\PYG{p}{])} \PYG{p}{:\PYGZhy{}}
+                \PYG{n+nf}{member}\PYG{p}{(}\PYG{n+nv}{G}\PYG{o}{/}\PYG{n+nv}{IG}\PYG{p}{,} \PYG{n+nv}{StateLevel}\PYG{p}{),}
+                \PYG{n+nv}{IG} \PYG{l+s+sAtom}{\PYGZsh{}\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{,}
+                \PYG{n+nf}{check\PYGZus{}constraint}\PYG{p}{(}\PYG{n+nv}{StateLevel}\PYG{p}{,} \PYG{n+nv}{Goals}\PYG{p}{).}
+\end{Verbatim}

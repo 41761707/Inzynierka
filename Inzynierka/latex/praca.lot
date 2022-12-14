@@ -3,15 +3,20 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Otrzymane wyniki dla znalezienia pierwszego rozwiązania łamigłówki\relax }}{31}{table.caption.28}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Otrzymane wyniki dla znalezienia pierwszego rozwiązania łamigłówki\relax }}{37}{table.caption.28}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Tabela sygnatur linii w pliku tekstowym\relax }}{41}{table.caption.32}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Tabela sygnatur linii w pliku tekstowym\relax }}{49}{table.caption.32}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Przykładowe czasy dla wybranych przykładów\relax }}{62}{table.caption.58}%
-\contentsline {table}{\numberline {6.2}{\ignorespaces Przykładowa liczba wnioskowań dla wybranych przykładów\relax }}{62}{table.caption.59}%
-\contentsline {table}{\numberline {6.3}{\ignorespaces Średnia liczba wnioskowania oraz czasów wykonania\relax }}{62}{table.caption.60}%
-\contentsline {table}{\numberline {6.4}{\ignorespaces Przykładowe czasy dla wybranych przykładów\relax }}{63}{table.caption.61}%
-\contentsline {table}{\numberline {6.5}{\ignorespaces Przykładowa liczba wnioskowań dla wybranych przykładów\relax }}{63}{table.caption.62}%
-\contentsline {table}{\numberline {6.6}{\ignorespaces Średnia liczba wnioskowania oraz czasów wykonania\relax }}{64}{table.caption.63}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Przykładowe czasy, podawane w sekundach, dla wybranych przykładów zaokrąglone do trzeciej cyfry znaczącej dla 15\relax }}{75}{table.caption.61}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces Przykładowa liczba wnioskowań, podawana w setkach tysięcy, zaokrąglona do trzech cyfr znaczących dla wybranych przykładów dla 15\relax }}{75}{table.caption.62}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces Średnia liczba wnioskowania oraz czasów wykonania dla 15\relax }}{76}{table.caption.63}%
+\contentsline {table}{\numberline {6.4}{\ignorespaces Przykładowe czasy dla wybranych przykładów, podawane w sekundach, zaokrąglone do trzeciej cyfry znaczącej dla modyfikacji algorytmu\relax }}{77}{table.caption.64}%
+\contentsline {table}{\numberline {6.5}{\ignorespaces Przykładowa liczba wnioskowań, podawana w setkach tysięcy, zaokrąglona do trzech cyfr znaczących dla wybranych przykładów dla modyfikacji algorytmu\relax }}{77}{table.caption.65}%
+\contentsline {table}{\numberline {6.6}{\ignorespaces Średnia liczba wnioskowania oraz czasów wykonania dla modyfikacji algorytmu\relax }}{78}{table.caption.66}%
+\contentsline {table}{\numberline {6.7}{\ignorespaces Przykładowe czasy, podawane w sekundach, dla wybranych przykładów z ósemki\relax }}{80}{table.caption.69}%
+\contentsline {table}{\numberline {6.8}{\ignorespaces Przykładowa liczba wnioskowań dla wybranych przykładów w 8-elementowej układance\relax }}{80}{table.caption.70}%
+\contentsline {table}{\numberline {6.9}{\ignorespaces Średnia liczba wnioskowania oraz czasów wykonania dla ósemki\relax }}{81}{table.caption.71}%
+\contentsline {table}{\numberline {6.10}{\ignorespaces Średnia liczba wnioskowania oraz czasów wykonania dla zmodyfikowanej ósemki\relax }}{81}{table.caption.72}%
+\contentsline {table}{\numberline {6.11}{\ignorespaces Rozwiązania dla łamigłówek z aplikacji\relax }}{87}{table.caption.78}%
 \addvspace {10\p@ }

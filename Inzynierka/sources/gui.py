@@ -322,7 +322,7 @@ class GUI:
                 print(simple_plan[i])
                 current_plan = re.split(',(?![^(]*\\))',str(simple_plan[i]))
                 for action in current_plan:
-                    command = action.rstrip(')').split(',')
+                    command = action.rstrip(']').rstrip("'").rstrip(')').split(',')
                     command[0] = command[0][6:]
                     canvas.create_text(300,150+(30*counter),text='Krok {}: Przenies klocek {} z {} na {}'.format(i+1,command[0],command[1],command[2]))
                     counter = counter + 1

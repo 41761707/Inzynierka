@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+            \PYG{c+c1}{\PYGZpc{} generate\PYGZus{}plan(+Graph,\PYGZhy{}Plan)}
+            \PYG{n+nf}{generate\PYGZus{}plan}\PYG{p}{([}\PYG{k}{\PYGZus{}}\PYG{p}{],[]).}
+
+            \PYG{n+nf}{generate\PYGZus{}plan}\PYG{p}{([}\PYG{n+nv}{ChosenStates}\PYG{p}{,}\PYG{n+nv}{ActionLevel} \PYG{p}{|} \PYG{n+nv}{RestOfGraph}\PYG{p}{],} \PYG{n+nv}{Plan}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+                \PYG{n+nf}{collect\PYGZus{}vars}\PYG{p}{(}\PYG{n+nv}{ActionLevel}\PYG{p}{,} \PYG{n+nv}{AVars}\PYG{p}{),}
+                \PYG{n+nf}{label}\PYG{p}{(}\PYG{n+nv}{AVars}\PYG{p}{),}
+                \PYG{n+nf}{findall}\PYG{p}{(}\PYG{n+nv}{A}\PYG{p}{,} \PYG{p}{(}\PYG{n+nf}{member}\PYG{p}{(}\PYG{n+nv}{A}\PYG{o}{/}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n+nv}{ActionLevel}\PYG{p}{)),}\PYG{n+nv}{ChosenActions}\PYG{p}{),}
+                \PYG{n+nf}{generate\PYGZus{}plan}\PYG{p}{(}\PYG{n+nv}{RestOfGraph}\PYG{p}{,} \PYG{n+nv}{RestOfPlan}\PYG{p}{),}
+                \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}ChosenActions: \PYGZdq{}}\PYG{p}{),} \PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{ChosenActions}\PYG{p}{),}\PYG{l+s+sAtom}{nl}\PYG{p}{,}
+                \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}ChosenStates: \PYGZdq{}}\PYG{p}{),} \PYG{n+nf}{writeln}\PYG{p}{(}\PYG{n+nv}{ChosenStates}\PYG{p}{),}
+                \PYG{n+nf}{append}\PYG{p}{(}\PYG{n+nv}{RestOfPlan}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{ChosenActions}\PYG{p}{],} \PYG{n+nv}{Plan}\PYG{p}{).}
+\end{Verbatim}
